@@ -1,6 +1,6 @@
 # Entropy Gemini / Argon Reference
 
-This is a private, read-only reference snapshot for Gemini Import Code. It is separate from the working Entropy repository.
+This is a public, read-only reference snapshot for Gemini Import Code. It is separate from the working Entropy repository.
 
 ## Start here
 
