@@ -1,0 +1,95 @@
+/* The Garden owns the outer frame. Preserve Sites' reading/command controls
+   while fitting its existing content into the left work surface. */
+[data-sites-embedded="garden"] .sites-sites-workspace {
+  --sites-inset: clamp(16px, 3cqw, 28px);
+  width: 100%;
+  min-width: 0;
+}
+[data-sites-embedded="garden"] .sites-sites-workspace__body,
+[data-sites-embedded="garden"] .sites-sites-workspace__selected,
+[data-sites-embedded="garden"] .sites-workspace-heading {
+  max-width: none;
+}
+[data-sites-embedded="garden"] .sites-sites-workspace__toolbar {
+  padding-block: 16px 12px;
+}
+[data-sites-embedded="garden"] .sites-sites-workspace__body {
+  padding-bottom: 24px;
+}
+[data-sites-embedded="garden"] .sites-workspace-heading > :first-child {
+  padding-inline-start: 0;
+}
+
+.zen-sites-cap-trigger {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  min-height: 36px;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-on-surface-muted);
+  font: inherit;
+  font-size: 11px;
+  text-align: start;
+  cursor: pointer;
+}
+.zen-sites-cap-trigger > :nth-child(2) { color: var(--color-on-surface); }
+.zen-sites-cap-trigger > small { font-size: 10px; }
+.zen-ledger__disclosure-content .zen-sites-cap-trigger { display: flex; }
+.zen-ledger__disclosure-content .zen-sites-cap-trigger > :nth-child(2) { margin-inline-start: auto; }
+.zen-ledger__disclosure-content .zen-sites-cap-trigger > small { flex-basis: 100%; }
+.zen-sites-cap-trigger:hover { color: var(--color-on-surface); }
+.zen-sites-cap-trigger:focus-visible {
+  outline: 1px solid var(--color-accent);
+  outline-offset: 4px;
+}
+.zen-sites-global-cap {
+  padding: 28px var(--sites-inset) 24px;
+  color: var(--color-on-surface);
+}
+.zen-sites-global-cap > h2 {
+  margin: 0;
+  font-family: var(--font-theme-heading);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -.035em;
+}
+.zen-sites-global-cap > p {
+  margin: 10px 0 28px;
+  color: var(--color-on-surface-muted);
+  font-size: 12px;
+}
+.zen-sites-global-cap .sites-cap-readout { height: auto; }
+.zen-sites-global-cap .sites-cap-inline-editor { max-width: 560px; }
+.zen-sites-global-cap .sites-cap-inline-editor__controls { gap: 12px 16px; }
+.zen-sites-global-cap .sites-cap-inline-editor input {
+  width: 116px;
+  min-height: 64px;
+  padding: 0 0 4px;
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
+  background: transparent;
+  font-family: var(--font-theme-serif);
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.zen-sites-global-cap .sites-cap-inline-editor input:focus-visible {
+  outline: 0;
+  border-bottom-color: var(--color-accent);
+}
+.zen-sites-global-cap .sites-cap-inline-editor button { min-height: 44px; }
+.zen-sites-global-cap .sites-cap-inline-editor__feedback { margin-top: 14px; }
+.zen-sites-global-cap .sites-cap-editor__evidence {
+  --cap-rule: var(--color-border);
+  margin-top: 28px;
+  padding-top: 20px;
+}
+@container sites-workspace (max-width: 400px) {
+  .zen-sites-global-cap .sites-cap-inline-editor__controls { gap: 12px; }
+  .zen-sites-global-cap .sites-cap-inline-editor input { width: 96px; }
+  .zen-sites-global-cap .sites-cap-editor__comparison { flex-wrap: wrap; }
+}

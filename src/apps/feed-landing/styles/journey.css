@@ -1,0 +1,35 @@
+.feed-horizon { padding: 64px 36px 72px; text-align: center; background: var(--feed-surface); outline-offset: -6px !important; }
+.feed-horizon-boundary { display: flex; justify-content: center; align-items: center; gap: 17px; margin-bottom: 42px; }
+.feed-horizon-boundary span { width: 31%; height: 1px; background: linear-gradient(90deg, transparent, var(--feed-border-bright)); }
+.feed-horizon-boundary span:last-child { transform: rotate(180deg); }
+.feed-horizon-boundary i { width: 5px; height: 5px; border: 1px solid var(--feed-accent); transform: rotate(45deg); }
+.feed-horizon .feed-eyebrow { color: var(--feed-muted); font-size: 8px; letter-spacing: 0.25em; }
+.feed-horizon h2 { font-size: 27px; font-weight: 400; letter-spacing: -1.4px; margin-top: 20px; }
+.feed-horizon p { margin-top: 18px; color: var(--feed-secondary); font-size: 12px; line-height: 2; }
+.feed-horizon-footnote { display: block; margin-top: 32px; color: var(--feed-muted); font-size: 9px; }
+.feed-terminus { padding-bottom: 56px; }
+.feed-terminus-void { min-height: 72vh; border-bottom: 1px solid var(--feed-border); background: var(--feed-surface); }
+.feed-afterword { padding: 64px 36px 32px; text-align: center; }
+.feed-afterword h2 { max-width: 300px; margin: 18px auto 0; word-break: keep-all; font-size: 26px; font-weight: 400; line-height: 1.6; letter-spacing: -1.1px; }
+.feed-afterword-lead { margin-top: 18px !important; color: var(--feed-secondary); font-size: 14px; line-height: 1.95; }
+.feed-afterword-stages { display: grid; gap: 10px; max-width: 360px; margin: 30px auto 0; padding: 0; list-style: none; text-align: left; font-size: 12px; color: var(--feed-secondary); counter-reset: stage; }
+.feed-afterword-stages li { counter-increment: stage; display: grid; grid-template-columns: 22px 1fr; column-gap: 8px; }
+.feed-afterword-stages li::before { content: counter(stage, decimal-leading-zero); grid-row: span 2; color: var(--feed-muted); font-size: 10px; padding-top: 3px; }
+.feed-afterword-stages strong { color: var(--feed-text); font-weight: 500; font-size: 13px; }
+.feed-afterword-caption { margin-top: 14px !important; color: var(--feed-muted); font-size: 11px; }
+.feed-invitation-uses { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; padding: 0; list-style: none; }
+.feed-invitation-uses li { padding: 4px 11px; border: 1px solid var(--feed-border-bright); border-radius: 20px; font-size: 10px; color: var(--feed-secondary); }
+.feed-invitation-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+.feed-afterword .feed-invitation { margin-top: 48px; }
+.feed-comparison { position: relative; margin-top: 30px; overflow: hidden; border-radius: 8px; }
+.feed-comparison .feed-media-filter { filter: saturate(calc(1 - var(--post-desaturation))); }
+.feed-comparison-label { position: absolute; left: 15px; bottom: 13px; padding: 5px 9px; background: #111214cc; font-size: 7px; letter-spacing: 0.12em; color: #fff; border-radius: 4px; }
+.feed-compare-button { margin-top: 18px; font-size: 11px; }
+.feed-invitation { padding: 40px 26px; border: 1px solid var(--feed-border); border-radius: 8px; background: var(--feed-surface-soft); }
+.feed-invitation h3 { font-size: 29px; font-weight: 400; line-height: 1.65; letter-spacing: -1.3px; margin-top: 17px; }
+.feed-invitation > p { color: var(--feed-secondary); font-size: 11px; line-height: 1.9; word-break: keep-all; margin: 16px 0 24px; }
+.feed-invitation .feed-local-promise { font-size: 9px; line-height: 1.9; max-width: 330px; color: var(--feed-muted); margin: 20px auto 0; }
+.feed-afterword-note { max-width: 430px; margin: 22px auto 0 !important; color: var(--feed-muted); font-size: 10px; line-height: 1.9; word-break: keep-all; }
+.feed-end-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 23px; margin-top: 30px; color: var(--feed-muted); font-size: 9px; }
+.feed-end-links a:hover { color: var(--feed-accent); }
+@media (max-width: 760px) { .feed-afterword { padding: 45px 22px 25px; } .feed-afterword h2 { font-size: 22px; } .feed-horizon { padding: 45px 22px 60px; } .feed-horizon h2 { font-size: 24px; } }

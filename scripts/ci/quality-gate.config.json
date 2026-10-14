@@ -1,0 +1,206 @@
+{
+  "coverage": {
+    "statementsPctMin": 68,
+    "branchesPctMin": 60,
+    "functionsPctMin": 72,
+    "linesPctMin": 70
+  },
+  "bundle": {
+    "warnAtPct": 0.98,
+    "maxOverheadPct": 0.05,
+    "maxJsAssetBytes": 2100000,
+    "maxTotalJsBytes": 13800000,
+    "maxTotalCssBytes": 650000,
+    "maxTotalDistBytes": 19000000,
+    "namedJsAssets": [],
+    "workerClosures": {
+      "zenHomeRenderer": {
+        "baseline": {
+          "entryRawBytes": 27531,
+          "entryGzipBytes": 9109,
+          "closureRawBytes": 1933443,
+          "closureGzipBytes": 622018,
+          "projectModules": 645
+        },
+        "baselineGrowth": {
+          "warnAtPct": 0.03,
+          "failAtPct": 0.08
+        },
+        "hardLimits": {
+          "maxEntryRawBytes": 900000,
+          "maxEntryGzipBytes": 280000,
+          "maxClosureRawBytes": 2250000,
+          "maxClosureGzipBytes": 725000,
+          "maxProjectModules": 680
+        },
+        "forbiddenModuleFragments": [
+          "src/apps/",
+          "src/domains/progression/",
+          "src/domains/guidance/",
+          "src/i18n/",
+          "src/themes/core/toolsVisualPolicy.js",
+          "src/themes/core/runtime/pluginCatalog.js",
+          "src/domains/settings/config/solarLocation.js",
+          "src/themes/plugins/zen/widgets/tools/recipes/zenFurinInscriptions.js",
+          "src/themes/plugins/zen/presentation/artifacts/engine/zenSvgMaterialCompiler.js",
+          "src/themes/plugins/zen/presentation/artifacts/engine/zenSvgRaster.jsx",
+          "node_modules/react/",
+          "node_modules/react-dom/",
+          "src/themes/plugins/zen/pond/storage/",
+          "src/themes/plugins/zen/pond/runtime/zenKoiEnergyProfile.js",
+          "src/themes/plugins/zen/pond/roster/zenKoiRosterProjector.js",
+          "src/themes/plugins/zen/pond/renderers/pixi/telemetry/pixiGpuFrameTimer.js",
+          "src/themes/plugins/zen/model/vnext/",
+          "src/themes/plugins/zen/state/",
+          "src/platform/storage/",
+          "ZenModelRepository",
+          "ZenThemeModelState",
+          "VNextPreferenceModel",
+          "ZenCoreStatusVNext",
+          "ZenCoreStatusClassicExperiment",
+          "ClassicExperiment",
+          "researchLearning.js",
+          "src/themes/plugins/zen/model/bonsai/g15/index.js",
+          "src/themes/plugins/zen/model/bonsai/g15/developmental-programs.js",
+          "src/themes/plugins/zen/model/bonsai/g15/sakura-terminal-lab-runtime.generated.js",
+          "src/themes/plugins/zen/model/bonsai/g15/ZenBonsaiG15TerminalStudyRuntime.js",
+          "src/themes/plugins/zen/model/bonsai/g15/ZenBonsaiG15Species.js",
+          "src/themes/plugins/zen/model/bonsai/plume/generation/",
+          "src/themes/plugins/zen/model/bonsai/plume/ZenBonsaiPlumeSpecies.js",
+          "src/themes/plugins/zen/model/bonsai/plume/live/model.js",
+          "src/themes/plugins/zen/model/bonsai/plume/live/compiled-pose.js",
+          "src/themes/plugins/zen/model/bonsai/plume/live/f4-history.js",
+          "src/themes/plugins/zen/model/bonsai/plume/cloud/model.js",
+          "src/themes/plugins/zen/model/bonsai/plume/rhythm/model.js",
+          "src/themes/plugins/zen/model/bonsai/plume/canopy/f4-scaffold.js"
+        ]
+      }
+    },
+    "contextStaticClosures": {
+      "background": {
+        "fileCountPolicy": "advisory",
+        "maxFiles": 66,
+        "maxRawBytes": 3200000,
+        "maxGzipBytes": 900000,
+        "forbiddenAssetFragments": [
+          "src/apps/dashboard/main.jsx",
+          "src/pages/popup.html",
+          "zen-pond-rendering",
+          "ZenPixiSceneRenderer",
+          "zenPondRenderer",
+          "zenHomeRenderer",
+          "createPixiBonsaiRenderer",
+          "SakuraSpeciesProfiles",
+          "VNextPreferenceModel",
+          "ZenCoreStatusVNext",
+          "ZenCoreStatusClassicExperiment",
+          "pluginCatalog"
+        ]
+      },
+      "popup": {
+        "fileCountPolicy": "enforced",
+        "maxFiles": 13,
+        "maxRawBytes": 785000,
+        "maxGzipBytes": 247000,
+        "forbiddenAssetFragments": [
+          "src/apps/background/index.js",
+          "src/apps/dashboard/main.jsx",
+          "background-kernel-runtime",
+          "background-kernel-storage",
+          "BackgroundAppKernel",
+          "backgroundKernel",
+          "zen-pond-rendering",
+          "SakuraSpeciesProfiles",
+          "VNextPreferenceModel",
+          "ZenCoreStatusVNext",
+          "ZenCoreStatusClassicExperiment",
+          "pluginCatalog"
+        ]
+      },
+      "dashboardMain": {
+        "fileCountPolicy": "enforced",
+        "maxFiles": 68,
+        "maxRawBytes": 1650000,
+        "maxGzipBytes": 500000,
+        "forbiddenAssetFragments": [
+          "src/apps/background/index.js",
+          "src/pages/popup.html",
+          "background-kernel-runtime",
+          "background-kernel-storage",
+          "BackgroundAppKernel",
+          "backgroundKernel",
+          "SakuraSpeciesProfiles",
+          "VNextPreferenceModel",
+          "ZenCoreStatusVNext",
+          "ZenCoreStatusClassicExperiment"
+        ]
+      },
+      "zenHome": {
+        "fileCountPolicy": "enforced",
+        "maxFiles": 43,
+        "maxRawBytes": 1550000,
+        "maxGzipBytes": 445000,
+        "forbiddenAssetFragments": [
+          "src/themes/plugins/zen/model/SakuraSpecies.js",
+          "src/themes/plugins/zen/model/SakuraStructuralSpecies.js",
+          "src/themes/plugins/zen/model/SakuraStructuralABSpecies.js",
+          "src/themes/plugins/zen/model/SakuraRenderSpecies.js",
+          "src/themes/plugins/zen/model/ZenCoreSpeciesRegistry.js",
+          "src/themes/plugins/zen/model/sakura/sakuraRenderer.js",
+          "src/themes/plugins/zen/runtime/useZenBonsaiAbRenderer.js",
+          "src/themes/plugins/zen/runtime/useZenBonsaiLocalPreviewRenderer.js",
+          "src/themes/plugins/zen/runtime/useZenLabTreeRenderer.js",
+          "src/themes/plugins/zen/runtime/classic/useZenClassicAnalysisRuntime.js",
+          "src/themes/plugins/zen/model/bonsai/evaluation/BonsaiCandidateEvaluator.js",
+          "src/themes/plugins/zen/model/bonsai/scoring/CandidateScoreModel.js"
+        ]
+      }
+    }
+  },
+  "lineBudget": {
+    "baselinePath": "scripts/ci/line-budget.baseline.json",
+    "warnNearBudgetPct": 0.85,
+    "driftAllowance": 25,
+    "density": {
+      "controlFlowTokens": 45,
+      "topLevelFunctions": 14
+    },
+    "roles": [
+      {
+        "id": "data",
+        "exempt": true,
+        "match": ["src/i18n/locales/", "src/domains/settings/config/"]
+      },
+      {
+        "id": "dev-only",
+        "exempt": true,
+        "match": [
+          "src/apps/dashboard/tabs/experiment/",
+          "/runtime-debugger/",
+          "/debug/",
+          ".dev.js",
+          "Lab.jsx",
+          "disabled"
+        ]
+      },
+      {
+        "id": "test",
+        "match": [".test.js", ".test.jsx", ".spec.", "/__tests__/"],
+        "fileLines": 1200,
+        "functionLines": 320
+      },
+      {
+        "id": "renderer",
+        "match": ["/model/", "/render/", "/renderers/", "Renderer.js", "/sakura/", "/world/", "/pixi/"],
+        "fileLines": 1400,
+        "functionLines": 260
+      },
+      {
+        "id": "logic",
+        "match": ["src/"],
+        "fileLines": 800,
+        "functionLines": 160
+      }
+    ]
+  }
+}

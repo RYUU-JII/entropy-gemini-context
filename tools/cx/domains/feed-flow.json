@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "feed-flow",
+  "title": "Feed Flow runtime",
+  "pathPrefixes": [
+    "src/domains/nudge/feed-flow/",
+    "src/domains/nudge/behavior/scrollInputOrchestrator.js",
+    "scripts/e2e/feedHorizon",
+    "tests/feed",
+    "tests/scrollInputOrchestrator.test.js",
+    "docs/architecture/runtime/feed-flow-"
+  ],
+  "ownerDocs": [
+    "docs/architecture/runtime/feed-flow-runtime-target-architecture.md",
+    "docs/architecture/repository/friction-nudge-effect-boundary-map.md",
+    "docs/operations/qa/real-site-e2e.md"
+  ],
+  "resourceClaims": [],
+  "focusedChecks": [
+    {
+      "id": "feed-flow-contract-tests",
+      "label": "Feed Flow focused contracts",
+      "executable": "node",
+      "args": [
+        "scripts/dev/run-local-command.mjs",
+        "vitest",
+        "run",
+        "tests/feedEndpointBoundaryResolver.test.js",
+        "tests/feedEndpointLease.test.js",
+        "tests/feedTerminusController.test.js",
+        "tests/scrollInputOrchestrator.test.js"
+      ],
+      "estimatedSeconds": 18
+    }
+  ],
+  "harnessIds": [
+    "feed-flow"
+  ]
+}

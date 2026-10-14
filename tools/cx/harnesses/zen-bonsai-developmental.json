@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "id": "zen-bonsai-developmental",
+  "title": "Zen bonsai developmental V10, one deterministic proposal",
+  "targets": [
+    "bonsai/developmental/one-proposal-smoke"
+  ],
+  "estimatedSeconds": 5,
+  "guide": "docs/architecture/themes/zen/zen-bonsai-architecture-guards.md",
+  "resourceClaims": [
+    "runtime:zen-bonsai-developmental-one-proposal"
+  ],
+  "execution": {
+    "owner": "verify",
+    "mode": "project_cli",
+    "recipeId": "active-v10-one-proposal-v1",
+    "executable": "node",
+    "args": [
+      "scripts/harness/entropyHarness.mjs"
+    ],
+    "adapterId": "zen-bonsai-developmental",
+    "input": {
+      "targetId": "bonsai/developmental/one-proposal-smoke",
+      "mode": "developmental_smoke",
+      "parameters": {
+        "preset": "active-v10-one-proposal-v1"
+      },
+      "configPath": null
+    },
+    "resultContractVersion": 1
+  }
+}

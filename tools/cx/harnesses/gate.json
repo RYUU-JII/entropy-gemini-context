@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 2,
+  "id": "gate",
+  "title": "Gate entry checkpoint runtime evidence",
+  "targets": [
+    "gate/entry-checkpoint/runtime"
+  ],
+  "estimatedSeconds": 90,
+  "guide": "docs/architecture/repository/protection-content-runtime-boundary-map.md",
+  "resourceClaims": [
+    "artifact:dev_extension",
+    "runtime:gate-interstitial"
+  ],
+  "execution": {
+    "owner": "verify",
+    "mode": "project_cli",
+    "recipeId": "entry-checkpoint-agent",
+    "executable": "node",
+    "args": [
+      "scripts/harness/entropyHarness.mjs"
+    ],
+    "adapterId": "entropy-qa",
+    "input": {
+      "targetId": "gate/entry-checkpoint/runtime",
+      "mode": "agent",
+      "parameters": {
+        "hold-ms": 0,
+        "rebuild": false
+      },
+      "configPath": null
+    },
+    "resultContractVersion": 1
+  }
+}

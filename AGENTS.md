@@ -1,0 +1,148 @@
+# AGENTS.md
+
+## 1) Core Project Philosophy
+- **Entropy (MV3)**: A digital friction engine designed to slow down instant gratification and improve intentionality.
+- **Aesthetic Direction**: Premium, modern, and high-fidelity visuals. Each theme must feel like a distinct, high-quality "world" (e.g., Matrix, Entropy, Cyberpunk, Clinical, SCP, Zen).
+
+## 2) The Zen Theme Protocol (Core Guide)
+- **Official Canonical ID**: `zen`
+- **Legacy Alias Policy**: New code should use `zen`. If legacy aliases appear at input boundaries, normalize immediately and avoid propagation.
+- **Aesthetic Concept**: Japanese Zen Style (Karesansui, Chaniwa).
+- **Core Elements**: Koi fish, Bonsai trees, Shishi-odoshi (Deer scarer), Furin (Wind chimes), Kakejiku (Hanging scrolls), Torii gate + Shimenawa (sacred boundary rope).
+  - Rationale for Torii/Shimenawa: these are declarative boundary markers (a closed threshold), a different category from the interactive-decision artifacts (Shishi-odoshi's enter/leave ritual, Furin's nudge game). Use them where the correct behavior is "no decision to make here," not "decide now."
+- **Design Guardrails (Default)**:
+  - Prefer Japanese Zen motifs; introduce non-Zen motifs only with explicit design rationale.
+  - Use `Zen` prefix for new Zen-specific components; migrate legacy names incrementally.
+
+## 3) The Entropy Theme Protocol
+- **Official Canonical ID**: `entropy`
+- **Aesthetic Concept**: High-Entropy / Industrial / Data Overflow Console.
+
+## 4) The Cyberpunk Theme Protocol
+- **Official Canonical ID**: `cyberpunk`
+- **Aesthetic Concept**: Neon Megacity / Digital Nightlife / Synthetic Signal Overload.
+- **Independence Rule**: Treat `cyberpunk` as an independent canonical theme and avoid coupling it as an alias of `entropy`.
+
+## 5) Theme Engine Architecture
+- **Canonical IDs**: `matrix`, `entropy`, `cyberpunk`, `clinical`, `scp`, `zen`.
+- **Normalization**: Prefer `normalizeThemeId` from `src/themes/core/ids.js` on runtime/storage boundaries.
+- **Access Paths**:
+  - Theme definition/catalog reads: `src/themes/core/catalog.js`
+  - Document theme apply/init: `src/themes/core/documentTheme.js`
+  - Behavior/Layout config: `src/themes/core/profile.js`
+  - Theme registry/loading: `src/themes/core/registry/index.js`
+  - Theme plugin catalog: `src/themes/core/runtime/pluginCatalog.js`
+  - Retired broad facades: do not reintroduce the legacy broad theme facade entrypoints; use the narrow public seams listed above instead
+  - Evolution rule: If a new theme concern does not fit the existing seams, add a new named seam and update docs/CI in the same change instead of widening an unrelated seam.
+- **Typography Layering (3 layers, one bridge)**:
+  - L1 app base — `src/themes/styles/tokens/typography.css` defines `--font-sans/-mono/-serif/-heading/-ui`. Theme-neutral; never tune it to suit one theme.
+  - L2 theme projection — `src/themes/core/utils.js` projects each theme's `tokens.typography` onto `--font-theme-heading/-ui/-mono/-serif`.
+  - L3 consumption — the Tailwind `font-*` utilities read L2.
+  - The `tokens.typography` block in `src/themes/plugins/<id>/theme.js` is the only sanctioned L1→L2 bridge. All other theme code (theme CSS, widgets, visual policies) must read L2.
+  - Never write `font-family: var(--font-sans|-mono|-serif|-heading)` inside a `[data-theme=...]` rule: it outranks the Tailwind utility (0,2,0 vs 0,1,0) and silently pins that theme to L1, turning its typography tokens into dead config that no further edit can fix.
+  - Fallback chains must stay within one font category. `var(--font-theme-ui, var(--font-mono, ...))` is a cross-category substitution and is forbidden.
+  - Only faces shipped as `@font-face` are guaranteed. Naming an unshipped face renders per-machine; record any accepted variance in `ACCEPTED_UNSHIPPED_FACES` in the guard below.
+  - Guard: `npm run check:theme-typography:layering`.
+
+## 6) Technical Implementation Standards
+- **Zustand 5 Policy**:
+  - Use `useShallow` for object/multiple-key selectors by default; allow measured exceptions with clear rationale.
+- **State & Storage**:
+  - **Data Privacy**: No data leaves the device.
+  - **Canonical Contract**: Use `docs/system-architecture/02-runtime-storage-boundaries.md` for storage owner/path topology and `docs/architecture/storage/storage-architecture-target.md` for backend/data-shape detail.
+  - **Storage Versioning**: Follow `docs/architecture/storage/storage-versioning-and-migration-policy.md`. Pre-release data has no automatic migration; reject incompatible presence without rewriting or wiping. Public upgrades require one explicit, versioned transition owner and release evidence.
+  - **Local Encryption**: Follow `docs/architecture/security/local-security-vault.md` for key ownership, unlock admission, and encrypted backups. Settings PINs do not replace encryption passphrases.
+  - **Persistent Settings**: User settings, policy snapshots, bootstrap snapshots, and small security metadata use `chrome.storage.local`.
+  - **Session Checkpoints**: In-flight runtime/session state uses `chrome.storage.session`.
+  - **Historical Data**: Historical stats, logs, CLSE buckets, asset caches, and large model state use IndexedDB.
+  - **Local Storage Rule**: `window.localStorage` is UI-only/debug-only and must not be the canonical source of business data.
+  - **Non-Negotiable Storage Invariants**:
+    - New dashboard/content code must go through canonical entrypoints (`settingsCommandBus`, `settingsTransport`, typed stores, `SettingsService`).
+    - Do not add new direct imports of `dbManager.js` or raw Chrome storage helpers in feature code.
+    - Do not add new business-data writes to `window.localStorage`.
+    - If a new persisted data class is needed, add or extend a typed store first; do not bypass the storage boundary.
+    - Treat CI storage-boundary failures as architecture regressions, not lint noise.
+
+## 7) Fallback Elimination Protocol
+- **Default Rule**:
+  - Do not add new fallback/backup/mirror/legacy-read paths in active runtime, storage, theme, or business logic.
+  - If the canonical owner/path/shape is missing or invalid, fail loudly with an explicit error or diagnosable failure state instead of silently recovering.
+- **Absolute Prohibitions (unless an existing Active doc explicitly allows the seam)**:
+  - No cross-theme fallback that substitutes another theme implementation for a missing canonical implementation.
+  - No read-time legacy fallback that keeps old keys/shapes alive in normal runtime paths.
+  - No secondary storage fallback that turns a mirror/debug cache into an undeclared source of truth.
+  - No silent `try/catch` that returns `null`, `false`, empty objects, or defaults in canonical business/runtime paths.
+  - No `||` / `??` defaulting that hides missing canonical state at a storage/runtime boundary.
+- **Narrowly Allowed Cases**:
+  - Input-boundary canonicalization.
+  - Explicit migration entrypoints or one-shot rewrites.
+  - Already-documented platform degradation seams owned by an Active architecture spec.
+- **Exception Burden**:
+  - If a fallback is truly unavoidable, update the relevant Active doc and guardrail/CI in the same change.
+  - The exception must name the owner, boundary, telemetry/error signal, and sunset or exit condition.
+  - If that bar is not met, treat the fallback itself as a regression.
+
+## 8) Workflow Guardrails
+- **Agent Routing Policy**:
+  - For ambiguous tasks, start with `docs/governance/agent-start-here.md` and `docs/governance/agent-routing-index.md`.
+  - Treat routing rows as investigation starting points, not fix locations.
+  - Confirm the actual owner through the relevant Active document's owner table, canonical path, system flow, or function ledger before editing.
+- **Guardrail Interpretation Policy**:
+  - Treat CI/contract failures as signals to inspect the owning boundary and the reason the guard exists, not as constraints to work around with awkward code.
+  - Keep structural guards strong for SSOT, storage, security, runtime ownership, and architecture boundaries; do not bypass them without explicit architecture discussion and matching docs/CI updates.
+  - For intentional UI/copy/shape changes where the old guard is now stale or too narrow, update the code, docs, tests, and guard contract together in the smallest owning seam.
+- **Dev Server Policy**:
+  - Do not start Vite/live dev servers automatically for routine visual or frontend patches.
+  - Assume the user owns live preview unless they explicitly ask for a server or a runtime-only issue cannot be diagnosed otherwise.
+  - If a server is started for diagnosis, stop it before handoff unless the user asks to keep it running.
+- **QA Browser Policy**:
+  - Start QA work with `docs/operations/qa/agent-qa-workflow.md`. Direct exploration needs no new target. `qa run` performs fresh preflight; separate `doctor` is optional.
+  - Prefer headless execution for automated tests, including screenshots, WebGL rendering, and CDP-driven interaction, whenever the target's assertions allow it. Human/direct UI control stays headed. Do not equate document visibility or WebGL with a required physical window; retain native foreground/permission/GPU evidence where that is the actual assertion, and report every headed exception with its reason.
+  - For headed Windows QA, prefer a secondary monitor when connected through the canonical launch or single initial/operator window-preparation owner. Keep single-monitor placement unchanged; never move unrelated/personal windows or repeatedly reposition/refocus during test steps. Connected direct UI work follows the same secondary-monitor preference when its tool supports placement. Monitor placement does not isolate the shared mouse/keyboard input.
+  - Route browser work by purpose using `docs/operations/runbooks/windows-native-development.md#browser-roles`. Automated QA uses the named target's declared `environmentId` and compiled browser contract from `npm run qa -- run` (or optional `describe/doctor`); `authenticated` is not a universal automation environment. Targets that require persistent login use the existing Chrome for Testing `authenticated` environment; isolated dashboard boot/capture uses `ephemeral`, render-only capture uses `visual`, and clean release checks use `release` when declared by their target. Never substitute an environment or profile to make a target run.
+  - `dashboard/boot` and `dashboard/capture` own disposable profiles and browser processes for isolated fixtures and cold/warm state. Preserve that isolation; do not route them into a persistent or personal profile. Real-use setup and exploratory checks default to the same persistent Chrome for Testing `authenticated` profile. Use `qa:open` / `qa:reload` for preparation and the connected ChatGPT browser extension for direct UI exploration; preserve regular Chrome Profile 2 for explicitly requested comparisons.
+  - Before connected real-use browser actions, verify the exact profile/tab identity against the runbook and retain the `qa explore start` runner's broker/capacity until exploration ends (Ctrl-C). If the profile is not connected or identity is ambiguous, stop connected UI interaction and request connection; canonical CLI preparation/verification can proceed without that connection. Never substitute another personal profile. Use `explore note/show` for exact-session exploratory evidence; real-use observations are not a named product QA PASS. The CLI lifecycle and CDP rules below govern every CLI preparation/run.
+  - Before browser automation, read `scripts/browser-qa/README.md` and the relevant target contract in `docs/operations/qa/entropy-qa-control-plane.md`.
+  - Use the declared Browser QA owners and `npm run qa -- ...` entrypoints. Do not reconstruct Chrome flags, guess a CDP port, launch a substitute browser, or create/close CDP targets from an ad hoc script.
+  - Treat document visibility, target activation, and OS focus as separate effects. Automated focus is opt-in and defaults OFF. A first-launch allowance belongs to the exact newly started browser process; attaching to an existing process, creating another tab, retrying, or starting another QA run does not renew it. Use the declared lifecycle owner and retain the exact launch/presentation receipt. Explicit user requests to open/show a browser or a human handoff use their separate operator owner. Never restore, minimize, reposition or refocus an existing browser as routine preparation, polling or retry recovery.
+  - Select browser mode from the assertion: isolated functional checks and public-site runtime checks use declared headless owners where supported; authenticated-profile checks preserve the managed profile; physical foreground, native prompts and physical-GPU measurements keep their specific evidence requirements. Headless execution opens no physical window and receives no OS-focus grant. Do not treat missing physical-focus evidence as a reason to force unrelated functional QA into a headed mode.
+  - Resource claims must match actual sharing. Keep one owner for a shared persistent profile and exclusive measurement lanes. Declared isolated functional runs may share bounded browser capacity only after their private profile/artifact ownership is proved; do not remove a live claim or substitute a profile to bypass contention. An immutable per-run development artifact releases the publication claim after admission.
+  - Preserve external and managed-persistent browser processes and profiles. Close only exact targets owned by the current run, and fail loudly when cleanup or identity cannot be proven.
+  - Inventory/status checks are observation-only. A persistent browser may start only through manual `browser start`/`browser ensure` or the upper `qa run` session's `managed_ensure_before_attach` step, and only for its declared managed profile slot. Low-level attach never starts a browser; external profiles remain operator-owned.
+- **Local Path Opening Policy**:
+  - When the user asks to open a local file or directory, call `mcp__open_path_local__open_path` with the existing absolute path as the first-choice opener.
+  - Do not try `xdg-open`, `open`, `explorer.exe`, or another shell launcher while the dedicated Open Path tool is available.
+  - If the tool is deferred rather than directly listed, discover it from the available tool catalog before considering a shell fallback.
+- **Verification Cadence (Default)**:
+  - Default to implementation-first. Do not run tests during intermediate iterations unless the user explicitly asks for them or they are needed to unblock a specific failure.
+  - During development, Chrome loads `dist/`. When the user or agent needs to produce or verify a build for the browser, use `npm run build` (or `npm run build:quick`), which builds the development extension with debug HUDs and dev logs through the canonical snapshot/publisher. Build cost varies with source size and host load; QA builds on demand and reuses an exact matching publication.
+  - Prefer lightweight verification (`git diff --check`, focused static checks, or targeted tests) when it matches the risk.
+  - Run `npm run build:prod` for production bundle/closure budget verification (`dist-prod/`), and `npm run build:release` for full release/shipping gates.
+  - Use targeted tests only when they materially speed up diagnosis of a known regression.
+  - Do not add or expand UI contract tests for incidental text, class names, card internals, or purely visual state. UI tests should protect durable user flows, public component contracts, or accessibility-critical behavior.
+  - Run the full test suite only when the user explicitly requests it, when doing a planned end-of-day verification pass, or when a shipping gate clearly requires it.
+- **Naming Consistency**: 
+  - Components: PascalCase (e.g., `ZenCoreStatus`).
+  - Logic/Storage: camelCase (e.g., `zenBonsaiSeed`).
+  - Storage Keys: snake_case (e.g., `entropy_mode`).
+
+- **Local Artifact Lifecycle**:
+  - Ordinary screenshots and one-off research output are disposable by default. Capture decisive states; keep optional screenshot streams off unless needed. Preserve required named QA evidence.
+  - Put new bulk research/capture output in a task-specific `.artifacts` directory. Keep `reports` for small useful conclusions/reproduction instructions or explicitly preserved records; do not add bulk raw output there by default.
+  - At task close, inspect QA retention and prune eligible completed runs through `npm run qa -- retention prune`. Default: seven days, three runs per target, 24-hour grace, 10 GB (10,000,000,000 bytes) admission budget, approved by the user on 2026-10-12. Pin valuable runs with an explicit reason. Follow `docs/operations/qa/agent-qa-workflow.md` and the Active control-plane contract.
+  - Do not delete dirty worktrees, existing research archives, browser profiles, live/incomplete runs or pinned evidence during routine cleanup. Close task-owned temporary outputs through their owning lifecycle and record deliberate preservation reasons.
+  - Reuse the current checkout for routine work. Do not create new Git worktrees under `.artifacts`; when isolation is needed, use the managed worktree lifecycle and close it after preserving required changes.
+
+## 9) Runtime Boundary (Important)
+- Project-root agents must treat this repository as a single-project coding context.
+- Do **not** load or follow orchestration runtime docs under `.orchestra/policy/**` in normal project sessions.
+- Multi-agent orchestration policy is private to `cx` runtime and injected only when launched via `cx`.
+- If a task is started directly from project root (not via `cx`), only this `AGENTS.md` governs behavior.
+
+## 10) Windows / WSL Execution Boundary
+- The canonical working repository is `C:\Users\113ji\projects\Entropy` on Windows.
+- Run Git, Node, npm, build, test, and QA commands with native Windows tools in that checkout.
+- Node must match `.nvmrc`; see `docs/operations/runbooks/windows-native-development.md` for the project toolchain and shell setup.
+- `/home/ryuji/projects/Entropy` in `Ubuntu-24.04` is the preserved pre-migration repository. Do not resume development there or silently synchronize the two checkouts.
+- The `windows_via_wsl` browser adapter remains supported for explicitly configured WSL environments. Native Windows QA uses platform `windows`, native drive paths, and the same exact browser/profile ownership checks.
+- Do not run Windows tools against a mapped WSL checkout or mix Windows and Linux `node_modules`.

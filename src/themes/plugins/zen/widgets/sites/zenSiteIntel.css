@@ -1,0 +1,46 @@
+.site-intel[data-variant='zen'] {
+  --intel-ink: var(--zen-ambient-text);
+  --intel-muted: var(--zen-ambient-text-muted);
+  --intel-rule: color-mix(in srgb, var(--zen-ambient-border-muted) 80%, transparent);
+  --intel-mark: color-mix(in srgb, var(--color-accent) 80%, var(--zen-ambient-text));
+  --intel-today: var(--zen-ambient-primary);
+}
+
+/* Empty reads use the same open page, without a second paper frame. */
+.sites-intel-empty[data-variant='zen'] {
+  color: var(--color-primary);
+  padding: 40px 0;
+}
+
+.sites-intel-empty[data-variant='zen'] .sites-intel-empty__card {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 24px 0;
+  max-width: 460px;
+}
+
+.sites-intel-empty[data-variant='zen'] .sites-zen-empty-motif {
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+}
+
+.sites-intel-empty[data-variant='zen'] h2 {
+  font-family: var(--font-theme-heading);
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.sites-intel-empty[data-variant='zen'] p {
+  font-family: var(--font-theme-ui);
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--color-on-surface-muted);
+  word-break: keep-all;
+}

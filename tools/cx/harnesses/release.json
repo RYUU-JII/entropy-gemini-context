@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "release",
+  "title": "Release lifecycle and public artifact evidence",
+  "targets": [
+    "lifecycle/mv3",
+    "lifecycle/data",
+    "release/lifecycle"
+  ],
+  "estimatedSeconds": 1200,
+  "guide": "docs/operations/qa/mv3-lifecycle-e2e.md",
+  "entrypoints": [
+    "scripts/e2e/releaseLifecycleMatrix.mjs"
+  ],
+  "resourceClaims": [
+    "artifact:public-extension",
+    "runtime:release"
+  ]
+}

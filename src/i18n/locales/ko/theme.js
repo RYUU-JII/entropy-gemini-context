@@ -1,0 +1,14 @@
+export default {
+  "theme": {
+    "nav": "디스플레이",
+    "nav_clinical": "시각 설정",
+    "nav_zen": "형상",
+    "title": "디스플레이",
+    "desc": "활성 테마와 화면 표현을 관리합니다.",
+    "workspace_eyebrow": "디스플레이 작업공간",
+    "workspace_desc": "디스플레이 탭은 테마와 화면 표현만 담당합니다. 시스템 접근, 권한, 안전 제어는 설정 탭에서 관리합니다.",
+    "scope_theme": "테마와 시각 언어",
+    "scope_no_system": "시스템 설정 제외",
+    "open_settings": "설정 열기"
+  }
+};

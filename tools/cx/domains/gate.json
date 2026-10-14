@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "gate",
+  "title": "Gate runtime",
+  "pathPrefixes": [
+    "src/domains/protection/",
+    "src/apps/gate/",
+    "tests/gate",
+    "tests/protectionGate",
+    "tests/backgroundKernelGate"
+  ],
+  "ownerDocs": [
+    "docs/architecture/repository/protection-content-runtime-boundary-map.md"
+  ],
+  "resourceClaims": [],
+  "focusedChecks": [
+    {
+      "id": "gate-contract-tests",
+      "label": "Gate focused contracts",
+      "executable": "node",
+      "args": [
+        "scripts/dev/run-local-command.mjs",
+        "vitest",
+        "run",
+        "tests/gateInterstitialBootstrap.test.js",
+        "tests/gateInterstitialSurface.test.js",
+        "tests/protectionGateDispatchBridge.test.js",
+        "tests/protectionGateReturnPolicy.test.js"
+      ],
+      "estimatedSeconds": 15
+    }
+  ],
+  "harnessIds": [
+    "gate"
+  ]
+}

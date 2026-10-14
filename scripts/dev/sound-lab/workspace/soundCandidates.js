@@ -1,0 +1,43 @@
+// Agent deliverables. Keep old entries when adding a new take; use a new id and
+// a separately registered synthId for changed algorithms, or explicit parameters.
+const existing = [
+  ['zen.shishi_odoshi.clack', 'zen/ShishiOdoshiClackSynth.js', 468],
+  ['zen.shishi_odoshi.water_loop', 'zen/ShishiOdoshiWaterLoopSynth.js', null],
+  ['zen.shishi_odoshi.overflow_loop', 'zen/ShishiOdoshiWaterLoopSynth.js', null],
+  ['ritual.site_furin.prelude_chime', 'zen/ZenFurinGlassClinkSynth.js', 3136],
+  ['ritual.global_sentinel.koi_accept', 'zen/ZenFurinGlassClinkSynth.js', 3136],
+  ['ritual.site_furin.settle_complete', 'zen/ZenSingingBowlSynth.js', 330],
+  ['ritual.site_furin.soundscape', 'SynthRegistry.js', null],
+  ['ritual.site_furin.underwater_loop', 'SynthRegistry.js', null],
+  ['ritual.site_furin.koi_wake_surface', 'zen/ZenKoiHydroAcousticsSynth.js', 520],
+  ['ritual.site_furin.koi_glide_loop', 'zen/ZenKoiHydroAcousticsSynth.js', 420],
+  ['ritual.site_furin.koi_rendezvous', 'zen/ZenKoiHydroAcousticsSynth.js', 640],
+  ['ritual.site_furin.koi_descent_dive', 'zen/ZenKoiHydroAcousticsSynth.js', 280],
+  ['ritual.site_furin.water_settle_calm', 'zen/ZenKoiHydroAcousticsSynth.js', 360],
+  ['room478.breath.inhale_swell', 'zen/ZenRoom478BreathingSynth.js', 108],
+  ['room478.breath.hold_drone', 'zen/ZenRoom478BreathingSynth.js', 216],
+  ['room478.breath.exhale_release', 'zen/ZenRoom478BreathingSynth.js', 108],
+  ['room478.bell.phase_chime', 'zen/ZenRoom478BreathingSynth.js', 108],
+  ['room478.grounding.charge', 'zen/ZenRoom478BreathingSynth.js', 108],
+  ['ritual.global_sentinel.simulation_rupture', 'zen/ZenGlobalSentinelRiftSynth.js', 3800],
+  ['ritual.global_sentinel.repair_telegraph', 'zen/ZenGlobalSentinelRiftSynth.js', 240],
+  ['ritual.global_sentinel.intervention_hit', 'zen/ZenGlobalSentinelRiftSynth.js', 3400],
+  ['ritual.global_sentinel.terminal_breach', 'zen/ZenGlobalSentinelRiftSynth.js', 55],
+  ['ritual.global_sentinel.failure_seal', 'zen/ZenGlobalSentinelRiftSynth.js', 840],
+  ['entropy.data_overflow.pulse', 'entropy/TerminalDataPulseSynth.js', null],
+  ['entropy.console.idle_drone', 'entropy/IndustrialConsoleHumSynth.js', null],
+  ['cyberpunk.neon.glitch_click', 'cyberpunk/NeonGlitchClickSynth.js', null],
+  ['matrix.digital_rain.chime', 'matrix/DigitalRainCascadeSynth.js', null],
+];
+
+export const SOUND_CANDIDATES = Object.freeze(existing.map(([targetId, source, basePitch]) => ({
+  id: `${targetId}:lab-v1`,
+  targetId,
+  synthId: targetId,
+  version: 'lab-v1',
+  name: '기존 연구 시안',
+  rationale: '기존 연구소의 합성 작업물을 비교와 피드백을 위한 첫 기준으로 등록했습니다.',
+  changeNote: '기존 소리 보존 · 새 합성 또는 제품과의 동일성 검증을 의미하지 않습니다.',
+  sourcePath: `scripts/dev/sound-lab/engine/synths/${source}`,
+  parameters: basePitch === null ? { intensity: 0.75 } : { intensity: 0.75, basePitch },
+})));

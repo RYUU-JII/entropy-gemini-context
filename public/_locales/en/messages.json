@@ -1,0 +1,11 @@
+{
+    "extName": {
+        "message": "Entropy"
+    },
+    "extDescription": {
+        "message": "Add local friction and limits to distracting sites so you can browse more intentionally."
+    },
+    "actionTitle": {
+        "message": "Open Entropy"
+    }
+}

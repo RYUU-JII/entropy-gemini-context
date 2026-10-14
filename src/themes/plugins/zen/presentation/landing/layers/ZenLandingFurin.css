@@ -1,0 +1,30 @@
+.zenLandingArtifact.zenLandingFurinActual {
+  inset: clamp(1rem, 4vh, 3rem) auto auto clamp(7rem, 12vw, 13rem);
+  width: clamp(13rem, 18vw, 18rem);
+  height: clamp(15.6rem, 21.6vw, 21.6rem);
+  filter: drop-shadow(0 1.3rem 2.4rem rgb(8 20 22 / 0.18));
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity 360ms cubic-bezier(0.22, 0.72, 0.28, 1),
+    filter 360ms ease;
+}
+
+.zenLandingFurinActual[data-signal-state="ringing"] {
+  filter:
+    drop-shadow(0 1.3rem 2.4rem rgb(8 20 22 / 0.18))
+    drop-shadow(0 0 1.6rem color-mix(in srgb, var(--zen-landing-flare) 36%, transparent));
+}
+
+@media (max-width: 720px) {
+  .zenLandingArtifact.zenLandingFurinActual {
+    inset: 3.5rem auto auto -3.2rem;
+    width: 12.5rem;
+    height: 15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zenLandingArtifact.zenLandingFurinActual {
+    transition: none;
+  }
+}

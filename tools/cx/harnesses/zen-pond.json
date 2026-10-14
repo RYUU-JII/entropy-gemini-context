@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "zen-pond",
+  "title": "Zen pond visual and runtime evidence",
+  "targets": [
+    "pond/*"
+  ],
+  "estimatedSeconds": 180,
+  "guide": "docs/architecture/repository/zen-pond-seam-map.md",
+  "entrypoints": [
+    "scripts/dev/zen-pond-render-research/host/agentRunner.mjs"
+  ],
+  "resourceClaims": [
+    "runtime:zen-home-renderer"
+  ]
+}

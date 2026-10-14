@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "qa",
+  "title": "Entropy QA control plane",
+  "pathPrefixes": [
+    "scripts/qa/",
+    "tests/entropyQa",
+    "tests/feedHorizonQa",
+    "docs/operations/qa/",
+    "scripts/ci/check-entropy-qa-architecture.mjs"
+  ],
+  "ownerDocs": [
+    "docs/operations/qa/entropy-qa-control-plane.md"
+  ],
+  "resourceClaims": [
+    "runtime:qa-control-plane"
+  ],
+  "focusedChecks": [
+    {
+      "id": "qa-contract-tests",
+      "label": "Entropy QA contract tests",
+      "executable": "node",
+      "args": [
+        "scripts/dev/run-local-command.mjs",
+        "vitest",
+        "run",
+        "tests/entropyQaContracts.test.js",
+        "tests/entropyQaRuntime.test.js"
+      ],
+      "estimatedSeconds": 15
+    },
+    {
+      "id": "qa-architecture",
+      "label": "Entropy QA architecture guard",
+      "executable": "node",
+      "args": [
+        "scripts/ci/check-entropy-qa-architecture.mjs"
+      ],
+      "estimatedSeconds": 5
+    }
+  ]
+}

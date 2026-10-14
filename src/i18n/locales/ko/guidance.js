@@ -1,0 +1,104 @@
+export default {
+  "common": {
+    "close": "닫기",
+    "help": "사용 안내",
+    "retry": "다시 시도",
+    "failed": "안내를 열지 못했습니다. {{message}}",
+    "continue": "계속",
+    "apply": "추천 설정 검토"
+  },
+  "journey": {
+    "label": "정원 {{day}}/{{target}}",
+    "preview_label": "개발 미리보기 · 정원 {{day}}/{{target}}",
+    "preview_detail": "개발 접근은 {{effective}}일차로 표시합니다. 실제 기록된 진행은 {{canonical}}일차입니다.",
+    "title": "다섯 번의 사용일",
+    "description": "보호 사이트를 사용한 날에 정원이 자랍니다. 쉬는 날에도 쌓인 기록은 남습니다.",
+    "day": "{{day}}번째 사용일",
+    "starter": "첫 방문부터",
+    "unlimited": "등록 수 무제한",
+    "sites": "보호 사이트 최대 {{count}}곳",
+    "locked": "{{day}}번째 사용일에 공개",
+    "next": "다음 변화: {{family}}",
+    "complete": "일곱 아티팩트를 모두 사용할 수 있습니다.",
+    "stage_2": "멈춤의 돌이 놓였습니다. 보호할 곳을 하나 더 둘 수 있습니다.",
+    "stage_3": "새로운 경계가 열렸습니다.",
+    "stage_4": "남겨진 흔적을 다루는 장치가 열렸습니다.",
+    "stage_5": "정원이 온전한 모습을 갖췄습니다. 이제 보호할 곳을 자유롭게 늘릴 수 있습니다.",
+    "add_site": "다른 사이트 추가",
+    "explore": "{{family}} 살펴보기",
+    "pressure_collecting": "관측이 쌓이면 이곳에 사용의 흐름이 나타납니다.",
+    "newly_opened": "새로 열림: {{family}}"
+  },
+  "guides": {
+    "garden_first_site_zen": "그림자를 눌러 사이트를 연결하세요.",
+    "garden_first_site_action": "첫 사이트 등록",
+    "popup_first_setup": "가장 자주 돌아오는 사이트 하나부터.",
+    "garden_first_site": "보호할 사이트를 하나 등록하세요.",
+    "site_goal_scope": "이 시간은 이 사이트에만 적용됩니다.",
+    "garden_bonsai_growth": "보호 사이트를 사용한 날에 자랍니다.",
+    "main_pressure_ready": "자주 돌아온 곳의 흐름입니다. 구간을 눌러 자세히 볼 수 있습니다.",
+    "schedule_first_setup": "대상 사이트와 구간을 정하세요. 구간의 시작과 끝에 보호 상태가 바뀝니다.",
+    "settings_recording_scope": "이 기기에 남길 사용 기록의 범위를 정합니다. 기록을 꺼도 기존 기록은 삭제되지 않습니다.",
+    "settings_notification_opt_in": "정원에 새 변화가 생기면 작은 알림을 받습니다. 알림은 선택 사항입니다."
+  },
+  "families": {
+    "lens": "Lens",
+    "gate": "Gate",
+    "flare": "Flare",
+    "brake": "Brake",
+    "barrier": "Barrier",
+    "echo": "Echo",
+    "veil": "Veil"
+  },
+  "family_descriptions": {
+    "lens": "화면의 시각적 자극을 낮춥니다.",
+    "gate": "들어가거나 다시 돌아오기 전에 잠깐 멈춥니다.",
+    "flare": "정해둔 시간 경계에서 주의를 돌려줍니다.",
+    "brake": "스크롤과 클릭에 잠깐의 마찰을 더합니다.",
+    "barrier": "지원하는 상황에서 빠르게 이어지는 탐색에 경계를 둡니다.",
+    "echo": "다시 돌아오게 하는 흔적을 줄입니다. 기록 삭제는 적용 전에 확인하세요.",
+    "veil": "숫자와 시간 신호를 가리고, 더 들어갈지 다시 묻습니다. 가벼운 추천이 모든 기능을 켜지는 않습니다."
+  },
+  "flare": {
+    "setup": "전체 보호 사이트에 사용할 시간을 정하고 후린을 걸어둡니다.",
+    "goal_label": "전체 보호 사이트의 시간 경계 분",
+    "goal_none": "실제로 사용할 시간 경계를 정하세요. 일반 시간 설정에도 함께 반영됩니다.",
+    "site_only": "사이트별 목표로도 후린을 사용할 수 있습니다. 전체 시간 경계를 정할 때 설치 장면을 만날 수 있습니다.",
+    "install": "Flare 설치",
+    "install_zen": "후린 걸어두기",
+    "saving": "경계를 저장하는 중…",
+    "invalid_goal": "1분부터 {{max}}분 사이의 정수를 입력하세요.",
+    "saved_pending": "설정은 저장됐습니다. 적용 문제를 해결하면 설치 장면을 열 수 있습니다.",
+    "failed": "경계를 설치하지 못했습니다. {{message}}"
+  },
+  "installation": {
+    "saved": "Furin 설정을 저장했습니다.",
+    "title": "미래의 나를 위한 경계",
+    "close": "설치 장면 닫기",
+    "finish": "정원으로 돌아가기",
+    "promise": "정한 경계에 닿으면, 이 소리가 돌아옵니다.",
+    "active": "Flare는 켜져 있으며, 전체 보호 사이트의 시간이 함께 쌓입니다.",
+    "time": "{{minutes}}분",
+    "replay": "설치 장면 다시 보기",
+    "soundOn": "소리 켜기",
+    "soundOff": "소리 끄기",
+    "phase": {
+      "prepare": "하나의 약속",
+      "hang": "경계가 자리를 잡습니다",
+      "quiet": "잠깐의 정적",
+      "chime": "정원이 응답합니다",
+      "return": "다음 만남까지"
+    }
+  },
+  "notifications": {
+    "title": "정원의 변화",
+    "description": "2–5번째 사용일에 새 단계가 열리면 한 번 알립니다.",
+    "enable": "정원의 변화를 알림으로 받기",
+    "disable": "정원 알림 끄기",
+    "denied": "알림 권한을 허용하지 않았습니다. 정원은 계속 자랍니다.",
+    "failed": "알림 설정을 저장하지 못했습니다. {{message}}",
+    "enabled": "Journey 알림 켜짐",
+    "disabled": "Journey 알림 꺼짐",
+    "settings": "알림 설정"
+  }
+};

@@ -1,0 +1,1265 @@
+:root {
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+.gate-page {
+  position: relative;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background:
+    radial-gradient(circle at top, color-mix(in srgb, var(--gate-accent, #d2b274) 22%, transparent) 0%, transparent 38%),
+    linear-gradient(180deg, color-mix(in srgb, var(--gate-shell, #090807) 94%, white 6%) 0%, var(--gate-shell, #090807) 100%);
+  color: var(--gate-text, #f6efe0);
+}
+
+.gate-page::before,
+.gate-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.gate-page::before {
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.08), transparent 30%),
+    radial-gradient(circle at 80% 18%, color-mix(in srgb, var(--gate-accent-secondary, #9dc7b5) 24%, transparent), transparent 28%);
+  opacity: 0.8;
+}
+
+.gate-page::after {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 120px 120px;
+  opacity: 0.22;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85), transparent);
+}
+
+.gate-page--status {
+  display: grid;
+  place-items: center;
+  padding: 32px;
+}
+
+.gate-page--boot {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top, color-mix(in srgb, var(--gate-accent, #d2b274) 12%, transparent) 0%, transparent 34%),
+    linear-gradient(180deg, color-mix(in srgb, var(--gate-shell, #090807) 97%, white 3%) 0%, var(--gate-shell, #090807) 100%);
+}
+
+.gate-page--boot::before {
+  opacity: 0.22;
+}
+
+.gate-page--boot::after {
+  opacity: 0;
+}
+
+.gate-page--boot .gate-page__mist {
+  width: 48vw;
+  height: 48vw;
+  filter: blur(120px);
+  opacity: 0.16;
+}
+
+.gate-status-card {
+  position: relative;
+  width: min(520px, 100%);
+  padding: 36px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.42);
+  text-align: center;
+}
+
+.gate-status-card__eyebrow {
+  margin: 0 0 12px;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.gate-status-card__title {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
+.gate-status-card__body {
+  margin: 18px 0 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.gate-status-card__pulse {
+  width: 54px;
+  height: 54px;
+  margin: 28px auto 0;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    radial-gradient(circle, color-mix(in srgb, var(--gate-accent, #d2b274) 44%, white 10%), transparent 68%);
+  animation: gatePulse 1.8s ease-in-out infinite;
+}
+
+.gate-page__backdrop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.gate-page__mist,
+.gate-page__sand,
+.gate-page__enso,
+.gate-page__pond {
+  position: absolute;
+  filter: blur(0);
+}
+
+.gate-page__mist {
+  width: 60vw;
+  height: 60vw;
+  border-radius: 999px;
+  filter: blur(90px);
+  opacity: 0.48;
+}
+
+.gate-page__mist--a {
+  top: -12vw;
+  left: -14vw;
+  background: color-mix(in srgb, var(--gate-accent, #d2b274) 36%, transparent);
+}
+
+.gate-page__mist--b {
+  right: -20vw;
+  bottom: -18vw;
+  background: color-mix(in srgb, var(--gate-accent-secondary, #9dc7b5) 30%, transparent);
+}
+
+.gate-page__sand {
+  inset: auto -10% 0 -10%;
+  height: 36vh;
+  background:
+    repeating-radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.024) 0 9px, transparent 9px 32px),
+    linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.04));
+  opacity: 0.66;
+}
+
+.gate-page__enso {
+  top: 10vh;
+  right: 10vw;
+  width: min(34vw, 360px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  opacity: 0.38;
+  box-shadow: 0 0 0 22px rgba(255, 255, 255, 0.02);
+}
+
+.gate-page__pond {
+  bottom: 12vh;
+  left: 8vw;
+  width: min(30vw, 320px);
+  aspect-ratio: 1.2;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08), transparent 62%),
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--gate-accent-secondary, #9dc7b5) 30%, transparent), transparent 72%);
+  filter: blur(8px);
+  opacity: 0.34;
+}
+
+.gate-shell {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: min(1480px, 100%);
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 1.06fr) minmax(320px, 0.84fr);
+  gap: clamp(18px, 2vw, 28px);
+  align-items: center;
+  min-height: 100dvh;
+  padding:
+    max(18px, env(safe-area-inset-top))
+    clamp(18px, 3vw, 40px)
+    max(18px, env(safe-area-inset-bottom));
+}
+
+.gate-copy-panel,
+.gate-meta-card,
+.gate-garden-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.gate-copy-panel {
+  display: grid;
+  grid-template-rows: repeat(5, auto);
+  align-content: start;
+  gap: clamp(18px, 2vw, 26px);
+  padding: clamp(28px, 4vw, 44px);
+  border-radius: 34px;
+}
+
+.gate-copy-panel__header,
+.gate-copy-panel__body {
+  display: grid;
+  align-content: start;
+  gap: clamp(10px, 1.2vw, 14px);
+}
+
+.gate-copy-panel__footer {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.gate-copy-panel__eyebrow,
+.gate-copy-panel__subtitle,
+.gate-copy-panel__hint,
+.gate-meta-card__label {
+  margin: 0;
+}
+
+.gate-copy-panel__eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gate-muted, rgba(246, 239, 224, 0.72));
+}
+
+.gate-copy-panel__meta-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gate-muted, rgba(246, 239, 224, 0.72));
+}
+
+.gate-copy-panel__meta-line span[aria-hidden="true"] {
+  opacity: 0.42;
+}
+
+.gate-copy-panel__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gate-copy-panel__pill,
+.gate-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--gate-text, #f6efe0);
+}
+
+.gate-copy-panel__subtitle {
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gate-accent, #d2b274) 72%, white 28%);
+}
+
+.gate-copy-panel__title {
+  margin: 0;
+  max-width: 11ch;
+  font-size: clamp(36px, 5.8vw, 76px);
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+}
+
+.gate-copy-panel__lead {
+  margin: 0;
+  max-width: 34rem;
+  font-size: clamp(16px, 1.55vw, 21px);
+  line-height: 1.62;
+  color: var(--gate-text, #f6efe0);
+}
+
+.gate-copy-panel__detail,
+.gate-copy-panel__hint {
+  font-size: clamp(14px, 1.05vw, 15px);
+  line-height: 1.65;
+  color: var(--gate-muted, rgba(246, 239, 224, 0.72));
+}
+
+.gate-copy-panel__hint--minimal {
+  margin-top: 2px;
+}
+
+.gate-countdown-card {
+  display: grid;
+  gap: 10px;
+  padding: 16px 18px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.gate-countdown-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--gate-muted, rgba(246, 239, 224, 0.72));
+}
+
+.gate-countdown-card__head strong {
+  font-size: 15px;
+  color: var(--gate-text, #f6efe0);
+}
+
+.gate-countdown-card__track {
+  position: relative;
+  height: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.gate-countdown-card__fill {
+  position: absolute;
+  inset: 0;
+  width: calc(var(--gate-progress, 0) * 100%);
+  border-radius: inherit;
+  background:
+    linear-gradient(90deg, var(--gate-accent-secondary, #9dc7b5), var(--gate-accent, #d2b274));
+  box-shadow: 0 0 28px color-mix(in srgb, var(--gate-accent, #d2b274) 42%, transparent);
+}
+
+.gate-countdown-card__caption {
+  margin: 0;
+  font-size: 13px;
+  color: var(--gate-muted, rgba(246, 239, 224, 0.72));
+}
+
+.gate-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.gate-actions--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.gate-button {
+  position: relative;
+  overflow: hidden;
+  min-height: 54px;
+  padding: 0 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease,
+    opacity 180ms ease;
+}
+
+.gate-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.gate-button:focus-visible {
+  outline: none;
+  border-color: color-mix(in srgb, var(--gate-accent, #d2b274) 44%, white 24%);
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--gate-ring, rgba(210, 178, 116, 0.34)) 72%, transparent),
+    0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+.gate-button:disabled {
+  cursor: default;
+  opacity: 0.56;
+}
+
+.gate-button__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.gate-button__label {
+  min-width: 0;
+  text-align: left;
+}
+
+.gate-button--secondary {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--gate-text, #f6efe0);
+}
+
+.gate-button--primary {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--gate-accent-secondary, #9dc7b5) 60%, black 12%), color-mix(in srgb, var(--gate-accent, #d2b274) 70%, black 10%));
+  color: #100d09;
+  border-color: color-mix(in srgb, var(--gate-accent, #d2b274) 64%, white 20%);
+  box-shadow: 0 14px 34px color-mix(in srgb, var(--gate-accent, #d2b274) 34%, transparent);
+}
+
+.gate-visual-panel {
+  display: grid;
+  grid-template-rows: minmax(340px, auto) auto;
+  gap: 14px;
+  align-content: start;
+}
+
+.gate-garden-card {
+  position: relative;
+  min-height: clamp(280px, 38vh, 430px);
+  border-radius: 30px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.08), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+}
+
+.gate-garden-card__halo {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  width: clamp(132px, 14vw, 168px);
+  height: clamp(132px, 14vw, 168px);
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, color-mix(in srgb, var(--gate-accent, #d2b274) 52%, white 12%), transparent 72%);
+  filter: blur(4px);
+  opacity: 0.72;
+}
+
+.gate-garden-card__rails {
+  position: absolute;
+  inset: auto 8% 10% 8%;
+  display: grid;
+  gap: 18px;
+}
+
+.gate-garden-card__rails span {
+  display: block;
+  height: 1px;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
+}
+
+.gate-garden-card__pivot {
+  position: absolute;
+  top: 34%;
+  left: 49%;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--gate-accent, #d2b274) 46%, #362617);
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.03);
+}
+
+.gate-garden-card__bamboo {
+  position: absolute;
+  top: 36%;
+  left: 49%;
+  width: clamp(210px, 24vw, 260px);
+  height: 28px;
+  transform-origin: 12px 14px;
+  transform:
+    translate(-8px, -14px)
+    rotate(calc(-14deg + (var(--gate-progress, 0) * 28deg)));
+  transition: transform 220ms ease-out;
+}
+
+.gate-garden-card__bamboo-neck,
+.gate-garden-card__bamboo-body {
+  position: absolute;
+  display: block;
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--gate-accent, #d2b274) 64%, #73572d), color-mix(in srgb, var(--gate-accent-secondary, #9dc7b5) 28%, #56431f));
+}
+
+.gate-garden-card__bamboo-neck {
+  inset: 6px auto 6px 0;
+  width: 76px;
+}
+
+.gate-garden-card__bamboo-body {
+  inset: 0 0 0 58px;
+  box-shadow: inset 0 0 0 1px rgba(17, 12, 9, 0.16);
+}
+
+.gate-garden-card__stone {
+  position: absolute;
+  right: 16%;
+  bottom: 19%;
+  width: clamp(112px, 14vw, 144px);
+  height: clamp(62px, 8vw, 80px);
+  border-radius: 48% 52% 54% 46% / 58% 54% 46% 42%;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.18), transparent 26%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(0, 0, 0, 0.1));
+  box-shadow: inset 0 -16px 24px rgba(0, 0, 0, 0.16);
+}
+
+.gate-garden-card__stone-ripple {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  transform: translate(-50%, -50%) scale(0.42);
+  opacity: calc(0.06 + (var(--gate-progress, 0) * 0.3));
+}
+
+.gate-garden-card__stone-ripple--a {
+  animation: gateRipple 3.8s ease-out infinite;
+}
+
+.gate-garden-card__stone-ripple--b {
+  animation: gateRipple 3.8s ease-out 1.4s infinite;
+}
+
+.gate-page[data-ready="1"] .gate-garden-card__bamboo {
+  transform: translate(-8px, -14px) rotate(12deg);
+}
+
+.gate-page[data-ready="1"] .gate-garden-card__stone-ripple {
+  opacity: 0.26;
+}
+
+.gate-meta-card {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+  border-radius: 24px;
+}
+
+.gate-meta-card__section {
+  display: grid;
+  gap: 10px;
+}
+
+.gate-meta-card__label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gate-muted, rgba(246, 239, 224, 0.72));
+}
+
+.gate-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gate-chip {
+  min-height: 30px;
+}
+
+.gate-chip--quiet {
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--gate-muted, rgba(246, 239, 224, 0.72));
+}
+
+.gate-chip-list--quiet {
+  padding-top: 2px;
+}
+
+.gate-meta-card__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.gate-stat {
+  display: grid;
+  gap: 6px;
+  padding: 12px 13px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gate-stat__label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gate-muted, rgba(246, 239, 224, 0.72));
+}
+
+.gate-stat__value {
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.gate-page[data-gate-style="matrix"] .gate-page__sand,
+.gate-page[data-gate-style="cyberpunk"] .gate-page__sand,
+.gate-page[data-gate-style="entropy"] .gate-page__sand {
+  opacity: 0.34;
+}
+
+.gate-page[data-gate-style="clinical"] .gate-page__enso {
+  opacity: 0.22;
+}
+
+.gate-page[data-gate-style="cyberpunk"] .gate-page__enso {
+  box-shadow: 0 0 0 18px rgba(255, 255, 255, 0.018), 0 0 80px rgba(45, 212, 191, 0.12);
+}
+
+.gate-page[data-gate-style="entropy"] .gate-garden-card__stone {
+  border-radius: 20px;
+}
+
+@keyframes gatePulse {
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.42;
+  }
+
+  50% {
+    transform: scale(1.06);
+    opacity: 0.88;
+  }
+}
+
+@keyframes gateRipple {
+  0% {
+    transform: translate(-50%, -50%) scale(0.28);
+    opacity: 0.26;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1080px) {
+.gate-shell {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .gate-visual-panel {
+    grid-template-columns: minmax(0, 1.15fr) minmax(240px, 0.85fr);
+    grid-template-rows: none;
+    align-items: stretch;
+  }
+
+  .gate-garden-card {
+    min-height: 280px;
+  }
+
+  .gate-copy-panel__title {
+    max-width: none;
+  }
+}
+
+@media (max-width: 720px) {
+.gate-shell {
+    padding:
+      max(16px, env(safe-area-inset-top))
+      16px
+      max(18px, env(safe-area-inset-bottom));
+    gap: 14px;
+  }
+
+  .gate-copy-panel {
+    padding: 20px 16px;
+    border-radius: 24px;
+    gap: 16px;
+  }
+
+  .gate-copy-panel__title {
+    font-size: clamp(30px, 11vw, 48px);
+  }
+
+  .gate-copy-panel__lead {
+    font-size: 16px;
+  }
+
+  .gate-countdown-card__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gate-actions,
+  .gate-meta-card__grid,
+  .gate-visual-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .gate-visual-panel {
+    grid-template-rows: auto auto;
+  }
+
+  .gate-garden-card__bamboo {
+    left: 44%;
+    top: 40%;
+    width: 180px;
+  }
+
+  .gate-garden-card__stone {
+    right: 10%;
+    bottom: 14%;
+    width: 96px;
+    height: 54px;
+  }
+}
+
+@media (max-height: 860px) {
+.gate-shell {
+    align-items: start;
+    padding:
+      max(14px, env(safe-area-inset-top))
+      16px
+      max(16px, env(safe-area-inset-bottom));
+    gap: 16px;
+  }
+
+  .gate-copy-panel {
+    gap: 16px;
+    padding: 24px 22px;
+  }
+
+  .gate-copy-panel__title {
+    max-width: 13ch;
+    font-size: clamp(32px, 5vw, 60px);
+  }
+
+  .gate-copy-panel__lead {
+    font-size: 16px;
+  }
+
+  .gate-garden-card {
+    min-height: 260px;
+  }
+
+  .gate-meta-card {
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .gate-stat {
+    padding: 11px 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gate-button,
+  .gate-copy-panel,
+  .gate-garden-card__bamboo,
+  .gate-garden-card__stone-ripple,
+  .gate-status-card__pulse,
+  .gate-torii__shide,
+  .gate-zen__tube {
+    animation: none;
+    transition: none;
+  }
+
+  .gate-zen__tube {
+    opacity: 1;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   The zen gate — the page IS the garden
+
+   No cards, no panels, no telemetry. A raked karesansui ground fills the lower
+   field, the bamboo sits low and off the centre axis (不均整), and one
+   inscribed line hangs in the empty air beside it. Nothing slides or scales in
+   on load: a page that claims stillness must already be still when it opens,
+   so the only motion here belongs to the water and the tube.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.gate-zen {
+  --zen-ink: #e9e3d7;
+  --zen-stage-size: max(0px, min(424px, calc(100vw - 48px), calc(100dvh - max(24px, env(safe-area-inset-top)) - max(24px, env(safe-area-inset-bottom)) - 64px)));
+  --zen-rake: rgba(233, 227, 215, 0.07);
+  --zen-spill: rgba(156, 188, 202, 0.16);
+  position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: linear-gradient(180deg, #070706 0%, #0a0908 52%, #0c0b09 100%);
+  color: var(--zen-ink);
+  font-family: var(--font-theme-ui);
+  line-height: 1.5;
+}
+
+/* The shared gate chrome (grid overlay, accent wash) belongs to the card
+   layouts; the garden paints its own ground and nothing else. */
+.gate-zen::before,
+.gate-zen::after {
+  display: none;
+}
+
+.gate-zen__ground {
+  position: absolute;
+  inset: 44% 0 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.gate-zen__sand {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(233, 227, 215, 0.028) 26%,
+    rgba(233, 227, 215, 0.05) 100%
+  );
+}
+
+/* Straight rake lines (流し砂紋) laid flat and tipped away from the viewer, so
+   they compress toward the horizon and read as ground rather than as stripes
+   on a wall. The widget's own ground ripples supply the concentric rings. */
+.gate-zen__rake {
+  position: absolute;
+  inset: -46% -24% 0;
+  transform: perspective(560px) rotateX(73deg);
+  transform-origin: 50% 100%;
+  background-image: repeating-linear-gradient(
+    180deg,
+    var(--zen-rake) 0,
+    var(--zen-rake) 1px,
+    transparent 1px,
+    transparent 34px
+  );
+  mask-image: linear-gradient(180deg, transparent 0%, #000 26%, #000 84%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 26%, #000 84%, transparent 100%);
+  opacity: 1;
+  transition: opacity 1800ms ease;
+}
+
+.gate-zen__field {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: max(24px, env(safe-area-inset-top)) 24px max(24px, env(safe-area-inset-bottom));
+}
+
+.gate-zen__stage {
+  position: relative;
+  flex: none;
+  width: var(--zen-stage-size);
+  height: var(--zen-stage-size);
+  overflow: hidden;
+  mask-image: linear-gradient(180deg, transparent, #000 12%, #000 100%);
+  user-select: none;
+  padding: 0;
+  border: 0;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.gate-zen__stage:disabled { cursor: default; }
+.gate-zen__stage:hover:not(:disabled) .gate-zen__tube,
+.gate-zen__stage:focus-visible .gate-zen__tube { filter: brightness(1.1); }
+.gate-zen__stage:focus-visible { outline: 1px solid rgba(233, 227, 215, 0.5); outline-offset: 5px; }
+
+.gate-zen__tube {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  /* The 320px scene paints past its SVG on the right. Fit the entire garden,
+     including that stone, with one transform shared by every water layer. */
+  width: 380px;
+  height: 380px;
+  transform: translate(-50%, -50%) scale(calc(var(--zen-stage-size) / 380px));
+  transform-origin: center;
+  animation: gateZenSurface 600ms ease both;
+  transition: filter 160ms ease;
+}
+
+.gate-zen__tube-fallback {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle at 50% 58%, rgba(233, 227, 215, 0.05), transparent 62%);
+}
+
+.gate-zen__inscription {
+  flex: none;
+  display: grid;
+  justify-items: center;
+  gap: 22px;
+  text-align: center;
+}
+
+.gate-zen__host {
+  margin: 0;
+  font-family: var(--font-theme-mono);
+  max-width: calc(100vw - 48px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: rgba(233, 227, 215, 0.6);
+}
+
+.gate-zen__status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.gate-zen__hint,
+.gate-decision-error {
+  margin: 0;
+  max-width: min(36ch, calc(100vw - 48px));
+  font-family: var(--font-theme-ui);
+  font-size: 12px;
+  line-height: 1.7;
+  text-wrap: balance;
+  color: var(--gate-muted);
+}
+
+.gate-decision-error {
+  color: var(--gate-text);
+}
+
+.gate-zen__retry {
+  min-width: 0;
+  padding: 10px 18px;
+}
+
+@keyframes gateZenSurface {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gate-zen__tube { animation: none; transition: none; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   The isolation boundary — a torii strung with shimenawa
+
+   Not a device to operate: no strike to wait for, no tube to hold. A closed
+   threshold reads its own state, so the page only needs to show it and say
+   when it reopens. Same inscription rhythm as the zen garden (host / line /
+   instruction), a different object because this is a different kind of gate.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.gate-torii {
+  --torii-vermillion: #a83a2c;
+  --torii-vermillion-light: #c9503a;
+  --torii-rope: #d8c49a;
+  --torii-rope-dark: #a98f61;
+  --torii-shide: #f2ede0;
+  position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0c0706 0%, #100907 55%, #0c0706 100%);
+  color: var(--gate-text, #f6efe0);
+}
+
+.gate-torii::before,
+.gate-torii::after {
+  display: none;
+}
+
+.gate-torii__ground {
+  position: absolute;
+  inset: 58% 0 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(168, 58, 44, 0.14), transparent 70%);
+  pointer-events: none;
+}
+
+.gate-torii__field {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: center;
+  gap: clamp(20px, 5vw, 80px);
+  width: min(1320px, 100%);
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding:
+    max(24px, env(safe-area-inset-top))
+    clamp(24px, 6vw, 96px)
+    max(24px, env(safe-area-inset-bottom));
+}
+
+.gate-torii__structure {
+  position: relative;
+  grid-column: 1;
+  justify-self: center;
+  width: min(340px, 78vw);
+  height: clamp(260px, 38vw, 380px);
+}
+
+.gate-torii__pillar {
+  position: absolute;
+  bottom: 6%;
+  width: 9%;
+  height: 82%;
+  background: linear-gradient(90deg, var(--torii-vermillion) 0%, var(--torii-vermillion-light) 46%, var(--torii-vermillion) 100%);
+  border-radius: 3px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.gate-torii__pillar--left {
+  left: 12%;
+}
+
+.gate-torii__pillar--right {
+  right: 12%;
+}
+
+.gate-torii__nuki {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 34%;
+  height: 6%;
+  background: linear-gradient(180deg, var(--torii-vermillion-light), var(--torii-vermillion));
+  border-radius: 2px;
+}
+
+.gate-torii__kasagi {
+  position: absolute;
+  left: 2%;
+  right: 2%;
+  top: 15%;
+  height: 8%;
+  background: linear-gradient(180deg, var(--torii-vermillion-light), var(--torii-vermillion));
+  border-radius: 4px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.gate-torii__shimenawa {
+  position: absolute;
+  left: 16%;
+  right: 16%;
+  top: 46%;
+  height: 5%;
+  background:
+    repeating-linear-gradient(
+      70deg,
+      var(--torii-rope-dark) 0 6px,
+      var(--torii-rope) 6px 12px
+    );
+  border-radius: 999px;
+  box-shadow: inset 0 -3px 6px rgba(0, 0, 0, 0.28);
+}
+
+.gate-torii__shide {
+  position: absolute;
+  top: 49%;
+  width: 9%;
+  height: 28%;
+  background: var(--torii-shide);
+  clip-path: polygon(0 0, 100% 0, 100% 62%, 60% 74%, 100% 86%, 55% 100%, 0 88%, 40% 76%, 0 64%);
+  transform-origin: top center;
+  opacity: 0.92;
+  animation: gateToriiShideSway 5.2s ease-in-out infinite;
+}
+
+.gate-torii__shide--1 {
+  left: 18%;
+  animation-delay: -0.4s;
+}
+
+.gate-torii__shide--2 {
+  left: 45.5%;
+  animation-delay: -2.1s;
+}
+
+.gate-torii__shide--3 {
+  left: 73%;
+  animation-delay: -3.6s;
+}
+
+@keyframes gateToriiShideSway {
+  0%, 100% {
+    transform: rotate(-2.5deg);
+  }
+
+  50% {
+    transform: rotate(2.5deg);
+  }
+}
+
+.gate-torii__plaque {
+  position: absolute;
+  top: 54%;
+  right: 6%;
+  display: grid;
+  gap: 2px;
+  padding: 10px 14px;
+  background: linear-gradient(180deg, #3c2a1c, #2a1c12);
+  border: 1px solid rgba(216, 196, 154, 0.3);
+  border-radius: 4px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.4);
+  transform: rotate(2deg);
+}
+
+.gate-torii__plaque-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(242, 237, 224, 0.62);
+}
+
+.gate-torii__plaque-time {
+  font-family: ui-monospace, 'SF Mono', 'JetBrains Mono', Consolas, monospace;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--torii-shide);
+}
+
+.gate-torii__inscription {
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: 0;
+  grid-column: 2;
+  max-width: 34ch;
+}
+
+.gate-torii__host {
+  margin: 0;
+  font-family: ui-monospace, 'SF Mono', 'JetBrains Mono', Consolas, monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  color: rgba(246, 239, 224, 0.32);
+}
+
+.gate-torii__line {
+  margin: 12px 0 0;
+  max-width: 18ch;
+  font-size: clamp(25px, 3.1vw, 42px);
+  font-weight: 400;
+  line-height: 1.38;
+  letter-spacing: -0.018em;
+  color: var(--gate-text, #f6efe0);
+}
+
+.gate-torii__instruction {
+  margin: 14px 0 0;
+  max-width: 32ch;
+  font-size: clamp(13px, 1.02vw, 15px);
+  font-weight: 400;
+  line-height: 1.9;
+  color: rgba(246, 239, 224, 0.5);
+}
+
+.gate-torii__close {
+  margin-top: 28px;
+  background: color-mix(in srgb, var(--torii-vermillion) 16%, transparent);
+  border-color: color-mix(in srgb, var(--torii-vermillion-light) 46%, transparent);
+  color: var(--gate-text, #f6efe0);
+}
+
+.gate-torii__close:hover:not(:disabled),
+.gate-torii__close:focus-visible {
+  background: color-mix(in srgb, var(--torii-vermillion) 26%, transparent);
+}
+
+.gate-torii__close:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+@media (max-width: 1080px) {
+  .gate-torii__field {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .gate-torii__structure {
+    grid-column: auto;
+  }
+
+  .gate-torii__inscription {
+    grid-column: auto;
+    justify-items: center;
+    max-width: 34ch;
+  }
+
+  .gate-torii__line,
+  .gate-torii__instruction {
+    max-width: 34ch;
+  }
+}
+
+@media (max-width: 480px) {
+  .gate-torii__structure {
+    width: min(280px, 82vw);
+    height: 240px;
+  }
+
+  .gate-torii__plaque {
+    right: 2%;
+  }
+}

@@ -1,0 +1,23 @@
+/**
+ * Viewport Runtime Tokens
+ *
+ * Runtime values are injected by DashboardLayout based on current viewport.
+ * Keep these as global defaults so non-dashboard surfaces remain stable.
+ */
+
+:root,
+[data-theme] {
+    --ui-scale: 1;
+    --ui-density-scale: 1;
+    --ui-font-scale: 1;
+    --ui-viewport-width: 0px;
+    --ui-viewport-height: 0px;
+}
+
+.console-shell {
+    font-size: calc(16px * var(--ui-font-scale, 1));
+}
+
+[data-ui-mode='portrait'] {
+    --ui-density-scale: min(var(--ui-density-scale, 1), 1.15);
+}

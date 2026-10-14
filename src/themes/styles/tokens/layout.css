@@ -1,0 +1,47 @@
+/**
+ * Layout Tokens System
+ * 
+ * Defines standardized "T-Shirt Size" tokens for structural layout.
+ * Used to unify layout behavior across themes while allowing specific overrides.
+ */
+
+:root {
+    /* =========================================
+       1. Proportion Ratios (Sidebar vs Content)
+       ========================================= */
+    /* Minimalist / High Density (e.g. Entropy) */
+    --layout-ratio-slim: 6%;
+
+    /* Standard balanced layout */
+    --layout-ratio-normal: 15%;
+
+    /* Spacious / Game-like (e.g. Entropy) */
+    --layout-ratio-wide: 20%;
+
+    /* =========================================
+       3. Density Presets (Padding & Gaps)
+       ========================================= */
+
+    /* COMPACT: Tight interfaces, terminal/data-heavy */
+    --density-compact-p: 4px;
+    --density-compact-gap: 2px;
+    --density-compact-text: 0.75rem;
+
+    /* NORMAL: Standard UI, optimal readability */
+    --density-normal-p: 8px;
+    --density-normal-gap: 8px;
+    --density-normal-text: 0.85rem;
+
+    /* LOOSE: Game/Dashboard, touch-friendly, easier scanning */
+    --density-loose-p: 12px;
+    --density-loose-gap: 12px;
+    --density-loose-text: 0.9rem;
+
+
+    /* =========================================
+       4. Defaults (Can be overridden by themes)
+       ========================================= */
+    --sidebar-ratio: var(--layout-ratio-normal);
+    --sidebar-spacing: var(--density-normal-p);
+    --sidebar-gap: var(--density-normal-gap);
+}

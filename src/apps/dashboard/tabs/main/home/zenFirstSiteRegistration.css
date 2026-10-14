@@ -1,0 +1,32 @@
+.zen-pond-registration {
+  position: absolute; z-index: 25;
+  left: var(--zen-registration-editor-x); top: var(--zen-registration-editor-y);
+  width: min(320px, calc(100% - 40px)); transform: translateX(-50%);
+  color: var(--zen-water-ink); text-shadow: 0 1px 8px color-mix(in srgb, var(--zen-water-ink-shadow) 50%, transparent);
+  animation: zen-pond-registration-enter 280ms ease-out;
+}
+.zen-pond-registration[data-registration-appearance='surface'] { padding: 20px; color: var(--color-text-primary); background: var(--color-surface); text-shadow: none; }
+.zen-pond-registration[data-first-registration='true'] { animation-duration: 600ms; }
+.zen-pond-registration p { margin: 0 0 12px; }
+.zen-pond-registration-fields[hidden] { display: none; }
+.zen-pond-registration-label { display: block; font-size: 12px; opacity: 0.86; }
+.zen-pond-registration input { color: inherit; border-radius: 0; background: transparent; text-shadow: inherit; }
+.zen-pond-registration-address { width: 100%; min-width: 0; height: 48px; padding: 4px 0; border: 0; border-bottom: 1px solid color-mix(in srgb, var(--zen-water-ink) 55%, transparent); font-size: 21px; }
+.zen-pond-registration-address::placeholder { color: inherit; opacity: 0.58; font-size: 18px; }
+.zen-pond-registration input:focus-visible, .zen-pond-registration button:focus-visible { outline: 1px solid currentColor; outline-offset: 4px; }
+.zen-pond-registration-domain { overflow-wrap: anywhere; font-size: 23px; }
+.zen-pond-registration-detail { font-size: 13px; line-height: 1.7; opacity: 0.87; }
+.zen-pond-registration-recording { margin-top: 18px; }
+.zen-pond-registration-recording label { display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: 13px; line-height: 1.6; cursor: pointer; }
+.zen-pond-registration-recording input { flex: 0 0 auto; width: 17px; height: 17px; accent-color: currentColor; }
+.zen-pond-registration-recording .zen-pond-registration-detail { margin: 0 0 4px 27px; font-size: var(--zen-type-floor); }
+.zen-pond-registration-actions { display: flex; flex-wrap: wrap; align-items: center; column-gap: 22px; margin-top: 12px; }
+.zen-pond-registration-actions button { display: inline-flex; min-height: 44px; align-items: center; gap: 9px; padding: 5px 0; color: inherit; font-size: 12px; background: transparent; border: 0; }
+.zen-pond-registration-actions button[type='submit'] { font-size: 14px; font-weight: 500; }
+.zen-pond-registration button:disabled { opacity: 0.55; cursor: wait; }
+.zen-pond-registration-error { margin-top: 8px !important; color: var(--zen-water-ink-warn); font-size: 12px; line-height: 1.6; }
+.zen-first-site-feedback { position: absolute; z-index: 24; left: var(--zen-registration-editor-x); top: var(--zen-registration-editor-y); width: min(320px, calc(100% - 40px)); transform: translateX(-50%); color: var(--zen-water-ink); text-shadow: 0 1px 8px color-mix(in srgb, var(--zen-water-ink-shadow) 50%, transparent); text-align: center; animation: zen-pond-registration-enter 280ms ease-out; pointer-events: none; }
+.zen-first-site-feedback strong { display: block; overflow-wrap: anywhere; font-size: 15px; font-weight: 400; }
+.zen-first-site-feedback small { display: block; margin-top: 6px; font-size: 12px; opacity: 0.85; }
+@keyframes zen-pond-registration-enter { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .zen-pond-registration, .zen-first-site-feedback { animation: none; } }

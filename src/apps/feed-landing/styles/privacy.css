@@ -1,0 +1,14 @@
+@import '@fontsource-variable/noto-sans-kr/wght.css';
+@import './tokens.css';
+body { margin: 0; font-family: 'Noto Sans KR Variable', sans-serif; color: var(--feed-text); -webkit-font-smoothing: antialiased; }
+main { max-width: 650px; margin: 0 auto; padding: 42px 26px 65px; }
+a { color: var(--feed-accent); text-underline-offset: 4px; font-size: 12px; }
+.back { display: block; margin-bottom: 65px; text-decoration: none; }
+.eyebrow { font-size: 9px; letter-spacing: 0.15em; color: var(--feed-muted); }
+h1 { font-size: 38px; font-weight: 400; line-height: 1.5; letter-spacing: -1.5px; }
+.lead { color: var(--feed-secondary); line-height: 1.9; font-size: 14px; margin-bottom: 45px; }
+section { border-top: 1px solid var(--feed-border-bright); padding: 24px 0; }
+h2 { font-size: 16px; font-weight: 500; }
+p { font-size: 13px; line-height: 2; color: var(--feed-secondary); }
+footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 30px; color: var(--feed-muted); font-size: 10px; }
+:focus-visible { outline: 2px solid var(--feed-accent); outline-offset: 5px; }

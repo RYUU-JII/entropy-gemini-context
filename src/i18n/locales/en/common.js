@@ -1,0 +1,647 @@
+export default {
+  "app": {
+    "title": "Entropy"
+  },
+  "action": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "clear": "Clear",
+    "back": "Back"
+  },
+  "prev": "Prev",
+  "next": "Next",
+  "status": {
+    "loading": "Loading...",
+    "error": "Error"
+  },
+  "popup": {
+    "media_support": {
+      "label": "Media",
+      "title": "Embedded media",
+      "scope": "Media controls for connected embedded frames in this tab.",
+      "refresh": "Check again",
+      "loading": "Checking…",
+      "load_failed": "Couldn't read media support. Check again.",
+      "coverage_unknown": "Frame coverage is unknown. No connected frame has reported its state.",
+      "coverage_known": "Reports from {{count}} connected frames. Other embedded frames may not be observed.",
+      "detected": "Media detected",
+      "count": "{{count}} elements",
+      "count_partial": "At least {{count}} elements",
+      "unobserved": "Not observed",
+      "pause_supported": "Pause available",
+      "command_accepted": "Request accepted",
+      "pause_verified": "Pause verified",
+      "resume_supported": "Resume available",
+      "frames": "{{count}} frames",
+      "seek": "Skip control",
+      "seek_unavailable": "Not provided here",
+      "hold_active": "A media hold request is active for this tab.",
+      "hold_inactive": "No remote media hold is active for this tab.",
+      "evidence_scope": "Detection and request acceptance do not confirm a pause. Pause evidence is the last reported check.",
+      "managed_by_top": "Same-origin embeds are controlled by the page hold and do not report remote pause evidence.",
+      "partial": "Some frames have not confirmed media control.",
+      "permission_title": "Embedded host access",
+      "permission_scope": "Allow a listed host to receive media controls. Each button requests access to that host only.",
+      "allow_origin": "Allow {{origin}}",
+      "granted_reload": "Access granted. Reload this tab, then check media support again.",
+      "permission_denied": "Access wasn't granted. Embedded media support remains limited.",
+      "permission_failed": "Couldn't request embedded host access. Try again.",
+      "port_unsupported": "The browser can't limit this permission to the requested port. Access wasn't requested."
+    },
+    "status": {
+      "loading": "Loading...",
+      "error": "Error"
+    },
+    "metric_lines": {
+      "today_top": "Today",
+      "today_bottom": "",
+      "seven_day_avg_top": "7-day",
+      "seven_day_avg_bottom": "daily avg",
+      "share_today_top": "Today",
+      "share_today_bottom": "share"
+    },
+    "labels": {
+      "unsupported_page": "Unsupported page",
+      "today": "Today",
+      "today_hint": "Used so far",
+      "seven_day_avg": "7-day daily avg",
+      "share_today": "Today's share",
+      "daily_goal": "Daily target",
+      "progress_against_goal": "of {{goal}}m target",
+      "no_goal": "No time target",
+      "register_site": "Site protection"
+    },
+    "actions": {
+      "start_protection": "Start protection",
+      "start_in_dashboard": "Get started in the dashboard",
+      "starting_protection": "Starting protection...",
+      "start_isolation_session": "Start isolation session",
+      "starting_special_session": "Starting session...",
+      "end_special_session": "End current session",
+      "ending_special_session": "Ending session...",
+      "allow_current_site_for_session": "Allow this site for this session",
+      "allowing_current_site_for_session": "Allowing site...",
+      "open_sites": "Open Sites",
+      "open_dashboard": "Open dashboard",
+      "unsupported": "Unavailable",
+      "end_occurrence": "End this occurrence"
+    },
+    "messages": {
+      "page_unavailable": "This page can't be protected here.",
+      "load_error": "Couldn't load the current site.",
+      "permission_required": "Site permission is required to protect this domain.",
+      "permission_hint": "Allow it in the browser prompt to apply now.",
+      "registration_in_dashboard": "Connect this site in your garden while the first five days unfold.",
+      "dashboard_hint": "Saved sites stay visible in the dashboard.",
+      "protect_success": "Protection started for {{hostname}}.",
+      "protect_error": "Couldn't save this protection target.",
+      "registration_limit_reached": "You can register up to {{limit}} sites now. The limit increases on use day {{nextDay}}.",
+      "special_session_started": "Isolation session started for {{minutes}}m",
+      "special_session_load_error": "Couldn't read the current isolation session.",
+      "special_session_error": "Couldn't start an isolation session.",
+      "special_session_ended": "Special session ended.",
+      "special_session_end_error": "Couldn't end the current session.",
+      "special_session_site_allowed": "{{hostname}} is allowed for this session.",
+      "special_session_site_allow_error": "Couldn't allow this site for the current session.",
+      "dashboard_goal_hint": "Set time in this site’s Sites note."
+    },
+    "isolation_picker": {
+      "title": "Isolation session",
+      "duration_minutes": "{{minutes}}m",
+      "start": "Start",
+      "cancel": "Close"
+    },
+    "permission_sheet": {
+      "eyebrow": "Site permission",
+      "title": "Protect {{domain}}?",
+      "body": "Allow access to this site to start protection on the current page.",
+      "scope": "This site only",
+      "scope_detail": "Permission is attached only to the current site. Other sites stay untouched until you allow them.",
+      "local_only": "Local only",
+      "local_only_detail": "Settings and usage records are processed and stored on this device and are not automatically sent to external services.",
+      "immediate_apply": "Applies now",
+      "immediate_apply_detail": "Once allowed, protection starts on this current page. No reload needed.",
+      "cancel": "Maybe later",
+      "confirm": "Allow this site only"
+    },
+    "state": {
+      "unavailable": "Unavailable",
+      "not_protected": "Not protected",
+      "protected": "Protected",
+      "near_goal": "Near target",
+      "over_goal": "Over target",
+      "tightening": "Tightening",
+      "active_now": "Protection active"
+    },
+    "state_detail": {
+      "unavailable": "Open a regular website to start site protection.",
+      "not_protected": "Start site protection here. Set time in its Sites note.",
+      "protected": "Quietly guiding this site toward your target.",
+      "near_goal": "You're close to today's target. Pressure will increase if needed.",
+      "over_goal": "Today's target is exceeded. Protection may escalate.",
+      "tightening": "Protection is nudging this session back toward the target."
+    },
+    "diagnostics": {
+      "title": "Site diagnosis",
+      "none": "None",
+      "level": "Policy Lv{{level}}",
+      "filter_source": "{{label}} - {{source}}",
+      "summary_unavailable": "This page is outside the protection runtime.",
+      "summary_unprotected": "No site rule is active for this page.",
+      "summary_idle": "The site rule is active. No runtime filters are currently engaged.",
+      "summary_filters": "{{count}} runtime filter(s) are currently engaged.",
+      "rows": {
+        "policy": "Policy",
+        "filters": "Filters",
+        "tools": "Tools"
+      },
+      "filter_sources": {
+        "user_config": "User setting",
+        "policy": "Adaptive policy",
+        "runtime_artifact": "Runtime tool"
+      },
+      "filters": {
+        "blur": "Content blur",
+        "saturation": "Grayscale",
+        "brightness": "Brightness",
+        "contrast": "Contrast",
+        "color_saturation": "Saturation",
+        "text_rhythm": "Text rhythm",
+        "click_delay": "Click pause",
+        "enso_gate": "Intent gate",
+        "scroll_friction": "Scroll inertia",
+        "input_delay": "Input delay",
+        "input_visual_brake": "Ink Resistance",
+        "navigation_button_lock": "Back/forward lock",
+        "social_metrics": "Social metrics",
+        "infinite_scroll": "Infinite scroll",
+        "short_form": "Short-form block",
+        "video_skip": "Skip guard",
+        "temporal": "Temporal veil",
+        "hide_icons": "Icon veil",
+        "unknown": "Filter",
+        "text_shadow": "Text shadow"
+      },
+      "artifacts": {
+        "loop_breaker": "Loop breaker",
+        "time_anchor": "Time anchor",
+        "sentinel_flare": "Sentinel flare",
+        "memory_purge": "Memory purge",
+        "unknown": "Tool",
+        "entry_checkpoint": "Entry checkpoint",
+        "return_guard": "Return guard",
+        "detour_spread_guard": "Detour spread guard"
+      }
+    },
+    "attention": {
+      "label": "Active effects that may need attention",
+      "active_filter": "{{label}} active",
+      "active_artifact": "{{label}} running"
+    },
+    "artifacts": {
+      "lens": "Lens",
+      "veil": "Veil",
+      "barrier": "Barrier",
+      "flare": "Flare",
+      "echo": "Echo",
+      "gate": "Gate"
+    },
+    "format": {
+      "minutes_short": "{{count}}m",
+      "hours_minutes_short": "{{hours}}h {{minutes}}m",
+      "percent": "{{value}}%",
+      "per_day": "min/day",
+      "hours_suffix": "h",
+      "minutes_suffix": "m"
+    },
+    "fallback": {
+      "title": "Entropy Popup",
+      "description": "An error occurred while loading the popup.",
+      "unknown_error": "Unknown error",
+      "bootstrap_failed": "popup bootstrap failed"
+    },
+    "design": {
+      "effects": "Active effects",
+      "filter": "Filters",
+      "artifact": "Artifacts",
+      "no_effects": "No effects are currently active. Site protection rules remain enabled.",
+      "remaining": "{{duration}} left",
+      "over": "{{duration}} over",
+      "isolation": "Isolation",
+      "session": "Isolation session",
+      "running": "Active",
+      "dashboard": "Dashboard",
+      "sites": "Sites",
+      "session_hint": "Close the paths to other sites for a while. Choose your isolation duration.",
+      "session_active_hint": "Your isolation session is active. Manage temporary access to this site or end the session."
+    },
+    "effect_descriptions": {
+      "blur": "Gently softens image and video detail.",
+      "saturation": "Moves colors across the page toward gray.",
+      "brightness": "Dims images and videos.",
+      "contrast": "Reduces the difference between light and dark in images and videos.",
+      "color_saturation": "Softens vivid colors in images and videos.",
+      "text_rhythm": "Adds friction to the reading rhythm.",
+      "click_delay": "Adds a brief pause to clicks.",
+      "enso_gate": "Checks your intention before continuing.",
+      "scroll_friction": "Adds resistance to scrolling.",
+      "input_delay": "Slows input response.",
+      "input_visual_brake": "Adds visual resistance while typing.",
+      "navigation_button_lock": "Restricts selected navigation controls.",
+      "social_metrics": "Reduces the pull of likes and other social counts.",
+      "infinite_scroll": "Interrupts an endless scrolling flow.",
+      "short_form": "Restricts access to short-form video.",
+      "video_skip": "Adds friction to skipping video.",
+      "temporal": "Applies a veil based on time of day.",
+      "hide_icons": "Reduces visual stimulation from icons.",
+      "loop_breaker": "Intervenes in repetitive browsing.",
+      "time_anchor": "Intervenes in short-form access and video skipping.",
+      "sentinel_flare": "An attention-restoring intervention is active.",
+      "memory_purge": "The history-cleanup artifact is active.",
+      "text_shadow": "Adds shadow to create reading friction.",
+      "entry_checkpoint": "Checks your intention before entering a site.",
+      "return_guard": "Adds a pause when returning to a site.",
+      "detour_spread_guard": "Intervenes in detours across multiple sites."
+    }
+  },
+  "dashboard": {
+    "main_panel": {
+      "loading_module": "Loading Module...",
+      "load_failed": "This workspace could not be loaded",
+      "retry": "Retry",
+      "missing_tab_title": "Missing Tab",
+      "missing_tab_placeholder": "Unable to find this tab."
+    }
+  },
+  "indicator": {
+    "aria_label": "Protection Status",
+    "status": {
+      "on": "Filter Active",
+      "off": "Filter Off"
+    },
+    "reason": {
+      "hard_block_window": "Hard Block Window",
+      "global_cap_exceeded": "Global Limit Reached",
+      "allowed_window": "Exception Window",
+      "default": "Policy Active",
+      "standard_clean_phase": "Initial Exception Phase",
+      "standard_mud_phase": "Progressive Protection",
+      "standard_wall_phase": "Maximum Intervention",
+      "filtered": "Filter Active",
+      "video_alert": "Skip Guard"
+    },
+    "video": {
+      "skip_guard": "SKIP GUARD",
+      "skip_guard_active": "Skip Guard Active",
+      "skip_guard_waiting": "Skip Guard Waiting",
+      "skip_guard_locked": "LOCKED",
+      "skip_guard_cooldown": "{{seconds}}s wait",
+      "phrases": {
+        "flow_preserved": "Trajectory Maintained",
+        "skip_restrained": "Jump Nullified",
+        "stay_present": "Current Point Locked",
+        "release_haste": "Intent Dismissed",
+        "stone_patience": "Void Detected",
+        "cycle_returns": "Causality Restored",
+        "night_calm": "Night Jump Blocked",
+        "take_breath": "Fatigue Detected",
+        "pause_is_journey": "Dawn Jump Dismissed",
+        "this_too_shall_pass": "No Shortcut",
+        "wind_trace": "Jump Trajectory Erased",
+        "silent_monolith": "Monolith Holds Silence",
+        "easter_egg_mirage": "A future only imagined.",
+        "easter_egg_signature": "The White Night Predator"
+      }
+    },
+    "time": {
+      "now_available": "Available now",
+      "in_minutes": "{{count}}m later",
+      "today_at": "Today {{time}}",
+      "date_at": "{{date}} {{time}}"
+    },
+    "filters": {
+      "blur": "Blur",
+      "saturation": "Grayscale",
+      "brightness": "Brightness",
+      "contrast": "Contrast",
+      "color_saturation": "Saturation",
+      "text_rhythm": "Text Rhythm",
+      "text_shadow": "Text Shadow",
+      "click_delay": "Click Pause",
+      "enso_gate": "Intent Gate",
+      "scroll_friction": "Scroll Resistance",
+      "input_delay": "Input Delay",
+      "input_visual_brake": "Ink Resistance",
+      "navigation_button_lock": "Back Lock",
+      "social_metrics": "Social Metrics",
+      "none": "No active filters"
+    },
+    "tooltip": {
+      "accumulated_time": "Accumulated Time",
+      "next_available": "Next Available",
+      "limit_time": "Limit",
+      "limit_none": "No limit",
+      "minutes_only": "{{minutes}}m",
+      "schedule_block_badge": "In Scheduled Block",
+      "status_active": "Filter Applied",
+      "status_waiting": "Waiting",
+      "hours_minutes": "{{hours}}h {{minutes}}m"
+    },
+    "edge": {
+      "open_site": "Open site record for {{domain}}",
+      "loading": "Loading usage",
+      "unavailable": "Usage unavailable",
+      "usage": "{{minutes}}/{{limit}} min",
+      "usage_without_limit": "{{minutes}} min",
+      "open_failed": "Could not open the record. Try again."
+    },
+    "feedback": {
+      "video_blocked": "Video skipping is restricted",
+      "shortform_blocked": "Short-form navigation is restricted"
+    }
+  },
+  "clse_alert": {
+    "title_default": "Load Alert",
+    "dismiss": "Dismiss alert",
+    "monitoring": "Monitoring behavior signals.",
+    "just_now": "Just now",
+    "severity": "Severity: {{value}}%",
+    "detail": {
+      "value": "value {{value}}",
+      "repeat_count": "repeat {{count}}",
+      "window_count": "windows {{count}}",
+      "duration": "duration {{seconds}}s",
+      "components": "components {{value}}",
+      "fallback": "Behavior signal detected."
+    },
+    "type": {
+      "tab_spike": "Tab burst detected",
+      "nav_spike": "Navigation burst detected",
+      "scroll_spike": "Aggressive scrolling detected",
+      "composite_spike": "Composite load spike",
+      "sustained_load_start": "Sustained load detected",
+      "sustained_load_escalation": "Sustained load escalating",
+      "page_loop_detected": "Page loop detected",
+      "site_loop_detected": "Site loop detected"
+    }
+  },
+  "gate_alert": {
+    "title_default": "Gate engaged",
+    "dismiss": "Dismiss gate alert",
+    "just_now": "Just now",
+    "detail_fallback": "Pause once before continuing.",
+    "status": {
+      "low": "Light gate",
+      "mid": "Gate engaged",
+      "high": "Strong gate"
+    },
+    "actions": {
+      "continue": "Continue",
+      "continue_countdown": "Continue in {{seconds}}s",
+      "leave": "Go back",
+      "processing": "Working..."
+    },
+    "type": {
+      "entry_checkpoint": "Entry checkpoint",
+      "return_guard": "Return guard",
+      "detour_spread_guard": "Tab spread guard"
+    },
+    "detail": {
+      "entry_checkpoint": "Pause once and decide whether you really want to enter.",
+      "return_guard": "You're moving back to the same site very quickly.",
+      "return_guard_recent": "You came back in {{seconds}}s. Choose again deliberately before continuing.",
+      "return_guard_with_cooldown": "You came back in {{returnSeconds}}s. Let the {{cooldownSeconds}}s cooldown pass before deciding to continue.",
+      "detour_spread_guard": "Pause before the same site spreads across more tabs.",
+      "detour_spread_guard_tabs": "{{tabCount}} tabs on this site are open. Decide whether to keep going in one place.",
+      "detour_spread_guard_switches": "Pause before the same site spreads across more tabs.",
+      "detour_spread_guard_mixed": "{{tabCount}} tabs on this site are open. Decide whether to keep going in one place."
+    }
+  },
+  "social": {
+    "instagram": {
+      "like": "Likes",
+      "comment": "Comments",
+      "repost": "Reposts",
+      "posts": "Posts",
+      "follower": "Followers",
+      "following": "Following",
+      "views": "Views",
+      "upload": "Uploaded"
+    },
+    "actions": {
+      "like": "Like",
+      "comment": "Comments"
+    }
+  },
+  "scroll_flow_interrupt": {
+    "title_default": "SCROLL INTERRUPTED",
+    "title_zen": "THE LOOP HAS BEEN SEVERED",
+    "subtitle_zen": "Hold until the cause goes quiet",
+    "cta_default": "CONTINUE (HOLD)",
+    "cta_zen": "SETTLE THE LIGHT (HOLD)",
+    "reason": {
+      "default": "The flow is speeding up on its own again",
+      "fast_forward": "The feed is still advancing without a pause",
+      "fresh_items": "You are skimming fresh items without stopping",
+      "paged_transition": "Items are switching too quickly",
+      "relapsed": "You slipped back into the same flow right after continuing"
+    }
+  },
+  "boot": {
+    "system_boot": "SYSTEM BOOT",
+    "initializing_kernel": "INITIALIZING KERNEL...",
+    "loading_modules": "LOADING MODULES...",
+    "establishing_uplink": "ESTABLISHING UPLINK...",
+    "sequence": {
+      "initializing_void_runner": "INITIALIZING VOID_RUNNER KERNEL...",
+      "loading_tactical_interface": "LOADING TACTICAL INTERFACE...",
+      "mounting_file_system": "MOUNTING FILE SYSTEM: /dev/sda1 [RO]",
+      "checking_neural_link": "CHECKING NEURAL LINK... STABLE",
+      "bypassing_security": "BYPASSING SECURITY PROTOCOLS...",
+      "optimizing_dopamine": "OPTIMIZING DOPAMINE RECEPTORS...",
+      "system_ready": "SYSTEM READY.",
+      "footer_os": "ENTROPY_OS release-v1",
+      "footer_hypervisor": "UNREGISTERED HYPERVISOR"
+    }
+  },
+  "controls": {
+    "color": "Color",
+    "off": "OFF",
+    "shadow_intensity": "Shadow intensity",
+    "select_shadow_color": "Select shadow color"
+  },
+  "toast": {
+    "dismiss_notification": "Dismiss notification"
+  },
+  "feedback": {
+    "settings": {
+      "channels": {
+        "default": "Settings",
+        "multiple": "Settings",
+        "protocol": "Protection settings",
+        "preference": "Display settings",
+        "security": "Security settings",
+        "clse": "Insight settings"
+      },
+      "saved": {
+        "title": "{{scope}} saved",
+        "message": "The change is active now."
+      },
+      "failed": {
+        "title": "{{scope}} not saved",
+        "message": "The change could not be saved. Try again from the affected setting."
+      },
+      "apply_failed": {
+        "title": "{{scope}} application needs attention",
+        "message": "Your choice was saved, but protection application could not be confirmed. Retry application.",
+        "retry": "Retry applying {{scope}}",
+        "retrying": "Applying…"
+      }
+    },
+    "interaction": {
+      "copy_completed": {
+        "title": "Copied",
+        "message": "The text is ready on your clipboard."
+      },
+      "copy_failed": {
+        "title": "Copy failed",
+        "message": "Clipboard access was not available."
+      }
+    }
+  },
+  "navigation": {
+    "main": "Main navigation"
+  },
+  "dashboard_boot_recovery": {
+    "pending_title": "Preparing your local profile",
+    "pending_body": "Entropy is checking this device's settings before opening the dashboard.",
+    "failed_title": "The dashboard couldn't open",
+    "failed_body": "Local data has been preserved. Reload to check again. If a stored profile needs a reset, Entropy will show that recovery action separately.",
+    "retry": "Reload and try again"
+  },
+  "profile_mutation_recovery": {
+    "settings_reset_body": "Saved settings don't match the current contract, so the dashboard can't open. Data is preserved; a full local reset runs only after your confirmation below.",
+    "diagnostics": "Diagnostic details",
+    "lifecycle_code_label": "Profile state code",
+    "request_code_label": "Latest request error",
+    "request_failed": "The recovery request couldn't finish. Check the diagnostic code below.",
+    "auth_failed": "The settings protection PIN is required or incorrect. Check your PIN and try again.",
+    "handoff_failed": "Your profile change is saved, but the restart request failed. Retry only that request below.",
+    "retry_handoff": "Retry restart request",
+    "eyebrow": "Profile consistency fence",
+    "title": "Local profile recovery required",
+    "resetting_body": "A profile mutation is still fenced. Wait for it to finish, or explicitly rebuild the local profile if the operation was interrupted.",
+    "committed_body": "The durable profile commit is complete while runtime owners are still reopening. Wait briefly, or rebuild the local profile if this state persists after a worker restart.",
+    "failed_body": "The previous profile mutation failed and normal runtime owners remain closed. Rebuild the local profile before continuing.",
+    "complete_body": "Your profile change is saved. Entropy needs to restart before you can continue.",
+    "contract_reset_body": "This build detected an older development-profile baseline. Normal runtime owners remain closed until you explicitly rebuild the local profile.",
+    "baseline_label": "Profile baseline",
+    "reason_label": "Reset reason",
+    "passcode_label": "Settings protection PIN, if configured",
+    "prepare_reset": "Recover with full local reset",
+    "confirm_body": "This permanently removes local settings, history, progression, and Zen model data, then creates one new profile generation.",
+    "confirm_reset": "Confirm full local reset",
+    "recovering": "Rebuilding local profile..."
+  },
+  "error_boundary": {
+    "crash_title": "SYSTEM CRASH DETECTED",
+    "error_message": "Error Message",
+    "stack_trace": "Stack Trace",
+    "build_info": "Build Info",
+    "build_id": "Build ID",
+    "build_created_at": "Created At",
+    "build_target": "Target",
+    "build_out_dir": "Output Directory",
+    "unknown": "unknown",
+    "reboot": "REBOOT SYSTEM"
+  },
+  "friction_profiles": {
+    "relaxed": "Relaxed",
+    "normal": "Normal",
+    "reinforced": "Reinforced",
+    "label": "{{label}} · {{band}}"
+  },
+  "security_vault": {
+    "setup_title": "Set up data lock",
+    "preparing_title": "Preparing Entropy",
+    "preparing_description": "Preparing local data on this device so you can start without a passphrase.",
+    "preparing_failed": "Could not prepare local data. Check the diagnostic code below and try again.",
+    "unlock_title": "Unlock detailed logs",
+    "incompatible_title": "This development profile needs a fresh start",
+    "description": "Your data passphrase protects detailed logs and their encryption key. Site settings, aggregate statistics and protection keys remain readable in the browser profile. This passphrase is separate from the settings protection PIN.",
+    "paused": "Site protection and aggregate statistics continue. New detailed logs are not saved while locked, and unlocking does not reconstruct that missing history.",
+    "passphrase": "Data passphrase",
+    "current_passphrase": "Current data passphrase",
+    "new_passphrase": "New data passphrase",
+    "confirm_passphrase": "Confirm data passphrase",
+    "passphrase_help": "Use at least 16 characters, up to 128 UTF-8 bytes. A long, unique phrase is recommended. Spaces and Unicode are supported.",
+    "mismatch": "The passphrases do not match.",
+    "no_recovery": "Keep this passphrase safe. It cannot be recovered. An independently encrypted backup can restore your data.",
+    "setup": "Enable data lock",
+    "unlock": "Unlock detailed logs",
+    "operation_failed": "Could not unlock your data. Check the data passphrase and try again.",
+    "retry": "Try again",
+    "incompatible_description": "This pre-release profile uses an unsupported data format. It will not be converted or erased automatically.",
+    "reset_title": "Forgotten passphrase or old development profile",
+    "reset_description": "Starting again erases all local settings, history and keys. Enter your settings protection PIN if one is configured.",
+    "pin": "Settings protection PIN",
+    "reset_confirmation": "I understand that all local data will be erased.",
+    "reset": "Erase local data and start again",
+    "reset_failed": "Could not reset this profile. Check the diagnostic code below.",
+    "reset_auth_failed": "The settings protection PIN is required or incorrect. Check your PIN and try again.",
+    "reset_committed": "Local data has been reset. The app needs to restart before you can continue.",
+    "reset_handoff_failed": "Local data has been reset, but the restart request could not start. Retry the restart below.",
+    "reset_retry_handoff": "Retry restart",
+    "reset_finishing": "Restarting…",
+    "popup_locked": "This profile uses the previous data lock structure. Confirm your current passphrase in the dashboard so site protection can start without it next time.",
+    "open_dashboard": "Open dashboard",
+    "settings_title": "Data lock · optional",
+    "settings_description": "Site protection starts without a passphrase. You can set a separate data lock for detailed logs.",
+    "lock_disabled": "Data lock is off",
+    "lock_disabled_description": "Start the app directly. The key that opens encrypted logs is stored in this browser profile.",
+    "lock_enabled": "Data lock is enabled",
+    "lock_enabled_description": "Detailed logs lock after restarting the browser or reloading the extension. Site protection and aggregate statistics continue. New detailed logs are saved after you unlock.",
+    "enable_lock": "Enable data lock",
+    "remove_lock": "Turn off data lock",
+    "remove_lock_description": "Confirm your current passphrase to use detailed logs without one. Your existing data and settings protection PIN stay in place.",
+    "lock_operation_failed": "Could not change data lock. Check your passphrase and the diagnostic code below.",
+    "change": "Change data passphrase",
+    "changed": "Data passphrase changed.",
+    "export": "Save encrypted backup",
+    "backup_description": "The entire backup, including private keys, is encrypted with a separate backup passphrase. Keep that passphrase safely.",
+    "backup_passphrase": "Backup passphrase",
+    "confirm_backup_passphrase": "Confirm backup passphrase",
+    "exported": "Encrypted backup saved.",
+    "restore": "Replace local data from backup",
+    "backup_file": "Encrypted backup file",
+    "restore_passphrase": "New data passphrase after restore",
+    "restore_local_description": "Start without a new data passphrase after restoration. You can enable data lock later in Settings.",
+    "replace_confirmation": "Replace all local settings and history with this backup. The settings protection PIN comes from the backup.",
+    "restored": "Backup restored. Restarting the app.",
+    "restore_handoff_failed": "Backup restoration is complete, but the restart request could not start. Retry only the restart below.",
+    "backup_failed": "The operation failed. Check the backup passphrase, settings protection PIN and backup file.",
+    "changed_unlock_required": "Your data passphrase was changed, but the unlocked session could not be saved. Unlock with your new passphrase.",
+    "removal_unlock_required": "Data lock could not be removed. Unlock with your current data passphrase.",
+    "backup_title": "Encrypted backup and restore",
+    "logs_locked": "Detailed logs are locked",
+    "logs_locked_description": "Site protection and aggregate statistics continue. Unlock to open existing detailed logs or save new ones. Detailed logs from the locked period are not reconstructed.",
+    "separate_title": "Let site protection start directly",
+    "separate_description": "This profile also locks the keys used for site protection. Confirm your current passphrase to lock only detailed logs, preserving your data and passphrase. Site protection will then start without a passphrase.",
+    "separate_action": "Confirm passphrase and update",
+    "separate_failed": "Could not complete the update. Check the diagnostic code below and try again.",
+    "reset_return_description": "After the reset, the app restarts into the first garden. Browser site-access permissions remain."
+  },
+  "consumption_boundary": {
+    "title": "Before the next flow",
+    "leave": "← End this visit",
+    "enter": "Continue →",
+    "instruction": "Slowly slide the center boundary and release. With a keyboard, briefly hold and release an arrow key.",
+    "idle": "Left to finish · right to continue",
+    "release_enter": "Release to continue",
+    "release_leave": "Release to end this visit"
+  }
+};

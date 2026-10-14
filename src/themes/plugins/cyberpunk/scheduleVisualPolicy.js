@@ -1,0 +1,61 @@
+import { THEME_IDS } from '../../core/ids.js';
+import {
+    SCHEDULE_RECIPE_VARIANTS,
+    SCHEDULE_TEXTURE_BLEND_MODES,
+    createScheduleVisualPolicy,
+} from '../../core/schedule/policyContract.js';
+import { SCHEDULE_TEXTURES } from '../../core/schedule/textureLibrary.js';
+
+export const cyberpunkScheduleVisualPolicy = createScheduleVisualPolicy({
+    themeId: THEME_IDS.CYBERPUNK,
+    recipes: {
+        shell: SCHEDULE_RECIPE_VARIANTS.shell.FRAMED,
+        heading: SCHEDULE_RECIPE_VARIANTS.heading.PAGE_HEADER,
+        status: SCHEDULE_RECIPE_VARIANTS.status.PAGE_HEADER,
+        rhythmIdentity: SCHEDULE_RECIPE_VARIANTS.rhythmIdentity.COUNTED_TABS,
+        timeline: SCHEDULE_RECIPE_VARIANTS.timeline.FRAMED_TRACK,
+        workbench: SCHEDULE_RECIPE_VARIANTS.workbench.STANDARD_PANEL,
+        utilities: SCHEDULE_RECIPE_VARIANTS.utilities.FLOATING,
+        specialSession: SCHEDULE_RECIPE_VARIANTS.specialSession.FLOATING_CARD,
+    },
+    typography: {
+        body: '"Space Grotesk", "Noto Sans KR", sans-serif',
+        label: '"Space Mono", monospace',
+        title: '"Orbitron", "Space Mono", monospace',
+        time: '"Space Mono", monospace',
+        titleLetterSpacing: '0.14em',
+    },
+    tokens: {
+        canvas: '#0A0C1A',
+        pageBackground: 'transparent',
+        panelBackground: 'rgba(16, 18, 40, 0.9)',
+        stageSurface: '#151A37',
+        stageHighlight: '#1A1F43',
+        stageDepth: '#070812',
+        stageEdge: '#4E5AA6',
+        stageRidge: '#5B61B4',
+        timeFieldSurface: '#0A0C1A',
+        workbenchSurface: 'rgba(16, 18, 40, 0.9)',
+        workbenchSelectedSurface: 'rgba(12, 35, 55, 0.94)',
+        workbenchSeam: '#4E5AA6',
+        inkPrimary: '#F4ECFF',
+        inkMuted: '#A6B0E8',
+        relaxationWash: '#22D3EE',
+        relaxationInk: '#0E7490',
+        currentMarker: '#67E8F9',
+        focusMarker: '#0E7490',
+        isolationInk: '#22D3EE',
+        danger: '#F43F5E',
+        onDarkInk: '#0A0B14',
+        shadowInk: '#070812',
+        panelControlSurface: 'rgba(255, 255, 255, 0.32)',
+    },
+    timeline: {
+        textureImage: SCHEDULE_TEXTURES.GRID_FINE,
+        textureOpacity: 0.18,
+        textureSize: null,
+        textureBlendMode: SCHEDULE_TEXTURE_BLEND_MODES.SCREEN,
+        idleBlockOpacity: 14,
+        selectedBlockOpacity: 20,
+    },
+});

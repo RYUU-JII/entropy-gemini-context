@@ -1,0 +1,6 @@
+export const SCHEDULE_TEXTURES = Object.freeze({
+    PAPER: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' opacity='0.09'/%3E%3C/svg%3E")`,
+    NOISE_SOFT: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='softnoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23softnoise)' opacity='0.1'/%3E%3C/svg%3E")`,
+    GRID_FINE: `url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.08)' stroke-width='1'%3E%3Cpath d='M0 0H32M0 16H32M0 32H32M0 0V32M16 0V32M32 0V32'/%3E%3C/g%3E%3C/svg%3E")`,
+    CHEVRON: `url("data:image/svg+xml,%3Csvg width='48' height='24' viewBox='0 0 48 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 12h48M0 0l12 12L0 24M24 0l12 12-12 12M48 0l-12 12 12 12' stroke='rgba(255,255,255,0.08)' stroke-width='1' fill='none'/%3E%3C/svg%3E")`,
+});

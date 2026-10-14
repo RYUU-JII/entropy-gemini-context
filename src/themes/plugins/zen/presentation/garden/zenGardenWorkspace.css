@@ -1,0 +1,122 @@
+.zen-garden-threshold-viewport {
+  position: absolute;
+  z-index: 23;
+  overflow: clip;
+  pointer-events: none;
+}
+.zen-garden-threshold {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  pointer-events: none;
+}
+.zen-garden-mode-control {
+  position: relative;
+  width: 100%;
+  font-family: var(--font-theme-ui);
+}
+.zen-garden-paper-edge {
+  position: absolute;
+  inset: -32px 0 auto;
+  display: block;
+  width: 100%;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: ns-resize;
+  touch-action: none;
+  pointer-events: auto;
+}
+.zen-garden-paper-edge::before {
+  content: '';
+  position: absolute;
+  inset: 31px 0 auto;
+  height: 1px;
+  background: var(--zen-ambient-edge);
+}
+/* The resting paper edge already draws the Pond/rail seam. Do not place a
+   second hairline directly below it; the open ledger still needs the rail edge. */
+.zen-home-stage[data-garden-mode='pond'] .zen-pressure-rail {
+  box-shadow: none;
+}
+.zen-garden-paper-lip {
+  position: absolute;
+  left: 50%;
+  top: 27px;
+  width: 44px;
+  height: 5px;
+  transform: translateX(-50%);
+  border: 1px solid var(--zen-ambient-edge);
+  border-bottom: 0;
+  border-radius: 24px 24px 0 0;
+  background: var(--zen-layer-l2-surface);
+  transition: width 180ms ease, border-color 180ms ease;
+}
+.zen-garden-paper-edge:is(:hover, :focus-visible) .zen-garden-paper-lip {
+  width: 60px;
+  border-color: currentColor;
+}
+.zen-garden-paper-edge:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: -4px;
+}
+.zen-garden-paper-edge:disabled { pointer-events: none; opacity: .35; }
+.zen-home-stage[data-garden-mode='pathways'] .zen-garden-paper-edge { top: 0; }
+.zen-home-stage[data-garden-mode='pathways'] .zen-garden-paper-edge::before { top: 0; }
+.zen-home-stage[data-garden-mode='pathways'] .zen-garden-paper-lip {
+  top: 0;
+  border-top: 0;
+  border-bottom: 1px solid var(--zen-ambient-edge);
+  border-radius: 0 0 24px 24px;
+}
+.zen-garden-mode-control[data-pending] .zen-garden-paper-lip { border-style: dashed; }
+.zen-garden-mode-error {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  width: max-content;
+  max-width: min(320px, calc(100% - 48px));
+  padding: 10px 12px;
+  background: var(--zen-layer-l2-surface);
+  color: var(--text-primary);
+  font-size: 12px;
+  pointer-events: auto;
+}
+.zen-home-stage[data-garden-mode='pathways'] .zen-garden-mode-error { top: 20px; bottom: auto; }
+.zen-garden-mode-error button { margin-left: 12px; text-decoration: underline; }
+.zen-garden-pond-content { height: 100%; min-height: 0; }
+.zen-garden-sheet-viewport {
+  position: absolute;
+  z-index: 20;
+  overflow: clip;
+  pointer-events: none;
+}
+.zen-garden-pathways {
+  position: absolute;
+  inset: 0;
+  overflow: clip;
+  background: var(--zen-layer-l2-surface);
+  pointer-events: auto;
+}
+.zen-home-stage[data-work-area-motion='true'] :is(.zen-garden-threshold, .zen-garden-pathways) {
+  transition: transform 220ms cubic-bezier(.22, 1, .36, 1);
+}
+.zen-garden-pathways[inert] { pointer-events: none; }
+.zen-garden-pathways-content { height: 100%; min-height: 0; padding-top: 32px; box-sizing: border-box; }
+.zen-garden-pathways[data-reading-ready='false'] .zen-garden-pathways-content { visibility: hidden; }
+.zen-home-stage[data-garden-mode='pathways'] .zen-home-garden-occlusion > div { pointer-events: none; }
+.zen-home-stage[data-sheet-dragging='true'] :is(.zen-garden-threshold, .zen-garden-pathways) {
+  transition: none;
+}
+@media (pointer: coarse) {
+  .zen-garden-pathways-content { padding-top: 44px; }
+  .zen-garden-paper-edge { top: -44px; height: 44px; }
+  .zen-garden-paper-edge::before { top: 43px; }
+  .zen-garden-paper-lip { top: 39px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .zen-home-stage[data-work-area-motion='true'] :is(.zen-garden-threshold, .zen-garden-pathways),
+  .zen-garden-paper-lip { transition: none; }
+}

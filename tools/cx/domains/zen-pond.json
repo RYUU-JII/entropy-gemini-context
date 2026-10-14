@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "zen-pond",
+  "title": "Zen pond runtime and research",
+  "pathPrefixes": [
+    "src/themes/plugins/zen/pond/",
+    "scripts/dev/zen-pond-render-research/",
+    "tests/themes/zenPond",
+    "tests/themes/zenWater",
+    "docs/architecture/repository/zen-pond-",
+    "docs/architecture/themes/zen/zen-pond-"
+  ],
+  "ownerDocs": [
+    "docs/architecture/repository/zen-pond-seam-map.md",
+    "docs/architecture/themes/zen/zen-pond-render-worker-spec.md"
+  ],
+  "resourceClaims": [],
+  "focusedChecks": [
+    {
+      "id": "zen-pond-research-contract",
+      "label": "Zen pond research harness contract",
+      "executable": "node",
+      "args": [
+        "scripts/dev/run-local-command.mjs",
+        "vitest",
+        "run",
+        "tests/themes/zenPondResearchHarness.test.js"
+      ],
+      "estimatedSeconds": 12
+    }
+  ],
+  "harnessIds": [
+    "zen-pond"
+  ]
+}

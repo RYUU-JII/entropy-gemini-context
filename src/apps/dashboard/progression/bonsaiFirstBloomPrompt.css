@@ -1,0 +1,116 @@
+.zen-bonsai-first-bloom-prompt {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.zen-bonsai-first-bloom-region {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.zen-bonsai-first-bloom-region::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, transparent 12%, rgb(255 232 214 / 68%) 24%, rgb(235 163 177 / 32%) 42%, transparent 70%);
+  opacity: .72;
+  transform: scale(.86);
+  transition: opacity 380ms ease-out, transform 380ms ease-out;
+  animation: zen-bonsai-bud-breath 1500ms ease-in-out var(--zen-bloom-cue-delay) 2 both;
+  pointer-events: none;
+}
+
+/* The atlas bud stays visible in the clear center. A small petal-shaped light
+   opens on hover/focus, connecting the invitation to the bloom that follows. */
+.zen-bonsai-first-bloom-region::after {
+  content: '';
+  position: absolute;
+  inset: 15px;
+  background:
+    radial-gradient(ellipse 3px 5px at 50% 25%, rgb(255 246 235 / 90%), rgb(244 183 195 / 46%) 70%, transparent),
+    radial-gradient(ellipse 4px 3px at 76% 44%, rgb(255 246 235 / 90%), rgb(244 183 195 / 46%) 70%, transparent),
+    radial-gradient(ellipse 3px 4px at 66% 73%, rgb(255 246 235 / 90%), rgb(244 183 195 / 46%) 70%, transparent),
+    radial-gradient(ellipse 3px 4px at 34% 73%, rgb(255 246 235 / 90%), rgb(244 183 195 / 46%) 70%, transparent),
+    radial-gradient(ellipse 4px 3px at 24% 44%, rgb(255 246 235 / 90%), rgb(244 183 195 / 46%) 70%, transparent);
+  opacity: 0;
+  transform: scale(.38) rotate(-12deg);
+  transition: opacity 180ms ease-out, transform 220ms ease-out;
+  pointer-events: none;
+}
+
+.zen-bonsai-first-bloom-region:hover::before,
+.zen-bonsai-first-bloom-region:focus-visible::before {
+  background: radial-gradient(ellipse, transparent 10%, rgb(255 241 222 / 88%) 24%, rgb(235 163 177 / 48%) 42%, transparent 70%);
+}
+
+.zen-bonsai-first-bloom-region:hover::after,
+.zen-bonsai-first-bloom-region:focus-visible::after {
+  opacity: .8;
+  transform: scale(1) rotate(0);
+}
+
+.zen-bonsai-first-bloom-region:active::after {
+  transform: scale(.8) rotate(0);
+}
+
+.zen-bonsai-first-bloom-region:focus-visible {
+  outline: 2px solid #fff2c8;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgb(92 68 43 / 85%);
+}
+
+.zen-bonsai-first-bloom-region[aria-disabled='true'] {
+  cursor: default;
+}
+
+.zen-bonsai-first-bloom-region[data-selected='true'] {
+  pointer-events: none;
+}
+
+.zen-bonsai-first-bloom-region[data-selected='true']::before {
+  animation: none;
+  opacity: 0;
+  transform: scale(1.65);
+}
+
+.zen-bonsai-first-bloom-region[data-selected='true']::after {
+  opacity: 0;
+  transform: scale(1.25) rotate(0);
+}
+
+.zen-bonsai-first-bloom-prompt[aria-busy='true'] .zen-bonsai-first-bloom-region::before {
+  animation-play-state: paused;
+}
+
+.zen-bonsai-first-bloom-prompt[aria-busy='true'] .zen-bonsai-first-bloom-region::after {
+  opacity: 0;
+}
+
+@keyframes zen-bonsai-bud-breath {
+  0%, 100% { opacity: .72; transform: scale(.86); }
+  50% { opacity: 1; transform: scale(1.18); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zen-bonsai-first-bloom-region::before,
+  .zen-bonsai-first-bloom-region[data-selected='true']::before,
+  .zen-bonsai-first-bloom-region::after {
+    animation: none;
+    transition: none;
+  }
+
+  .zen-bonsai-first-bloom-region[data-selected='true']::before {
+    opacity: 0;
+  }
+}

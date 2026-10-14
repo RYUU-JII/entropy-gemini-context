@@ -1,0 +1,61 @@
+import { THEME_IDS } from '../../core/ids.js';
+import {
+    SCHEDULE_RECIPE_VARIANTS,
+    SCHEDULE_TEXTURE_BLEND_MODES,
+    createScheduleVisualPolicy,
+} from '../../core/schedule/policyContract.js';
+import { SCHEDULE_TEXTURES } from '../../core/schedule/textureLibrary.js';
+
+export const scpScheduleVisualPolicy = createScheduleVisualPolicy({
+    themeId: THEME_IDS.SCP,
+    recipes: {
+        shell: SCHEDULE_RECIPE_VARIANTS.shell.FRAMED,
+        heading: SCHEDULE_RECIPE_VARIANTS.heading.PAGE_HEADER,
+        status: SCHEDULE_RECIPE_VARIANTS.status.PAGE_HEADER,
+        rhythmIdentity: SCHEDULE_RECIPE_VARIANTS.rhythmIdentity.COUNTED_TABS,
+        timeline: SCHEDULE_RECIPE_VARIANTS.timeline.FRAMED_TRACK,
+        workbench: SCHEDULE_RECIPE_VARIANTS.workbench.STANDARD_PANEL,
+        utilities: SCHEDULE_RECIPE_VARIANTS.utilities.FLOATING,
+        specialSession: SCHEDULE_RECIPE_VARIANTS.specialSession.FLOATING_CARD,
+    },
+    typography: {
+        body: '"Rajdhani", "Noto Sans KR", sans-serif',
+        label: '"Rajdhani", "Noto Sans KR", sans-serif',
+        title: '"Orbitron", "Rajdhani", sans-serif',
+        time: '"Rajdhani", "Noto Sans KR", sans-serif',
+        titleLetterSpacing: '0.12em',
+    },
+    tokens: {
+        canvas: '#0F1418',
+        pageBackground: 'transparent',
+        panelBackground: 'rgba(20, 27, 31, 0.9)',
+        stageSurface: '#1A2126',
+        stageHighlight: '#1F2A30',
+        stageDepth: '#0D1113',
+        stageEdge: '#4D5E57',
+        stageRidge: '#4D5E57',
+        timeFieldSurface: '#0F1418',
+        workbenchSurface: 'rgba(20, 27, 31, 0.9)',
+        workbenchSelectedSurface: 'rgba(29, 42, 42, 0.94)',
+        workbenchSeam: '#4D5E57',
+        inkPrimary: '#DCE6DE',
+        inkMuted: '#92A79C',
+        relaxationWash: '#6EA6A6',
+        relaxationInk: '#4A7A7A',
+        currentMarker: '#B6A25B',
+        focusMarker: '#4A7A7A',
+        isolationInk: '#6EA6A6',
+        danger: '#C64A4A',
+        onDarkInk: '#0C0F12',
+        shadowInk: '#0D1113',
+        panelControlSurface: 'rgba(255, 255, 255, 0.32)',
+    },
+    timeline: {
+        textureImage: SCHEDULE_TEXTURES.CHEVRON,
+        textureOpacity: 0.08,
+        textureSize: null,
+        textureBlendMode: SCHEDULE_TEXTURE_BLEND_MODES.SCREEN,
+        idleBlockOpacity: 14,
+        selectedBlockOpacity: 20,
+    },
+});

@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-08-26T14:57:52.115Z",
+  "status": "clean",
+  "files": {
+    "total": 0,
+    "failed": 0,
+    "passed": 0
+  },
+  "tests": {
+    "total": 0,
+    "failed": 0,
+    "passed": 0
+  },
+  "failedEntries": 0,
+  "unhandledErrors": 0,
+  "latestFailureTextPath": "reports/test-failures/latest-failure-summary.txt",
+  "latestFailureJsonPath": "reports/test-failures/latest-failure-summary.json"
+}

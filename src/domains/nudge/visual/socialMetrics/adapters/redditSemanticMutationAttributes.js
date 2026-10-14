@@ -1,0 +1,15 @@
+export const REDDIT_SEMANTIC_MUTATION_ATTRIBUTES = Object.freeze([
+  'aria-hidden',
+  'aria-label',
+  'data-action-bar-action',
+  'data-post-click-location',
+  'data-testid',
+  'datetime',
+  'downvote',
+  'href',
+  'name',
+  'number',
+  'role',
+  'title',
+  'upvote',
+]);

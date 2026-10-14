@@ -1,0 +1,17 @@
+.installation-zen-furin-position {
+  position: absolute;
+  width: 215px;
+  height: 258px;
+  left: calc(50% - 107.5px);
+  top: 12%;
+  transform-origin: center 0;
+}
+.installation-zen-furin { width: 100%; height: 100%; }
+.installation-world-zen .installation-response-light {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 65%, rgb(199 220 168 / 35%), transparent 65%);
+}
+@media (max-height: 580px) {
+  .installation-zen-furin-position { width: 165px; height: 198px; left: calc(50% - 82.5px); top: 10%; }
+}

@@ -1,0 +1,62 @@
+.visual-tomeishi-page {
+  display: grid;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 32%, rgb(255 255 255 / 86%), transparent 40%),
+    linear-gradient(180deg, #ebe7df 0%, #d8d1c5 100%);
+}
+
+.visual-tomeishi-scene {
+  position: relative;
+  display: grid;
+  width: 760px;
+  height: 760px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgb(91 82 68 / 12%);
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 62%), rgb(245 241 233 / 72%)),
+    #e8e2d8;
+  box-shadow:
+    0 28px 80px rgb(50 43 33 / 16%),
+    inset 0 1px 0 rgb(255 255 255 / 72%);
+}
+
+.visual-tomeishi-scene::before {
+  position: absolute;
+  right: 8%;
+  bottom: 16%;
+  left: 8%;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgb(82 73 60 / 13%), transparent 70%);
+  content: '';
+  filter: blur(16px);
+}
+
+.visual-tomeishi-scene__wash {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-radial-gradient(
+      ellipse at 50% 78%,
+      transparent 0 24px,
+      rgb(106 95 77 / 3.5%) 25px 26px,
+      transparent 27px 52px
+    );
+  opacity: 0.74;
+}
+
+.visual-tomeishi-scene__artifact {
+  position: relative;
+  display: grid;
+  width: 440px;
+  height: 440px;
+  place-items: center;
+  overflow: visible;
+}

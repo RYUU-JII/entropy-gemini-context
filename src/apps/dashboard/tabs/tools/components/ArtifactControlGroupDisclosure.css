@@ -1,0 +1,8 @@
+.artifact-control-group { margin-top: 8px; border-top: 1px solid color-mix(in srgb, currentColor 18%, transparent); }
+.artifact-control-group__summary { display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 10px 2px; cursor: pointer; font-family: var(--font-theme-ui); font-size: 12px; list-style: none; }
+.artifact-control-group__summary::-webkit-details-marker { display: none; }
+.artifact-control-group__summary::before { content: '›'; display: inline-block; transition: transform 160ms ease; }
+.artifact-control-group[open] > .artifact-control-group__summary::before { transform: rotate(90deg); }
+.artifact-control-group__summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.artifact-control-group__count { margin-left: auto; opacity: .7; font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { .artifact-control-group__summary::before { transition: none; } }

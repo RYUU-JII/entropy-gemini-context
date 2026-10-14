@@ -1,0 +1,8 @@
+/* Shared utility configuration and explicit product-only source inventory. */
+@config '../../../tailwind.config.js';
+@source '../../**/*.{js,jsx,ts,tsx,html}';
+
+@theme {
+  --default-ring-width: 3px;
+  --default-ring-color: #3b82f6;
+}

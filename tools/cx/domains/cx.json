@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "cx",
+  "title": "Entropy CX workspace adapter",
+  "pathPrefixes": [
+    "tools/cx/"
+  ],
+  "exactPaths": [
+    "cx.workspace.json"
+  ],
+  "ownerDocs": [
+    "tools/cx/README.md"
+  ],
+  "resourceClaims": [
+    "runtime:cx-control-plane"
+  ],
+  "focusedChecks": []
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "id": "zen-bonsai-structural",
+  "title": "Zen bonsai structural smoke, not cutover or visual evidence",
+  "targets": [
+    "bonsai/morphology/structural-smoke-once"
+  ],
+  "estimatedSeconds": 5,
+  "guide": "docs/architecture/themes/zen/zen-bonsai-architecture-guards.md",
+  "resourceClaims": [
+    "runtime:zen-bonsai-morphology-structural-smoke"
+  ],
+  "execution": {
+    "owner": "verify",
+    "mode": "project_cli",
+    "recipeId": "contract-min-v1",
+    "executable": "node",
+    "args": [
+      "scripts/harness/entropyHarness.mjs"
+    ],
+    "adapterId": "zen-bonsai-morphology",
+    "input": {
+      "targetId": "bonsai/morphology/structural-smoke-once",
+      "mode": "structural_smoke",
+      "parameters": {
+        "preset": "contract-min-v1"
+      },
+      "configPath": null
+    },
+    "resultContractVersion": 1
+  }
+}

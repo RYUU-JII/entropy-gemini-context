@@ -1,0 +1,11 @@
+.artifact-range-control { min-width: 0; --artifact-range-accent: var(--color-accent); }
+.artifact-range-control__line { display: flex; align-items: center; gap: 12px; min-height: 32px; }
+.artifact-range-control__toggle { flex: 0 0 42px; padding: 5px 7px; border: 1px solid var(--color-border); border-radius: 6px; font-size: 10px; color: var(--color-on-surface-muted); background: transparent; }
+.artifact-range-control__toggle[aria-checked="true"] { color: var(--color-on-surface); border-color: var(--artifact-range-accent); background: color-mix(in srgb, var(--artifact-range-accent) 9%, transparent); }
+.artifact-range-control input[type="range"] { flex: 1; min-width: 36px; height: 24px; margin: 0; accent-color: var(--artifact-range-accent); cursor: ew-resize; }
+.artifact-range-control output { flex: 0 0 40px; text-align: right; font-size: 11px; font-variant-numeric: tabular-nums; color: var(--color-on-surface); }
+.artifact-range-control__preview { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; height: 22px; overflow: hidden; border-radius: 3px; margin: 6px 0 0 54px; }
+.artifact-range-control__swatch { background: repeating-linear-gradient(90deg, transparent 0 9px, #ffffff99 9px 10px), linear-gradient(115deg, #dc744d, #d9b76c 25%, #82a982 50%, #6f9cb4 75%, #9a7caa); }
+.artifact-range-control__ends { display: flex; justify-content: space-between; margin: 4px 0 0 54px; font-size: 9px; color: var(--color-on-surface-muted); }
+.artifact-range-control__error { font-size: 11px; color: var(--color-alert); margin-top: 6px; }
+.artifact-range-control button:focus-visible, .artifact-range-control input:focus-visible { outline: 2px solid var(--artifact-range-accent); outline-offset: 3px; }

@@ -1,0 +1,2433 @@
+{
+  "cooling_curve": {
+    "strength": "세기",
+    "curve": "시간에 따라",
+    "fixed": "항상 같게",
+    "description": "켜 둔 효과에만 적용합니다. 쇼츠 차단 등 구조적 차단과 정기 점검은 곡선을 따르지 않습니다.",
+    "save_error": "설정을 저장하거나 반영하지 못했습니다. 다시 시도해 주세요."
+  },
+  "artifact_appearance": {
+    "enabled": "켜짐",
+    "disabled": "꺼짐",
+    "actions": {
+      "veil": {
+        "enable": "드리운다",
+        "disable": "걷는다"
+      },
+      "open": {
+        "enable": "열어 둔다",
+        "disable": "닫아 둔다"
+      },
+      "empty": {
+        "enable": "비운다",
+        "disable": "드러낸다"
+      },
+      "bind": {
+        "enable": "묶는다",
+        "disable": "푼다"
+      },
+      "raise": {
+        "enable": "세운다",
+        "disable": "거둔다"
+      },
+      "gather": {
+        "enable": "모은다",
+        "disable": "흩는다"
+      },
+      "ring": {
+        "enable": "울린다",
+        "disable": "멈춘다"
+      },
+      "wind": {
+        "enable": "바람을 들인다",
+        "disable": "잠재운다"
+      },
+      "flow": {
+        "enable": "흘려보낸다",
+        "disable": "붙잡는다"
+      }
+    }
+  },
+  "artifact_number": {
+    "value_label": "{{label}} · 유지할 보호 탭 수",
+    "increase": "{{label}} 수 늘리기",
+    "decrease": "{{label}} 수 줄이기",
+    "invalid": "{{min}}–{{max}} 사이의 정수를 입력해 주세요."
+  },
+  "progression_unlock_debug": {
+    "aria_label": "해금 진행도 디버그 컨트롤",
+    "title": "개발 진행도 · {{target}}일 미리보기",
+    "loading": "실제 진행도 확인 중…",
+    "unavailable": "해금 스냅샷을 사용할 수 없음",
+    "live_status": "실제 사용 · {{canonical}}일",
+    "debug_status": "여정 미리보기 {{effective}}일 · 실제 {{canonical}}일",
+    "full_access_status": "전체 접근 · 실제 {{canonical}}일",
+    "scope_note": "0–{{target}}일로 아티팩트·분재·사이트 등록의 각 정책을 미리 봅니다. 실제 사용 기록과 흐름 그래프의 관측일은 바뀌지 않습니다.",
+    "day": "{{day}}일",
+    "live": "실제 사용",
+    "full_access": "전체 접근",
+    "first_vision_replay": "First Vision 다시 보기"
+  },
+  "development_tools": {
+    "title": "개발 도구",
+    "short_label": "DEV",
+    "open": "개발 도구 열기",
+    "close": "개발 도구 닫기",
+    "time_title": "정원 시간",
+    "time_scope": "정원 조명만 바꿉니다. 유효 사용일과는 별개입니다.",
+    "time_follow": "실제 시간 따르기",
+    "time_custom": "시간 지정",
+    "time_slider": "정원 표시 시간",
+    "time_fixed": "고정",
+    "time_live": "실시간"
+  },
+  "header": {
+    "title": "무기고",
+    "title_zen": "정원 도구",
+    "desc": "능동적 개입 프로토콜 및 인지 안정화 장치.",
+    "desc_zen": "흐름을 되찾는 도구들입니다."
+  },
+  "tools": {
+    "workspace_eyebrow": "작업공간",
+    "workspace_desc": "수동 액션과 복구 유틸리티를 다룹니다.",
+    "scope_artifacts": "수동 개입과 복구 액션은 여기에서 실행합니다.",
+    "scope_system": "권한과 개인정보는 Settings에서 관리합니다.",
+    "open_sites": "사이트",
+    "open_settings": "설정",
+    "support_mode": "지원"
+  },
+  "artifact_capabilities": {
+    "runs_on_protected_sites": "보호 사이트에서 작동",
+    "insights_can_improve_timing": "인사이트가 타이밍을 더 정교하게 만듦",
+    "needs_memory_access": "기억 접근 권한 필요"
+  },
+  "artifacts": {
+    "loop_breaker": {
+      "title": "사건의 지평선",
+      "title_zen": "대나무 경종",
+      "subtitle": "루프 브레이커",
+      "desc": "루프가 감지되면 흐름을 끊고, 계속할지 다시 묻습니다.",
+      "desc_zen": "속 빈 대나무가 문턱을 치며 흐름을 멈춥니다.",
+      "distance": "거리",
+      "boost": "숏폼 부스트",
+      "elastic_spring": "탄성 스프링",
+      "elastic_damping": "탄성 감쇠",
+      "scroll_impulse": "스크롤 임펄스",
+      "trip_distance": "작동 거리",
+      "anim_test": "루프 애니메이션 테스트",
+      "anim_test_zen": "대나무 경종 애니메이션 테스트",
+      "overlay_test": "루프 테스트",
+      "overlay_test_zen": "대나무 경종 테스트",
+      "anim_toast": "애니메이션 테스트 실행",
+      "pause_marker": "멈춤",
+      "title_clinical": "검사 에어록",
+      "title_scp": "방폭 에어록",
+      "title_entropy": "에어록"
+    },
+    "memory_purge": {
+      "title": "레테",
+      "title_zen": "망각의 물결",
+      "subtitle": "기억 정화",
+      "subtitle_zen": "흔적을 씻는 물결",
+      "desc": "흔적 형성을 방지합니다. 위험 구역의 방문 기록을 자동으로 지웁니다.",
+      "desc_zen": "흔적이 습관으로 굳기 전, 망각의 물결이 발자국을 씻어냅니다.",
+      "history_label": "방문기록",
+      "history_desc": "차단 사이트 방문 기록을 지우고 이후 방문도 정리합니다.",
+      "bookmark_label": "북마크 파괴",
+      "bookmark_desc": "차단 사이트 북마크를 복구본 없이 제거합니다. 필요하면 직접 HTML 백업을 받아두세요.",
+      "tab_evaporation_label": "방치된 탭 증발",
+      "tab_evaporation_desc": "백그라운드에서 일정 시간 방치된 차단 사이트 탭을 자동으로 닫고 흔적을 정리합니다.",
+      "tab_evaporation_timeout_options": {
+        "3": "3분",
+        "5": "5분",
+        "10": "10분",
+        "15": "15분"
+      },
+      "tab_evaporation_timeout_feedback": {
+        "3": "3분 이상 방치 시 탭을 닫습니다.",
+        "5": "5분 이상 방치 시 탭을 닫습니다.",
+        "10": "10분 이상 방치 시 탭을 닫습니다.",
+        "15": "15분 이상 방치 시 탭을 닫습니다."
+      },
+      "title_clinical": "표본 기록함",
+      "title_scp": "기억 카트리지",
+      "title_entropy": "기억 카트리지"
+    },
+    "shoji": {
+      "title": "여백의 격자",
+      "subtitle": "빛을 거르는 문",
+      "desc": "종이 격자가 색, 윤곽, 읽기 흐름을 부드럽게 낮춥니다.",
+      "title_clinical": "광학 분석기",
+      "title_scp": "검사 렌즈 배열",
+      "title_entropy": "광학 조리개"
+    },
+    "enso": {
+      "title": "궁극의 원",
+      "subtitle": "별들이 오래된 질문을 맴돌고 있다.",
+      "desc": "붓으로 그린 원 안에서 숫자와 조급함, 다음 탭의 충동이 조용히 멀어집니다.",
+      "title_clinical": "멸균 차폐막",
+      "title_scp": "검열 기록철",
+      "title_entropy": "신호 차폐 모듈"
+    },
+    "suikinkutsu": {
+      "title": "스이킨쿠츠",
+      "subtitle": "땅속 물금",
+      "desc": "낮은 돌 테두리 아래로 소리를 끌어내려 서늘한 울림으로 바꿉니다."
+    },
+    "rhythm_brake": {
+      "title": "멈춤의 돌",
+      "subtitle": "손끝의 마찰",
+      "desc": "십자 매듭으로 묶인 돌이 빠른 스크롤의 박자에 무게를 둡니다.",
+      "title_clinical": "유량 완충기",
+      "title_scp": "억제 클램프",
+      "title_entropy": "관성 완충기"
+    },
+    "sentinel_flare": {
+      "title": "센티널 플레어",
+      "title_entropy": "경고 비콘",
+      "title_zen": "꿈속의 풍경",
+      "subtitle": "개입 비콘",
+      "subtitle_entropy": "프로토콜 트리거",
+      "subtitle_zen": "꿈결의 울림",
+      "desc": "전역 또는 현재 사이트의 목표를 넘으면 센티널 신호가 울립니다.",
+      "desc_entropy": "강한 신호로 센티널 응답을 호출합니다.",
+      "desc_zen": "꿈속의 풍경이 울리며 멈춤을 알립니다.",
+      "trigger": "트리거",
+      "trigger_basis": "발동 기준",
+      "trigger_basis_entropy": "소환 기준",
+      "trigger_basis_zen": "흐름 이탈 기준",
+      "site_goal": "사이트 예산",
+      "site_goal_entropy": "위험 구역 한도",
+      "site_goal_zen": "사이트 수행 목표",
+      "status": "상태",
+      "status_entropy": "링크 상태",
+      "status_zen": "흐름 상태",
+      "armed": "감시 중",
+      "armed_entropy": "추적 구역",
+      "armed_zen": "관찰 대상",
+      "breached": "한도 초과 대상",
+      "breached_entropy": "침범 구역",
+      "breached_zen": "흐름 이탈 대상",
+      "breach": "한도 초과",
+      "breach_entropy": "침범",
+      "breach_zen": "이탈",
+      "rule_summary": "전역 목표와 사이트별 목표가 발동 신호를 제공합니다.",
+      "rule_summary_entropy": "전역 한도와 구역별 한도가 발동 신호를 제공합니다.",
+      "rule_summary_zen": "전역 목표와 사이트 수행 목표가 울림의 기준이 됩니다.",
+      "target_feedback": {
+        "global_and_site": "전역 목표 · 개별 목표 {{count}}곳",
+        "global_only": "개별 목표 없음 · 전역 목표 적용",
+        "site_only": "개별 목표 {{count}}곳 · 전역 목표 없음",
+        "unconfigured": "목표 미설정"
+      },
+      "control_status": {
+        "site_policy": "개별 목표 끝맺음 {{state}}",
+        "global_policy": "전체 목표 끝맺음 {{state}}",
+        "open_policy": "Settings에서 보호 방식 설정",
+        "temporary_pause": "Furin 잠시 멈추기",
+        "temporary_resume": "Furin 일시정지 해제",
+        "temporary_pause_error": "일시정지 상태를 저장하지 못했습니다. 다시 시도해 주세요.",
+        "global_pause_hint": "보호 전체가 일시 정지되어 있습니다.",
+        "off": "꺼짐",
+        "paused": "켜짐 · 일시 정지됨",
+        "no_sites": "켜짐 · 보호 사이트 등록 대기",
+        "unconfigured": "켜짐 · 시간 설정 대기",
+        "mode_off": "켜짐 · 사용 기록이 꺼져 있어 대기",
+        "consent_required": "켜짐 · 사용 기록 동의 대기",
+        "excluded": "켜짐 · 시간 대상이 기록에서 제외되어 대기",
+        "global_only": "켜짐 · Sites의 전체 한도 {{minutes}}분에 연결됨",
+        "site_only": "켜짐 · Sites의 개별 한도 {{count}}곳에 연결됨",
+        "global_and_site": "켜짐 · 전체 {{minutes}}분 / 개별 {{count}}곳 한도에 연결됨",
+        "open_sites": "Sites에서 설정",
+        "open_recording": "기록 설정",
+        "open_exclusions": "기록 제외 설정"
+      },
+      "no_site_target": "사이트 탭에서 목표 시간을 지정하세요.",
+      "protocol_test": "프로토콜 테스트",
+      "spawn_test": "스폰 테스트",
+      "spawn_target_tab": "스폰 대상 탭",
+      "spawn_target_auto": "자동 (마지막 활성 웹 탭)",
+      "spawn_target_refresh": "탭 새로고침",
+      "spawn_position": "스폰 위치",
+      "spawn_position_auto": "자동(랜덤)",
+      "spawn_position_center": "중앙",
+      "spawn_position_manual": "직접 지정",
+      "spawn_position_x": "X 좌표 (%)",
+      "spawn_position_y": "Y 좌표 (%)",
+      "spawn": "강제 가동",
+      "halt": "중지",
+      "debug_controls": "디버그 제어",
+      "decoy_size": "풍경 크기",
+      "swarm_speed": "군집 속도",
+      "spawn_interval": "생성 간격",
+      "swarm_density": "군집 밀도",
+      "total_spawn_cap": "총 생성 상한",
+      "split_cap": "분열 상한",
+      "escalation": "가속도",
+      "basis_global_protocol": "전역 기준",
+      "basis_scope_target": "범위 기준",
+      "basis_global_or_scope": "혼합 기준",
+      "sites_in_scope": "범위 사이트",
+      "reference_over": "참고 목표 초과",
+      "reference_targets": "참고 목표",
+      "reference_only": "참고 전용",
+      "reference_targets_note": "사이트 목표는 현재 전략이 승격하지 않는 한 참고 값으로만 유지됩니다.",
+      "no_reference_target": "사용 가능한 범위 목표가 없습니다. 전역 프로토콜이 계속 기준이 됩니다.",
+      "scope_fallback": "기본 한도",
+      "title_clinical": "경보 비콘",
+      "title_scp": "격리 경보등"
+    },
+    "time_anchor": {
+      "title": "모노리스",
+      "title_zen": "백야의 포식자",
+      "subtitle": "시공간 닻",
+      "subtitle_zen": "엔트로피 역전기",
+      "desc": "시공간의 미끄러짐을 방지하는 중력장입니다.",
+      "desc_zen": "자극의 인과를 포식하여, 흩어지는 시선과 시간의 엔트로피를 역전시킵니다.",
+      "video_skip": "도약 무효화",
+      "video_skip_desc": "큰 폭의 점프가 감지되면 이동한 시간을 냉각시키거나 없었던 일로 되돌립니다.",
+      "shortform_block": "원인 소거",
+      "shortform_block_desc": "쇼츠와 릴스로 이어지는 첫 원인을 불빛 안에서 지웁니다.",
+      "title_clinical": "격리 캐비닛",
+      "title_scp": "격리 캡슐",
+      "title_entropy": "모노리스"
+    },
+    "advanced_config": "고급 설정",
+    "settings_open": "설정",
+    "settings_close": "닫기",
+    "primary_control": "기본 제어",
+    "live_metrics": "실시간 지표",
+    "unknown": "알 수 없음",
+    "runtime": {
+      "unavailable": "런타임 없음",
+      "execution_kinds": {
+        "filter_settings": "필터 설정",
+        "runtime_artifacts": "보호 런타임"
+      },
+      "states": {
+        "disabled": "유휴",
+        "armed": "준비",
+        "engaged": "작동 중",
+        "cleanup": "정리 중"
+      }
+    },
+    "toggle_neural_armed": "뉴럴 준비",
+    "toggle_arm_neural": "뉴럴 준비하기",
+    "toggle_system_active": "시스템 활성",
+    "toggle_activate_system": "시스템 활성화",
+    "lens": {
+      "title": "시야 필터",
+      "title_zen": "여백의 격자",
+      "desc": "이미지와 영상의 채도와 밝기를 먼저 낮추고, 블러는 필요할 때 따로 켭니다. 대비와 페이지 전체 흑백은 추가 조절에 있습니다.",
+      "desc_zen": "색과 빛을 먼저 누그러뜨리고, 필요한 만큼만 윤곽을 흐립니다.",
+      "children": {
+        "grayscale": {
+          "title": "페이지 전체 흑백",
+          "title_zen": "페이지 전체 흑백",
+          "desc": "페이지 전체의 색을 회색에 가깝게 바꾸는 강한 조절입니다. 미디어뿐 아니라 글자와 조작부에도 적용됩니다.",
+          "desc_zen": "페이지 전체의 색을 회색에 가깝게 바꾸는 강한 조절입니다. 미디어뿐 아니라 글자와 조작부에도 적용됩니다."
+        },
+        "blur": {
+          "title": "미디어 흐림",
+          "title_zen": "미디어 흐림",
+          "desc": "이미지와 영상의 윤곽을 흐립니다. 필요할 때 따로 켜는 선택 효과입니다.",
+          "desc_zen": "이미지와 영상의 윤곽을 흐립니다. 필요할 때 따로 켜는 선택 효과입니다."
+        },
+        "brightness": {
+          "title": "미디어 밝기",
+          "title_zen": "미디어 밝기",
+          "desc": "이미지와 영상의 밝기를 가볍게 낮춥니다. 채도 조절과 함께 눈부심을 누그러뜨립니다.",
+          "desc_zen": "이미지와 영상의 밝기를 가볍게 낮춥니다. 채도 조절과 함께 눈부심을 누그러뜨립니다."
+        },
+        "contrast": {
+          "title": "미디어 대비",
+          "title_zen": "미디어 대비",
+          "desc": "이미지와 영상의 명암 차이를 줄입니다. 채도와 밝기만으로 충분하지 않을 때 추가로 조절합니다.",
+          "desc_zen": "이미지와 영상의 명암 차이를 줄입니다. 채도와 밝기만으로 충분하지 않을 때 추가로 조절합니다."
+        },
+        "saturation": {
+          "title": "미디어 채도",
+          "title_zen": "미디어 채도",
+          "desc": "이미지와 영상의 선명한 색을 낮춥니다. 미디어의 색 자극부터 조절할 때 사용합니다.",
+          "desc_zen": "이미지와 영상의 선명한 색을 낮춥니다. 미디어의 색 자극부터 조절할 때 사용합니다."
+        },
+        "fullscreenVisualRelaxation": {
+          "title": "전체화면에서 시각 효과 완화",
+          "title_zen": "전체화면에서 시각 효과 완화",
+          "desc": "동영상 전체화면에서는 켜진 시각 효과를 한 단계 낮춥니다. 완화 시간대에는 잠시 해제하며, 목표 시간을 소진한 뒤에는 완화하지 않습니다.",
+          "desc_zen": "동영상 전체화면에서는 켜진 시각 효과를 한 단계 낮춥니다. 완화 시간대에는 잠시 해제하며, 목표 시간을 소진한 뒤에는 완화하지 않습니다.",
+          "inactiveDescription": "시각 효과를 하나 이상 켜면 적용됩니다. 완화 시간대의 전체화면 시청에는 해당 효과를 잠시 해제합니다."
+        }
+      },
+      "subtitle": "시야 필터",
+      "subtitle_zen": "시야 필터"
+    },
+    "veil": {
+      "title": "신호 차폐",
+      "title_zen": "궁극의 원",
+      "desc": "비교 숫자와 시간 신호, 숏폼 진입점을 가려 자극이 시선을 붙드는 길을 줄입니다.",
+      "desc_zen": "붓으로 그린 원 안에서 숫자와 조급함, 다음 탭의 충동이 조용히 멀어집니다.",
+      "children": {
+        "socialMetrics": {
+          "title": "반응 수치",
+          "title_zen": "비교의 숫자",
+          "desc": "반응·조회·규모 중 비교 숫자를 어디까지 숨길지 범위로 선택합니다.",
+          "desc_zen": "좋아요, 조회수, 팔로워처럼 나를 바깥의 숫자로 재단하게 만드는 신호의 범위를 고릅니다.",
+          "scope_options": {
+            "reactions": "반응",
+            "reactions_and_views": "반응 + 조회",
+            "all_comparison": "전체 비교"
+          },
+          "scope_feedback": {
+            "reactions": "좋아요와 댓글 같은 즉각 반응 숫자를 숨깁니다.",
+            "reactions_and_views": "반응 수치와 조회 수치를 함께 숨깁니다.",
+            "all_comparison": "팔로워와 구독자 같은 규모 숫자까지 모두 숨깁니다."
+          }
+        },
+        "timeSignals": {
+          "title": "시간 신호",
+          "title_zen": "시간의 흔적",
+          "desc": "최신성, 업로드 시점 같은 조급한 신호를 줄입니다.",
+          "desc_zen": "방금, 오늘, 몇 분 전 같은 최신성 표식을 낮춰 지금 당장 봐야 한다는 감각을 누그러뜨립니다."
+        },
+        "socialSurface": {
+          "title": "과시 표면",
+          "desc": "준비되면 과시성 소셜 표면의 존재감을 낮춥니다."
+        },
+        "shortformBlock": {
+          "title": "숏폼 차단",
+          "desc": "숏폼 진입 버튼을 지워, 무한 루프의 첫 시작을 막습니다.",
+          "title_zen": "짧은 흐름 가리기"
+        }
+      },
+      "subtitle": "신호 차폐",
+      "subtitle_zen": "별들이 오래된 질문을 맴돌고 있다."
+    },
+    "resonance": {
+      "title": "청각 공명",
+      "title_zen": "스이킨쿠츠",
+      "desc": "보호 탭의 소리를 먹먹하고 멀게 만들어 미디어 보상의 온도를 낮춥니다.",
+      "desc_zen": "소리를 자갈 아래로 떨어뜨려 미디어가 끌어당기는 힘을 식힙니다.",
+      "capture_action": "보호 페이지 물방울 연결",
+      "capture_started": "보호 페이지의 물방울로 청각 공명을 연결했습니다.",
+      "capture_failed": "청각 공명은 보호 사이트의 미디어 탭이 필요합니다.",
+      "capture_status_ready": "보호 페이지에서 미디어가 재생되면 물방울이 나타납니다.",
+      "capture_status_requesting": "물방울에서 탭 오디오 연결 중",
+      "capture_status_armed": "보호 미디어 재생 대기 중",
+      "capture_status_capturing": "보호 탭 오디오 공명 중",
+      "capture_status_permission": "탭 오디오 권한 필요",
+      "capture_status_failed": "탭 오디오 캡처 실패",
+      "children": {
+        "audioDulling": {
+          "title": "소리 먹먹함",
+          "desc": "보호 페이지에서 미디어가 재생되면 물방울을 띄우고, 누른 뒤 탭 오디오를 로컬 공명실로 통과시킵니다.",
+          "level_feedback": {
+            "1": "소리의 존재감과 고역 보상을 가볍게 낮춥니다.",
+            "2": "먹먹한 공간감으로 미디어 소리를 한층 멀리 보냅니다.",
+            "3": "소리를 비고 먼 울림으로 만들어 자동 몰입을 어렵게 합니다."
+          }
+        }
+      },
+      "subtitle": "청각 공명",
+      "subtitle_zen": "청각 공명"
+    },
+    "brake": {
+      "title": "리듬 제동",
+      "title_zen": "멈춤의 돌",
+      "desc": "클릭, 스크롤, 타이핑과 영상 건너뛰기에 저항을 주어 조급한 손끝을 늦춥니다.",
+      "desc_zen": "손끝의 조급한 터치, 스크롤, 타이핑의 관성을 무겁게 제어합니다.",
+      "children": {
+        "clickPause": {
+          "title": "클릭 멈춤",
+          "title_zen": "찰나의 침묵",
+          "desc": "버튼과 링크 클릭 시 찰나의 지연을 주어, 반사적인 이동을 멈춰 세웁니다.",
+          "desc_zen": "누름과 반응 사이에 고요한 틈을 두어 즉각적인 충동의 고리를 늦춥니다."
+        },
+        "scrollFriction": {
+          "title": "스크롤 마찰",
+          "desc": "스크롤에 물리적 마찰과 관성을 걸어, 피드를 끝없이 훑어내리는 손끝을 늦춥니다.",
+          "desc_zen": "스크롤에 물리적 마찰과 관성을 걸어, 피드를 끝없이 훑어내리는 손끝을 늦춥니다.",
+          "mode_options": {
+            "1": "빙판 맷돌",
+            "2": "깊은 물속",
+            "3": "진공관 추"
+          },
+          "mode_feedback": {
+            "1": "초기 정지 마찰을 돌파하면 스르륵 미끄러져 원하는 위치 정지를 방해합니다.",
+            "2": "천천히 스크롤하면 정상 작동하지만, 빠르게 튕길수록 끈적하게 굳어버립니다.",
+            "3": "무거운 추가 매달린 듯 한 박자 늦은 묵직한 탄성 지연을 부여합니다."
+          }
+        },
+        "inputVisualBrake": {
+          "title": "먹의 저항",
+          "title_zen": "묵흔의 결계",
+          "desc": "입력창을 짙은 먹물로 가려, 방금 쓴 글자에 집착하며 조급해지는 템포를 늦춥니다.",
+          "desc_zen": "성급히 쏟아낼수록 먹은 짙어지고, 호흡을 가라앉힐 때 비로소 맑아집니다."
+        },
+        "navigationButtonLock": {
+          "title": "되돌리기 잠금",
+          "desc": "마우스 측면 뒤로가기·앞으로가기 버튼을 페이지 안에서 삼켜, 돌아가려면 다시 직접 선택하게 합니다."
+        },
+        "skipFriction": {
+          "title": "건너뛰기 방지",
+          "desc": "영상 건너뛰기를 차단하여, 결말만 좇는 조급함을 멈춥니다.",
+          "policy_options": {
+            "hard_block": "완전 차단"
+          },
+          "policy_feedback": {
+            "hard_block": "앞으로 크게 건너뛰는 행동을 완전히 차단합니다."
+          },
+          "title_zen": "도약을 붙드는 돌",
+          "desc_zen": "앞으로 크게 건너뛰려는 순간, 작은 돌이 버티며 영상을 지금의 자리에 붙듭니다."
+        }
+      },
+      "subtitle": "리듬 제동",
+      "subtitle_zen": "손끝의 마찰"
+    },
+    "barrier": {
+      "tab_management": {
+        "title": "보호 탭 묶기",
+        "desc": "보호 탭을 창마다 Entropy 그룹으로 모읍니다. 직접 정리한 탭은 존중하며, 탭 정리 한도와 별개로 작동합니다. 그룹 저장·동기화는 Chrome 설정을 따릅니다.",
+        "permission_denied": "탭 그룹 권한이 허용되지 않아 묶기를 켜지 않았습니다.",
+        "permission_missing": "ON으로 저장되어 있지만 탭 그룹 권한이 없어 묶을 수 없습니다."
+      },
+      "title": "패턴 차단",
+      "title_zen": "백야의 포식자",
+      "desc": "의미를 해체하고 소비의 경계를 세우며, 보호 사이트로 뻗는 곁가지를 정리합니다.",
+      "desc_zen": "자극의 인과를 포식하여, 흩어지는 시선과 시간의 엔트로피를 역전시킵니다.",
+      "children": {
+        "textRhythm": {
+          "title": "텍스트 셔플",
+          "title_zen": "의미 해체",
+          "desc": "글줄과 획을 흩뜨려, 무의식적으로 훑어내리는 시선을 끊습니다.",
+          "desc_zen": "글줄과 획을 흩뜨려, 무의식적으로 훑어내리는 시선을 끊습니다."
+        },
+        "detourSpreadGuard": {
+          "title": "보호 사이트 탭 정리",
+          "title_zen": "곁가지 절단",
+          "desc": "모든 창의 보호 탭 수가 유지 목표를 넘으면 정리할 탭을 고릅니다. 1–20개로 설정하며, 일반 탭과 창 수는 세지 않습니다.",
+          "desc_zen": "모든 창의 보호 탭 수가 유지 목표를 넘으면 정리할 탭을 고릅니다. 1–20개로 설정하며, 일반 탭과 창 수는 세지 않습니다.",
+          "budget_feedback": "유지 목표 {{count}}개 · {{threshold}}번째 보호 탭부터 정리를 요청합니다.",
+          "max_tab_options": {
+            "1": "1개",
+            "2": "2개",
+            "3": "3개"
+          },
+          "max_tab_feedback": {
+            "1": "유지 목표는 1개입니다. 2번째 보호 탭부터 정리를 요청합니다.",
+            "2": "유지 목표는 2개입니다. 3번째 보호 탭부터 정리를 요청합니다.",
+            "3": "유지 목표는 3개입니다. 4번째 보호 탭부터 정리를 요청합니다."
+          }
+        },
+        "intentThreshold": {
+          "title": "소비 간격",
+          "title_zen": "소비 간격",
+          "desc": "보호 사이트의 소비 시간이 쌓이면, 현재 콘텐츠를 마친 뒤 다음으로 넘어가는 경계에서 멈춥니다. 경계를 밀어 계속 보거나 이번 소비를 끝낼 수 있습니다.",
+          "desc_zen": "보호 사이트의 소비 시간이 쌓이면, 현재 콘텐츠를 마친 뒤 다음으로 넘어가는 경계에서 멈춥니다. 경계를 밀어 계속 보거나 이번 소비를 끝낼 수 있습니다.",
+          "interval_options": {
+            "frequent": "8분",
+            "standard": "12분 · 기본",
+            "spacious": "20분"
+          },
+          "interval_feedback": "현재 사용하는 브라우저에서 선택한 보호 사이트 탭의 시간을 합산합니다. 콘텐츠 경계나 다른 개입을 기다리면 실제 표시는 더 늦어질 수 있습니다."
+        }
+      },
+      "subtitle": "패턴 차단",
+      "subtitle_zen": "엔트로피 역전기"
+    },
+    "flare": {
+      "title": "개입 알림",
+      "title_zen": "꿈속의 풍경",
+      "desc": "Sites의 시간 한도에서 멈춤을 제안합니다.",
+      "desc_zen": "Sites의 시간 한도에서 멈춤을 제안합니다.",
+      "children": {
+        "sentinelFlare": {
+          "title": "목표 울림",
+          "title_zen": "꿈속의 풍경",
+          "desc": "Sites에서 정한 시간에 잠시 멈추고 선택하도록 돕습니다.",
+          "desc_zen": "Sites에서 정한 시간에 잠시 멈추고 선택하도록 돕습니다."
+        }
+      },
+      "subtitle": "개입 알림",
+      "subtitle_zen": "꿈결의 울림"
+    },
+    "echo": {
+      "title": "흔적 정리",
+      "title_zen": "망각의 물결",
+      "desc": "노출 뒤에 남는 방문 흔적과 저장 흔적을 정리합니다.",
+      "desc_zen": "반복이 자국으로 굳기 전에 물결이 흔적을 씻어냅니다.",
+      "children": {
+        "memoryPurge": {
+          "title": "흔적 정리",
+          "title_zen": "망각의 물결",
+          "desc": "차단 사이트 방문 기록을 지우고 필요하면 저장 흔적도 함께 숨깁니다.",
+          "desc_zen": "반복이 깊어지기 전 발자국과 표식을 걷어냅니다."
+        },
+        "tabEvaporation": {
+          "title": "방치된 탭 증발",
+          "desc": "백그라운드에서 일정 시간 방치된 차단 사이트 탭을 자동으로 닫고 흔적을 정리합니다."
+        }
+      },
+      "subtitle": "흔적 정리",
+      "subtitle_zen": "흔적을 씻는 물결"
+    },
+    "gate": {
+      "title": "문턱 확인",
+      "title_zen": "대나무 경종",
+      "desc": "첫 진입을 한 번 묻고, 완전히 떠난 사이트는 한동안 닫아 둡니다.",
+      "desc_zen": "속 빈 대나무가 울릴 때마다 문턱을 넘는 걸음을 다시 묶습니다.",
+      "children": {
+        "entryCheckpoint": {
+          "title": "첫 울림",
+          "desc": "보호 사이트로 들어가기 전, 지금 이 걸음이 맞는지 한 번 묻습니다."
+        },
+        "returnGuard": {
+          "title": "되돌림 울림",
+          "desc": "보호 사이트의 탭을 모두 닫거나 다른 곳으로 옮기면, 그 사이트는 15분 동안 다시 열리지 않습니다. 아직 열려 있는 탭이 있으면 닫히지 않습니다."
+        }
+      },
+      "subtitle": "문턱 확인",
+      "subtitle_zen": "문턱 확인",
+      "cooldown_label": "냉각 구간"
+    }
+  },
+  "artifact_altar": {
+    "disclosure_refresh_failed": "아티팩트 접근 상태를 새로 확인하지 못했습니다: {{message}}",
+    "current_mode": "현재 모드",
+    "current_state": "현재 발현",
+    "bound_aspects": "각인된 속성",
+    "manifesting_on": "발현 범위",
+    "awaiting_signal": "신호를 기다리는 중",
+    "none_bound": "각인된 속성 없음",
+    "more_bound": "+{{count}}개 더",
+    "apply_recommended": "추천 사용",
+    "seal_artifact": "아티팩트 적용",
+    "revert_to_recommended": "추천으로 되돌리기",
+    "open_custom_controls": "세부 조절",
+    "close_custom_controls": "세부 닫기",
+    "custom_controls": "세부 조절",
+    "focused_aspect": "집중 속성",
+    "current_effect": "현재 적용",
+    "no_effects": "적용 효과 없음",
+    "detail_apply": "적용",
+    "detail_cancel": "취소",
+    "editing_badge": "편집 중",
+    "open_attunement_tablet": "세부 조율",
+    "close_attunement_tablet": "세부 조절 닫기",
+    "attunement_tablet": "세부 조절",
+    "deep_readings": "심층 판독",
+    "navigation": {
+      "label": "아티팩트 빠른 이동",
+      "previous": "이전 아티팩트",
+      "next": "다음 아티팩트",
+      "select": "{{index}}번 아티팩트 선택: {{title}}",
+      "load_failed": "아티팩트를 준비하지 못했습니다.",
+      "path_label": "아티팩트의 길",
+      "position": "{{index}} / {{count}} · {{title}}",
+      "retry": "다시 시도"
+    },
+    "dev_projection": {
+      "aria_label": "아티팩트 공개 개발용 프로젝션",
+      "badge": "DEV PROJECTION",
+      "safety": "표시 전용 · 실제 progression 변경 없음",
+      "settings_warning": "카드 조작은 실제 dev 설정에 저장됩니다.",
+      "stage": "{{total}}개 중 {{visible}}개 표시",
+      "live": "실제",
+      "none": "0개",
+      "previous": "이전",
+      "next": "다음",
+      "all": "전체",
+      "replay": "재생",
+      "pause": "일시정지"
+    },
+    "info_button_label": "설명",
+    "info_button_aria": "{{label}} 설명 열기",
+    "level": "레벨",
+    "off": "끔",
+    "on": "켬",
+    "intensity": "강도",
+    "policy": "정책",
+    "saved_setting": "보존값: {{value}}",
+    "turn_on_to_adjust": "켜면 조절할 수 있습니다",
+    "temporary_pause": "임시 정지",
+    "system_pause": "시스템 정지",
+    "pause_running": "가동",
+    "pause_paused": "정지",
+    "apply_recommendation": "추천 설정 적용",
+    "apply_recommendation_desc": "보수적인 시작 구성을 한 번 적용합니다.",
+    "pause": "일시정지",
+    "resume": "재개",
+    "pause_resume_desc": "세부 설정을 바꾸지 않고 이 아티팩트만 일시정지하거나 재개합니다.",
+    "master_toggle_enabled": "설정됨",
+    "master_toggle_disabled": "미설정",
+    "mode_labels": {
+      "level": "레벨 모드",
+      "custom": "커스텀 모드"
+    },
+    "custom_mode_hint": "각 항목을 조정한 뒤 적용하면 커스텀 구성으로 전환됩니다.",
+    "custom_mode_applied": "현재 커스텀 값이 적용 중입니다.",
+    "custom_mode_pending": "아직 적용되지 않은 커스텀 변경이 있습니다.",
+    "control_modes": {
+      "sealed": "잠금",
+      "recommended": "추천",
+      "strong": "강화",
+      "custom": "커스텀"
+    },
+    "ritual_states": {
+      "sealed": "잠금",
+      "dormant": "대기",
+      "attuned": "준비",
+      "awakened": "활성",
+      "custom": "커스텀"
+    },
+    "ritual_state_descriptions": {
+      "sealed": "아티팩트가 완전히 잠긴 상태입니다.",
+      "dormant": "아티팩트가 대기 중입니다.",
+      "attuned": "아티팩트가 준비된 상태입니다.",
+      "awakened": "아티팩트가 완전히 활성화된 상태입니다.",
+      "custom": "커스텀 값이 적용된 상태입니다."
+    },
+    "manifestation_states": {
+      "quiet": "고요",
+      "watching": "주시 중",
+      "manifesting": "발현 중",
+      "settling": "정리 중",
+      "unbound": "연결 안 됨"
+    },
+    "application": {
+      "permission_snapshot_unavailable": "미리보기만 가능: 권한 상태 확인 불가",
+      "runtime_snapshot_unavailable": "미리보기만 가능: 런타임 상태 확인 불가",
+      "inactive_protection_access": "미리보기만 가능: 보호 접근 필요",
+      "inactive_protected_sites": "미리보기만 가능: 보호 사이트 없음",
+      "inactive_memory_access": "미리보기만 가능: 기억 접근 필요",
+      "partial_protection_access": "접근 가능한 사이트에서만 활성",
+      "active_on_page": "현재 페이지에 적용 중",
+      "ready_on_page": "현재 페이지에서 준비됨",
+      "ready_protection": "보호 사이트 적용 준비됨",
+      "ready_memory": "기억 접근 준비됨",
+      "detail_protection_access": "사이트 제어 권한을 허용하면 적용됩니다.",
+      "detail_no_protected_sites": "보호 또는 예외 사이트를 먼저 추가하세요.",
+      "detail_permission_snapshot_unavailable": "권한 상태를 읽지 못했습니다: {{error}}",
+      "detail_runtime_snapshot_unavailable": "런타임 상태를 읽지 못했습니다: {{error}}",
+      "detail_memory_access": "정리하려면 기억 접근 권한이 필요합니다.",
+      "detail_partial_protection": "{{total}}개 중 {{covered}}개 접근 가능. {{missing}}개는 권한이 필요합니다.",
+      "detail_ready_protection": "저장되었고 가능한 사이트에 적용됩니다.",
+      "detail_ready_memory": "정리 설정이 저장되었고 기억 접근 권한이 준비되어 있습니다.",
+      "detail_active_on_host": "현재 {{host}}에 적용 중입니다.",
+      "detail_ready_on_host": "{{host}}에 적용할 준비가 되었습니다.",
+      "actions": {
+        "sites": "Sites 열기",
+        "permissions": "권한 설정 열기",
+        "retry_permissions": "권한 다시 확인",
+        "retry_runtime": "실행 상태 다시 확인",
+        "tab_groups": "탭 그룹 권한 허용",
+        "pending": "확인 중…"
+      }
+    }
+  },
+  "matrix": {
+    "flux_toggle": {
+      "armed": "플레어 가동",
+      "arm": "플레어 준비",
+      "activate_flow": "흐름 활성화",
+      "deactivate_flow": "흐름 비활성화",
+      "flow": "흐름",
+      "still": "정지"
+    },
+    "artifact_visuals": {
+      "event_horizon": "루프 차단기",
+      "lens": "글리프 프리즘",
+      "lethe": "기억 소거기",
+      "monolith": "시간 앵커",
+      "sentinel_flare_title": "센티널 플레어",
+      "sentinel_flare_link": "소환 링크",
+      "veil": "사이퍼 스크림"
+    }
+  },
+  "status": {
+    "api_unavailable": "API 사용 불가",
+    "no_target": "대상 탭을 찾을 수 없음",
+    "target_tab_missing": "선택한 대상 탭을 찾을 수 없음",
+    "injecting": "페이지에 적용 중...",
+    "link_failed": "연결 실패",
+    "signal_sent": "요청 전송됨",
+    "signal_established": "연결됨",
+    "transmission_failed": "전송 실패",
+    "transmission_failed_with_detail": "전송 실패: {{error}}",
+    "transmission_error": "전송 오류",
+    "transmission_error_with_detail": "전송 오류: {{error}}",
+    "history_permission_denied": "흔적 정리 권한이 거부되었습니다",
+    "bookmark_permission_denied": "북마크 제거 권한이 거부되었습니다",
+    "access_denied": "접근이 거부되었습니다",
+    "auth_required": "암호를 입력해야 합니다",
+    "auth_failed": "암호 인증에 실패했습니다",
+    "previewing_history": "방문기록 영향 범위 확인 중...",
+    "previewing_history_detail": "정리될 차단 방문기록을 계산하고 있습니다.",
+    "previewing_bookmarks": "북마크 영향 범위 확인 중...",
+    "previewing_bookmarks_detail": "영구 제거될 차단 북마크를 계산하고 있습니다.",
+    "purging": "방문기록 정리 중...",
+    "purging_detail": "Chrome 방문기록에서 차단 사이트 흔적을 지우는 중입니다.",
+    "purge_failed": "방문기록 정리에 실패했습니다",
+    "erased_records": "{{count}}개 방문기록 정리됨",
+    "clean": "정리 완료",
+    "history_pending": "{{count}}개의 방문기록 정리 예정",
+    "history_pending_detail": "{{domains}}개 도메인에서 Chrome 기록이 삭제됩니다.",
+    "history_done_detail": "{{domains}}개 도메인 정리 후 이후 방문도 자동으로 정리됩니다.",
+    "history_enabled_no_matches": "방문기록 자동 정리 켜짐",
+    "history_enabled_no_matches_detail": "기존 기록은 없고, 이후 방문은 자동 정리됩니다.",
+    "history_disabled": "방문기록 자동 정리 꺼짐",
+    "history_disabled_detail": "이후 차단 사이트 방문기록 자동 정리가 중지됩니다.",
+    "bookmark_pending_destroy": "{{count}}개 북마크 파괴 대기",
+    "bookmark_pending_destroy_detail": "{{domains}}개 도메인의 북마크가 Chrome에서 영구 제거됩니다.",
+    "bookmarks_destroyed": "{{count}}개 북마크 제거됨",
+    "bookmarks_destroyed_detail": "{{domains}}개 도메인의 북마크를 제거했습니다. Entropy는 복구본을 저장하지 않습니다.",
+    "bookmark_destroy_enabled_no_matches": "북마크 파괴 켜짐",
+    "bookmark_destroy_enabled": "북마크 자동 정리 켜짐",
+    "bookmark_destroy_enabled_detail": "Echo가 활성화되어 있을 때 보호 사이트의 북마크를 자동으로 제거합니다.",
+    "bookmark_destroy_apply_failed": "북마크 정리를 완료하지 못했습니다",
+    "bookmark_destroy_apply_failed_detail": "설정은 저장되었습니다. 위의 설정 상태에서 정리를 다시 시도할 수 있습니다.",
+    "bookmark_destroy_apply_pending": "북마크 정리 확인 중",
+    "bookmark_destroy_apply_pending_detail": "설정은 저장되었습니다. 위의 설정 상태에서 정리 진행 상황을 확인할 수 있습니다.",
+    "bookmark_destroy_enabled_no_matches_detail": "현재 제거할 북마크는 없고, 이후 보호 사이트 북마크는 자동 제거됩니다.",
+    "bookmark_destroy_disabled": "북마크 파괴 꺼짐",
+    "bookmark_destroy_disabled_detail": "이후 보호 사이트 북마크 자동 제거가 중지됩니다.",
+    "bookmark_backup_ready": "HTML 백업 생성됨",
+    "bookmark_backup_ready_detail": "{{count}}개 북마크를 파일로 내보냈습니다. Entropy는 이 URL 목록을 저장하지 않습니다.",
+    "bookmark_backup_failed": "HTML 백업 생성 실패",
+    "exporting": "생성 중...",
+    "export_done": "내보내기 완료",
+    "no_data": "데이터 없음",
+    "sentinel_flare_active": "개입 시퀀스: 활성",
+    "sentinel_flare_active_entropy": "센티널 링크: 활성",
+    "sentinel_flare_active_zen": "보호: 활성",
+    "sentinel_flare_standby": "개입 시퀀스: 대기",
+    "sentinel_flare_standby_entropy": "센티널 링크: 대기",
+    "sentinel_flare_standby_zen": "보호: 대기",
+    "sentinel_flare_patrol": "모니터링",
+    "sentinel_flare_patrol_entropy": "저신호 감시",
+    "sentinel_flare_patrol_zen": "모니터링",
+    "sentinel_flare_armed": "준비됨",
+    "sentinel_flare_armed_entropy": "링크 준비",
+    "sentinel_flare_armed_zen": "준비됨",
+    "sentinel_flare_breach": "발동됨",
+    "sentinel_flare_breach_entropy": "센티널 침범",
+    "sentinel_flare_breach_zen": "발동됨",
+    "on": "켜짐",
+    "off": "꺼짐"
+  },
+  "units": {
+    "min": "분",
+    "sec": "초",
+    "px": "px",
+    "ms": "ms"
+  },
+  "sentinel_flare_protocol": {
+    "site_furin_chime_label": "풍경의 여운",
+    "site_furin_reflection_title": "정해 둔 시간이 되었습니다.",
+    "site_furin_reflection_summary": "오늘 {{used}}분 · 설정 {{goal}}분",
+    "site_furin_reflection_unavailable": "사용 시간 확인 불가",
+    "site_furin_reflection_leaving": "탭을 닫습니다.",
+    "site_furin_wind_label": "바람을 보내 이 탭 닫기. Enter 또는 Space로 실행합니다.",
+    "site_furin_wind_hint": "눌러 옆으로 쓸고 놓으면 탭이 닫힙니다.",
+    "site_furin_wind_keyboard": "Enter / Space로 탭 닫기",
+    "site_furin_wind_release": "놓으면 탭 닫기 · Esc 취소",
+    "site_furin_meaning_clear_wind": "맑은 바람, 밝은 달",
+    "site_furin_meaning_still_water": "맑고 고요한 마음",
+    "site_furin_meaning_one_encounter": "단 한 번의 만남",
+    "site_furin_meaning_harmony": "조화 · 존중 · 맑음 · 고요",
+    "site_furin_meaning_one_act": "한 가지에 온전히 머묾",
+    "site_furin_meaning_flowing_clouds": "흐르는 구름과 물처럼",
+    "site_furin_close_failed": "탭을 닫지 못했습니다. 다시 시도해 주세요.",
+    "site_furin_reflection_continue": "계속 보기",
+    "site_furin_chime_caption": "바람이 한 번 지나갑니다.",
+    "site_furin_chime_complete_title": "정해 둔 한 구간이 끝났어요.",
+    "site_furin_chime_complete_body": "여기서 멈출까요, 조금 더 볼까요?",
+    "site_furin_chime_leave": "여기서 나가기",
+    "site_furin_chime_continue": "계속 보기",
+    "title": "개입 프로토콜",
+    "title_entropy": "센티널 프로토콜",
+    "title_zen": "개입 응답",
+    "title_localized": "개입 프로토콜",
+    "title_localized_entropy": "센티널 프로토콜",
+    "title_localized_zen": "개입이 필요합니다",
+    "simulation_drift": "주의 표류 감지",
+    "combined_goals_title": "사이트·전체 목표 도달",
+    "combined_goals_body": "이 사이트의 하루 목표와 전체 하루 목표에 모두 도달했어요.",
+    "simulation_drift_entropy": "시뮬레이션 드리프트 감지",
+    "simulation_drift_zen": "주의 표류 감지",
+    "hint": "플레어를 클릭해 동기화하십시오.",
+    "hint_entropy": "플레어를 클릭해 동기화하십시오.",
+    "hint_zen": "플레어를 클릭해 동기화하세요.",
+    "body": "사용 한도를 넘었습니다. 동기화하거나 대시보드로 돌아가세요.",
+    "body_entropy": "노출 한도를 넘었습니다. 동기화하거나 안전 구역으로 돌아가세요.",
+    "body_zen": "사용 한도를 넘었습니다. 동기화하거나 대시보드로 돌아가세요.",
+    "system_tag": "SENTINEL PROTOCOL ACTIVE",
+    "system_tag_zen": "센티널 프로토콜 가동",
+    "primary_cta": "동기화 후 계속",
+    "primary_cta_entropy": "동기화 후 계속",
+    "primary_cta_zen": "동기화 후 계속",
+    "primary_desc": "",
+    "primary_desc_zen": "동기화 후 계속 머뭅니다",
+    "secondary_cta": "대시보드 이동",
+    "secondary_cta_entropy": "대시보드 이동",
+    "secondary_cta_zen": "대시보드 열기",
+    "secondary_desc": "",
+    "secondary_desc_zen": "사이트를 떠나 대시보드로 돌아갑니다",
+    "recovery_pause_body": "주의 표류가 커지고 있습니다. 동기화하거나 잠깐 벗어나세요.",
+    "recovery_pause_body_global": "오늘 리듬이 기울고 있습니다. 멈추거나 패턴을 확인하세요.",
+    "recovery_pause_primary_cta": "동기화 후 머무르기",
+    "recovery_pause_primary_desc": "더 차분한 속도로 이어갑니다",
+    "recovery_pause_secondary_cta": "패턴 보기",
+    "recovery_pause_secondary_desc": "대시보드를 열고 이 루프를 끊습니다",
+    "recovery_dashboard_body": "세션이 목표에서 벗어납니다. 동기화하거나 대시보드를 여세요.",
+    "recovery_dashboard_body_global": "오늘 흐름이 목표에서 벗어납니다. 동기화하거나 패턴을 보세요.",
+    "recovery_dashboard_primary_cta": "동기화 후 머무르기",
+    "recovery_dashboard_primary_desc": "조심스럽게 이어갑니다",
+    "recovery_dashboard_secondary_cta": "패턴 보기",
+    "recovery_dashboard_secondary_desc": "잠시 벗어나 현재 보호 상태를 확인합니다",
+    "recovery_review_goal_body": "오늘 목표를 넘었습니다. 동기화하거나 사이트 목표를 검토하세요.",
+    "recovery_review_goal_body_global": "오늘 목표를 넘었습니다. 동기화하거나 한도를 검토하세요.",
+    "recovery_review_goal_primary_cta": "동기화 후 머무르기",
+    "recovery_review_goal_primary_desc": "동기화 후 잠시 더 머뭅니다",
+    "recovery_review_goal_secondary_cta": "목표 검토",
+    "recovery_review_goal_secondary_desc": "대시보드를 열고 이 사이트 목표를 조정합니다",
+    "ritual_title_site": "꿈속의 풍경이 울렸습니다",
+    "ritual_title_global": "하루의 종이 울렸습니다",
+    "ritual_step_site": "인도 잉어를 따라 천천히 귀환의 물길을 만드세요.",
+    "ritual_step_global": "그림자 잉어를 {{current}}/{{target}}마리 저지하세요. 남은 시간 {{seconds}}초.",
+    "ritual_hold_site": "귀환의 물결이 잦아드는 동안 한 호흡 머무르세요.",
+    "ritual_hold_global": "전체 리듬을 다시 맞추는 중입니다. 한 호흡만 더 기다리세요.",
+    "ritual_ready_site": "이제 선택하세요. 계속 머무를 이유가 아직 분명한가요?",
+    "ritual_ready_global": "센티널 저지 완료. 지금 이어갈 일이 오늘의 리듬과 맞나요?",
+    "ritual_failed_global": "시간이 닫혔습니다. 그림자 잉어가 다시 수면 아래로 사용자를 끌어당깁니다.",
+    "global_sentinel_title": "센티널 동기화가 상승 중입니다",
+    "global_sentinel_step": "동기화가 {{syncPercent}}%에 도달하기 전에 그림자 잉어를 {{current}}/{{target}}마리 잠재우세요. 남은 시간 {{seconds}}초.",
+    "global_sentinel_hold": "그림자 잉어가 잠들었습니다. 시뮬레이션의 결속이 풀리고 있습니다.",
+    "global_sentinel_ready": "센티널이 잠들었습니다. 이제 시뮬레이션을 붕괴시킬 수 있습니다.",
+    "global_sentinel_failed": "동기화가 완료되었습니다. 그림자 잉어가 사용자를 시뮬레이션에 다시 맞췄습니다.",
+    "global_sentinel_hud_title": "GLOBAL FURIN · DEBUG",
+    "global_sentinel_hud_boot": "첫 렌더 프레임 대기 중",
+    "global_sentinel_hud_status": "{{phase}} · 승인 입력 {{strokes}}회",
+    "global_sentinel_hud_meter": "균열 {{breakPercent}}% / 목표 {{breakTargetPercent}}% · 복구 압력 {{restorePercent}}%",
+    "global_sentinel_hud_hint": "복구까지 {{seconds}}초",
+    "global_sentinel_hud_waiting": "시작 입력 대기 · 시계 정지",
+    "global_sentinel_hud_finished": "판정 완료",
+    "global_sentinel_action_start": "잉어를 눌러 신호에 응답하세요",
+    "global_sentinel_action_repair": "고리가 열리면 한 번 · 놓쳐도 다음 박자에",
+    "global_sentinel_outcome_success_announcement": "복구 압력이 끊겼습니다. 균열이 열리고 있습니다.",
+    "global_sentinel_outcome_failure_announcement": "재동기화가 시뮬레이션 표면을 봉합하고 있습니다.",
+    "site_furin_title": "귀환의 물결이 열리고 있습니다",
+    "site_furin_brief_complete_body": "이 사이트에서도 정해 둔 시간에 닿았습니다. 지금 계속 보고 싶은지 선택하세요.",
+    "site_furin_brief_complete_title": "잠시 멈췄습니다",
+    "site_furin_brief_descent_announcement": "잉어가 가라앉고 있습니다. 잠시 물결을 바라보세요.",
+    "site_furin_brief_guidance_announcement": "잉어를 중앙의 원으로 이끌거나 물길에 맡기세요. 짧은 귀환 뒤 계속 볼지 선택할 수 있습니다.",
+    "site_furin_brief_guidance_hint": "가만히 물길에 맡겨도 됩니다. 잠시 머문 뒤 계속 볼지 선택하세요.",
+    "site_furin_brief_guidance": "잉어를 중앙의 원으로 천천히 이끄세요",
+    "site_furin_brief_title": "잠깐, 물길에 머물기",
+    "site_furin_action_start": "귀환의 물결에 몸을 맡기기",
+    "site_furin_prelude_title": "귀환의 물결",
+    "site_furin_prelude": "포인터를 천천히 움직여 잉어를 이끄세요",
+    "site_furin_prelude_hint": "누르지 않아도 따라옵니다. 가만히 물길에 맡겨도 됩니다.",
+    "site_furin_prelude_announcement": "귀환의 물결이 준비되었습니다. 포인터를 움직이거나 키보드 동작으로 시작하세요. 누르고 있을 필요는 없습니다.",
+    "site_furin_attunement_title": "물길이 열립니다",
+    "site_furin_attunement": "그대로 이어가세요",
+    "site_furin_attunement_hint": "포인터를 따라 천천히 헤엄칩니다.",
+    "site_furin_attunement_announcement": "물길을 맞추고 있습니다. 키보드 입력은 더 필요하지 않습니다.",
+    "site_furin_guidance_title": "물길 따라 모이기",
+    "site_furin_step": "잔물결을 향해 인도 잉어를 천천히 이끄세요",
+    "site_furin_guidance_hint": "연꽃마다 동료가 합류합니다. 모두 모일 때까지, 가만히 있어도 물길이 도와줍니다.",
+    "site_furin_guidance_announcement": "깨어난 동료 식신들이 한 마리씩 귀환의 물결에 합류하고 있습니다.",
+    "site_furin_return_point_title": "함께 돌아가기",
+    "site_furin_return_point": "중앙의 원 안으로 천천히 이끄세요",
+    "site_furin_return_point_hint": "잠시 머물면 대열이 함께 가라앉습니다. 물길에 맡겨도 됩니다.",
+    "site_furin_return_point_announcement": "다섯 마리가 모였습니다. 중앙의 원으로 이끌거나 물길에 맡기세요.",
+    "site_furin_descent_title": "한 물결로 귀환 중",
+    "site_furin_descent": "잉어가 고요히 가라앉습니다",
+    "site_furin_descent_hint": "물결이 잦아들면 계속 볼지 선택할 수 있습니다.",
+    "site_furin_descent_announcement": "다섯 마리가 함께 깊은 연못으로 가라앉고 있습니다.",
+    "site_furin_quiet_hold_title": "물결이 잦아듭니다",
+    "site_furin_hold": "아무것도 하지 않아도 됩니다",
+    "site_furin_quiet_hold_hint": "잠시 머무르면 의식이 완료되고, 이 사이트에 계속 머물지 선택할 수 있습니다.",
+    "site_furin_quiet_hold_announcement": "마지막 고요가 시작되었습니다. 아무것도 더 하지 않아도 됩니다.",
+    "site_furin_ready_title": "귀환 완료",
+    "site_furin_ready": "이 사이트로 돌아갈 이유가 아직 분명한지 선택하세요",
+    "site_furin_ready_hint": "페이지를 떠나 흐름을 확인하거나, 돌아갈 이유가 분명할 때만 계속하세요.",
+    "site_furin_ready_announcement": "귀환이 완료되었습니다. 이 사이트를 떠날지 의식적으로 계속할지 선택하세요.",
+    "site_furin_hud_status": "{{phase}} · 귀환 {{returnPercent}}% · 무리 {{schoolPercent}}%",
+    "site_furin_hud_meter": "물결 {{currentPercent}}% · 하강 {{descentPercent}}%",
+    "site_furin_hud_hint": "동료들이 모이면 중앙의 원으로 돌아갑니다.",
+    "site_furin_complete_title": "귀환의 물결이 잦아들었습니다",
+    "site_furin_complete_body": "깨어난 동료들이 한 물결로 돌아가고 페이지가 저녁 물빛 뒤로 물러났습니다. 이유가 아직 분명할 때만 이어가세요.",
+    "site_furin_complete_tag": "RETURN CURRENT COMPLETE",
+    "site_furin_complete_primary_cta": "페이지에서 벗어나기",
+    "site_furin_complete_primary_desc": "대시보드를 열어 방금 끊어낸 흐름을 확인합니다",
+    "site_furin_complete_secondary_cta": "이유가 분명해 계속 보기",
+    "site_furin_complete_secondary_desc": "이 사이트로 돌아갈 이유를 다시 선택합니다",
+    "outcome_success_title_global": "시뮬레이션 붕괴",
+    "outcome_success_body_global": "모든 그림자 잉어가 잠들었습니다. 시뮬레이션이 열리고 오늘의 보호 사이트에는 최고강도 필터가 고정됩니다.",
+    "outcome_success_tag_global": "SENTINEL PROTOCOL BREACHED",
+    "outcome_success_primary_cta_global": "붕괴 유지",
+    "outcome_success_primary_desc_global": "오늘 남은 보호를 최고강도로 유지합니다",
+    "outcome_success_secondary_cta_global": "대시보드 확인",
+    "outcome_success_secondary_desc_global": "붕괴된 흐름을 대시보드에서 확인합니다",
+    "outcome_failure_title_global": "재동기화 완료",
+    "outcome_failure_body_global": "당신의 정신 속에 다시금 그림자가 드리웁니다. 센티널 프로토콜 종료, 사용자의 시뮬레이션 동기화도 98%.",
+    "outcome_failure_tag_global": "SENTINEL PROTOCOL COMPLETE",
+    "outcome_failure_primary_cta_global": "안개 속으로",
+    "outcome_failure_primary_desc_global": "잠시 모든 필터가 걷힌 상태로 돌아갑니다",
+    "outcome_failure_secondary_cta_global": "대시보드 열기",
+    "outcome_failure_secondary_desc_global": "남은 흔적을 확인합니다",
+    "modal_aria_label": "집중 안내",
+    "modal_aria_label_zen": "센티널 프로토콜 — 집중 안내",
+    "rift_invite_aria_label": "잠시 쉬기",
+    "room_478_page_title": "Room 478",
+    "room_478_exit": "Room 478 나가기",
+    "room_478_breathing_label": "Room 478 호흡 명상",
+    "room_478_phase_arrival": "도착",
+    "room_478_phase_grounding": "가다듬기",
+    "room_478_phase_inhale": "들이쉬기",
+    "room_478_phase_hold": "머무르기",
+    "room_478_phase_exhale": "내쉬기",
+    "room_478_phase_still": "고요",
+    "room_478_return": "돌아가기",
+    "room_478_repeat": "한 호흡 더",
+    "room_478_grounding_hint": "스페이스바를 길게 눌러 원상 닫기",
+    "room_478_grounding_touch_hint": "길게 눌러 원상 닫기",
+    "room_478_status_arrival": "균열을 건넜습니다. 주변의 공간이 고요해지는 동안 잠시 머무르세요.",
+    "room_478_status_grounding": "호흡을 시작하려면 스페이스바를 길게 누르세요.",
+    "room_478_status_inhale": "빛이 중심으로 모이는 동안 천천히 숨을 들이쉬세요.",
+    "room_478_status_hold": "공간이 가라앉는 동안 편안히 숨을 머금고 머무르세요.",
+    "room_478_status_exhale": "화면의 잔향이 멀어지는 동안 천천히 숨을 내쉬세요.",
+    "room_478_status_still": "호흡이 끝났습니다. 고요에 머물거나 준비되면 돌아가세요.",
+    "room_478_departure_notice": "다음 행동을 천천히 선택해 보세요.",
+    "sync_level": "동기화 수준 {{percent}}%",
+    "sync_level_entropy": "동기화 수준 {{percent}}%",
+    "sync_level_zen": "동기화 정렬 {{percent}}%",
+    "telemetry": "동기화 {{percent}}% | {{runtime}} | 품질 {{quality}} | 개체 {{live}} | 누적 {{total}} | 분열 {{split}}",
+    "telemetry_entropy": "동기화 {{percent}}% | {{runtime}} | 품질 {{quality}} | 개체 {{live}} | 누적 {{total}} | 분열 {{split}}",
+    "telemetry_zen": "재동기화 {{percent}}% | {{runtime}} | 품질 {{quality}} | 잉어 {{live}} | 누적 {{total}} | 분열 {{split}}",
+    "telemetry_runtime_main": "메인",
+    "telemetry_runtime_main_zen": "캔버스",
+    "telemetry_runtime_worker": "워커",
+    "telemetry_runtime_worker_zen": "오프스크린",
+    "telemetry_quality_high": "높음",
+    "telemetry_quality_high_zen": "높음",
+    "telemetry_quality_medium": "중간",
+    "telemetry_quality_medium_zen": "중간",
+    "telemetry_quality_low": "낮음",
+    "telemetry_quality_low_zen": "낮음"
+  },
+  "history_modal": {
+    "preview_total": "{{count}}개 항목 영향",
+    "affected_domains": "{{count}}개 도메인",
+    "records_unit": "건",
+    "affected_list_label": "영향받는 도메인",
+    "more_domains": "외 {{count}}개 도메인",
+    "impact_hint": "세부 URL은 기기 밖으로 나가지 않고, 도메인별 개수만 집계합니다.",
+    "passcode_label": "인증 암호",
+    "passcode_placeholder": "계속하려면 암호를 입력하세요",
+    "cancel": "취소",
+    "effects": {
+      "history": "Chrome 방문기록에서 삭제",
+      "bookmark_destroy": "Chrome 북마크에서 영구 제거"
+    },
+    "irreversible_badge": "복구 불가",
+    "irreversible_body": "이 선택은 되돌릴 수 없습니다. Entropy는 당신의 URL을 저장하지 않으므로 유실 시 복구할 수 없습니다.",
+    "backup_cta": "백업 파일 받기",
+    "backup_busy": "백업 생성 중",
+    "bookmark_acknowledgement": "이 북마크들이 Chrome에서 영구 제거되며 Entropy 안에서는 복구할 수 없음을 이해했습니다.",
+    "modes": {
+      "history": {
+        "badge": "Chrome 방문기록 정리",
+        "title": "아래 방문기록이 정리됩니다",
+        "desc": "차단 사이트 방문 기록을 지우고 이후 방문도 정리합니다.",
+        "empty": "정리할 방문기록이 없습니다.",
+        "confirm": "정리 계속"
+      },
+      "bookmark_destroy": {
+        "badge": "Chrome 북마크 파괴",
+        "title": "과거로 돌아가는 손잡이를 끊습니다",
+        "desc": "아래 보호 사이트 북마크는 Chrome에서 제거됩니다. Entropy 내부에는 복구본이 남지 않습니다.",
+        "empty": "제거할 보호 사이트 북마크가 없습니다.",
+        "confirm": "영구 제거"
+      }
+    }
+  },
+  "koi_tuner": {
+    "header": "잉어 아키타입",
+    "tabs": {
+      "body": "신체",
+      "physics": "움직임",
+      "fins": "지느러미",
+      "env": "환경"
+    },
+    "sub_tabs": {
+      "structure": "골격",
+      "head": "머리",
+      "torso": "몸통",
+      "tail": "꼬리",
+      "locomotion": "운동",
+      "dynamics": "파동 역학",
+      "hybrid": "하이브리드 코어",
+      "debug": "디버그",
+      "shape": "형상",
+      "motion": "운동",
+      "ecosystem": "생태",
+      "waterTone": "수색",
+      "waterFx": "수면 효과",
+      "pectoral": "가슴지느러미",
+      "ventral": "배지느러미"
+    },
+    "params": {
+      "baseSize": "전체 크기",
+      "historyLength": "세그먼트 (MD)",
+      "headLen": "주둥이 길이",
+      "headWidth": "머리 너비",
+      "headMin": "코 너비",
+      "eyeFB": "눈 위치 (전/후)",
+      "eyeSP": "눈 간격 / 돌출",
+      "shoulderMax": "어깨 너비",
+      "shoulderPos": "어깨 위치",
+      "midWidth": "복부 너비",
+      "midPos": "복부 위치",
+      "tailWidth": "꼬리 기부 너비",
+      "tailCurve": "꼬리 테이퍼",
+      "swimModel": "유영 모델",
+      "compareSwimModels": "듀얼 모델 비교",
+      "compareModelA": "비교 모델 A",
+      "compareModelB": "비교 모델 B",
+      "speed": "시뮬레이션 속도",
+      "accelScale": "가속도",
+      "frictionScale": "관성 (마찰)",
+      "coreSegment": "피벗 위치",
+      "waveAmplitudeScale": "꼬리 진폭",
+      "wavelengthScale": "S-곡선 길이",
+      "spineStiffness": "척추 강도",
+      "swimSpeedScale": "꼬리 속도",
+      "eventHeadYawGain": "이벤트 머리 요 강도",
+      "eventHeadTurnLeadGain": "이벤트 턴 선행",
+      "eventHeadSwayGain": "이벤트 머리 흔들림",
+      "eventHeadPivotFollow": "이벤트 피벗 추종",
+      "eventEyeAnchorIndex": "이벤트 눈 기준 마디",
+      "koiMotionGrace": "우아함",
+      "koiMotionAgility": "민첩성",
+      "koiMotionTailDrive": "꼬리 추진감",
+      "koiMotionTurnSharpness": "턴 선명도",
+      "hybridCurvatureGain": "곡률 게인",
+      "hybridTurnResponse": "턴 응답",
+      "hybridThrustGain": "꼬리 추진 게인",
+      "hybridRearWaveGain": "후방 파동 게인",
+      "hybridCounterYawGain": "카운터 요 게인",
+      "hybridHeadSwayGain": "머리 흔들림 게인",
+      "debugOverlay": "디버그 HUD",
+      "debugVectors": "모션 벡터",
+      "pectoralSize": "크기",
+      "pectoralAngle": "각도",
+      "pectoralPosShift": "전/후 위치",
+      "pectoralPosSide": "간격 오프셋",
+      "pectoralWidthScale": "두께 배율",
+      "pectoralTipRoundness": "끝단 둥글기",
+      "pectoralLeadingCurvature": "앞날개 곡률",
+      "pectoralTrailingCurvature": "뒷날개 곡률",
+      "pectoralFlutterAmp": "펄럭임 강도",
+      "pectoralFlutterSpeed": "펄럭임 속도",
+      "ventralSize": "보조 크기",
+      "ventralAngle": "보조 각도",
+      "ventralPosShift": "보조 전/후 위치",
+      "ventralPosSide": "보조 간격 오프셋",
+      "tailFinSize": "꼬리지느러미 크기",
+      "tailFinSpread": "꼬리 펼침",
+      "tailFinNotchDepth": "꼬리 홈 깊이",
+      "tailFinBaseWidth": "꼬리 기저 폭",
+      "tailFinRoundness": "꼬리 둥글기",
+      "tailFinEdgeSharpness": "꼬리 외곽 날카로움",
+      "tailFinRootOffset": "꼬리 루트 오프셋",
+      "tailFinVeinAlpha": "꼬리 맥 가시성",
+      "pectoralTurnRateBoost": "회전 측 주파수 증폭",
+      "pectoralOpposingRateMin": "반대측 최소 주파수",
+      "pectoralOpposingFold": "반대측 접힘 강도",
+      "tailFinTurnSpreadGain": "회전 시 꼬리 펼침 증폭",
+      "timeMode": "시간 모드",
+      "manualHour": "연못 시간대",
+      "envCloudiness": "흐린 정도",
+      "envRainIntensity": "강우 강도",
+      "envWaterClarity": "수질 투명도",
+      "padDensity": "수련잎 밀도",
+      "flowerChance": "수련꽃 확률",
+      "petalDensity": "낙화량",
+      "petalFallCurve": "낙화 곡률",
+      "petalFallSway": "낙화 흔들림",
+      "petalFallSpeed": "낙화 속도",
+      "petalLandingScale": "착수 축소",
+      "petalFallSpawnRatio": "낙하 비율",
+      "petalZigzagChance": "지그재그 확률",
+      "particleDensity": "수중 부유물",
+      "rockDensity": "수중 돌 밀도",
+      "rockClusterBias": "돌 군집 성향",
+      "rockSizeVariance": "돌 크기 편차",
+      "rockToneVariance": "돌 색상 편차",
+      "sunlightIntensity": "햇살 강도",
+      "causticsIntensity": "물결 반사광 강도",
+      "pollenDensity": "윤슬 (꽃가루)",
+      "pondPaletteId": "연못 팔레트",
+      "waterReflectionAlgorithm": "수면 반사 알고리즘",
+      "compareWaterReflectionAlgorithms": "반사 알고리즘 A/B",
+      "compareWaterReflectionAlgorithmA": "반사 알고리즘 A",
+      "compareWaterReflectionAlgorithmB": "반사 알고리즘 B",
+      "waterReflectionStability": "반사 안정화(전체)",
+      "waterReflectionSpatialStability": "반사 공간 안정화",
+      "waterReflectionDetailStability": "반사 디테일 안정화",
+      "waterReflectionTemporalStability": "반사 시간 안정화",
+      "waterReflectionSoftKnee": "반사 소프트 니",
+      "pondClarityBlend": "상태 반영 비율",
+      "temporalNightTintStrength": "야간 색감 강도",
+      "pondSaturation": "연못 채도",
+      "pondLightness": "연못 밝기",
+      "pondDepthStrength": "수심 깊이감",
+      "pondContourDensity": "등심선 밀도",
+      "pondSedimentAmount": "퇴적물 양",
+      "causticsOpacity": "빛 패턴",
+      "vignetteStrength": "비네트 강도",
+      "enableRefraction": "물 굴절",
+      "enableSecondCausticLayer": "이중 코스틱"
+    },
+    "model_options": {
+      "cpg_dynamics": "연속 파동 (CPG)",
+      "kinematic_hybrid": "키네매틱 하이브리드",
+      "event_fsm": "이벤트 FSM",
+      "event_fsm_life_v1": "이벤트 FSM + Life Intent",
+      "event_fsm_life_v2": "Life Intent v2 (연속 척추)"
+    },
+    "reflection_algorithm_options": {
+      "ggx": "GGX",
+      "looped_caustic": "루프 코스틱",
+      "phase_noise": "노이즈 위상차",
+      "limited_waves": "제한 파동",
+      "yoonseul_glint": "윤슬 글린트",
+      "slope_lobe": "기울기 로브",
+      "stochastic_slope_spectrum": "확률적 기울기 스펙트럼",
+      "surface_field": "수면 정본 필드"
+    },
+    "palette_options": {
+      "zen_garden": "젠 가든",
+      "ramune_soda": "라무네 소다",
+      "summer_lagoon": "서머 라군",
+      "sapphire_pool": "사파이어 풀",
+      "emerald_glass": "에메랄드 글래스"
+    },
+    "badges": {
+      "cause": "원인",
+      "operational": "운영",
+      "creature": "생명체",
+      "advanced": "고급"
+    },
+    "groups": {
+      "environment": "환경",
+      "channels": "채널",
+      "ecosystem": "생태계",
+      "waterTone": "수면 톤",
+      "waterReflection": "수면 반사",
+      "waterReflectionLab": "반사 비교",
+      "koiModel": "잉어 모델",
+      "koiFeel": "잉어 느낌",
+      "koiLook": "잉어 외형",
+      "koiBody": "잉어 몸체",
+      "koiRig": "잉어 리그",
+      "koiSwim": "잉어 유영",
+      "koiAppendages": "잉어 지느러미",
+      "koiHybrid": "하이브리드 코어",
+      "koiCompare": "잉어 비교",
+      "koiDiagnostics": "잉어 진단"
+    },
+    "flow_stages": {
+      "environment": "환경",
+      "surface": "수면",
+      "koi": "잉어",
+      "inspect": "관측"
+    },
+    "targets": {
+      "world": "월드",
+      "koi": "잉어"
+    },
+    "modes": {
+      "authoring": "제작",
+      "advanced": "고급",
+      "lab": "실험실"
+    },
+    "panel": {
+      "scope": "대상",
+      "pipeline": "구조",
+      "active_model": "활성 모델"
+    },
+    "inactive_for_model": "{{model}}에서는 적용되지 않습니다.",
+    "actions": {
+      "reset": "초기화",
+      "copy": "설정 복사",
+      "copied_alert": "튜닝 설정이 클립보드에 복사되었습니다.",
+      "copy_failed": "튜닝 설정 복사에 실패했습니다.",
+      "hard_cache_reset": "캐시 하드초기화"
+    },
+    "domain_badge": "잉어: {{domain}}",
+    "select_url_prompt": "잉어: URL 선택",
+    "reroll_within_breed": "품종 내 변경",
+    "reroll_breed": "품종 변경",
+    "reroll_all_color": "전체 색 리롤",
+    "reroll_all_breed": "전체 품종 리롤",
+    "footer_hint": "모든 파라미터는 생체 역학과 연결되어 있습니다",
+    "default_hint": "바이오메카닉과 연결된 모든 파라미터",
+    "reroll_scene": "연못 리롤",
+    "sections": {
+      "koi_color": "색상",
+      "body_structure": "골격",
+      "body_head": "머리",
+      "body_torso": "몸통",
+      "body_tail": "꼬리",
+      "fins_shape": "지느러미 형상",
+      "fins_motion": "지느러미 운동",
+      "koi_look_body": "몸체 인상",
+      "koi_look_tail": "꼬리 인상",
+      "koi_rig_spine": "척추 리그",
+      "koi_rig_segmented_solver": "분절형 솔버"
+    },
+    "env_channels": {
+      "title": "채널 모니터",
+      "hint": "장면 원인이 바뀌면 실시간으로 갱신됩니다.",
+      "preview_note": "현재 설정으로 계산한 환경 미리보기입니다. 실행 중인 워커의 실측값은 아닙니다.",
+      "group": {
+        "illumination": {
+          "label": "광량",
+          "hint": "직사광·주변광·하이라이트"
+        },
+        "surface": {
+          "label": "수면과 반사",
+          "hint": "물결·반사·거칠기"
+        },
+        "volume": {
+          "label": "수질",
+          "hint": "탁도·투과율·바닥 가시성"
+        }
+      },
+      "directLight": {
+        "label": "직사광"
+      },
+      "ambientLight": {
+        "label": "주변광"
+      },
+      "specularResponse": {
+        "label": "하이라이트"
+      },
+      "waveEnergy": {
+        "label": "물결 에너지"
+      },
+      "roughness": {
+        "label": "거칠기"
+      },
+      "cloudReflectionFactor": {
+        "label": "구름 반사"
+      },
+      "mirrorFactor": {
+        "label": "거울 반사"
+      },
+      "turbidity": {
+        "label": "탁도"
+      },
+      "transmittance": {
+        "label": "투과율"
+      },
+      "bottomVisibility": {
+        "label": "바닥 가시성"
+      }
+    }
+  },
+  "furin_tuner": {
+    "header": "꿈속의 풍경 튜닝",
+    "tabs": {
+      "physics": "물리",
+      "environment": "환경"
+    },
+    "sub_tabs": {
+      "mass": "질량",
+      "length": "길이",
+      "damping": "감쇠",
+      "angular": "각속도",
+      "wind": "바람 설정"
+    },
+    "params": {
+      "M_BELL": "종 질량",
+      "M_STRIKER": "막대 질량",
+      "M_PAPER": "종이 질량",
+      "L_BELL": "종 진자 길이",
+      "L_STRIKER": "막대 진자 길이",
+      "L_PAPER": "종이 길이",
+      "DAMP_BELL": "종 감쇠",
+      "DAMP_STRIKER": "막대 감쇠",
+      "DAMP_PAPER": "종이 감쇠",
+      "SPEED_BELL": "종 각속도",
+      "SPEED_STRIKER": "막대 각속도",
+      "SPEED_PAPER": "종이 각속도",
+      "WIND_MULT": "바람 세기 배율",
+      "G": "중력 강도",
+      "IMPACT_ANGLE_DEG": "충돌 각도 (도)",
+      "WIND_DEBUG_STRENGTH": "디버그 바람 세기",
+      "WIND_DEBUG_PERIOD_SEC": "디버그 전환 주기 (초)",
+      "WIND_DEBUG_MIX": "디버그 혼합 비율 (0..1)"
+    },
+    "wind_debug": {
+      "header": "바람 패턴 (디버그)",
+      "modes": {
+        "off": "자연풍",
+        "fixed_left": "고정 좌풍",
+        "fixed_right": "고정 우풍",
+        "cycle_lr": "좌우 교대",
+        "cycle_rl": "우좌 교대"
+      }
+    },
+    "default_hint": "꿈속의 풍경 강체 진자 물리를 조정합니다."
+  },
+  "shishi_tuner": {
+    "header": "대나무 경종 튜닝",
+    "tabs": {
+      "balance": "밸런스",
+      "flow": "유량",
+      "impact": "충돌"
+    },
+    "params": {
+      "minAngle": "최저 각도",
+      "maxAngle": "최고 각도",
+      "spring": "복귀 스프링",
+      "angularDrag": "각속도 감쇠",
+      "balancePivotFill": "균형 수위",
+      "balanceGain": "수위-각도 민감도",
+      "stickTorqueThreshold": "정지 토크 임계",
+      "stickOmegaThreshold": "정지 속도 임계",
+      "inflowRate": "유입 속도",
+      "outflowRate": "배출 속도",
+      "spillStartAngle": "배출 시작 각도",
+      "spillBandDeg": "배출 전이 폭",
+      "spillPull": "배출 구간 하강 보조",
+      "fillRateTorque": "빠른 유입 추가 토크",
+      "fillRateResponse": "유입 반응 속도",
+      "impactAngle": "충돌 각도",
+      "impactMinSpeed": "최소 충돌 속도",
+      "impactRestitution": "충돌 반발 계수",
+      "pulseDecayPerSec": "지면 파동 감쇠",
+      "lipDecayPerSec": "입구 파동 감쇠"
+    },
+    "actions": {
+      "reset": "초기화",
+      "copy": "값 복사",
+      "copied": "복사됨",
+      "copy_failed": "튜닝 설정 복사에 실패했습니다."
+    },
+    "default_hint": "Artifact Lab에서 대나무 경종의 물리 속성을 조정합니다."
+  },
+  "experiment": {
+    "lab_module_error_title": "실험 모듈을 열 수 없음",
+    "lab_module_retry": "실험실 다시 열기",
+    "lab_sections": {
+      "home": {
+        "label": "실험 홈",
+        "title": "실험실",
+        "desc": "실험실과 개발 빌드 전용 런타임 도구 모음"
+      },
+      "bonsai": {
+        "label": "분재 실험실",
+        "title": "분재 실험실",
+        "desc": "A/B 테스트와 최적화 제어"
+      },
+      "bonsai_classic": {
+        "label": "분재 실험실 · Classic2",
+        "title": "Classic2 성장 실험실",
+        "desc": "메인 성장 모델을 기준으로 Classic 비교와 가역 성장 단계를 점검"
+      },
+      "sakura_refinement": {
+        "label": "벚꽃 시각 점검 샌드박스",
+        "title": "벚꽃 디테일 & 하이라이트 연구소",
+        "desc": "점 하이라이트 제거 및 오프스크린 고해상도 벚꽃 시각화 비교"
+      },
+      "bonsai_vnext": {
+        "label": "분재 실험실 VNext",
+        "title": "분재 실험실 VNext",
+        "desc": "차세대 생성기와 학습 흐름"
+      },
+      "bonsai_render_debug": {
+        "label": "렌더 진단",
+        "title": "분재 렌더 진단",
+        "desc": "시그니처와 캐시 동작을 한 번에 점검"
+      },
+      "sentinel_protocol": {
+        "label": "센티널 프로토콜",
+        "title": "센티널 프로토콜 실험실",
+        "desc": "런타임 디버거, 스폰, 분열, 프로토콜 강도를 조율"
+      },
+      "boot": {
+        "label": "부트 진단",
+        "title": "부트 진단실",
+        "desc": "대시보드 부팅 상태, trace, telemetry report를 분리 수집"
+      },
+      "blossom_lab": {
+        "label": "꽃 실험실",
+        "title": "꽃 실험실",
+        "desc": "꽃 형태 튜닝과 수동 적용"
+      },
+      "runtime": {
+        "label": "워커 런타임",
+        "title": "워커 런타임",
+        "desc": "워커 큐, 타임아웃, 폴백 진단"
+      },
+      "stats_rules": {
+        "label": "통계",
+        "title": "통계 실험실",
+        "desc": "수집, 저장, 조회, 표시 경계를 순서대로 점검"
+      },
+      "clse": {
+        "label": "CLSE",
+        "title": "CLSE 진단실",
+        "desc": "인지 부하 감지 상태, 개인 기준점, 원시 진단 로그를 점검"
+      },
+      "ceremony": {
+        "label": "연출 확인",
+        "title": "전환 연출 확인",
+        "desc": "연못 진입과 메모리 정화 연출을 데이터 변경 없이 재생"
+      },
+      "pond": {
+        "label": "연못 실험실",
+        "title": "연못 실험실",
+        "desc": "실시간 튜닝 피드가 연결된 연못 시뮬레이션"
+      },
+      "artifact_disclosure": {
+        "label": "공개 모델",
+        "title": "아티팩트 공개 모델",
+        "desc": "현재 로컬 기준으로 계산한 단계별 공개 순서"
+      },
+      "artifact": {
+        "label": "아티팩트 실험실",
+        "title": "아티팩트 실험실",
+        "desc": "프로토콜 아티팩트 미리보기와 동작 상태"
+      }
+    },
+    "lab_actions": {
+      "open": "열기",
+      "back": "실험 홈"
+    },
+    "vnext_growth_lab": {
+      "seed": "시드",
+      "stage": "단계",
+      "randomize": "랜덤",
+      "reset": "초기화",
+      "claims": "점유 기록",
+      "copy_ledger": "JSON 복사",
+      "preset_compare": "프리셋 비교",
+      "stages": {
+        "seedling": "유묘",
+        "mid": "중간",
+        "mature": "성숙",
+        "display": "전시"
+      },
+      "controls": {
+        "trunk_movement": "줄기 움직임",
+        "branch_density": "가지 밀도",
+        "crown_openness": "수관 여백",
+        "blossom_bias": "개화 성향"
+      },
+      "metrics": {
+        "nodes": "노드",
+        "claims": "점유",
+        "attractors": "자원점",
+        "complexity": "복잡도",
+        "negative_space": "여백"
+      },
+      "presets": {
+        "balanced": "균형",
+        "windswept": "바람형",
+        "ramified": "세밀 가지",
+        "flowering": "개화"
+      },
+      "claim_kinds": {
+        "trunk_guide": "줄기 유도점",
+        "apex": "정점",
+        "light": "빛",
+        "space": "공간",
+        "style": "양식",
+        "pad": "패드",
+        "void": "여백"
+      },
+      "copy_states": {
+        "copied": "복사됨",
+        "failed": "복사 실패"
+      }
+    },
+    "runtime_debugger_option": {
+      "eyebrow": "런타임 디버깅",
+      "title": "보호 사이트 런타임 디버거",
+      "desc": "보호 사이트에서 통합 런타임 HUD를 열어 보호, 센티널, 피드, 동영상 스킵 로그를 확인합니다.",
+      "status_on": "보호 사이트 HUD 켜짐",
+      "status_off": "보호 사이트 HUD 꺼짐",
+      "saved_on": "보호 사이트에서 런타임 디버거가 열립니다.",
+      "saved_off": "보호 사이트 런타임 디버거 자동 열림을 껐습니다.",
+      "save_failed": "런타임 디버거 옵션 저장에 실패했습니다."
+    },
+    "boot_lab": {
+      "eyebrow": "대시보드 부트",
+      "title": "부트 진단실",
+      "desc": "현재 부팅과 최근 리로드 부팅의 시간, 상태, 오류, trace를 분리해서 캡처합니다.",
+      "trace_on": "Trace 켜짐 · {{count}}",
+      "trace_off": "Trace 꺼짐 · {{count}}",
+      "arm_trace": "다음 부트 추적",
+      "trace_reload": "새로고침 진단",
+      "cold_visual_reload": "콜드 비주얼 진단",
+      "refresh": "새로고침",
+      "clear": "비우기",
+      "copy_summary": "요약 복사",
+      "copy_timing": "시간 복사",
+      "copy_main_frame": "첫 프레임 복사",
+      "copy_errors": "오류 복사",
+      "copy_state": "상태 복사",
+      "copy_trace": "Trace 복사",
+      "copy_full": "전체 복사",
+      "copy_done": "부트 진단을 복사했습니다.",
+      "copy_failed": "부트 진단 복사에 실패했습니다.",
+      "trace_armed": "다음 부팅 trace를 켰습니다.",
+      "clear_done": "부트 진단 임시 기록을 비웠습니다.",
+      "state_title": "상태",
+      "timing_title": "시간",
+      "errors_title": "오류",
+      "trace_title": "Trace",
+      "metric_status": "상태",
+      "metric_phase": "단계",
+      "metric_theme": "테마",
+      "metric_core": "코어",
+      "metric_main_frame": "첫 프레임",
+      "metric_mode": "진단 모드",
+      "metric_reports": "저장 리포트",
+      "metric_total": "총 시간",
+      "metric_loader": "셸 노출",
+      "metric_main_wait": "첫 프레임 대기",
+      "metric_long_tasks": "Long task",
+      "metric_boot_errors": "Boot 오류",
+      "metric_task_errors": "Task 오류",
+      "metric_trace_errors": "Trace 오류",
+      "tasks": "Tasks",
+      "phases": "Phases",
+      "main_frame_segment": "첫 프레임 구간",
+      "main_frame_trace_events": "Trace 이벤트",
+      "main_frame_pond": "연못",
+      "main_frame_bonsai": "분재",
+      "empty": "기록 없음",
+      "no_errors": "현재 캡처된 오류가 없습니다.",
+      "no_trace": "Trace 이벤트가 없습니다."
+    },
+    "artifacts": {
+      "Artifact_Monolith": "백야의 포식자",
+      "Artifact_Gate": "대나무 경종",
+      "Artifact_Lethe": "망각의 물결",
+      "Artifact_SentinelFlare": "꿈속의 풍경",
+      "active": "활성",
+      "idle": "유휴",
+      "color_title": "아티팩트 강조 색상",
+      "component_unavailable": "사용 가능한 아티팩트 컴포넌트가 없습니다."
+    },
+    "artifact_disclosure": {
+      "eyebrow": "진행 모델",
+      "title": "현재 아티팩트 순서",
+      "desc": "현재 로컬 설정과 가능한 런타임 상태를 proxy로 사용합니다. 집단 평균으로 정규화한 통계는 아닙니다.",
+      "source_label": "신호 출처",
+      "middle_eyebrow": "보조 신호",
+      "middle_title": "아티팩트 절대 신호 가중치",
+      "middle_desc": "이 점수는 현재 로컬 강도만 설명하며, 고정된 아티팩트 순서를 재배치하지 않습니다.",
+      "causality_eyebrow": "배리어 증거",
+      "causality_title": "{{artifact}} 증거 구간",
+      "causality_desc": "현재 로컬 인과 증거를 분석용으로만 분류하며 공개 순서는 바꾸지 않습니다.",
+      "score": "점수",
+      "base_priority": "기본값",
+      "evidence_band": "증거 구간",
+      "fixed_first": "첫 고정",
+      "fixed_final": "끝 고정",
+      "barrier_evidence": "증거 초점",
+      "artifacts": {
+        "lens": "쇼지",
+        "brake": "멈춤의 돌",
+        "gate": "대나무 경종",
+        "echo": "망각의 물결",
+        "flare": "꿈속의 풍경",
+        "barrier": "백야의 포식자",
+        "veil": "엔소"
+      }
+    },
+    "ceremony_preview": {
+      "eyebrow": "연출 프리뷰",
+      "title": "전환 연출 수동 재생",
+      "desc": "실제 진행 상태나 기록을 바꾸지 않고 현재 페이지 위에서 시각 효과만 재생합니다.",
+      "status_idle": "대기 중",
+      "status_playing": "{{title}} 재생 중",
+      "status_last": "마지막: {{title}}",
+      "play": "재생",
+      "play_aria": "{{title}} 재생",
+      "replay_first_vision": {
+        "eyebrow": "First Vision 프리뷰",
+        "title": "전체 오프닝 다시 보기",
+        "desc": "일회성 개발 연출을 요청한 뒤 새로고침합니다. 실제 First Vision과 진행도 기록은 바꾸지 않습니다.",
+        "button": "다시 보기 후 새로고침",
+        "button_aria": "실제 진행도를 바꾸지 않고 First Vision 다시 보기",
+        "status_idle": "세션 전용 프리뷰이며 완료 후 전부 열린 개발 모드로 돌아갑니다.",
+        "status_busy": "세션 전용 First Vision 프리뷰 준비 중...",
+        "status_done": "프리뷰를 준비했습니다. 새로고침합니다...",
+        "status_error": "프리뷰 요청 실패: {{error}}"
+      },
+      "items": {
+        "firstVisionDescent": {
+          "title": "연못 첫 진입",
+          "desc": "첫 연못 시야에서 내려오는 사쿠라와 빛 전환을 재생합니다."
+        },
+        "memoryPurgeTide": {
+          "title": "메모리 퍼지",
+          "desc": "기억 정화의 파도와 거품 전환을 재생합니다."
+        }
+      }
+    },
+    "pond_lab": {
+      "eyebrow": "연못 데이터",
+      "title_synthetic": "가상 fixture",
+      "title_live": "실제 대시보드 피드",
+      "mode_synthetic": "격리 가상",
+      "mode_live": "실제 데이터",
+      "randomize": "랜덤",
+      "copy_snapshot": "스냅샷 복사",
+      "copy_snapshot_done": "스냅샷 복사됨 · 잉어 {{count}}마리",
+      "copy_snapshot_failed": "스냅샷 복사 실패",
+      "copy_snapshot_empty": "복사할 잉어 후보가 없습니다",
+      "metric_seed": "Seed {{seed}}",
+      "metric_candidates": "잉어 후보 {{count}}개",
+      "metric_pressure": "압력 케이스 {{count}}개 · 최대 {{max}}",
+      "metric_share": "최대 비중 {{value}}",
+      "visual_profile": {
+        "title": "시각 프로필",
+        "mode_single": "단일",
+        "reset": "제품 기본값",
+        "axes": {
+          "floor": "바닥",
+          "plants": "식생",
+          "rocks": "돌",
+          "sunlight": "햇빛"
+        },
+        "options": {
+          "floor": {
+            "product": "제품",
+            "mineral_airy": "미네랄 에어리 v1",
+            "neutral_depth": "뉴트럴 깊이감 v2"
+          },
+          "plants": {
+            "product": "제품",
+            "botanical": "보태니컬"
+          },
+          "rocks": {
+            "product": "제품",
+            "natural": "내추럴",
+            "grounded": "그라운디드",
+            "ishigumi": "이시구미"
+          },
+          "sunlight": {
+            "product": "제품",
+            "lacy_connected": "레이시 + 커넥티드"
+          }
+        }
+      },
+      "effects_title": "효과 제어",
+      "reset_pending": "캐시 초기화 중…",
+      "reset_complete": "캐시 삭제 완료",
+      "reset_scope": "저장된 잉어 외형·활동 프로필·배치 캐시를 삭제하고 연못을 다시 시작합니다. 튜닝 설정은 유지됩니다.",
+      "runtime": {
+        "idle": "연못 대기",
+        "mount_wait": "데이터·화면 준비 대기",
+        "attached": "화면 연결됨",
+        "starting": "연못 시작 중",
+        "worker_ready": "워커 준비 · 첫 화면 대기",
+        "first_frame_committed": "연못 실행 중 · 첫 화면 확인됨",
+        "degraded": "연못 성능 저하",
+        "failed": "연못 실행 실패",
+        "disposed": "연못 종료됨"
+      },
+      "effect_groups": {
+        "gates": "물 효과 스위치",
+        "surface": "수면",
+        "layers": "수중 레이어",
+        "interaction": "그림자·물결"
+      },
+      "effect_controls": {
+        "waterEffectsEnabled": "물 효과 전체",
+        "waterSurfaceEffectsEnabled": "수면 효과",
+        "waterLayerEffectsEnabled": "수중 레이어",
+        "yoonseulEnabled": "윤슬",
+        "cloudReflectionEnabled": "구름 반사",
+        "surfaceOpticsEnabled": "광학 효과",
+        "surfaceNormalEnabled": "수면 법선",
+        "screenRefractionEnabled": "굴절",
+        "surfaceReflectionEnabled": "반사",
+        "rgbSplitEnabled": "색 분산",
+        "benthicEnabled": "바닥 질감",
+        "causticsEnabled": "집광 무늬",
+        "godRaysEnabled": "물속 빛줄기",
+        "atmosphereEnabled": "수중 분위기",
+        "komorebiEnabled": "나뭇잎 그림자",
+        "fishShadowEnabled": "잉어 그림자",
+        "koiWakeDisturbanceEnabled": "잉어 물결",
+        "tapDisturbanceEnabled": "클릭 물결",
+        "petalDisturbanceEnabled": "꽃잎 물결"
+      },
+      "workbench": {
+        "title": "연못 연구실",
+        "navigation": "연못 연구 도구",
+        "scene": "장면",
+        "water": "물과 빛",
+        "koi": "잉어",
+        "inspect": "진단",
+        "scene_hint": "입력 데이터와 장면을 정한 뒤, 같은 조건에서 변화를 관찰하세요.",
+        "water_hint": "효과를 켜고 끄거나 하나씩 분리해서 물과 빛의 기여를 비교하세요.",
+        "koi_hint": "모델을 선택하고 유영 감각을 조정하세요. 세밀한 물리·형상 값은 정밀 조정에 있습니다.",
+        "inspect_hint": "실행 상태를 확인하고 필요할 때 설정이나 저장 캐시를 초기화하세요.",
+        "copy_experiment": "실험 기록 복사",
+        "synthetic_note": "실제 사용 기록과 격리된 가상 입력입니다. 같은 명단을 유지하며 비교할 수 있습니다.",
+        "live_note": "대시보드의 실제 입력을 사용합니다. 시간이 지나면 명단과 상태가 달라질 수 있습니다.",
+        "new_roster": "새 명단 생성",
+        "effects_default": "효과 기본값",
+        "effects_off": "효과 모두 끄기",
+        "effects_note": "체크는 상위 스위치까지 반영한 효과 설정입니다. 오른쪽 분리 버튼은 필요한 상위 효과와 함께 해당 효과만 켭니다.",
+        "solo_active": "분리 관찰 중 · {{effect}}",
+        "solo_label": "{{effect}}만 관찰",
+        "solo_restore": "이전 효과 조합 복원",
+        "blocked_by": "{{gate}}가 꺼져 있어 대기 중",
+        "precision_controls": "정밀 조정",
+        "recipe_note": "이 감각 슬라이더는 여러 물리 값을 함께 바꿉니다. 정밀 조정 후 다시 움직이면 관련 물리 값도 새로 계산됩니다.",
+        "runtime_title": "실행 확인",
+        "runtime_note": "실행 상태는 첫 프레임 응답을 포함한 실제 렌더러 상태입니다. 개별 효과의 적용 응답이나 성능 측정값을 뜻하지는 않습니다.",
+        "intent_hud": "행동 의도 표시 · Life 모델",
+        "maintenance": "초기화",
+        "reset_tuning": "환경·잉어 튜닝 초기화",
+        "reset_tuning_note": "환경과 잉어 조정값을 기본값으로 되돌립니다. 시각 스타일과 효과 스위치는 각 영역에서 초기화합니다.",
+        "scanner_unavailable": "이 테마에서는 연못 렌더러를 사용할 수 없습니다.",
+        "tuner_unavailable": "이 테마에서는 세부 튜닝을 사용할 수 없습니다."
+      }
+    },
+    "render_trace": {
+      "eyebrow": "렌더 트레이스",
+      "title": "부트 렌더링 추적",
+      "desc": "다음 새로고침부터 부트, 첫 연출, 연못, 분재의 준비 상태를 콘솔과 임시 버퍼에 기록합니다.",
+      "status_enabled": "기록 중 · {{count}}개",
+      "status_disabled": "꺼짐 · {{count}}개",
+      "reload": "추적 후 새로고침",
+      "copy": "로그 복사",
+      "disable": "끄기",
+      "clear": "비우기",
+      "copy_done": "렌더 트레이스 로그를 복사했습니다.",
+      "copy_empty": "복사할 렌더 트레이스 로그가 없습니다.",
+      "copy_failed": "렌더 트레이스 로그 복사에 실패했습니다.",
+      "disabled_feedback": "렌더 트레이스를 껐습니다.",
+      "clear_feedback": "렌더 트레이스 로그를 비웠습니다."
+    },
+    "stats_pipeline_diagnostics": {
+      "eyebrow": "실시간 통계 파이프라인",
+      "title": "사용시간 추적 진단",
+      "desc": "데이터를 쓰지 않고 활성 탭 분류, 수집 정책, 알람, durable facts, 대시보드 읽기 모델을 한 번에 캡처합니다.",
+      "target_label": "대상 도메인",
+      "target_placeholder": "대상 도메인 (비우면 자동)",
+      "run": "진단 실행",
+      "running": "실행 중",
+      "copy": "요약 복사",
+      "copy_raw": "Raw 복사",
+      "clear": "비우기",
+      "copy_done": "요약 진단을 복사했습니다.",
+      "copy_raw_done": "Raw 진단을 복사했습니다({{lines}}줄).",
+      "copy_empty": "복사할 진단 리포트가 없습니다.",
+      "copy_failed": "진단 리포트 복사에 실패했습니다.",
+      "run_done": "진단 리포트를 만들었습니다.",
+      "run_failed": "진단 실패: {{message}}",
+      "metric_overall": "결과",
+      "metric_elapsed": "활성 누적",
+      "metric_hourly": "hourly 행",
+      "metric_today": "오늘 활성",
+      "primary_stage": "핵심 판정",
+      "stage_sequence": "단계별 경로",
+      "stage_sequence_desc": "브라우저 소스에서 대시보드 스냅샷까지 canonical path가 어디서 끊기는지 순서대로 봅니다.",
+      "boundary_title": "경계 비교",
+      "boundary_desc": "runtime, hourly ledger, repository read, facts summary, read model 사이의 숫자가 어디서 사라지는지 비교합니다.",
+      "target_matrix": "대상 도메인",
+      "target_matrix_desc": "도메인별 raw ledger, repository series, activity-day, Rules projection 값을 나란히 비교합니다.",
+      "target_empty": "대상 도메인이 없습니다. 직접 입력하거나 웹 탭을 활성화한 뒤 다시 실행하세요.",
+      "observations": "관찰 항목",
+      "observations_desc": "단계 판정 외에 같이 봐야 하는 fail/watch 신호입니다.",
+      "report_preview": "복사용 요약",
+      "summary_size": "요약: {{lines}}줄 / {{bytes}}",
+      "raw_size": "Raw: {{lines}}줄 / {{bytes}}",
+      "evidence": {
+        "active_tabs": "활성 탭",
+        "excluded": "제외",
+        "sites_sites": "Rules 사이트",
+        "tracked_dates": "추적 날짜",
+        "status_snapshot": "Status 스냅샷",
+        "sites_snapshot": "Rules 스냅샷",
+        "available": "가용성"
+      },
+      "boundary": {
+        "runtime": "Runtime",
+        "hourly": "Hourly ledger",
+        "repository": "Repository read",
+        "facts": "Facts summary",
+        "read_model": "Read model"
+      },
+      "unit": {
+        "rows": "행",
+        "domains": "도메인",
+        "sites": "사이트"
+      },
+      "target_table": {
+        "domain": "도메인",
+        "ledger": "Ledger active",
+        "repository": "Repository active",
+        "current_day": "Activity-day",
+        "sites": "Rules",
+        "patterns": "패턴",
+        "status": "판정"
+      },
+      "stage": {
+        "source": "소스",
+        "runtime_health": "런타임 헬스",
+        "policy": "정책",
+        "classification": "분류기",
+        "runtime_mutation": "런타임 기록",
+        "persistence": "영속화",
+        "facts_read": "Facts 읽기",
+        "target_domain": "대상 도메인",
+        "query_projection": "쿼리",
+        "dashboard_snapshot": "대시보드",
+        "unknown": "알 수 없음"
+      },
+      "signal": {
+        "mode": "모드",
+        "focus": "포커스",
+        "focused_active": "포커스 탭",
+        "settlement": "정산",
+        "candidate": "폴백 후보",
+        "classified": "활성/bg",
+        "policy": "정책 탭",
+        "diagnostics": "오류",
+        "hourly_usage": "Hourly 사용",
+        "hourly_today": "오늘 Hourly",
+        "tick_gap": "틱 간격",
+        "seal_gap": "정산 간격",
+        "save_lag": "저장 지연",
+        "health": "헬스",
+        "facts_active": "Facts 활성",
+        "facts_domains": "Facts 도메인",
+        "facts_repo_active": "Repo 활성",
+        "facts_repo_domains": "Repo 도메인",
+        "facts_repo_rows": "Repo rows",
+        "target": "대상",
+        "target_db": "대상 DB",
+        "target_ledger": "대상 Ledger"
+      },
+      "code": {
+        "tick_alarm_owner_unavailable": "heartbeat 알람 owner를 읽지 못했습니다.",
+        "tick_alarm_missing": "heartbeat 알람이 없습니다.",
+        "last_focused_window_owner_unavailable": "focused window owner를 읽지 못했습니다.",
+        "idle_state_owner_unavailable": "idle state owner를 읽지 못했습니다.",
+        "runtime_state_query_failed": "서비스 워커 런타임 진단 조회가 실패했습니다.",
+        "active_tab_missing": "진단 시점에 활성 브라우저 탭이 보이지 않았습니다.",
+        "source_surface_ready": "브라우저 소스 표면은 정상입니다.",
+        "stats_runtime_health_missing": "런타임 헬스 체크포인트가 아직 없습니다.",
+        "stats_runtime_health_write_failed": "런타임 헬스 체크포인트 저장이 실패했습니다.",
+        "tick_health_current": "heartbeat, active 정산, 저장 헬스가 최신입니다.",
+        "tick_not_completed_yet": "완료된 heartbeat tick이 아직 기록되지 않았습니다.",
+        "tick_gap_delayed": "마지막 완료 heartbeat tick이 지연되고 있습니다.",
+        "tick_gap_excessive": "heartbeat tick 간격이 사용시간 정확도를 위협할 만큼 큽니다.",
+        "tick_failed": "마지막 성공 tick 이후 최신 heartbeat tick이 실패했습니다.",
+        "stats_save_failed": "마지막 성공 저장 이후 최신 stats 저장이 실패했습니다.",
+        "active_seal_not_saved": "active elapsed는 정산됐지만 최근 저장이 뒤따르지 않았습니다.",
+        "stats_save_after_seal_missing": "active elapsed 정산 뒤 저장이 오래 지연되어 durability가 위험합니다.",
+        "foreground_resume_ambiguous_recorded": "런타임 헬스에 foreground resume 모호성이 기록되었습니다.",
+        "data_collection_disabled": "도메인 사용시간 수집이 꺼져 있습니다.",
+        "policy_rejected_trackable_tabs": "추적 가능한 탭이 수집 정책에서 거부되었습니다.",
+        "collection_policy_allows_tracking": "수집 정책은 현재 추적 경로를 허용합니다.",
+        "tab_urls_unavailable": "탭 URL 표면이 비어 있어 분류기가 도메인을 볼 수 없습니다.",
+        "idle_blocked_active_elapsed": "idle 상태 때문에 active elapsed가 막혔습니다.",
+        "tab_activity_batch_missing": "아직 탭 활동 배치가 실행되지 않았습니다.",
+        "active_tab_not_classified": "활성 탭은 있지만 배치가 active로 분류하지 못했습니다.",
+        "tabs_classified_as_background": "누적 시간이 background로 분류되고 있습니다.",
+        "background_elapsed_without_trackable_active": "추적 가능한 활성 웹 탭이 없어 열린 탭의 background elapsed만 관측되었습니다.",
+        "active_classifier_ready": "활성 탭 분류는 정상으로 보입니다.",
+        "active_elapsed_recorded": "런타임 배치에 active elapsed가 기록되었습니다.",
+        "first_tick_initialized_tabs_only": "배치가 추적 기준점만 초기화했습니다. 1분 뒤 다시 실행해보세요.",
+        "active_elapsed_not_applied": "활성 탭은 분류됐지만 elapsed가 적용되지 않았습니다.",
+        "no_active_elapsed_observed": "최근 배치에서 active elapsed가 보이지 않습니다.",
+        "previous_tab_settlement_failed": "이전 탭 정산이 실패했습니다.",
+        "previous_tab_settlement_incomplete": "이전 탭 정산이 불완전합니다.",
+        "foreground_segment_closed": "이전 전경 구간을 active elapsed로 닫았습니다.",
+        "foreground_segment_missing": "닫을 전경 구간의 런타임 스냅샷이 없습니다.",
+        "foreground_segment_tab_mismatch": "전경 구간의 tab id와 정산 대상 tab id가 다릅니다.",
+        "foreground_segment_not_started": "전경 구간이 시작 시각을 갖고 있지 않습니다.",
+        "foreground_segment_non_positive_elapsed": "전경 구간 elapsed가 0 이하입니다.",
+        "foreground_segment_policy_rejected": "전경 구간 도메인이 현재 수집 정책에서 제외되었습니다.",
+        "foreground_segment_no_change": "전경 구간 정산이 저장 변경을 만들지 않았습니다.",
+        "foreground_segment_resume_ambiguous": "서비스 워커가 열린 전경 구간을 들고 재개됐지만 현재 확인된 전경 탭과 일치하지 않습니다.",
+        "stats_runtime_diagnostic_error": "stats runtime diagnostics에 load/save/rollover 오류가 있습니다.",
+        "durable_hourly_rows_present": "durable hourly facts가 있습니다.",
+        "stats_hourly_ledger_inspection_failed": "durable hourly ledger 상세 조회가 실패했습니다.",
+        "hourly_rows_without_usage_delta": "hourly rows는 있지만 사용시간 delta가 없습니다.",
+        "hourly_rows_outside_today": "hourly rows는 있지만 오늘 날짜 bucket이 없습니다.",
+        "active_elapsed_not_yet_persisted": "active elapsed는 있지만 durable hourly 행이 아직 보이지 않습니다.",
+        "stats_hourly_empty": "durable hourly facts가 보이지 않습니다.",
+        "facts_query_failed": "최근 durable facts 쿼리가 실패했습니다.",
+        "recent_durable_facts_present": "최근 durable facts에 사용시간이 있습니다.",
+        "durable_rows_outside_recent_window": "durable rows는 있지만 최근 facts window에는 사용시간이 없습니다.",
+        "recent_durable_facts_empty": "최근 durable facts가 비어 있습니다.",
+        "target_domain_missing": "대상 도메인을 찾지 못했습니다. 직접 입력하거나 웹 탭을 활성화해 두세요.",
+        "target_domain_query_failed": "대상 도메인 durable facts 쿼리가 실패했습니다.",
+        "target_domain_facts_not_projected": "대상 도메인 durable facts는 있지만 Rules projection에 드러나지 않습니다.",
+        "target_domain_hourly_ledger_not_projected": "대상 도메인이 hourly ledger에는 있지만 facts/read model에는 드러나지 않습니다.",
+        "target_domain_facts_outside_sites_day": "대상 도메인 facts는 있지만 현재 Rules activity-day 밖에 있습니다.",
+        "target_domain_durable_facts_present": "대상 도메인 durable facts가 있습니다.",
+        "target_domain_runtime_only": "런타임에는 대상 active elapsed가 있지만 durable facts에는 아직 보이지 않습니다.",
+        "target_domain_not_in_durable_facts": "대상 도메인이 durable facts에 보이지 않습니다.",
+        "read_model_query_failed": "Status 또는 Rules 읽기 모델 쿼리가 실패했습니다.",
+        "durable_rows_not_projected": "durable rows는 있지만 읽기 모델이 비어 있습니다.",
+        "read_models_have_usage": "읽기 모델에 사용시간이 드러납니다.",
+        "read_models_empty": "읽기 모델이 비어 있습니다.",
+        "dashboard_snapshot_received": "대시보드 스냅샷을 받았습니다.",
+        "dashboard_snapshot_missing": "대시보드 스냅샷이 없습니다.",
+        "pipeline_clear": "실패 단계가 식별되지 않았습니다."
+      }
+    },
+    "sites_benchmark": {
+      "eyebrow": "통계 읽기 모델",
+      "title": "읽기 모델 벤치마크",
+      "desc": "IndexedDB를 쓰지 않고 합성 보호 사이트 시나리오를 통계 읽기 경로에 태웁니다.",
+      "run": "시나리오 실행",
+      "running": "실행 중",
+      "running_detail": "합성 Rules 시나리오를 실행하는 중...",
+      "copy": "리포트 복사",
+      "clear": "비우기",
+      "empty": "아직 벤치마크 리포트가 없습니다.",
+      "copy_done": "벤치마크 리포트를 복사했습니다.",
+      "copy_empty": "복사할 벤치마크 리포트가 없습니다.",
+      "copy_failed": "벤치마크 리포트 복사에 실패했습니다.",
+      "run_done": "{{count}}개 시나리오 결과를 만들었습니다.",
+      "run_failed": "벤치마크 실패: {{message}}",
+      "summary_total": "총 계산 시간",
+      "summary_slowest": "가장 느린 시나리오",
+      "summary_flags": "주의 / 높음",
+      "metric_days": "일수",
+      "metric_domains": "도메인",
+      "metric_intels": "인텔",
+      "metric_candidates": "후보",
+      "metric_generate": "생성",
+      "metric_compute": "계산",
+      "metric_rows": "행 h/domain",
+      "scenarios": {
+        "protected-core-30d": "보호 핵심 · 30일",
+        "sites-pro-mixed-30d": "Rules Pro 혼합 · 30일",
+        "long-baseline-90d": "긴 기준선 · 90일",
+        "wide-domain-stress-30d": "넓은 도메인 스트레스 · 30일"
+      }
+    },
+    "bonsai_debug": {
+      "eyebrow": "분재 디버그",
+      "title": "생명 상태 프리뷰",
+      "mode_live": "실제 데이터",
+      "mode_override": "디버그 오버라이드",
+      "reset": "초기화",
+      "activation_label": "활성화도",
+      "activation_hint": "재배 ledger를 쓰지 않고 생기, 스트레스, 건조, 개화 상태만 미리봅니다.",
+      "growth_label": "성장 단계",
+      "growth_hint": "재배 성장과 같은 묘목, 어린 분재, 완성 분재 임계값으로 매핑합니다.",
+      "phase_seedling": "묘목",
+      "phase_juvenile": "어린 분재",
+      "phase_mature": "완성 분재",
+      "model_label": "성장 모델 · Classic2 기준",
+      "model_classic": "Classic 비교 기준",
+      "model_classic2": "Classic2 메인 기준"
+    },
+    "sentinel_lab": {
+      "mode_eyebrow": "디버그 모드",
+      "mode_title": "프로토콜 접근",
+      "debug_enabled": "디버그 모드 켜짐",
+      "debug_disabled": "디버그 모드 꺼짐",
+      "debug_desc": "콘솔 플래그 없이 실험실 제어를 엽니다.",
+      "hud_visible": "디버그 HUD",
+      "hud_visible_desc": "디버그 발동에 런타임 HUD 텔레메트리를 포함합니다.",
+      "field_scope": "디버그 발동 기본값",
+      "scope_site": "사이트",
+      "scope_global": "전역",
+      "intensity": "프로토콜 강도",
+      "break_preview_eyebrow": "전역 균열",
+      "break_preview_title": "균열 성장 실험",
+      "break_preview_canvas": "전역 시뮬레이션 균열 프리뷰",
+      "break_control_fracture": "균열량",
+      "break_control_sync": "복구 압력",
+      "break_control_seed": "골격 시드",
+      "break_control_shape": "균열 형태",
+      "break_shape_seeded": "시드 기반",
+      "break_shape_diagonal_spine": "대각 골격",
+      "break_shape_center_spider": "중앙 방사",
+      "break_shape_edge_tear": "엣지 찢김",
+      "break_shape_horizontal_lcd_split": "가로 LCD 분할",
+      "break_inject_sentinel": "잉어 투입",
+      "break_reset_preview": "초기화",
+      "break_metric_fracture": "균열",
+      "break_metric_sync": "동기화",
+      "break_metric_repair": "복구",
+      "break_metric_shape": "형태",
+      "break_metric_length": "길이",
+      "break_metric_branch": "가지",
+      "break_metric_aperture": "벌어짐",
+      "break_metric_debris": "파편",
+      "spawn_eyebrow": "시뮬레이션",
+      "spawn_title": "그림자 잉어 스폰 제어",
+      "target_tab": "대상 탭",
+      "target_auto": "자동 대상",
+      "target_active_prefix": "활성: ",
+      "refresh_targets": "탭 새로고침",
+      "run_validation": "검증 실행",
+      "spawn": "스폰",
+      "spawn_only": "스폰만",
+      "worker_probe": "워커 프로브",
+      "frame_worker_probe": "프레임 호스트",
+      "stop": "정지",
+      "live_entities": "동시 개체",
+      "total_spawn_cap": "총 스폰 상한",
+      "split_cap": "분열 상한",
+      "split_generation": "분열 세대",
+      "validation_eyebrow": "검증",
+      "validation_title": "꿈속의 풍경 경로 리포트",
+      "validation_spawn": "스폰",
+      "validation_runtime": "런타임",
+      "validation_probe": "워커 프로브",
+      "validation_frame_host": "프레임 호스트",
+      "validation_main_canvas": "메인 캔버스",
+      "validation_surface": "서피스",
+      "validation_worker_support": "워커 지원",
+      "validation_bootstrap": "부트스트랩",
+      "validation_ready": "Ready 응답",
+      "validation_activation": "활성화",
+      "validation_frame_first_frame": "프레임 첫 렌더",
+      "validation_page_worker_blocked": "페이지 차단 확인",
+      "validation_detached": "분리됨",
+      "validation_active": "활성",
+      "validation_copy_hint": "검증을 실행한 뒤 이 리포트를 복사해서 에이전트에게 전달하세요.",
+      "validation_frame_success_worker_blocked": "프레임 호스트 렌더 성공, 페이지 워커는 차단됨.",
+      "validation_copy_report": "리포트 복사",
+      "validation_copy_unavailable": "Clipboard API를 사용할 수 없습니다.",
+      "validation_copied": "검증 리포트를 복사했습니다.",
+      "timeline_eyebrow": "관측성",
+      "timeline_title": "이벤트 타임라인",
+      "timeline_count": "{{count}}개 이벤트 기록",
+      "timeline_clear": "비우기",
+      "timeline_empty": "아직 센티널 프로토콜 이벤트가 없습니다.",
+      "timeline_error": "타임라인을 읽을 수 없음: {{error}}",
+      "timeline_phase_requested": "호출 요청",
+      "timeline_phase_background_accepted": "백그라운드 접수",
+      "timeline_phase_protected_site_validated": "보호 사이트 검증",
+      "timeline_phase_content_ready": "콘텐츠 준비",
+      "timeline_phase_nudge_dispatched": "넛지 발송",
+      "timeline_phase_content_rendered": "콘텐츠 렌더",
+      "timeline_phase_worker_probed": "워커 프로브",
+      "timeline_phase_config_delivered": "설정 전달",
+      "timeline_phase_stopped": "정지",
+      "timeline_phase_skipped": "스킵",
+      "timeline_phase_failed": "실패",
+      "timeline_status_info": "정보",
+      "timeline_status_pending": "대기",
+      "timeline_status_success": "성공",
+      "timeline_status_skipped": "스킵",
+      "timeline_status_error": "오류",
+      "timeline_source_experiment_lab": "실험실",
+      "timeline_source_runtime": "런타임",
+      "render_eyebrow": "렌더 추적",
+      "render_title": "스폰 경로 진단",
+      "render_root_cause": "현재 원인",
+      "render_no_trace": "아직 추적된 스폰이 없습니다.",
+      "render_last_target": "마지막 대상",
+      "render_current_session": "콘텐츠 세션",
+      "render_recent_events": "최근 런타임 이벤트",
+      "render_refresh_diagnostics": "진단 새로고침",
+      "render_diagnostics_error": "콘텐츠 진단을 읽을 수 없음: {{error}}",
+      "render_no_diagnostics": "콘텐츠 진단 없음",
+      "render_step_target": "대상 탭",
+      "render_step_content": "콘텐츠 준비",
+      "render_step_delivery": "메시지 전달",
+      "render_step_render": "렌더 확인",
+      "render_step_idle": "대기",
+      "render_step_pending": "진행 중",
+      "render_step_success": "성공",
+      "render_step_error": "오류",
+      "render_root_idle": "스폰을 실행하면 대상 선택부터 렌더 확인까지 이곳에 표시됩니다.",
+      "render_root_pending": "요청이 진행 중입니다. 콘텐츠 준비 또는 렌더 응답을 기다리고 있습니다.",
+      "render_root_api_unavailable": "Chrome 탭 API를 사용할 수 없어 대상 탭을 확인하지 못했습니다.",
+      "render_root_no_target": "대상 웹 탭을 찾지 못했습니다. x.com 탭을 활성화하거나 직접 선택하세요.",
+      "render_root_invalid_target": "선택한 탭이 사라졌거나 웹 페이지가 아닙니다.",
+      "render_root_dispatch_ready_timeout": "콘텐츠 리시버가 제한 시간 안에 receiver_ready를 보고하지 않았습니다. 코드: {{code}}",
+      "render_root_bootstrap_message_invalid": "background까지 도착한 bootstrap 메시지에 유효한 status가 없습니다. 리시버 상태를 올릴 수 없습니다.",
+      "render_root_bootstrap_stalled": "콘텐츠 런타임이 bootstrapping까지만 보고했고 receiver_ready로 전환되지 않았습니다.",
+      "render_root_bootstrap_signal_ignored": "콘텐츠 런타임은 receiver_ready/active를 보고했지만 background 세션 가드가 탭을 injecting 상태로 유지했습니다.",
+      "render_root_loader_no_bootstrap": "loader 주입은 끝났지만 background에 bootstrap 상태가 도착하지 않았습니다.",
+      "render_root_bootstrap_failed": "콘텐츠 bootstrap이 실패했습니다. 코드: {{code}}",
+      "render_root_inject_failed": "콘텐츠 스크립트 주입이 실패했습니다. 코드: {{code}}",
+      "render_root_missing_scripting": "scripting 권한이 없어 콘텐츠 스크립트를 주입할 수 없습니다.",
+      "render_root_content_not_ready": "콘텐츠 런타임이 준비 상태가 아닙니다. 코드: {{code}}",
+      "render_root_send_failed": "콘텐츠 리시버 준비 후 메시지 전달이 실패했습니다. 페이지 이동 또는 리시버 해제를 의심하세요.",
+      "render_root_rendered": "렌더링이 확인되었습니다. 프로토콜이 실제 화면 런타임까지 도달했습니다.",
+      "render_root_runtime_start_exception": "런타임 시작 중 예외가 발생했습니다. 렌더러 초기화/캔버스 소유권 전환 경로를 확인하세요. 코드: {{code}}",
+      "render_root_spawn_timeout": "스폰 요청은 전달됐지만 렌더 완료 신호가 시간 안에 돌아오지 않았습니다. 코드: {{code}}",
+      "render_root_worker_spawn_accepted_timeout": "worker가 스폰 요청을 accepted까지 처리했지만 다음 렌더 프레임에서 rendered 신호를 보내지 못했습니다. 코드: {{code}}",
+      "render_root_worker_spawn_requested_timeout": "worker로 스폰 요청을 보냈지만 accepted/rendered 신호가 돌아오지 않았습니다. 코드: {{code}}",
+      "render_root_spawn_canvas_missing": "스폰 요청은 main 런타임까지 도달했지만 canvas context를 확보하지 못했습니다. 코드: {{code}}",
+      "render_root_spawn_live_limit": "스폰 요청은 런타임까지 도달했지만 현재 live entity 제한이 이미 찼습니다. 코드: {{code}}",
+      "render_root_spawn_total_limit": "스폰 요청은 런타임까지 도달했지만 전체 스폰 예산이 이미 소진되었습니다. 코드: {{code}}",
+      "render_root_worker_script_origin_blocked": "worker 런타임이 선택됐지만 페이지 origin에서 extension worker script를 직접 열 수 없습니다. 코드: {{code}}",
+      "render_root_worker_bootstrap_failed": "worker 런타임 부트스트랩이 실패했습니다. 코드: {{code}}",
+      "render_root_spawn_runtime_inactive": "스폰 요청은 런타임까지 도달했지만 런타임이 활성 상태가 아닙니다. 코드: {{code}}",
+      "render_root_worker_runtime_failed": "worker 런타임이 렌더 경로에서 실패했습니다. 코드: {{code}}",
+      "render_root_spawn_split_limit": "스폰 요청은 런타임까지 도달했지만 현재 split 제한 때문에 차단되었습니다. 코드: {{code}}",
+      "render_root_spawn_rejected": "스폰 요청이 런타임에서 거절되었습니다. 코드: {{code}}",
+      "render_root_render_failed": "스폰 응답이 렌더 완료로 끝나지 않았습니다. 코드: {{code}}",
+      "render_root_delivered": "요청이 콘텐츠 런타임까지 전달되었습니다.",
+      "render_root_unknown": "아직 분류되지 않은 실패입니다. 코드: {{code}}"
+    },
+    "render_debug": {
+      "actions": {
+        "run": "시퀀스 실행"
+      },
+      "status": {
+        "pass": "통과",
+        "fail": "실패",
+        "not_run": "대기"
+      },
+      "summary": {
+        "scene_updates": "씬",
+        "back_layer": "후면 베이크",
+        "front_layer": "전면 베이크",
+        "branch_rig": "가지 리그"
+      },
+      "columns": {
+        "step": "단계",
+        "scene": "씬",
+        "back": "후면",
+        "front": "전면",
+        "branch": "가지",
+        "reason": "이유"
+      },
+      "observations": {
+        "scene_changed": "변경",
+        "scene_steady": "유지",
+        "rebake": "리베이크",
+        "reuse": "재사용",
+        "rebuild": "재구성"
+      },
+      "steps": {
+        "baseline": "기준 렌더",
+        "wind_motion": "바람 움직임",
+        "gust_motion": "돌풍 움직임",
+        "bloom_band": "개화 구간",
+        "health_band": "건강 구간",
+        "light_band": "조명 구간",
+        "canvas_resize": "캔버스 변경",
+        "seed_change": "시드 변경",
+        "version_bump": "버전 변경",
+        "resume_rehydrate": "탭 복귀 재수화"
+      },
+      "reasons": {
+        "initial": "초기 베이크",
+        "wind_runtime": "런타임 움직임만 변경",
+        "bloom_backdrop": "개화 배경 구간 변경",
+        "health_full": "건강 구간이 전후면 변경",
+        "light_bake": "조명 베이크 구간 변경",
+        "canvas_static": "정적 캔버스 텍스처만 변경",
+        "seed_cache": "시드 캐시 경계",
+        "version_cache": "렌더러 버전 경계",
+        "resume_rig": "탭 복귀 가지 리그 재수화"
+      },
+      "empty": "시퀀스를 실행하면 현재 렌더 캐시 계약을 점검합니다."
+    },
+    "pond_controls": {
+      "strategy_label": "사이트 코이 색상 전략",
+      "strategy_options": {
+        "off": "끔",
+        "direct": "직접",
+        "hybrid": "하이브리드",
+        "breed": "품종 근사"
+      }
+    },
+    "blossom_lab": {
+      "preview_eyebrow": "라이브 프리뷰",
+      "preview_title": "단일 꽃 캔버스",
+      "preview_desc": "꽃을 따로 조정하고 Apply 때만 분재에 반영합니다.",
+      "pending_badge": "드래프트",
+      "applied_badge": "적용됨",
+      "preview_stage_label": "프리뷰 단계",
+      "preview_stage_auto": "자동",
+      "preview_stage_bud": "봉오리",
+      "preview_stage_half_open": "반개화",
+      "preview_stage_full": "만개",
+      "controls_eyebrow": "형태 제어",
+      "controls_title": "꽃 생성 팩터",
+      "controls_desc": "단순 미리보기 트릭이 아니라 실제 blossom generator 편향값을 조정합니다.",
+      "apply": "분재에 적용",
+      "revert": "드래프트 되돌리기",
+      "reset": "드래프트 초기화",
+      "apply_hint": "Apply를 누르면 이후 분재 렌더에 이 튜닝이 사용됩니다.",
+      "toast_applied": "꽃 튜닝을 분재에 적용했습니다.",
+      "preview_controls": {
+        "preview_yaw": {
+          "label": "방향 Yaw",
+          "hint": "꽃을 좌우로 돌려 보며 옆면 실루엣 품질을 확인합니다."
+        },
+        "preview_pitch": {
+          "label": "방향 Pitch",
+          "hint": "꽃을 위아래로 기울여 깊이감과 중심부 표현을 확인합니다."
+        }
+      },
+      "sliders": {
+        "openness_bias": {
+          "label": "개화 편향",
+          "hint": "꽃잎을 더 활짝 열지, 더 오므릴지 조정합니다."
+        },
+        "petal_length_scale": {
+          "label": "꽃잎 길이",
+          "hint": "꽃의 전체 실루엣이 길쭉해지거나 짧아집니다."
+        },
+        "petal_width_scale": {
+          "label": "꽃잎 너비",
+          "hint": "꽃잎이 가늘지, 넓적한지 조정합니다."
+        },
+        "petal_count": {
+          "label": "꽃잎 수",
+          "hint": "한 송이에서 보이는 꽃잎 수를 설정합니다."
+        },
+        "layers": {
+          "label": "레이어",
+          "hint": "안쪽 꽃잎 층을 추가해 더 풍성하게 만듭니다."
+        },
+        "ruffle_gain": {
+          "label": "주름감",
+          "hint": "꽃잎 가장자리의 물결감과 부드러움을 키웁니다."
+        },
+        "core_size_gain": {
+          "label": "중심부 크기",
+          "hint": "분홍 중심부의 존재감을 키우거나 줄입니다."
+        },
+        "inner_scale_gain": {
+          "label": "내부 스케일",
+          "hint": "안쪽 꽃잎의 퍼짐과 깊이를 조정합니다."
+        },
+        "notch_depth_gain": {
+          "label": "끝 갈라짐",
+          "hint": "꽃잎 끝의 갈라짐 깊이를 조정합니다."
+        },
+        "translucency_gain": {
+          "label": "반투명도",
+          "hint": "빛이 꽃잎을 얼마나 통과해 보일지 조정합니다."
+        },
+        "stamen_burst_gain": {
+          "label": "수술 강조",
+          "hint": "중앙 수술의 존재감을 더 약하게 혹은 강하게 만듭니다."
+        },
+        "warmth_bias": {
+          "label": "색 온기",
+          "hint": "차가운 연분홍과 따뜻한 분홍 사이의 느낌을 조정합니다."
+        }
+      }
+    }
+  },
+  "worker_runtime": {
+    "title": "워커 런타임",
+    "subtitle": "실패, 폴백, 큐 드롭, 취소 이벤트를 추적하는 워커 진단 스트림입니다.",
+    "refresh": "새로고침",
+    "clear": "지우기",
+    "events": "이벤트",
+    "fail": "실패",
+    "fallback": "폴백",
+    "circuit": "회로 차단",
+    "task_type": "작업 유형",
+    "priority": "우선순위",
+    "all_task_types": "모든 작업 유형",
+    "all_priorities": "모든 우선순위",
+    "filtered": "필터 적용: {{total}} / {{all}}",
+    "reset_filters": "필터 초기화",
+    "unknown": "알 수 없음",
+    "worker": "워커",
+    "task": "작업",
+    "priority_short": "우선",
+    "lane": "레인",
+    "context_short": "문맥",
+    "no_events": "아직 수집된 런타임 이벤트가 없습니다."
+  },
+  "shortform_blocker": {
+    "notice_navigation_blocked": "숏폼 이동이 차단되었습니다",
+    "overlay_title": "숏폼 차단 활성",
+    "overlay_description": "집중 유지를 위해 숏폼 페이지를 차단했습니다. 일반 피드로 돌아가세요.",
+    "leave_button": "피드로 이동",
+    "back_button": "뒤로"
+  },
+  "support": {
+    "eyebrow": "지원 모드",
+    "title": "스토리지 인스펙터",
+    "desc": "숨겨진 스토리지 진단과 복구 액션입니다.",
+    "refreshing": "새로고침 중...",
+    "refresh": "새로고침",
+    "hide": "숨기기",
+    "generated_at": "스냅샷 시각:",
+    "buffered_logs": "버퍼 로그:",
+    "stats_cache": "캐시된 통계 날짜:",
+    "local_documents": "로컬 문서",
+    "fields": "필드",
+    "bytes": "바이트",
+    "size_unavailable": "측정 불가",
+    "unknown": "알 수 없음",
+    "present": "있음",
+    "empty": "비어 있음",
+    "session": "세션 체크포인트",
+    "indexed_db": "IndexedDB 스토어",
+    "rows": "행",
+    "security": "보안 / 키",
+    "missing": "없음",
+    "reset_guard": "리셋 가드",
+    "guard_on": "켜짐",
+    "guard_off": "꺼짐",
+    "passcode_set": "패스코드 설정됨",
+    "passcode_missing": "패스코드 없음",
+    "actions_title": "복구 액션",
+    "shortcut_hint": "Alt+Shift+I 로 토글",
+    "passcode_label": "인증 패스코드",
+    "passcode_placeholder": "복구 액션용 패스코드를 입력하세요",
+    "actions": {
+      "repair_hashes": "도메인 해시 복구",
+      "run_retention": "통계 보존 정책 실행",
+      "clear_runtime": "런타임 세션 비우기",
+      "clear_favicons": "파비콘 캐시 비우기"
+    },
+    "status": {
+      "hashes_repaired": "도메인 해시 아티팩트를 다시 만들었습니다.",
+      "hashes_ok": "도메인 해시 아티팩트는 이미 정상입니다.",
+      "retention_failed": "통계 보존 정책 실행 실패: {{error}}",
+      "retention_done": "통계 보존 정책을 완료했습니다. ({{removed}}일 버킷 제거)",
+      "runtime_cleared": "런타임 세션 체크포인트를 비웠습니다. ({{cleared}}개 키)",
+      "favicons_cleared": "영구 파비콘 캐시를 비웠습니다.",
+      "action_complete": "지원 액션을 완료했습니다.",
+      "snapshot_refreshed": "스토리지 인스펙터 스냅샷을 새로고침했습니다.",
+      "snapshot_failed": "스토리지 인스펙터 새로고침 실패: {{error}}",
+      "auth_required": "지원 복구 액션에는 패스코드가 필요합니다.",
+      "auth_failed": "지원 액션 인증에 실패했습니다.",
+      "action_failed": "지원 액션 실패: {{error}}"
+    }
+  },
+  "artifact_range": {
+    "value_label": "{{label}} 강도",
+    "value": "{{value}}%",
+    "minimum": "원본",
+    "maximum": "현재 효과",
+    "effective": "{{value}}",
+    "save_failed": "강도를 저장하지 못했습니다."
+  },
+  "artifact_controls": {
+    "secondary_adjustments": "추가 조절",
+    "group_active_count": "{{count}}개 켜짐"
+  }
+}

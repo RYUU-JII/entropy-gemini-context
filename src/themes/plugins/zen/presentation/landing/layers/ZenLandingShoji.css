@@ -1,0 +1,47 @@
+.zenLandingShojiShared {
+  inset: 0;
+  overflow: visible;
+  opacity: var(--zen-landing-shoji-opacity);
+  filter: saturate(calc(1 - (var(--zen-landing-shoji-intensity) * 0.32)));
+}
+
+.zenLandingShojiShared__visual {
+  position: absolute;
+  top: clamp(3rem, 11svh, 6.5rem);
+  left: clamp(-4rem, 0.5vw, 1rem);
+  width: 340px;
+  height: 340px;
+  opacity: calc(0.68 + (var(--zen-landing-shoji-intensity) * 0.32));
+  transform:
+    translate3d(
+      calc((1 - var(--zen-landing-shoji-intensity)) * -2.2rem),
+      calc((1 - var(--zen-landing-shoji-intensity)) * 0.8rem),
+      0
+    )
+    scale(calc(1.04 + (var(--zen-landing-shoji-intensity) * 0.26)));
+  transform-origin: 50% 50%;
+  filter: drop-shadow(0 1.25rem 2.8rem rgb(32 27 20 / 0.12));
+  transition:
+    opacity 420ms cubic-bezier(0.22, 0.72, 0.28, 1),
+    transform 560ms cubic-bezier(0.22, 0.72, 0.28, 1);
+}
+
+@media (max-width: 720px) {
+  .zenLandingShojiShared__visual {
+    top: clamp(4.5rem, 12svh, 7rem);
+    left: -6.5rem;
+    transform:
+      translate3d(
+        calc((1 - var(--zen-landing-shoji-intensity)) * -1.4rem),
+        calc((1 - var(--zen-landing-shoji-intensity)) * 0.6rem),
+        0
+      )
+      scale(calc(0.78 + (var(--zen-landing-shoji-intensity) * 0.18)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zenLandingShojiShared__visual {
+    transition: none;
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "release",
+  "title": "Release and shipping",
+  "pathPrefixes": [
+    "src/manifest.json",
+    "vite.config.js",
+    "package.json",
+    "package-lock.json",
+    "scripts/ci/run-vite-build",
+    "scripts/e2e/releaseLifecycle",
+    "docs/operations/release"
+  ],
+  "ownerDocs": [
+    "docs/operations/ci/quality-gate.md",
+    "docs/operations/qa/mv3-lifecycle-e2e.md"
+  ],
+  "resourceClaims": [],
+  "focusedChecks": [],
+  "harnessIds": [
+    "release"
+  ]
+}

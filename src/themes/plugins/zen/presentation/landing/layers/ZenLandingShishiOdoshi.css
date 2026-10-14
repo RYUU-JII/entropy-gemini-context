@@ -1,0 +1,31 @@
+.zenLandingArtifact.zenLandingShishiActual {
+  inset: auto auto clamp(0.5rem, 3vh, 2rem) clamp(-2rem, 1.5vw, 1.5rem);
+  width: clamp(24rem, 34vw, 34rem);
+  height: clamp(24rem, 34vw, 34rem);
+  filter: drop-shadow(0 1.2rem 2.2rem rgb(7 18 18 / 0.2));
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity 360ms cubic-bezier(0.22, 0.72, 0.28, 1),
+    filter 360ms ease;
+}
+
+.zenLandingShishiActual[data-shishi-phase="tipping"],
+.zenLandingShishiActual[data-shishi-phase="settled"] {
+  filter:
+    drop-shadow(0 1.2rem 2.2rem rgb(7 18 18 / 0.22))
+    drop-shadow(0 0 1.8rem color-mix(in srgb, var(--zen-landing-gate) 24%, transparent));
+}
+
+@media (max-width: 720px) {
+  .zenLandingArtifact.zenLandingShishiActual {
+    inset: auto auto -1.5rem -6.5rem;
+    width: 25rem;
+    height: 25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zenLandingArtifact.zenLandingShishiActual {
+    transition: none;
+  }
+}

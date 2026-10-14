@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ko" data-landing-boot="booting">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f1e7" />
+    <script>
+      (() => {
+        const queryLocale = new URLSearchParams(window.location.search).get('lang');
+        const localeCandidate = String(queryLocale || window.navigator.language || '').toLowerCase();
+        document.documentElement.lang = localeCandidate === 'ko' || localeCandidate.startsWith('ko-')
+          ? 'ko'
+          : 'en';
+      })();
+    </script>
+    <link
+      rel="preload"
+      href="../../themes/styles/fonts/Ubuntu-Variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        background: #f6f1e7;
+      }
+
+      html,
+      body,
+      #root {
+        min-width: 320px;
+        min-height: 100%;
+        margin: 0;
+      }
+
+      body {
+        background: #f6f1e7;
+      }
+
+      #landing-boot {
+        position: fixed;
+        z-index: 2147483647;
+        inset: 0;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 71% 26%, rgb(255 250 230 / 0.86) 0 3.25rem, transparent 3.4rem),
+          radial-gradient(ellipse at 73% 88%, rgb(75 112 113 / 0.19), transparent 34%),
+          linear-gradient(158deg, #f8f2e6 0%, #d9e0d8 54%, #94aaa8 100%);
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 180ms ease-out, visibility 0s linear 180ms;
+      }
+
+      #landing-boot::before,
+      #landing-boot::after {
+        content: "";
+        position: absolute;
+        right: -12vw;
+        bottom: 14%;
+        left: -12vw;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgb(49 73 72 / 0.22), transparent);
+        transform: rotate(-1.1deg);
+      }
+
+      #landing-boot::after {
+        bottom: 9%;
+        opacity: 0.48;
+        transform: rotate(0.6deg) scaleX(0.78);
+      }
+
+      html[data-landing-boot="ready"] #landing-boot {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      #landing-boot-error {
+        position: absolute;
+        right: max(1.5rem, env(safe-area-inset-right));
+        bottom: max(1.5rem, env(safe-area-inset-bottom));
+        left: max(1.5rem, env(safe-area-inset-left));
+        max-width: 34rem;
+        margin: auto;
+        padding: 1rem 1.15rem;
+        border: 1px solid rgb(71 58 48 / 0.18);
+        color: #3f3932;
+        background: rgb(248 243 232 / 0.9);
+        font: 400 0.875rem/1.65 system-ui, sans-serif;
+        text-align: center;
+      }
+
+      #landing-boot-error .landing-boot-error-en {
+        display: none;
+      }
+
+      :root:lang(en) #landing-boot-error .landing-boot-error-ko {
+        display: none;
+      }
+
+      :root:lang(en) #landing-boot-error .landing-boot-error-en {
+        display: inline;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #landing-boot {
+          transition: none;
+        }
+      }
+    </style>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <meta
+      name="description"
+      content="Entropy는 충동과 집중 사이에 조용한 여백을 만드는 로컬 브라우저 확장 프로그램입니다."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Entropy — 여백의 정원" />
+    <meta
+      property="og:description"
+      content="의지를 강요하지 않고, 충동과 집중 사이에 조용한 여백을 만듭니다."
+    />
+    <meta name="twitter:card" content="summary" />
+    <title>Entropy — 여백의 정원</title>
+  </head>
+  <body>
+    <div id="landing-boot" aria-hidden="true">
+      <p id="landing-boot-error" role="alert" hidden>
+        <span class="landing-boot-error-ko">정원을 여는 중 문제가 생겼습니다. 페이지를 새로고침해 주세요.</span>
+        <span class="landing-boot-error-en">The garden could not open. Please refresh the page.</span>
+      </p>
+    </div>
+    <div id="root" aria-busy="true"></div>
+    <noscript>
+      <style>#landing-boot { display: none; }</style>
+      <p class="landing-noscript">
+        이 정원의 움직임을 경험하려면 JavaScript가 필요합니다.
+        <a href="./privacy/">개인정보처리방침</a>
+      </p>
+    </noscript>
+    <script type="module" src="./main.jsx"></script>
+  </body>
+</html>

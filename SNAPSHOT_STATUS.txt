@@ -1,0 +1,12 @@
+Captured snapshot: entropy-2026-10-14-130557-86054c5923fa
+Source commit: 86054c5923fa0cfa7e315e4549e672fee643e3fd
+Captured working-copy state before packaging:
+ M src/themes/plugins/zen/model/bonsai/rendering/zenBonsaiSkyMoon.js
+ M src/themes/plugins/zen/model/sakura/sakuraRenderLighting.js
+ M src/themes/plugins/zen/runtime/debug/zenBonsaiRenderDebugSequence.js
+ M src/themes/plugins/zen/runtime/environment/zenWorldSolar.js
+ M tests/themes/zenBonsaiG15PixiLifecycle.test.js
+ M tests/themes/zenSakuraRenderLighting.test.js
+?? src/themes/plugins/zen/runtime/environment/zenWorldSkyPanelProjection.js
+
+See context/07-CAPTURE-NOTE.txt for concurrent change. No original checkout files were modified by packaging. No build or product tests were run for this reference export.

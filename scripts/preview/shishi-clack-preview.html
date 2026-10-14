@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entropy - Shishi-odoshi Bamboo Clack Synth Preview</title>
+  <style>
+    :root {
+      --bg: #121415;
+      --card-bg: #1a1d1f;
+      --accent: #5e8b63;
+      --accent-glow: #8cb891;
+      --text: #e6e9e6;
+      --text-muted: #889289;
+      --border: #2c342e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2.5rem 1rem;
+    }
+
+    .container {
+      max-width: 760px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    header {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.85rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Interactive Animation Area */
+    .stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at center, #222924 0%, #151816 100%);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      height: 240px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .stage-hint {
+      position: absolute;
+      top: 12px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .bamboo-rig {
+      position: relative;
+      width: 220px;
+      height: 140px;
+    }
+
+    .bamboo-arm {
+      position: absolute;
+      width: 180px;
+      height: 18px;
+      background: linear-gradient(180deg, #8cb891 0%, #527a56 60%, #3a583e 100%);
+      border-radius: 4px 10px 10px 4px;
+      top: 60px;
+      left: 10px;
+      transform-origin: 65% 50%;
+      transition: transform 0.08s ease-in;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .bamboo-arm.tilt {
+      transform: rotate(26deg);
+    }
+
+    .bamboo-arm.strike {
+      transform: rotate(-10deg);
+      transition: transform 0.04s cubic-bezier(0.1, 0.9, 0.2, 1.2);
+    }
+
+    .bamboo-pivot {
+      position: absolute;
+      width: 14px;
+      height: 60px;
+      background: #3e4840;
+      top: 60px;
+      left: 120px;
+      border-radius: 2px;
+    }
+
+    .stone-base {
+      position: absolute;
+      width: 110px;
+      height: 24px;
+      background: #2a312d;
+      border-radius: 8px;
+      top: 110px;
+      left: 10px;
+      border-bottom: 3px solid #1c221e;
+    }
+
+    .water-stream {
+      position: absolute;
+      width: 3px;
+      height: 50px;
+      background: rgba(140, 200, 255, 0.4);
+      top: 15px;
+      left: 30px;
+      opacity: 0.7;
+    }
+
+    /* Buttons */
+    .button-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    button {
+      background: #252c27;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    button:hover {
+      background: #323d35;
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+
+    button.primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent-glow);
+    }
+
+    button.primary:hover {
+      background: #6ea074;
+    }
+
+    button.active-loop {
+      background: #8b5e5e;
+      border-color: #ba7e7e;
+    }
+
+    /* Visualizer */
+    .canvas-container {
+      margin-top: 1rem;
+      background: #0d0f10;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      height: 80px;
+      overflow: hidden;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Controls */
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .control-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .control-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    input[type="range"] {
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    /* Explanation List */
+    .layer-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 0.75rem;
+      font-size: 0.88rem;
+    }
+
+    .layer-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      color: var(--text-muted);
+    }
+
+    .layer-list strong {
+      color: var(--text);
+      min-width: 140px;
+    }
+
+    .tag {
+      background: #252c27;
+      color: var(--accent-glow);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎋 <span>Shishi-odoshi Sound Synthesizer</span></h1>
+      <p class="subtitle">WebAudio Physical Modeling Acoustic Synthesis for Zen Theme</p>
+    </header>
+
+    <!-- Stage / Animation -->
+    <div class="stage" id="stage" title="Click anywhere on the stage to strike!">
+      <span class="stage-hint">클릭하여 타격 체험 (Click to strike)</span>
+      <div class="bamboo-rig">
+        <div class="water-stream"></div>
+        <div class="stone-base"></div>
+        <div class="bamboo-pivot"></div>
+        <div class="bamboo-arm" id="bambooArm"></div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="card">
+      <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">사운드 트리거 (Triggers)</h3>
+      <div class="button-group">
+        <button class="primary" id="btnNormal">🎋 보통 타격 (72%)</button>
+        <button id="btnHard">💥 강한 타격 (95%)</button>
+        <button id="btnSoft">🍃 약한 타격 (45%)</button>
+        <button id="btnLoop">⏳ 자동 루프 (3.5s)</button>
+      </div>
+
+      <div class="canvas-container">
+        <canvas id="visualizer" width="700" height="80"></canvas>
+      </div>
+    </div>
+
+    <!-- Parameter Sliders -->
+    <div class="card">
+      <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">물리 모델링 파라미터 (Acoustic Parameters)</h3>
+      <div class="controls">
+        <div class="control-item">
+          <div class="control-label">
+            <span>타격 강도 (Intensity)</span>
+            <span id="lblIntensity">0.72</span>
+          </div>
+          <input type="range" id="sliderIntensity" min="0.2" max="1.2" step="0.01" value="0.72">
+        </div>
+        <div class="control-item">
+          <div class="control-label">
+            <span>대나무 공명 기본 주파수 (Base Pitch)</span>
+            <span id="lblBaseFreq">468 Hz</span>
+          </div>
+          <input type="range" id="sliderBaseFreq" min="300" max="700" step="5" value="468">
+        </div>
+        <div class="control-item">
+          <div class="control-label">
+            <span>나무 섬유 질감 (Wood Texture Noise)</span>
+            <span id="lblNoise">100%</span>
+          </div>
+          <input type="range" id="sliderNoise" min="0" max="2" step="0.1" value="1.0">
+        </div>
+        <div class="control-item">
+          <div class="control-label">
+            <span>바위 저음 타격감 (Stone Thud Sub)</span>
+            <span id="lblSub">100%</span>
+          </div>
+          <input type="range" id="sliderSub" min="0" max="2" step="0.1" value="1.0">
+        </div>
+      </div>
+    </div>
+
+    <!-- Physics Structure Info -->
+    <div class="card">
+      <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">물리 합성 계층 구조 (Acoustic Layers)</h3>
+      <ul class="layer-list">
+        <li>
+          <strong>1. Contact Transient</strong>
+          <span>광물/대나무 표면 순간 충격파 (2.8 kHz Bandpass + Rapid Pitch Drop)</span>
+        </li>
+        <li>
+          <strong>2. Woody Body Noise</strong>
+          <span>대나무 섬유질 마찰 및 울림 질감 (760 Hz Bandpass Burst, Q=5.5)</span>
+        </li>
+        <li>
+          <strong>3. Cavity Modes</strong>
+          <span>속이 빈 대나무 원통 공명 <span class="tag">468Hz</span> <span class="tag">875Hz</span> <span class="tag">1540Hz</span> <span class="tag">2720Hz</span></span>
+        </li>
+        <li>
+          <strong>4. Stone Absorption</strong>
+          <span>하부 받침돌 충격 흡수 서브 베이스 <span class="tag">118Hz Triangle</span></span>
+        </li>
+        <li>
+          <strong>5. Micro-Jitter</strong>
+          <span>타격할 때마다 ±1.8% 미세 주파수 난수 적용 (기계적 반복음 방지)</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    let audioCtx = null;
+    let analyser = null;
+    let loopTimer = null;
+
+    function getAudioContext() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 512;
+        analyser.connect(audioCtx.destination);
+        startVisualizer();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function getNoiseBuffer(ctx) {
+      if (ctx._noiseBuffer) return ctx._noiseBuffer;
+      const bufferSize = Math.floor(ctx.sampleRate * 0.08);
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = Math.random() * 2 - 1;
+      }
+      ctx._noiseBuffer = buffer;
+      return buffer;
+    }
+
+    function scheduleNoiseBurst(ctx, destination, { startAt, duration, gain, filterType = 'bandpass', filterFrequency = 1200, filterQ = 4 }) {
+      const noiseBuffer = getNoiseBuffer(ctx);
+      const source = ctx.createBufferSource();
+      source.buffer = noiseBuffer;
+
+      const filter = ctx.createBiquadFilter();
+      filter.type = filterType;
+      filter.frequency.setValueAtTime(filterFrequency, startAt);
+      filter.Q.setValueAtTime(filterQ, startAt);
+
+      const gainNode = ctx.createGain();
+      gainNode.gain.setValueAtTime(0.0001, startAt);
+      gainNode.gain.exponentialRampToValueAtTime(Math.max(0.0001, gain), startAt + 0.0015);
+      gainNode.gain.exponentialRampToValueAtTime(0.0001, startAt + duration);
+
+      source.connect(filter);
+      filter.connect(gainNode);
+      gainNode.connect(destination);
+
+      source.start(startAt);
+      source.stop(startAt + duration + 0.015);
+    }
+
+    function scheduleModalTone(ctx, destination, { frequency, startAt, duration, gain, type = 'sine', pitchDrop = false }) {
+      const osc = ctx.createOscillator();
+      const gainNode = ctx.createGain();
+      osc.type = type;
+
+      if (pitchDrop) {
+        osc.frequency.setValueAtTime(frequency * 2.4, startAt);
+        osc.frequency.exponentialRampToValueAtTime(frequency, startAt + 0.009);
+      } else {
+        osc.frequency.setValueAtTime(frequency, startAt);
+      }
+
+      gainNode.gain.setValueAtTime(0.0001, startAt);
+      gainNode.gain.exponentialRampToValueAtTime(Math.max(0.0001, gain), startAt + 0.0015);
+      gainNode.gain.exponentialRampToValueAtTime(0.0001, startAt + duration);
+
+      osc.connect(gainNode);
+      gainNode.connect(destination);
+
+      osc.start(startAt);
+      osc.stop(startAt + duration + 0.015);
+    }
+
+    function triggerShishiClack(customIntensity = null) {
+      const ctx = getAudioContext();
+      const intensity = customIntensity !== null 
+        ? customIntensity 
+        : parseFloat(document.getElementById('sliderIntensity').value);
+      const basePitch = parseFloat(document.getElementById('sliderBaseFreq').value);
+      const noiseMultiplier = parseFloat(document.getElementById('sliderNoise').value);
+      const subMultiplier = parseFloat(document.getElementById('sliderSub').value);
+
+      const now = ctx.currentTime + 0.004;
+      const safeIntensity = Math.max(0.2, Math.min(1.2, Number(intensity) || 0.72));
+
+      // Master Node routed to Analyser -> Destination
+      const master = ctx.createGain();
+      master.gain.setValueAtTime(0.26 * safeIntensity, now);
+      master.gain.exponentialRampToValueAtTime(0.0001, now + 0.28);
+      master.connect(analyser);
+
+      const jitter = 0.982 + Math.random() * 0.036;
+      const pitchRatio = basePitch / 468;
+
+      // 1. Initial hard contact click
+      scheduleNoiseBurst(ctx, master, {
+        startAt: now,
+        duration: 0.018,
+        gain: 0.65 * safeIntensity * noiseMultiplier,
+        filterType: 'bandpass',
+        filterFrequency: 2800 * jitter * pitchRatio,
+        filterQ: 3.2,
+      });
+
+      // 2. High-speed pitch drop snap
+      scheduleModalTone(ctx, master, {
+        frequency: 580 * jitter * pitchRatio,
+        startAt: now,
+        duration: 0.018,
+        gain: 0.50 * safeIntensity,
+        type: 'sine',
+        pitchDrop: true,
+      });
+
+      // 3. Bamboo fibrous wood texture
+      scheduleNoiseBurst(ctx, master, {
+        startAt: now + 0.001,
+        duration: 0.065,
+        gain: 0.45 * safeIntensity * noiseMultiplier,
+        filterType: 'bandpass',
+        filterFrequency: 760 * jitter * pitchRatio,
+        filterQ: 5.5,
+      });
+
+      // 4. Acoustic hollow bamboo cavity resonance
+      // Mode 0: Sub-bass stone absorption
+      scheduleModalTone(ctx, master, {
+        frequency: 118 * jitter,
+        startAt: now,
+        duration: 0.075,
+        gain: 0.38 * safeIntensity * subMultiplier,
+        type: 'triangle',
+      });
+
+      // Mode 1: Main bamboo tube hollow fundamental
+      scheduleModalTone(ctx, master, {
+        frequency: 468 * jitter * pitchRatio,
+        startAt: now + 0.001,
+        duration: 0.165,
+        gain: 0.52 * safeIntensity,
+        type: 'sine',
+      });
+
+      // Mode 2: Secondary harmonic
+      scheduleModalTone(ctx, master, {
+        frequency: 875 * jitter * pitchRatio,
+        startAt: now + 0.001,
+        duration: 0.125,
+        gain: 0.36 * safeIntensity,
+        type: 'sine',
+      });
+
+      // Mode 3: Upper bamboo cavity formant
+      scheduleModalTone(ctx, master, {
+        frequency: 1540 * jitter * pitchRatio,
+        startAt: now + 0.002,
+        duration: 0.075,
+        gain: 0.24 * safeIntensity,
+        type: 'sine',
+      });
+
+      // Mode 4: High rim overtone ring
+      scheduleModalTone(ctx, master, {
+        frequency: 2720 * jitter * pitchRatio,
+        startAt: now + 0.002,
+        duration: 0.042,
+        gain: 0.14 * safeIntensity,
+        type: 'sine',
+      });
+
+      // Trigger Visual Animation
+      animateBamboo();
+    }
+
+    function animateBamboo() {
+      const arm = document.getElementById('bambooArm');
+      arm.classList.remove('tilt', 'strike');
+      void arm.offsetWidth; // trigger reflow
+      arm.classList.add('strike');
+      setTimeout(() => {
+        arm.classList.remove('strike');
+      }, 180);
+    }
+
+    // Visualizer Loop
+    function startVisualizer() {
+      const canvas = document.getElementById('visualizer');
+      const ctx = canvas.getContext('2d');
+      const bufferLength = analyser.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+
+      function draw() {
+        requestAnimationFrame(draw);
+        analyser.getByteTimeDomainData(dataArray);
+
+        ctx.fillStyle = '#0d0f10';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = '#8cb891';
+        ctx.beginPath();
+
+        const sliceWidth = canvas.width * 1.0 / bufferLength;
+        let x = 0;
+
+        for (let i = 0; i < bufferLength; i++) {
+          const v = dataArray[i] / 128.0;
+          const y = v * (canvas.height / 2);
+
+          if (i === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+          x += sliceWidth;
+        }
+
+        ctx.lineTo(canvas.width, canvas.height / 2);
+        ctx.stroke();
+      }
+      draw();
+    }
+
+    // Event Listeners
+    document.getElementById('stage').addEventListener('click', () => triggerShishiClack());
+    document.getElementById('btnNormal').addEventListener('click', () => triggerShishiClack(0.72));
+    document.getElementById('btnHard').addEventListener('click', () => triggerShishiClack(0.98));
+    document.getElementById('btnSoft').addEventListener('click', () => triggerShishiClack(0.42));
+
+    const btnLoop = document.getElementById('btnLoop');
+    btnLoop.addEventListener('click', () => {
+      if (loopTimer) {
+        clearInterval(loopTimer);
+        loopTimer = null;
+        btnLoop.classList.remove('active-loop');
+        btnLoop.innerText = '⏳ 자동 루프 (3.5s)';
+      } else {
+        btnLoop.classList.add('active-loop');
+        btnLoop.innerText = '⏹ 루프 정지';
+        const arm = document.getElementById('bambooArm');
+        
+        const runCycle = () => {
+          arm.classList.add('tilt');
+          setTimeout(() => {
+            triggerShishiClack();
+          }, 1400);
+        };
+        runCycle();
+        loopTimer = setInterval(runCycle, 3500);
+      }
+    });
+
+    // Sliders
+    const sliderIntensity = document.getElementById('sliderIntensity');
+    sliderIntensity.addEventListener('input', (e) => {
+      document.getElementById('lblIntensity').innerText = e.target.value;
+    });
+
+    const sliderBaseFreq = document.getElementById('sliderBaseFreq');
+    sliderBaseFreq.addEventListener('input', (e) => {
+      document.getElementById('lblBaseFreq').innerText = `${e.target.value} Hz`;
+    });
+
+    const sliderNoise = document.getElementById('sliderNoise');
+    sliderNoise.addEventListener('input', (e) => {
+      document.getElementById('lblNoise').innerText = `${Math.round(e.target.value * 100)}%`;
+    });
+
+    const sliderSub = document.getElementById('sliderSub');
+    sliderSub.addEventListener('input', (e) => {
+      document.getElementById('lblSub').innerText = `${Math.round(e.target.value * 100)}%`;
+    });
+  </script>
+</body>
+</html>

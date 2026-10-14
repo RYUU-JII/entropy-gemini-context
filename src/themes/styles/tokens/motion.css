@@ -1,0 +1,72 @@
+/**
+ * Motion Tokens (Animation & Transitions)
+ * 
+ * Timing and easing tokens for consistent motion.
+ */
+
+:root {
+    /* ═══════════════════════════════════════════════════════════════
+   * DURATION
+   * ═══════════════════════════════════════════════════════════════ */
+    --duration-instant: 50ms;
+    --duration-fast: 150ms;
+    --duration-normal: 250ms;
+    --duration-slow: 400ms;
+    --duration-slower: 600ms;
+
+    /* ═══════════════════════════════════════════════════════════════
+   * EASING CURVES
+   * ═══════════════════════════════════════════════════════════════ */
+    --ease-linear: linear;
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Spring-like bounce */
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-spring-soft: cubic-bezier(0.32, 0.72, 0, 1);
+
+    /* Smooth deceleration (iOS-like) */
+    --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    /* ═══════════════════════════════════════════════════════════════
+   * TRANSITION PRESETS
+   * ═══════════════════════════════════════════════════════════════ */
+    --transition-fast: var(--duration-fast) var(--ease-out);
+    --transition-normal: var(--duration-normal) var(--ease-out);
+    --transition-slow: var(--duration-slow) var(--ease-smooth);
+    --transition-spring: var(--duration-normal) var(--ease-spring);
+    --transition-color: color var(--duration-fast) var(--ease-out),
+        background-color var(--duration-fast) var(--ease-out),
+        border-color var(--duration-fast) var(--ease-out);
+    --transition-transform: transform var(--duration-fast) var(--ease-spring);
+    --transition-opacity: opacity var(--duration-normal) var(--ease-out);
+    --transition-property-interactive: background-color, border-color, color, opacity, box-shadow, filter;
+
+    /* ═══════════════════════════════════════════════════════════════
+   * CHRONOS: Smooth Heavy Physics
+   * ═══════════════════════════════════════════════════════════════ */
+    --spring-mass: 1.2;
+    --spring-stiffness: 100;
+    --spring-damping: 20;
+
+    /* Sliding Slabs Transition */
+    --slab-duration: 0.5s;
+    --slab-ease: cubic-bezier(0.34, 0.56, 0.64, 1);
+
+    /* RGB Split Entropy */
+    --entropy-duration: 0.1s;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ * REDUCED MOTION (Accessibility)
+ * ═══════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --duration-instant: 0ms;
+        --duration-fast: 0ms;
+        --duration-normal: 0ms;
+        --duration-slow: 0ms;
+        --duration-slower: 0ms;
+    }
+}

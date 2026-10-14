@@ -1,0 +1,421 @@
+/*
+ * Main Home composition owns placement and geometry. Theme widgets keep their
+ * own paint and internal presentation; this file assigns the existing pond,
+ * pressure, bonsai, and rhythm nodes to one restrained architectural field.
+ */
+
+[data-theme='zen'] .journey-progress > summary {
+  font-size: var(--zen-type-caption);
+  letter-spacing: var(--zen-tracking-caption);
+}
+
+[data-theme='zen'] .journey-progress__body {
+  font-size: var(--zen-type-body);
+}
+
+@keyframes zen-bonsai-growth-reveal-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* A paper slip laid on the garden rather than a floating toast: square cut,
+ * one hairline edge, ambient paper and ink so it follows dawn through night.
+ * The short hand-drawn stroke on its left is the only ornament. */
+.zen-bonsai-growth-reveal-card {
+  position: relative;
+  display: flex;
+  max-width: 340px;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 10px 12px 22px;
+  border-top: 1px solid var(--zen-ambient-border);
+  border-radius: 1px;
+  background: var(--zen-ambient-surface-elevated);
+  color: var(--zen-ambient-text);
+  box-shadow: 0 14px 30px -22px var(--zen-ambient-cast-shadow);
+  font-family: var(--font-theme-ui);
+  animation: zen-bonsai-growth-reveal-arrive 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.zen-bonsai-growth-reveal-card::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  bottom: 17px;
+  left: 10px;
+  width: 2px;
+  border-radius: 1px 2px 1px 2px;
+  background: var(--zen-ambient-text-muted);
+  opacity: 0.55;
+}
+
+.zen-bonsai-growth-reveal-card__eyebrow {
+  color: var(--zen-ambient-text-muted);
+  font-size: var(--zen-type-floor);
+  font-weight: 500;
+  letter-spacing: var(--zen-tracking-label);
+  line-height: 1.4;
+  text-transform: var(--zen-label-case);
+}
+
+.zen-bonsai-growth-reveal-card__title {
+  margin-top: 3px;
+  font-family: var(--font-theme-serif);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.zen-bonsai-growth-reveal-card__progress {
+  margin-top: 4px;
+  color: var(--zen-ambient-text-muted);
+  font-size: var(--zen-type-floor);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--zen-tracking-caption);
+}
+
+.zen-bonsai-growth-reveal-card__ack {
+  flex-shrink: 0;
+  min-width: 48px;
+  min-height: 36px;
+  padding: 6px 10px;
+  border: 0;
+  background: transparent;
+  color: var(--zen-ambient-text);
+  font-size: var(--zen-type-caption);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--zen-ambient-border);
+  text-underline-offset: 5px;
+  cursor: pointer;
+  transition: text-decoration-color 180ms ease, background-color 180ms ease;
+}
+
+.zen-bonsai-growth-reveal-card__ack:hover {
+  background: color-mix(in srgb, var(--zen-ambient-text) 5%, transparent);
+  text-decoration-color: currentColor;
+}
+
+.zen-bonsai-growth-reveal-card__ack:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Pending garden content: the paper plane at rest. A single slow breath of
+ * tone instead of a skeleton pulse, and none at all under reduced motion. */
+@keyframes zen-home-pending-breath {
+  from { opacity: 0.55; }
+  to { opacity: 1; }
+}
+
+.zen-home-pending-plane {
+  width: 100%;
+  height: 100%;
+  background: color-mix(in srgb, var(--zen-ambient-layer-l3-bottom) 70%, var(--zen-ambient-edge));
+  animation: zen-home-pending-breath 2.4s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zen-bonsai-growth-reveal-card,
+  .zen-home-pending-plane {
+    animation: none;
+  }
+
+  .zen-bonsai-growth-reveal-card__ack {
+    transition: none;
+  }
+}
+
+.zen-home-frame {
+  background:
+    radial-gradient(
+      110% 90% at 75% 30%,
+      color-mix(in srgb, var(--zen-ambient-layer-l2-top) 28%, transparent) 0%,
+      color-mix(in srgb, var(--zen-ambient-layer-l2-bottom) 14%, transparent) 48%,
+      color-mix(in srgb, var(--zen-ambient-edge) 4%, transparent) 100%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--zen-ambient-layer-l2-top) 10%, transparent) 0%,
+      color-mix(in srgb, var(--zen-ambient-layer-l2-bottom) 5%, transparent) 100%
+    ),
+    var(--zen-layer-l2-surface);
+  box-shadow: inset 0 1px 30px color-mix(in srgb, var(--zen-ambient-cast-shadow) 4%, transparent);
+}
+
+.zen-home-stage {
+  position: relative;
+  isolation: isolate;
+  --zen-home-layer-ground: 19;
+  --zen-home-layer-pressure: 22;
+  --zen-home-layer-garden: 21;
+  --zen-home-layer-readout: 40;
+  --zen-home-plane-rim: var(--zen-ambient-edge);
+}
+
+.zen-home-pond-inframe {
+  box-shadow: inset 0 0 16px color-mix(in srgb, var(--zen-ambient-cast-shadow) 3.5%, transparent);
+  border-right: 1px solid color-mix(in srgb, var(--zen-ambient-edge) 12%, transparent);
+}
+
+.zen-home-bonsai-breach {
+  overflow: visible;
+  filter: drop-shadow(6px 10px 20px rgba(45, 38, 30, 0.085));
+  transition: filter 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-ui-layout='landscape'] .zen-home-frame {
+  /* Bound scroll overflow outside the frame, then let the dashboard crop the
+   * visible edge once. The shared paint reserve keeps this clip away from that
+   * edge; clip creates no extra scrolling surface. */
+  overflow: clip;
+  overflow-clip-margin: var(--zen-home-frame-paint-bleed);
+}
+
+[data-ui-layout='landscape'] .zen-home-stage {
+  --zen-home-frame-top: clamp(14px, 1.6vh, 20px);
+  --zen-home-frame-divider: clamp(20px, 1.6vw, 26px);
+  --zen-home-frame-right: clamp(20px, 1.6vw, 26px);
+  grid-template-columns: minmax(0, 1.58fr) minmax(240px, 0.96fr);
+  grid-template-rows: minmax(0, 1fr) 34px;
+  column-gap: var(--zen-home-frame-divider);
+  row-gap: 0;
+  padding: var(--zen-home-frame-top) var(--zen-home-frame-right) 0 0;
+}
+
+[data-ui-layout='landscape'] .zen-home-pond-slot {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  border: 0;
+  box-shadow: none;
+}
+
+[data-ui-layout='landscape'] .zen-home-side-column {
+  position: relative;
+  display: flex;
+  grid-column: 2;
+  grid-row: 1;
+  margin-top: 0;
+  margin-left: 0;
+  pointer-events: none;
+}
+
+[data-ui-layout='landscape'] .zen-home-bonsai-breach {
+  z-index: var(--zen-home-layer-garden);
+  filter: none;
+}
+
+[data-ui-layout='landscape'] .zen-home-side-column :is(button, input, select, [role='button']) {
+  pointer-events: auto;
+}
+
+[data-ui-layout='landscape'] .zen-home-rhythm-slot {
+  position: absolute;
+  top: clamp(24px, 3.4vh, 40px);
+  right: clamp(32px, 3.6vw, 64px);
+  z-index: var(--zen-home-layer-readout);
+  align-self: flex-end;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  height: auto;
+  min-height: 0;
+}
+
+.zen-home-garden-occlusion {
+  position: absolute;
+  inset: 0;
+  z-index: var(--zen-home-layer-ground);
+  pointer-events: none;
+}
+
+.zen-home-garden-occlusion > div {
+  position: absolute;
+  inset: 0;
+  pointer-events: auto;
+}
+
+.zen-home-garden-depth {
+  position: absolute;
+  inset: 0;
+  /* The dashboard viewport clips the bleed; do not rasterize this edge twice. */
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* Outer slots remain measurement-only grid anchors. Data and the decorative
+ * garden joint consume the composition frame without changing those anchors. */
+.zen-home-pressure-slot {
+  z-index: var(--zen-home-layer-pressure);
+  background: var(--zen-ambient-layer-l3-bottom);
+}
+
+.zen-home-pressure-data {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: var(--zen-home-pressure-data-width);
+  pointer-events: auto;
+}
+
+.zen-home-pressure-slot[data-layout-ready='false'] > * {
+  visibility: hidden;
+}
+
+[data-ui-layout='landscape'] .zen-home-pressure-slot {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: calc(100% + var(--zen-home-frame-right));
+  background: transparent;
+  pointer-events: none;
+}
+
+[data-ui-layout='portrait-compact'] .zen-home-stage {
+  /* The pressure anchor measures only its allocation. The unoccupied end of
+     that row is the same frame plane, not an exposed patch of inner paper. */
+  background: var(--zen-ambient-layer-l3-bottom);
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1.08fr) 34px minmax(0, 0.92fr);
+  column-gap: 0;
+  row-gap: 0;
+  padding: 0;
+}
+
+[data-ui-layout='portrait-compact'] .zen-home-pond-slot {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+[data-ui-layout='portrait-compact'] .zen-home-side-column {
+  display: flex;
+  grid-column: 1;
+  grid-row: 3;
+  /* Keep breathing room inside the measured row. h-full plus an outer margin
+   * moves the bonsai's lower edge beyond the stage and breaks its contract. */
+  margin-top: 0;
+  margin-left: 0;
+  padding-top: 12px;
+  background: var(--zen-layer-l2-surface);
+}
+
+[data-ui-layout='portrait-compact'] .zen-home-bonsai-breach,
+[data-ui-layout='portrait-desktop'] .zen-home-bonsai-breach {
+  /* Portrait uses a rectangular paper field with local planter support. */
+  filter: none;
+}
+
+[data-ui-layout='portrait-compact'] .zen-home-pond-inframe,
+[data-ui-layout='portrait-desktop'] .zen-home-pond-inframe {
+  border-right: 0;
+}
+
+[data-ui-layout='portrait-compact'] .zen-home-pressure-slot {
+  grid-column: 1;
+  grid-row: 2;
+  width: 78%;
+}
+
+[data-ui-layout='portrait-compact'] .home-main-vision-grid {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1.08fr) minmax(0, 0.92fr);
+}
+
+[data-ui-layout='portrait-compact'] .home-main-scanner-slot {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+[data-ui-layout='portrait-compact'] .home-main-core-slot {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+[data-ui-layout='portrait-desktop'] .zen-home-stage {
+  --zen-home-portrait-pond-block: clamp(420px, min(68vw, 38vh), 760px);
+  --zen-home-portrait-lower-block: clamp(360px, min(58vw, 34vh), 680px);
+  align-self: center;
+  flex: 0 0 auto;
+  width: min(100%, 1240px);
+  height: auto;
+  margin-block: auto;
+  padding: 0;
+  overflow: hidden;
+  grid-template-columns: minmax(0, 2.125fr) minmax(240px, 1fr);
+  grid-template-rows:
+    var(--zen-home-portrait-pond-block)
+    34px
+    14px
+    var(--zen-home-portrait-lower-block);
+  column-gap: 0;
+  row-gap: 0;
+}
+
+[data-ui-layout='portrait-desktop'] .zen-home-pond-slot {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+
+[data-ui-layout='portrait-desktop'] .zen-home-pressure-slot {
+  grid-column: 1;
+  grid-row: 2;
+  width: 100%;
+}
+
+[data-ui-layout='portrait-desktop'] .zen-home-side-column {
+  display: contents;
+}
+
+[data-ui-layout='portrait-desktop'] .zen-home-bonsai-slot {
+  grid-column: 1;
+  grid-row: 4;
+}
+
+[data-ui-layout='portrait-desktop'] .zen-home-rhythm-slot {
+  grid-column: 2;
+  grid-row: 4;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  background: var(--zen-layer-l2-surface);
+}
+
+[data-ui-layout='portrait-desktop'] .home-main-frame {
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  overflow: hidden;
+}
+
+[data-ui-layout='portrait-desktop'] .home-main-vision-grid {
+  flex: 0 0 auto;
+  width: min(calc(100% - 28px), 1120px);
+  padding: 0;
+  gap: 14px;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows:
+    clamp(380px, min(62vw, 34vh), 640px)
+    clamp(340px, min(54vw, 30vh), 580px);
+}
+
+[data-ui-layout='portrait-desktop'] .home-main-scanner-slot {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+[data-ui-layout='portrait-desktop'] .home-main-core-slot {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+[data-ui-layout='portrait-desktop'] .home-main-brief-slot {
+  flex: 0 0 clamp(220px, 14vh, 280px);
+  width: min(calc(100% - 28px), 1120px);
+  min-height: 220px;
+  max-height: 280px;
+  padding: 0;
+}

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "feed-flow",
+  "title": "Feed Flow real-site and causal evidence",
+  "targets": [
+    "feed/*"
+  ],
+  "estimatedSeconds": 120,
+  "guide": "docs/operations/qa/real-site-e2e.md",
+  "entrypoints": [
+    "scripts/e2e/feedHorizonQa.mjs"
+  ],
+  "resourceClaims": [
+    "runtime:feed-flow"
+  ]
+}

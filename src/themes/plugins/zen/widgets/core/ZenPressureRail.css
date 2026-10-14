@@ -1,0 +1,176 @@
+.zen-pressure-rail {
+  background: var(--zen-pressure-frame-fill);
+  color: var(--zen-pressure-frame-ink);
+  box-shadow: inset 0 1px 0 var(--zen-pressure-frame-divider);
+}
+
+.zen-pressure-segment-cell,
+.zen-pressure-segment-face--other {
+  transition: flex-basis 480ms ease;
+}
+
+.zen-pressure-segments {
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+}
+
+/* The painted allocation remains the hover target. Its width always comes from
+ * the quantitative layout; only the in-place favicon opens a domain. */
+.zen-pressure-segment-face::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.zen-pressure-segment-face::before {
+  top: 12px;
+  height: 9px;
+  background-color: var(--zen-pressure-pigment);
+  box-shadow: inset -1px 0 0 var(--zen-pressure-frame-divider);
+  transition: background-color 180ms ease;
+}
+
+.zen-pressure-segment-face--other::before {
+  mask-image: linear-gradient(90deg, black 65%, transparent);
+}
+
+.zen-pressure-domain-action {
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: 10;
+  display: flex;
+  width: 32px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: opacity 180ms ease;
+}
+
+.zen-pressure-domain-action:disabled { cursor: default; }
+.zen-pressure-domain-action:focus-visible {
+  outline: 2px solid var(--zen-pressure-frame-focus);
+  outline-offset: -2px;
+}
+
+.zen-pressure-segment-favicon {
+  display: flex;
+  filter: grayscale(0.75);
+  pointer-events: none;
+}
+
+.zen-pressure-readiness-rail {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--zen-pressure-frame-fill);
+}
+
+.zen-pressure-readiness-rail::before {
+  content: '';
+  position: absolute;
+  inset: 16px 0 auto;
+  height: 1px;
+  background: color-mix(in srgb, var(--zen-pressure-frame-ink) 22%, transparent);
+  pointer-events: none;
+}
+
+/* Unavailable: the line itself is interrupted. Uneven stroke lengths keep it
+   from reading as a decorative dash pattern. It stays in frame ink so the break
+   survives every ambient phase; shu appears only as the small seal below. */
+.zen-pressure-readiness-rail[data-content-state='unavailable']::before {
+  background: repeating-linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--zen-pressure-frame-ink) 34%, transparent) 0 22px,
+    transparent 22px 29px,
+    color-mix(in srgb, var(--zen-pressure-frame-ink) 34%, transparent) 29px 40px,
+    transparent 40px 51px
+  );
+}
+
+/* Notches and inscription clear a patch of the line, like a carved label. */
+.zen-pressure-readiness-rail__notches,
+.zen-pressure-readiness-rail__inscription {
+  z-index: 1;
+  background: var(--zen-pressure-frame-fill);
+}
+
+.zen-pressure-readiness-rail__notches {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 12px;
+}
+
+.zen-pressure-readiness-rail__inscription {
+  min-width: 0;
+  overflow: hidden;
+  padding: 0 12px;
+  color: var(--zen-pressure-frame-ink);
+  font-family: var(--font-theme-ui);
+  font-size: var(--zen-type-floor);
+  letter-spacing: var(--zen-tracking-caption);
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* A small shu seal, slightly off-square, as a hanko would leave it. */
+.zen-pressure-readiness-rail[data-content-state='unavailable']
+  .zen-pressure-readiness-rail__inscription::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 8px;
+  border-radius: 1px 0 1px 0;
+  background: var(--zen-ink-shu);
+  vertical-align: 0.05em;
+}
+
+.zen-pressure-readiness-rail__notch {
+  width: 2px;
+  height: 9px;
+  background: color-mix(in srgb, var(--zen-pressure-frame-ink) 26%, var(--zen-pressure-frame-fill));
+  transition: background-color 240ms ease, opacity 240ms ease;
+}
+
+.zen-pressure-readiness-rail__notch[data-observed='true'] {
+  background: color-mix(in srgb, var(--zen-pressure-frame-ink) 88%, var(--zen-pressure-frame-fill));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zen-pressure-segment-cell,
+  .zen-pressure-segment-face--other,
+  .zen-pressure-segment-face::before,
+  .zen-pressure-domain-action,
+  .zen-pressure-readiness-rail__notch { transition: none !important; }
+}
+
+@media (forced-colors: active) {
+  .zen-pressure-segment-face::before {
+    background: CanvasText;
+    box-shadow: none;
+  }
+
+  .zen-pressure-segment-face[data-hovered='true']::before {
+    background: Highlight;
+  }
+
+  .zen-pressure-domain-action:focus-visible { outline-color: Highlight; }
+
+  .zen-pressure-readiness-rail::before { background: GrayText; }
+  .zen-pressure-readiness-rail__inscription { color: CanvasText; }
+  .zen-pressure-readiness-rail__inscription::before { background: CanvasText; }
+}

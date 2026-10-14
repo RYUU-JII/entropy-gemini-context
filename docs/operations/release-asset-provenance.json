@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "families": [
+    {
+      "id": "ubuntu-font-family",
+      "kind": "font",
+      "status": "verified",
+      "rightsBasis": "Redistribution under the Ubuntu Font Licence 1.0.",
+      "license": "Ubuntu Font Licence 1.0",
+      "sourceUrl": "https://design.ubuntu.com/font/",
+      "noticePath": "public/THIRD_PARTY_NOTICES.txt",
+      "files": [
+        {
+          "path": "src/themes/styles/fonts/Ubuntu-Italic-Variable.ttf",
+          "sha256": "f5689f6ae7f16f7ede2012702abd605ac1afa03c950713523b9953d600937975"
+        },
+        {
+          "path": "src/themes/styles/fonts/Ubuntu-Italic-Variable.woff2",
+          "sha256": "a8c09e728afc7ac2ec6373b97cdfb7fd824bebaa5c1fe9d1055c048eaf7f3d7c"
+        },
+        {
+          "path": "src/themes/styles/fonts/Ubuntu-Variable.ttf",
+          "sha256": "28c4c189a44803b1986fd16074187034dc6d94ad35f5e87de13dd0e786b70b73"
+        },
+        {
+          "path": "src/themes/styles/fonts/Ubuntu-Variable.woff2",
+          "sha256": "a52d67081ca7f0b8e4cfd0562eb8f876683a962a6a1fcb128bfecd859bf0cc62"
+        },
+        {
+          "path": "src/themes/styles/fonts/UbuntuMono-Variable.ttf",
+          "sha256": "fbf1e748836994f730e602f7dcf2525564d6d78aa336080cbb73af909d0e08ee"
+        },
+        {
+          "path": "src/themes/styles/fonts/UbuntuMono-Variable.woff2",
+          "sha256": "b822dbcda8bc14837c11e2fcad3baab125bc371659541468107e15414311cb81"
+        }
+      ]
+    },
+    {
+      "id": "dejavu-serif",
+      "kind": "font",
+      "status": "verified",
+      "rightsBasis": "Redistribution under the Bitstream Vera font licence with DejaVu changes in the public domain.",
+      "license": "Bitstream Vera font licence",
+      "sourceUrl": "https://dejavu-fonts.github.io/",
+      "noticePath": "public/THIRD_PARTY_NOTICES.txt",
+      "files": [
+        {
+          "path": "src/themes/styles/fonts/DejaVuSerif-Bold.ttf",
+          "sha256": "847b33e13925f19ff87e4d934d6b3cf7cac35ce16424f6f670e40c2f377cf2df"
+        },
+        {
+          "path": "src/themes/styles/fonts/DejaVuSerif-Bold.woff2",
+          "sha256": "b455a1d09697b136b93071e544c51000f5a85660a96a9107ca1051fc7efc31be"
+        },
+        {
+          "path": "src/themes/styles/fonts/DejaVuSerif-Regular.ttf",
+          "sha256": "8f2c103bfa3fd5de71f1b92b18f21906b5a26871fb7e19a9a4c9af539c3cc7ab"
+        },
+        {
+          "path": "src/themes/styles/fonts/DejaVuSerif-Regular.woff2",
+          "sha256": "04ef4171a93a60338d161456ba95c8715e9ac09b71ed8dcf69a9b2b4fba049d1"
+        }
+      ]
+    },
+    {
+      "id": "sunflower",
+      "kind": "font",
+      "status": "verified",
+      "rightsBasis": "Redistribution under the SIL Open Font License 1.1 bundled with the font.",
+      "license": "SIL Open Font License 1.1",
+      "sourceUrl": "https://fonts.google.com/specimen/Sunflower",
+      "noticePath": "src/apps/landing/assets/fonts/OFL-Sunflower.txt",
+      "files": [
+        {
+          "path": "src/apps/landing/assets/fonts/Sunflower-Light.ttf",
+          "sha256": "dd9fb97aa9ec1fdb65e0328513d9c54c114fba41decca1d32a1e1ed992e255c5"
+        }
+      ]
+    },
+    {
+      "id": "noto-sans-kr",
+      "kind": "font-package",
+      "status": "verified",
+      "rightsBasis": "Pinned build dependency redistributed under the SIL Open Font License 1.1.",
+      "license": "SIL Open Font License 1.1",
+      "sourceUrl": "https://fontsource.org/fonts/noto-sans-kr",
+      "package": "@fontsource-variable/noto-sans-kr",
+      "version": "5.3.0",
+      "noticePath": "node_modules/@fontsource-variable/noto-sans-kr/LICENSE",
+      "files": []
+    },
+    {
+      "id": "entropy-enso-extension-icons",
+      "kind": "generated-icon",
+      "status": "verified",
+      "origin": "first-party",
+      "rightsBasis": "First-party raster outputs generated only from the repository-owned Canvas2D geometry and color constants in scripts/generate-icons.mjs. Commit 4488e4b8e76a0efcdcb7f8f3214140f5c7db9b54 changed the generator and these exact PNG outputs together; the generator and output blobs remain unchanged at the audited revision.",
+      "license": "Not applicable (first-party project asset)",
+      "sourcePath": "scripts/generate-icons.mjs",
+      "sourceCommit": "4488e4b8e76a0efcdcb7f8f3214140f5c7db9b54",
+      "files": [
+        {
+          "path": "public/icons/icon128.png",
+          "sha256": "1242a1bf05f684033acf7756ed4c0a7ff5381ec75b8eadbdaba6b7740b35a907"
+        },
+        {
+          "path": "public/icons/icon16.png",
+          "sha256": "29b29a7588e3d3db98afaf39777bdf5ad198fa7ef9653206e1f5092c1c454044"
+        },
+        {
+          "path": "public/icons/icon48.png",
+          "sha256": "8bdc90690e24f56d986bcc3bf6942463a01cea2033fd4df209de880aee1bd796"
+        }
+      ]
+    },
+    {
+      "id": "suikinkutsu-toolbar-icons",
+      "kind": "derived-raster-icon",
+      "status": "review_required",
+      "origin": "unresolved",
+      "rightsBasis": "Local history proves only that commit e3844480bd93607eb348611778b8862afd086859 added the four toolbar icons together with tmp/imagegen/suikinkutsu-master.png, suikinkutsu-chroma.png, and toolbar/QA derivatives. The repository does not retain a prompt, generator/provider identity, source-input declaration, creator rights statement, or redistribution terms, so release rights cannot be verified locally.",
+      "license": "",
+      "sourceCommit": "e3844480bd93607eb348611778b8862afd086859",
+      "reviewReason": "Confirm the original generator/provider, prompt and input provenance, and commercial redistribution rights; otherwise replace this family with a reproducible first-party asset.",
+      "files": [
+        {
+          "path": "public/icons/suikinkutsu16.png",
+          "sha256": "807906c4da5b06bb4b78c8159bb0e88dd1918cbe18755ae708a35beeabc91d0b"
+        },
+        {
+          "path": "public/icons/suikinkutsu24.png",
+          "sha256": "a6dab9fc8155f6bc07359d1fc08acd9d8832991b11cfe0f6d1e83fe56d2a78e6"
+        },
+        {
+          "path": "public/icons/suikinkutsu32.png",
+          "sha256": "fea4e5c0bfd8c1b084e99280da446b0caa343d60601eb6be18b2ef9c1f4f44a4"
+        },
+        {
+          "path": "public/icons/suikinkutsu48.png",
+          "sha256": "84e92fdb0ddb7f51c9327f7391041aa098b048991c27c4cd78e3bdc38e82402e"
+        }
+      ]
+    },
+    {
+      "id": "instagram-preview-threats-icon",
+      "kind": "brand-like-raster-icon",
+      "status": "review_required",
+      "origin": "unresolved",
+      "rightsBasis": "Local history proves only a GIMP 2.10 export dated 2026-01-10 and repository introduction in commit 0b5a4bbc0e5acfd4fb7cd43f1d7aa013e67bfe47. Embedded metadata identifies no image creator, original vector, source URL, copyright owner, trademark authorization, or redistribution terms. The embedded ICC profile's Public Domain notice applies to the color profile, not to the icon artwork.",
+      "license": "",
+      "sourceCommit": "0b5a4bbc0e5acfd4fb7cd43f1d7aa013e67bfe47",
+      "reviewReason": "Provide the original artwork/source and permission for use in the Instagram-like preview, or replace it with a clearly original first-party mark.",
+      "files": [
+        {
+          "path": "src/apps/dashboard/tabs/filter/preview/icons/threats_icon.png",
+          "sha256": "5c7b8861cbacaddb06361ce8446f204a48eed11e7069311a409103b120b430de"
+        }
+      ]
+    },
+    {
+      "id": "zen-landing-favicon",
+      "kind": "authored-svg-icon",
+      "status": "verified",
+      "origin": "first-party",
+      "rightsBasis": "First-party code-authored SVG composed only of repository-visible rect, path, and circle primitives. It was introduced with the Zen landing implementation in commit b9c940242ebcfabfbfc87cf2f3f6ca41092aecaa and contains no external references, embedded raster, generator metadata, or third-party notice.",
+      "license": "Not applicable (first-party project asset)",
+      "sourcePath": "src/apps/landing/favicon.svg",
+      "sourceCommit": "b9c940242ebcfabfbfc87cf2f3f6ca41092aecaa",
+      "files": [
+        {
+          "path": "src/apps/landing/favicon.svg",
+          "sha256": "9096bccddc86937ce254f7a2c575ab7ee6165e2a1c6f8ebe2fc2e8554469260f"
+        }
+      ]
+    },
+    {
+      "id": "mockup-preview-placeholder",
+      "kind": "authored-svg-placeholder",
+      "status": "verified",
+      "origin": "first-party",
+      "rightsBasis": "First-party code-authored placeholder composed only of repository-visible SVG gradients, rectangles, and text. Commit 8f1e621a3cf565e42cc8b9c52618c746c0f66dda added it while removing the prior GIF mockup assets, and the SVG declares that replacement purpose directly.",
+      "license": "Not applicable (first-party project asset)",
+      "sourcePath": "src/assets/mockups/images/preview-placeholder.svg",
+      "sourceCommit": "8f1e621a3cf565e42cc8b9c52618c746c0f66dda",
+      "files": [
+        {
+          "path": "src/assets/mockups/images/preview-placeholder.svg",
+          "sha256": "5b12659ea3b1bd7593037fc243c856f7d689e412e7abd17fce38e0d92154dbfa"
+        }
+      ]
+    },
+    {
+      "id": "zen-enso-complete-seal",
+      "kind": "authored-svg-artifact",
+      "status": "verified",
+      "origin": "first-party",
+      "rightsBasis": "First-party code-authored SVG composed only of repository-visible paths, circles, gradients, and standard SVG filters. It was introduced as part of the Zen artifact presentation in commit 73da0698b2e35ddb653472f8bd9cfab353cc4e9f and contains no external references, embedded raster, generator metadata, or third-party notice.",
+      "license": "Not applicable (first-party project asset)",
+      "sourcePath": "src/themes/plugins/zen/widgets/tools/assets/zen-enso-complete-seal.svg",
+      "sourceCommit": "73da0698b2e35ddb653472f8bd9cfab353cc4e9f",
+      "files": [
+        {
+          "path": "src/themes/plugins/zen/widgets/tools/assets/zen-enso-complete-seal.svg",
+          "sha256": "1869a5ed7cb64e213f8494320f7bf5086be2bd549bf9e26281cc6a784074ed63"
+        }
+      ]
+    },
+    {
+      "id": "room478-hybrid-garden-v4",
+      "kind": "generated-illustration",
+      "status": "verified",
+      "origin": "first-party",
+      "rightsBasis": "Project-directed built-in image_gen outputs from the selected Room 478 hybrid-v4 study, with complete prompts and original generated files committed under prototypes/room-478/assets. These optimized files only re-encode those originals; they contain no separately sourced artwork. Source file hashes and encoding are recorded per product file.",
+      "license": "Not applicable (project-generated image asset)",
+      "sourcePath": "prototypes/room-478/assets/hybrid-v4-prompts.md",
+      "sourceCommit": "3b671e8e019adc0ea99a7eb6a4577ac41e9b702e",
+      "files": [
+        {
+          "path": "src/apps/room-478/assets/zen-garden-wide-hybrid-v4.webp",
+          "sha256": "b357c6acb6557508d047a0bab8606795f52ee2cd57de6bcc0fe019d2e3e9e2ae",
+          "sourcePath": "prototypes/room-478/assets/zen-garden-wide-hybrid-v4.png",
+          "sourceSha256": "43d3ca316e50ad8e3c40532c59f8a5b683be6d34ec5f6ce90768058892893239",
+          "encoding": "WebP quality=92 method=6; original dimensions retained"
+        },
+        {
+          "path": "src/apps/room-478/assets/zen-garden-portrait-hybrid-v4.webp",
+          "sha256": "1f6dfb3c8795834c8206975d3f5094a8ab0d941760bc0fb8aff227a78e0e3647",
+          "sourcePath": "prototypes/room-478/assets/zen-garden-portrait-hybrid-v4.png",
+          "sourceSha256": "96e0db7f414b5a4af347cdb94ee8e29ab98e81094e78af47943256bc8032f997",
+          "encoding": "WebP quality=92 method=6; original dimensions retained"
+        },
+        {
+          "path": "src/apps/room-478/assets/zen-garden-panorama-hybrid-v4.webp",
+          "sha256": "7eb7bdc25cfb0b0cc8ec4ac71031e1a9043f67ef1c1fa4a0be15f0371169fbea",
+          "sourcePath": "prototypes/room-478/assets/zen-garden-panorama-hybrid-v4.png",
+          "sourceSha256": "9b99e1c74008d92db2915f16d547a2c83f2b2166169a75674d63425efd4d9723",
+          "encoding": "WebP quality=92 method=6; original dimensions retained"
+        },
+        {
+          "path": "src/apps/room-478/assets/zen-furin-hybrid-v4.webp",
+          "sha256": "06f3cc8eea029acebb96eeed9472bd794b5f85f54be9928ba3f09b4e65bf1ec8",
+          "sourcePath": "prototypes/room-478/assets/zen-furin-hybrid-v4.png",
+          "sourceSha256": "7d36257d1986d4ee4cacc986bcd5048317edeb9cda01883c6793e88b24c6b80c",
+          "encoding": "Lossless RGBA WebP method=6 exact=True; original alpha and dimensions retained"
+        }
+      ]
+    },
+    {
+      "id": "zen-korean-serif",
+      "kind": "font",
+      "status": "verified",
+      "rightsBasis": "Redistribution and subsetting under SIL Open Font License 1.1; local family renamed to Zen Korean Serif Local.",
+      "license": "SIL Open Font License 1.1",
+      "sourceUrl": "https://github.com/google/fonts/tree/8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5/ofl/notoserifkr",
+      "sourceCommit": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+      "sourceSha256": "11f8d5de6f1b79195efba3828aaa2ec95c1178f5ae976fb23c8d53250a9938f3",
+      "fontVersion": "2.003-H1",
+      "generation": "scripts/dev/subset-zen-korean-serif.py; fonttools 4.61.1 + brotli 1.2.0; KS X 1001 Hangul + current ko copy, jamo, punctuation; wght 400:700",
+      "noticePath": "public/OFL-ZenKoreanSerif.txt",
+      "files": [
+        {
+          "path": "src/themes/styles/fonts/ZenKoreanSerif-Variable.woff2",
+          "sha256": "6f8ea180c30bc3c2a5c6b48fb050155ca8920804492d7420e8d78665f0f62cdc"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entropy Gate</title>
+  <link rel="icon" type="image/png" href="/icons/icon48.png" />
+  <style>
+    :root {
+      color-scheme: dark;
+      background:
+        radial-gradient(circle at top, rgba(233, 224, 202, 0.2), transparent 42%),
+        linear-gradient(180deg, #181716 0%, #090909 100%);
+    }
+
+    html,
+    body,
+    #root {
+      width: 100%;
+      min-width: 100%;
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      overflow: hidden;
+      background: transparent;
+      color: #f5efe2;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top, rgba(233, 224, 202, 0.18), transparent 42%),
+        linear-gradient(180deg, #181716 0%, #090909 100%);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/apps/gate/main.jsx"></script>
+</body>
+
+</html>

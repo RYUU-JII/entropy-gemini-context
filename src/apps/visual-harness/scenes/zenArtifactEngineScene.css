@@ -1,0 +1,20 @@
+.zen-engine-review { min-height: 100vh; padding: 44px; color: #353930; background: #eeede7; font-family: var(--font-theme-ui); }
+.zen-engine-review header, .zen-engine-results { max-width: 960px; margin: 0 auto 30px; }
+.zen-engine-review header > p:first-child { font-size: 11px; letter-spacing: .18em; color: #737968; }
+.zen-engine-review h1 { font-size: 28px; font-weight: 400; margin: 10px 0; }
+.zen-engine-review h2 { font-size: 16px; font-weight: 500; padding: 20px 24px 0; }
+.zen-engine-review p { font-size: 13px; line-height: 1.7; }
+.zen-engine-review article { width: 960px; margin: 0 auto 24px; background: #faf9f5; border: 1px solid #d9d9ce; }
+.zen-engine-pair { display: grid; grid-template-columns: 480px 480px; }
+.zen-engine-specimen { display: flex; align-items: center; justify-content: center; width: 480px; height: 480px; }
+.zen-engine-pair img { display: block; width: 480px; height: 480px; }
+.zen-engine-benchmark { width: 480px; margin: 0 auto; background: #faf9f5; }
+.zen-engine-benchmark > p { padding: 10px; }
+.zen-engine-results { padding: 20px 0; }
+.zen-engine-results h2 { padding-left: 0; }
+.zen-engine-results table { border-collapse: collapse; width: 100%; font-size: 12px; margin: 20px 0; }
+.zen-engine-results th, .zen-engine-results td { text-align: left; border-bottom: 1px solid #d9d9ce; padding: 12px 8px; }
+.zen-engine-collection article { width: 1280px; }
+.zen-engine-collection .zen-engine-pair { grid-template-columns: 640px 640px; }
+.zen-engine-collection .zen-engine-specimen, .zen-engine-collection .zen-engine-pair img { width: 640px; height: 640px; overflow: hidden; }
+.zen-engine-collection .zen-engine-benchmark { width: 640px; }

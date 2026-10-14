@@ -1,0 +1,108 @@
+/**
+ * Theme Contract + System-Aware Effects
+ *
+ * This file consumes theme variables so the UI reacts automatically.
+ */
+
+:root,
+[data-theme] {
+    --ui-mesh: none;
+    --ui-mesh-opacity: 0;
+    --ui-mesh-blend: normal;
+    --ui-mesh-size: auto;
+    --ui-mesh-filter: none;
+    --ui-mesh-animation: none;
+
+    --entropy-intensity: 0;
+    --entropy-shift-sm: calc(var(--entropy-intensity) * 1px);
+    --entropy-shift: calc(var(--entropy-intensity) * 2px);
+    --entropy-shift-lg: calc(var(--entropy-intensity) * 3px);
+    --entropy-shift-sm-neg: calc(var(--entropy-shift-sm) * -1);
+    --entropy-shift-neg: calc(var(--entropy-shift) * -1);
+    --entropy-shift-lg-neg: calc(var(--entropy-shift-lg) * -1);
+    --entropy-anim-1-duration: calc(2.4s - (var(--entropy-intensity) * 0.8s));
+    --entropy-anim-2-duration: calc(3.2s - (var(--entropy-intensity) * 1.1s));
+
+    --font-distortion: 0;
+    --font-distortion-family: var(--font-sans);
+    --font-distortion-spacing: calc(var(--font-distortion) * 0.04em);
+    --font-theme-letter-spacing: 0em;
+
+    --ui-fx-text-shadow:
+        calc(var(--entropy-intensity) * -1px) 0 0 color-mix(in srgb, var(--color-danger) calc(var(--entropy-intensity) * 100%), transparent),
+        calc(var(--entropy-intensity) * 1px) 0 0 color-mix(in srgb, var(--color-success) calc(var(--entropy-intensity) * 100%), transparent);
+    --ui-fx-border-color: color-mix(in srgb, var(--color-border) calc(100% - (var(--entropy-intensity) * 35%)), var(--color-danger) calc(var(--entropy-intensity) * 35%));
+    --ui-fx-border-glow: 0 0 calc(var(--entropy-intensity) * 12px) color-mix(in srgb, var(--color-accent) calc(var(--entropy-intensity) * 35%), transparent);
+}
+
+@keyframes ui-mesh-drift {
+    from {
+        background-position: 0 0, 0 0, 0 0;
+    }
+
+    to {
+        background-position: 0 120px, 60px 0, 120px 120px;
+    }
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: var(--ui-mesh);
+    background-size: var(--ui-mesh-size);
+    background-repeat: repeat;
+    opacity: var(--ui-mesh-opacity);
+    mix-blend-mode: var(--ui-mesh-blend);
+    filter: var(--ui-mesh-filter);
+    animation: var(--ui-mesh-animation);
+    z-index: 2147483647;
+    transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+:where(h1, h2, h3, h4, h5, h6, button, [role='button'], a, label) {
+    text-shadow: var(--ui-fx-text-shadow);
+    letter-spacing: calc(var(--font-theme-letter-spacing, 0em) + var(--font-distortion-spacing));
+    font-family: var(--font-distortion-family, inherit);
+}
+
+:where(button, [role='button'], input, select, textarea, .card, .panel, .glass, .chip, .badge) {
+    border-color: var(--ui-fx-border-color);
+    box-shadow: var(--ui-fx-border-glow);
+    transition-property: var(--transition-property-interactive);
+    transition-duration: var(--transition-duration-base);
+    transition-timing-function: var(--transition-style);
+}
+
+/* Theme-aware hover/active transforms */
+:where(button, [role='button'], a.btn, .interactive):hover {
+    transform: var(--hover-transform);
+}
+
+:where(button, [role='button'], a.btn, .interactive):active {
+    transform: var(--active-transform);
+}
+
+/* Theme typography application */
+:where(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--font-theme-heading);
+}
+
+:where(body, p, span, label, .ui-text) {
+    font-family: var(--font-theme-ui);
+}
+
+:where(code, pre, .mono, .terminal) {
+    font-family: var(--font-theme-mono);
+}
+
+/* Theme-aware blur for glass elements */
+:where(.glass, .backdrop-blur) {
+    backdrop-filter: blur(var(--blur-intensity));
+}
+
+/* Theme-aware glow intensity */
+:where(.glow, .neon) {
+    filter: drop-shadow(var(--glow-shadow, 0 0 calc(var(--glow-intensity, 1) * 5px) currentColor));
+}

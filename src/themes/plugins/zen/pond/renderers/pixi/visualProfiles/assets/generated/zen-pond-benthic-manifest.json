@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "contractSignature": "schema:1|material:neutral-depth|size:1024|runtime:rgba8|encoding:gzip|morphology:neutral_mineral_relief|depth:0.16|seed:neutral-depth-v2|engine:@napi-rs/canvas@1.0.2",
+  "materialId": "neutral-depth",
+  "textureSize": 1024,
+  "buildEngine": "@napi-rs/canvas@1.0.2",
+  "sourceDigest": "ade45b96dc6a63828fddc186b7623badac377111c7f3af37d8be1e13624cdb2f",
+  "assets": {
+    "primary": {
+      "file": "zen-pond-benthic-primary.png",
+      "bytes": 802591,
+      "sha256": "ba15e6e2263802063a0e3c15b62c6b73d1c8d3ec697cc060adf493a195b901c8",
+      "runtimeFile": "zen-pond-benthic-primary.rgba.gz",
+      "runtimeBytes": 838169,
+      "runtimeSha256": "ec41e637af537962a3bbc1dd448186cd82569f411115999d821ea948345b4ca0",
+      "runtimeDecodedBytes": 4194304,
+      "runtimeDecodedSha256": "4c91ce94626b6e2c8eba22cef01db524a91b7ccfad9b88cebf7f60313ea74ac1",
+      "runtimePixelFormat": "rgba8",
+      "runtimeEncoding": "gzip"
+    },
+    "detail": {
+      "file": "zen-pond-benthic-detail.png",
+      "bytes": 727322,
+      "sha256": "c6edb9868353523c06dbff3df7430d4a62d1960a04ae00d0dfc700e9e8d452e3",
+      "runtimeFile": "zen-pond-benthic-detail.rgba.gz",
+      "runtimeBytes": 715691,
+      "runtimeSha256": "2ffa333130f42003853f3460a274843d4a193cb2be294ee76bfc999c825d3704",
+      "runtimeDecodedBytes": 4194304,
+      "runtimeDecodedSha256": "674fe08ec8a12f1e4e877f8cf0863852baf84047818d5403fa0cf62ad22250a0",
+      "runtimePixelFormat": "rgba8",
+      "runtimeEncoding": "gzip"
+    }
+  }
+}

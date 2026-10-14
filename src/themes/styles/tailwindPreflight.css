@@ -1,0 +1,23 @@
+/* App defaults remain deliberate design choices across framework releases. */
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+  border-color: #e5e7eb;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+  opacity: 1;
+}
+
+button:not(:disabled),
+[role='button']:not(:disabled) {
+  cursor: pointer;
+}
+
+dialog {
+  margin: auto;
+}

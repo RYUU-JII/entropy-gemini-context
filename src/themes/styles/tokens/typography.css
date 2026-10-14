@@ -1,0 +1,227 @@
+/**
+ * Typography Tokens
+ * 
+ * Font families, sizes, weights, and line heights.
+ */
+
+@font-face {
+    font-family: 'App Sans Local';
+    src: url('../fonts/Ubuntu-Variable.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 100 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'App Sans Local';
+    src: url('../fonts/Ubuntu-Italic-Variable.woff2') format('woff2');
+    font-style: italic;
+    font-weight: 100 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'App Mono Local';
+    src: url('../fonts/UbuntuMono-Variable.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 100 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'App Serif Local';
+    src: url('../fonts/DejaVuSerif-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'App Serif Local';
+    src: url('../fonts/DejaVuSerif-Bold.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ * THEME-IDENTITY FACES
+ *
+ * These are NOT part of the app-neutral L1 stack above — each is a
+ * specific theme's visual identity (matrix's terminal glyph, scp's
+ * typewriter, cyberpunk's HUD grotesk), referenced by name from that
+ * theme's own `tokens.typography` in themes/plugins/<id>/theme.js.
+ * Self-hosted so the declared name always matches what actually renders.
+ * Latin-only subsets (these themes render Latin/mono glyphs; non-Latin
+ * text falls through to --font-theme-*'s next stack entry, unaffected).
+ * ═══════════════════════════════════════════════════════════════ */
+@font-face {
+    font-family: 'VT323';
+    src: url('../fonts/VT323-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+/* Zen opts into this face through its L2 serif tokens. App-neutral stacks
+ * deliberately keep their existing families. Latin stays App Serif Local. */
+@font-face {
+    font-family: 'Zen Korean Serif Local';
+    src: url('../fonts/ZenKoreanSerif-Variable.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    unicode-range: U+1100-11FF, U+3000-303F, U+3130-318F, U+AC00-D7A3;
+}
+
+@font-face {
+    font-family: 'Share Tech Mono';
+    src: url('../fonts/ShareTechMono-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Courier Prime';
+    src: url('../fonts/CourierPrime-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Courier Prime';
+    src: url('../fonts/CourierPrime-Bold.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../fonts/JetBrainsMono-Variable.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 100 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('../fonts/Rajdhani-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('../fonts/Rajdhani-Medium.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('../fonts/Rajdhani-SemiBold.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('../fonts/Rajdhani-Bold.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('../fonts/Orbitron-Variable.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400 900;
+    font-display: swap;
+}
+
+:root {
+    /* ═══════════════════════════════════════════════════════════════
+   * FONT FAMILIES — APP BASE LAYER (theme-neutral)
+   *
+   * This is layer 1 of 3 and belongs to NO theme. Do not tune it to suit
+   * one theme's look; a theme expresses its typography through its own
+   * `tokens.typography`, which themes/core/utils.js projects onto
+   * --font-theme-heading / -ui / -mono / -serif (layer 2), which the
+   * Tailwind font-* utilities then consume (layer 3).
+   *
+   * A [data-theme] rule must never redeclare font-family from these base
+   * vars: it outranks the utility class and would pin that theme to this
+   * layer, silently making its typography tokens dead config.
+   *
+   * Only the 'App * Local' faces above are actually shipped. Every other
+   * name here is an opportunistic OS-local match, so it renders only on
+   * machines that happen to have it.
+   * ═══════════════════════════════════════════════════════════════ */
+    --font-sans: 'App Sans Local', 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --font-mono: 'App Mono Local', ui-monospace, monospace;
+
+    --font-heading: var(--font-sans);
+    --font-ui: var(--font-sans);
+    --font-serif: 'App Serif Local', 'Georgia', serif;
+    --font-calligraphy: var(--font-serif);
+
+    /* ═══════════════════════════════════════════════════════════════
+   * FONT SIZES (Based on modular scale)
+   * ═══════════════════════════════════════════════════════════════ */
+    --text-xs: 0.6875rem;
+    /* 11px */
+    --text-sm: 0.8125rem;
+    /* 13px */
+    --text-base: 0.9375rem;
+    /* 15px */
+    --text-lg: 1.125rem;
+    /* 18px */
+    --text-xl: 1.5rem;
+    /* 24px */
+    --text-2xl: 2rem;
+    /* 32px */
+    --text-3xl: 2.5rem;
+    /* 40px */
+
+    /* ═══════════════════════════════════════════════════════════════
+   * FONT WEIGHTS
+   * ═══════════════════════════════════════════════════════════════ */
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    --font-black: 900;
+
+    /* ═══════════════════════════════════════════════════════════════
+   * LINE HEIGHTS
+   * ═══════════════════════════════════════════════════════════════ */
+    --leading-none: 1;
+    --leading-tight: 1.25;
+    --leading-snug: 1.375;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.625;
+    --leading-loose: 2;
+
+    /* ═══════════════════════════════════════════════════════════════
+   * LETTER SPACING
+   * ═══════════════════════════════════════════════════════════════ */
+    --tracking-tighter: -0.05em;
+    --tracking-tight: -0.025em;
+    --tracking-normal: 0;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+    --tracking-widest: 0.1em;
+}
+
+:root:lang(ko) {
+    --font-sans: 'Pretendard Variable', 'Pretendard', 'Noto Sans KR', 'App Sans Local', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    --font-serif: 'Noto Serif KR', 'App Serif Local', 'Apple SD Gothic Neo', 'Malgun Gothic', serif;
+}

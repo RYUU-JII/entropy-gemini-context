@@ -1,0 +1,22 @@
+.pressure-dock-specimens {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 28px;
+  background: #e0ddd2;
+}
+
+.pressure-dock-specimen h2 {
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: #444b3b;
+}
+
+.pressure-dock-specimen__surface {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) 34px;
+  overflow: hidden;
+  background: linear-gradient(130deg, #667b65, #344c41);
+}

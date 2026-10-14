@@ -1,0 +1,123 @@
+@font-face {
+  font-family: "Entropy Korean";
+  src: url("./assets/fonts/Sunflower-Light.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 300;
+}
+
+:root {
+  color-scheme: light;
+  font-family: Inter, Pretendard, "Entropy Korean", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #332f2a;
+  background: #f5f0e6;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 82% 8%, rgba(214, 185, 147, 0.18), transparent 32rem),
+    linear-gradient(160deg, #fbf8f1 0%, #f2eadf 100%);
+}
+
+a {
+  color: inherit;
+}
+
+.static-page {
+  width: min(100% - 2.5rem, 760px);
+  margin: 0 auto;
+  padding: clamp(4rem, 10vw, 8rem) 0 6rem;
+}
+
+.static-page__back,
+.static-page__eyebrow {
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.static-page__back {
+  display: inline-block;
+  margin-bottom: 4rem;
+  text-decoration: none;
+}
+
+.static-page__eyebrow {
+  color: #756b60;
+}
+
+.static-page h1,
+.static-page h2 {
+  font-family: "Iowan Old Style", "Entropy Korean", Batang, serif;
+  font-weight: 500;
+}
+
+.static-page h1 {
+  max-width: 12ch;
+  margin: 0.65rem 0 1.5rem;
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+}
+
+.static-page__lede {
+  max-width: 60ch;
+  margin: 0 0 5rem;
+  color: #5f574f;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: 1.75;
+}
+
+.static-page section {
+  padding: 2rem 0;
+  border-top: 1px solid rgba(71, 62, 52, 0.16);
+}
+
+.static-page h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.25rem;
+}
+
+.static-page section p,
+.static-page footer {
+  color: #655d54;
+  line-height: 1.8;
+}
+
+.static-page footer {
+  padding-top: 3rem;
+  font-size: 0.78rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    color: #eee8dc;
+    background: #151822;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 80% 8%, rgba(102, 82, 111, 0.22), transparent 32rem),
+      linear-gradient(160deg, #202431 0%, #12151e 100%);
+  }
+
+  .static-page__eyebrow,
+  .static-page__lede,
+  .static-page section p,
+  .static-page footer {
+    color: #aaa6ae;
+  }
+
+  .static-page section {
+    border-top-color: rgba(238, 232, 220, 0.15);
+  }
+}

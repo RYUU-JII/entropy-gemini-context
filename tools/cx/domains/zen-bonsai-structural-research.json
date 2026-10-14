@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "zen-bonsai-structural-research",
+  "title": "Zen bonsai deterministic structural research",
+  "pathPrefixes": [
+    "scripts/dev/zen-bonsai-morphology-research/experiment/",
+    "scripts/dev/zen-bonsai-morphology-research/kernel/",
+    "scripts/harness/adapters/zenBonsaiMorphologyHarnessAdapter.mjs",
+    "tests/zenBonsaiMorphology"
+  ],
+  "ownerDocs": [
+    "docs/architecture/themes/zen/zen-bonsai-architecture-guards.md"
+  ],
+  "resourceClaims": [],
+  "focusedChecks": [
+    {
+      "id": "zen-bonsai-structural-research-contracts",
+      "label": "Zen bonsai structural research contracts",
+      "executable": "node",
+      "args": [
+        "scripts/dev/run-local-command.mjs",
+        "vitest",
+        "run",
+        "tests/zenBonsaiMorphologyResearchBoundary.test.js",
+        "tests/zenBonsaiMorphologyResearchHarnessAdapter.test.js",
+        "--no-file-parallelism"
+      ],
+      "estimatedSeconds": 12
+    }
+  ],
+  "harnessIds": [
+    "zen-bonsai-structural"
+  ]
+}

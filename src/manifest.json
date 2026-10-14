@@ -1,0 +1,67 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extName__",
+  "version": "1.0.0",
+  "minimum_chrome_version": "129",
+  "default_locale": "en",
+  "description": "__MSG_extDescription__",
+  "permissions": [
+    "storage",
+    "tabs",
+    "alarms",
+    "favicon"
+  ],
+  "optional_permissions": [
+    "tabGroups",
+    "notifications",
+    "scripting",
+    "history",
+    "bookmarks",
+    "idle",
+    "webNavigation"
+  ],
+  "optional_host_permissions": [
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "src/apps/background/index.js",
+    "type": "module"
+  },
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; script-src 'self'; object-src 'none'; connect-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self'; media-src 'self' blob:; frame-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none';"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "src/pages/popup.html",
+    "default_title": "__MSG_actionTitle__",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_ui": {
+    "page": "src/pages/dashboard.html",
+    "open_in_tab": true
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/apps/content/*.js",
+        "src/pages/nudge-render-host.html",
+        "src/pages/room-478.html",
+        "assets/*",
+        "assets/**/*",
+        "chunks/*.js",
+        "icons/*.png"
+      ],
+      "matches": [
+        "*://*/*"
+      ]
+    }
+  ]
+}

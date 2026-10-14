@@ -1,0 +1,73 @@
+.visual-room478-sequence {
+  min-height: 100vh;
+  padding: 28px 34px 34px;
+  background:
+    radial-gradient(circle at 72% 0%, rgb(52 73 69 / 24%), transparent 28%),
+    #050909;
+  color: #bdc9c0;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.visual-room478-sequence__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  height: 52px;
+  border-bottom: 1px solid rgb(160 181 168 / 12%);
+}
+
+.visual-room478-sequence__header > span {
+  color: rgb(196 211 200 / 72%);
+  font-size: 10px;
+  font-weight: 760;
+  letter-spacing: 0.2em;
+}
+
+.visual-room478-sequence__header > p {
+  margin: 0;
+  color: rgb(160 178 166 / 46%);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+
+.visual-room478-sequence__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 20px;
+  padding-top: 22px;
+}
+
+.visual-room478-panel {
+  min-width: 0;
+  margin: 0;
+}
+
+.visual-room478-panel__viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #020506;
+  box-shadow:
+    0 18px 34px rgb(0 0 0 / 28%),
+    0 0 0 1px rgb(162 183 170 / 9%);
+}
+
+.visual-room478-panel__viewport .room-478 {
+  position: absolute;
+}
+
+.visual-room478-panel > p {
+  margin: 9px 0 0;
+  color: rgb(177 193 181 / 52%);
+  font: 600 9px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1100px) {
+  .visual-room478-sequence__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

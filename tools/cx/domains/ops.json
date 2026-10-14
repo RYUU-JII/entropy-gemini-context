@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "ops",
+  "title": "Entropy deterministic project operations",
+  "pathPrefixes": [],
+  "exactPaths": [],
+  "ownerDocs": [
+    "docs/governance/agent-start-here.md",
+    "docs/operations/ci/quality-gate.md"
+  ],
+  "resourceClaims": [
+    "workspace:sequential-main",
+    "git:index"
+  ],
+  "projectCommands": [
+    {
+      "id": "ops.build-dev",
+      "title": "Run the development build once",
+      "execution": {
+        "kind": "project_cli",
+        "executable": "npm",
+        "args": [
+          "run",
+          "build:dev"
+        ],
+        "timeoutSeconds": 900
+      },
+      "resourceClaims": [
+        "workspace:sequential-main"
+      ]
+    }
+  ],
+  "focusedChecks": []
+}

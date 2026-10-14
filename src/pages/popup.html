@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entropy Popup</title>
+  <link rel="stylesheet" href="/src/apps/popup/popup.css" />
+</head>
+
+<body>
+  <div id="root">
+    <div class="popup-shell" aria-live="polite">
+      <div class="popup-layout popup-layout--supported">
+        <section class="popup-card popup-site-panel popup-site-panel--loading">
+          <header class="popup-site-header">
+            <div class="popup-favicon popup-favicon--loading">
+              <span class="popup-favicon__letter">E</span>
+            </div>
+            <div class="popup-site-header__copy">
+              <div class="popup-loading-block popup-loading-block--title"></div>
+            </div>
+          </header>
+
+          <section class="popup-readout popup-readout--loading">
+            <div class="popup-readout__primary">
+              <div class="popup-loading-block popup-loading-block--label"></div>
+              <div class="popup-loading-block popup-loading-block--value"></div>
+              <div class="popup-loading-block popup-loading-block--hint"></div>
+            </div>
+            <div class="popup-readout__context">
+              <div class="popup-loading-block popup-loading-block--context"></div>
+              <div class="popup-loading-block popup-loading-block--context"></div>
+            </div>
+          </section>
+
+          <section class="popup-goal-card">
+            <div class="popup-goal-card__panel popup-goal-card__panel--active">
+              <div class="popup-loading-block popup-loading-block--limit-head"></div>
+              <div class="popup-loading-block popup-loading-block--track"></div>
+              <div class="popup-loading-block popup-loading-block--assist"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="popup-app-rail" aria-label="Entropy">
+          <div class="popup-app-rail__utility-group"></div>
+          <div class="popup-app-rail__nav-group">
+            <a class="popup-rail-button popup-rail-button--dashboard" href="dashboard.html" target="_blank" rel="noreferrer" aria-label="대시보드 열기" data-tooltip="대시보드 열기">
+              <span class="popup-rail-button__glyph" aria-hidden="true">D</span>
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/apps/popup/main.jsx"></script>
+</body>
+
+</html>

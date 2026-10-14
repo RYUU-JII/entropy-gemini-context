@@ -1,0 +1,11 @@
+{
+    "extName": {
+        "message": "엔트로피"
+    },
+    "extDescription": {
+        "message": "산만한 사이트에 로컬 마찰과 제한을 더해 더 의도적으로 탐색하도록 돕습니다."
+    },
+    "actionTitle": {
+        "message": "엔트로피 열기"
+    }
+}

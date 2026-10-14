@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 2,
+  "sinks": [
+    {
+      "path": "src/apps/dashboard/components/ZenAppearanceTimeControl.jsx",
+      "innerHTMLWrites": 0,
+      "dangerouslySetInnerHTML": 1,
+      "rationale": "Injects component-owned numeric CSS custom-property rules; no user-authored HTML input."
+    },
+    {
+      "path": "src/apps/popup/main.jsx",
+      "innerHTMLWrites": 2,
+      "dangerouslySetInnerHTML": 0,
+      "rationale": "Replaces the popup root with the static boot-shell template before the React owner mounts."
+    },
+    {
+      "path": "src/apps/room-478/main.js",
+      "innerHTMLWrites": 1,
+      "dangerouslySetInnerHTML": 0,
+      "rationale": "Creates a fixed extension-owned error state when the canonical room container is missing."
+    },
+    {
+      "path": "src/apps/room-478/room478Template.js",
+      "innerHTMLWrites": 1,
+      "dangerouslySetInnerHTML": 0,
+      "rationale": "Mounts extension-owned localized room markup; dynamic copy remains escaped by its template owner."
+    },
+    {
+      "path": "src/domains/nudge/indicator/view.js",
+      "innerHTMLWrites": 1,
+      "dangerouslySetInnerHTML": 0,
+      "rationale": "Private target-only mount inserts one static code-owned edge-status/reason template with immutable INDICATOR_CSS; dynamic labels and usage use DOM textContent. The security guard verifies this exact owner and rejects dynamic HTML, mount exports or value aliases."
+    },
+    {
+      "path": "src/domains/nudge/nudge/nudgeGameMediaSuppression.js",
+      "innerHTMLWrites": 1,
+      "dangerouslySetInnerHTML": 0,
+      "rationale": "Mounts a fixed open-shadow media-suppression overlay without page-provided markup."
+    },
+    {
+      "path": "src/domains/nudge/runtime-debugger/RuntimeDebuggerOverlay.js",
+      "innerHTMLWrites": 16,
+      "dangerouslySetInnerHTML": 0,
+      "rationale": "Development-only runtime diagnostics renderer; the public build guard must keep the module out of dist-prod."
+    },
+    {
+      "path": "src/domains/nudge/runtime/NudgeOverlayHost.js",
+      "innerHTMLWrites": 1,
+      "dangerouslySetInnerHTML": 0,
+      "rationale": "Private target-only mount inserts the immutable NUDGE_GAME_TEMPLATE from its fixed module owner; the security guard rejects dynamic interpolation, mount exports, and value aliases."
+    },
+    {
+      "path": "src/domains/protection/content/runtime/GlobalSentinelResidueOverlay.js",
+      "innerHTMLWrites": 1,
+      "dangerouslySetInnerHTML": 0,
+      "rationale": "Mounts a fixed closed-shadow residue overlay from extension-owned markup."
+    },
+    {
+      "path": "src/themes/plugins/zen/pond/app/ZenKoiTunerPanel.jsx",
+      "innerHTMLWrites": 0,
+      "dangerouslySetInnerHTML": 1,
+      "rationale": "Injects tuner-owned CSS animation rules derived from bounded numeric model values."
+    },
+    {
+      "path": "src/themes/plugins/zen/widgets/tools/FurinTuner.jsx",
+      "innerHTMLWrites": 0,
+      "dangerouslySetInnerHTML": 1,
+      "rationale": "Injects component-owned CSS keyframes derived from bounded numeric tuner state."
+    },
+    {
+      "path": "src/themes/plugins/zen/widgets/tools/ShishiOdoshiTuner.jsx",
+      "innerHTMLWrites": 0,
+      "dangerouslySetInnerHTML": 1,
+      "rationale": "Injects component-owned CSS timing values derived from bounded numeric tuner state."
+    }
+  ]
+}

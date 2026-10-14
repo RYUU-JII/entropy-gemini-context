@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "zen-bonsai",
+  "title": "Zen bonsai visual and runtime evidence",
+  "targets": [
+    "bonsai/*"
+  ],
+  "estimatedSeconds": 180,
+  "guide": "docs/architecture/themes/zen/zen-bonsai-architecture-guards.md",
+  "entrypoints": [
+    "scripts/dev/zen-bonsai-morphology-research/host/agentRunner.mjs"
+  ],
+  "resourceClaims": [
+    "runtime:zen-home-renderer"
+  ]
+}

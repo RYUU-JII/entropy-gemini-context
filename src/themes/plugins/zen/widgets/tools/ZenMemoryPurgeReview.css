@@ -1,0 +1,532 @@
+/* ZenMemoryPurgeReview
+   The Lethe (망각의 물결) confirmation sheet, drawn in the same hand as
+   ZenArtifactPanel: paper ground, one strong boundary under the identity
+   block, hairline rows beneath it, and ink-weight rather than box-weight for
+   emphasis. Colors read from the solar --zen-ambient-* tokens so the sheet
+   ages with the rest of the garden through the day. */
+
+.zen-purge {
+  --zen-purge-ink: var(--zen-ambient-text);
+  --zen-purge-ink-muted: var(--zen-ambient-text-muted);
+  --zen-purge-ink-subtle: var(--zen-ambient-text-subtle);
+  --zen-purge-rule: var(--zen-ambient-border);
+  --zen-purge-rule-muted: var(--zen-ambient-border-muted);
+  --zen-purge-vermilion: var(--zen-ink-shu);
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  padding: clamp(22px, 2vw, 28px);
+  color: var(--zen-purge-ink);
+}
+
+.zen-purge[data-zen-purge-mode='bookmark_destroy'] {
+  --zen-purge-accent: var(--zen-purge-vermilion);
+}
+
+/* ── Identity ─────────────────────────────────────────────────────────── */
+
+.zen-purge__identity {
+  flex: 0 0 auto;
+  padding-bottom: 16px;
+  /* The sheet's single strong boundary, matched to
+     .zen-artifact-panel__identity so returning to the controls does not
+     feel like a different surface. */
+  border-bottom: 1px solid color-mix(in srgb, var(--zen-purge-rule) 46%, transparent);
+}
+
+.zen-purge__return {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 18px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--zen-purge-ink-muted);
+  cursor: pointer;
+  font-size: var(--zen-type-caption);
+  font-weight: 600;
+  letter-spacing: var(--zen-tracking-label);
+  text-transform: var(--zen-label-case);
+  transition: color 160ms ease, gap 160ms ease;
+}
+
+.zen-purge__return:hover {
+  gap: 11px;
+  color: var(--zen-purge-ink);
+}
+
+.zen-purge__return:focus-visible {
+  outline: 1px solid color-mix(in srgb, var(--zen-purge-accent) 45%, transparent);
+  outline-offset: 3px;
+}
+
+.zen-purge__return-arrow {
+  width: 14px;
+  height: 1px;
+  background: currentColor;
+  position: relative;
+}
+
+.zen-purge__return-arrow::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-left: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: translateY(-50%) rotate(45deg);
+  transform-origin: left center;
+}
+
+.zen-purge__identity-top {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  column-gap: 16px;
+}
+
+/* Same slender vertical tag the artifact panel uses for its index, carrying
+   the rite's mark instead of a number: 流 (let it flow away) for history,
+   斷 (sever) for the irreversible bookmark cut. */
+.zen-purge__mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--zen-purge-rule) 62%, transparent);
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--zen-purge-accent) 6%, transparent);
+  color: color-mix(in srgb, var(--zen-purge-accent) 78%, var(--zen-purge-ink));
+  font-size: 15px;
+  line-height: 1;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.zen-purge__eyebrow {
+  display: block;
+  font-size: var(--zen-type-floor);
+  font-weight: 600;
+  letter-spacing: var(--zen-tracking-label);
+  line-height: 1.35;
+  text-transform: var(--zen-label-case);
+  color: var(--zen-purge-ink-muted);
+}
+
+.zen-purge__title {
+  margin-top: 6px;
+  font-size: clamp(1.75rem, 2.6vw, 2.15rem);
+  font-weight: 300;
+  line-height: 1.06;
+  letter-spacing: -0.032em;
+  word-break: keep-all;
+}
+
+.zen-purge__inscription {
+  margin: 12px 0 0 50px;
+  max-width: 40ch;
+  font-size: var(--zen-type-body);
+  line-height: 1.65;
+  letter-spacing: var(--zen-tracking-caption);
+  color: var(--zen-purge-ink-muted);
+  word-break: keep-all;
+}
+
+/* ── Scrolling body ───────────────────────────────────────────────────── */
+
+.zen-purge__body {
+  flex: 1 1 0%;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 2px;
+}
+
+/* A sticky band of the rail's own ground. It is invisible while the ledger
+   fits and thickens into mist over whatever is still below, so a clipped row
+   reads as "there is more" instead of as a broken one. */
+.zen-purge__body::after {
+  content: '';
+  display: none;
+  position: sticky;
+  bottom: -1px;
+  height: 26px;
+  margin-top: -26px;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    var(--zen-ambient-layer-l2-bottom),
+    transparent
+  );
+}
+
+.zen-purge[data-zen-purge-more='true'] .zen-purge__body::after {
+  display: block;
+}
+
+/* ── Tally ────────────────────────────────────────────────────────────── */
+
+.zen-purge__tally {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 17px 0 15px;
+}
+
+.zen-purge__count {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  color: var(--zen-purge-ink);
+}
+
+.zen-purge__count-value {
+  font-size: clamp(2.5rem, 4.4vw, 3.1rem);
+  font-weight: 200;
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+  font-variant-numeric: tabular-nums;
+}
+
+.zen-purge__count-unit {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--zen-purge-ink-muted);
+}
+
+.zen-purge__effect {
+  margin-top: 11px;
+  font-size: var(--zen-type-floor);
+  font-weight: 600;
+  letter-spacing: var(--zen-tracking-label);
+  text-transform: var(--zen-label-case);
+  color: var(--zen-purge-ink-muted);
+}
+
+.zen-purge__domains {
+  padding-bottom: 3px;
+  font-size: var(--zen-type-floor);
+  letter-spacing: var(--zen-tracking-caption);
+  text-align: right;
+  color: var(--zen-purge-ink-subtle);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Ledger ───────────────────────────────────────────────────────────── */
+
+.zen-purge__ledger-head {
+  margin-top: 4px;
+  padding-bottom: 7px;
+  font-size: var(--zen-type-floor);
+  font-weight: 600;
+  letter-spacing: var(--zen-tracking-label);
+  text-transform: var(--zen-label-case);
+  color: var(--zen-purge-ink-subtle);
+  border-bottom: 1px solid color-mix(in srgb, var(--zen-purge-rule) 34%, transparent);
+}
+
+.zen-purge__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9.5px 8px 9.5px 2px;
+  transition: background-color 160ms ease;
+}
+
+.zen-purge__row + .zen-purge__row {
+  border-top: 1px solid color-mix(in srgb, var(--zen-purge-rule) 14%, transparent);
+}
+
+.zen-purge__row:hover {
+  background: color-mix(in srgb, var(--zen-purge-rule-muted) 9%, transparent);
+}
+
+/* Each row carries its own waterline: a shallow wash closed by a hairline,
+   both as long as that domain's share of the heaviest one, so the weight of a
+   purge reads at a glance without a chart or a second column of numbers. The
+   wash is what keeps the hairline from being mistaken for a row divider. */
+.zen-purge__row::before,
+.zen-purge__row::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: var(--zen-purge-row-share, 0%);
+  pointer-events: none;
+}
+
+.zen-purge__row::before {
+  top: 1px;
+  bottom: 1.5px;
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--zen-purge-accent) 13%, transparent),
+    color-mix(in srgb, var(--zen-purge-accent) 6%, transparent)
+  );
+}
+
+.zen-purge__row::after {
+  bottom: 0;
+  height: 1.5px;
+  background: var(--zen-purge-accent);
+  opacity: 0.42;
+}
+
+.zen-purge__row-domain,
+.zen-purge__row-count {
+  position: relative;
+}
+
+.zen-purge__row-domain {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12.5px;
+  color: var(--zen-purge-ink);
+}
+
+.zen-purge__row-count {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--zen-purge-ink-muted);
+}
+
+.zen-purge__row-more {
+  padding: 11px 2px;
+  border-top: 1px solid color-mix(in srgb, var(--zen-purge-rule) 14%, transparent);
+  font-size: 11px;
+  color: var(--zen-purge-ink-subtle);
+}
+
+.zen-purge__empty {
+  margin: 4px 0;
+  padding: 30px 12px;
+  border: 1px dashed color-mix(in srgb, var(--zen-purge-rule) 40%, transparent);
+  border-radius: 2px;
+  text-align: center;
+  font-size: var(--zen-type-body);
+  line-height: 1.6;
+  color: var(--zen-purge-ink-subtle);
+}
+
+.zen-purge__skeleton {
+  position: relative;
+  height: 40px;
+  border-top: 1px solid color-mix(in srgb, var(--zen-purge-rule) 16%, transparent);
+  animation: zen-purge-breath 2600ms ease-in-out infinite;
+}
+
+.zen-purge__skeleton::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1.5px;
+  width: var(--zen-purge-skeleton-share, 60%);
+  background: var(--zen-purge-accent);
+  opacity: 0.3;
+}
+
+.zen-purge__skeleton:nth-child(1) { --zen-purge-skeleton-share: 78%; }
+.zen-purge__skeleton:nth-child(2) { --zen-purge-skeleton-share: 54%; animation-delay: 180ms; }
+.zen-purge__skeleton:nth-child(3) { --zen-purge-skeleton-share: 37%; animation-delay: 360ms; }
+.zen-purge__skeleton:nth-child(4) { --zen-purge-skeleton-share: 22%; animation-delay: 540ms; }
+
+@keyframes zen-purge-breath {
+  0%, 100% { opacity: 0.28; }
+  50% { opacity: 0.62; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zen-purge__skeleton { animation: none; opacity: 0.4; }
+  .zen-purge__return { transition: color 160ms ease; }
+  .zen-purge__return:hover { gap: 7px; }
+}
+
+.zen-purge__hint {
+  margin-top: 13px;
+  font-size: var(--zen-type-body);
+  line-height: 1.7;
+  color: var(--zen-purge-ink-subtle);
+  word-break: keep-all;
+}
+
+/* ── Passcode ─────────────────────────────────────────────────────────── */
+
+.zen-purge__passcode {
+  display: block;
+  margin-top: 20px;
+}
+
+.zen-purge__field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: var(--zen-type-caption);
+  font-weight: 600;
+  letter-spacing: var(--zen-tracking-label);
+  text-transform: var(--zen-label-case);
+  color: var(--zen-purge-ink-subtle);
+}
+
+.zen-purge__passcode-input {
+  width: 100%;
+  padding: 9px 2px;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--zen-purge-rule) 48%, transparent);
+  border-radius: 0;
+  background: transparent;
+  color: var(--zen-purge-ink);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  outline: none;
+  transition: border-color 180ms ease;
+}
+
+.zen-purge__passcode-input::placeholder {
+  color: color-mix(in srgb, var(--zen-purge-ink-subtle) 62%, transparent);
+  letter-spacing: 0.01em;
+}
+
+.zen-purge__passcode-input:focus {
+  border-bottom-color: var(--zen-purge-accent);
+}
+
+/* ── Irreversible rite (bookmark destruction) ─────────────────────────── */
+
+.zen-purge__warning {
+  margin-top: 20px;
+  padding: 15px 0;
+  border-top: 1px solid color-mix(in srgb, var(--zen-purge-vermilion) 30%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--zen-purge-vermilion) 30%, transparent);
+}
+
+.zen-purge__warning-badge {
+  font-size: var(--zen-type-floor);
+  font-weight: 700;
+  letter-spacing: var(--zen-tracking-label);
+  text-transform: var(--zen-label-case);
+  color: var(--zen-purge-ink);
+}
+
+.zen-purge__warning-body {
+  margin-top: 8px;
+  font-size: var(--zen-type-body);
+  line-height: 1.7;
+  color: var(--zen-purge-ink-muted);
+  word-break: keep-all;
+}
+
+.zen-purge__ghost-button {
+  margin-top: 14px;
+  padding: 8px 14px;
+  border: 1px solid color-mix(in srgb, var(--zen-purge-rule) 55%, transparent);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--zen-purge-ink-muted);
+  cursor: pointer;
+  font-size: var(--zen-type-caption);
+  letter-spacing: var(--zen-tracking-caption);
+  transition: border-color 160ms ease, color 160ms ease, background-color 160ms ease;
+}
+
+.zen-purge__ghost-button:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--zen-purge-rule) 85%, transparent);
+  background: color-mix(in srgb, var(--zen-purge-rule-muted) 14%, transparent);
+  color: var(--zen-purge-ink);
+}
+
+.zen-purge__ghost-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.zen-purge__error {
+  margin-top: 10px;
+  font-size: var(--zen-type-body);
+  line-height: 1.6;
+  padding-left: 10px;
+  border-left: 2px solid var(--zen-purge-vermilion);
+  color: var(--zen-purge-ink);
+}
+
+.zen-purge__acknowledge {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+.zen-purge__acknowledge input {
+  margin-top: 2px;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  accent-color: var(--zen-purge-vermilion);
+  cursor: pointer;
+}
+
+.zen-purge__acknowledge span {
+  font-size: var(--zen-type-body);
+  line-height: 1.65;
+  color: var(--zen-purge-ink-muted);
+  word-break: keep-all;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────── */
+
+.zen-purge__footer {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  padding-top: 16px;
+  border-top: 1px solid color-mix(in srgb, var(--zen-purge-rule) 30%, transparent);
+}
+
+.zen-purge__confirm {
+  padding: 10px 22px;
+  border: 1px solid color-mix(in srgb, var(--zen-purge-accent) 45%, transparent);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--zen-purge-ink);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--zen-tracking-caption);
+  transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.zen-purge__confirm:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--zen-purge-accent) 72%, transparent);
+  background: color-mix(in srgb, var(--zen-purge-accent) 9%, transparent);
+}
+
+.zen-purge__confirm:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.zen-purge__confirm:focus-visible {
+  outline: 1px solid color-mix(in srgb, var(--zen-purge-accent) 55%, transparent);
+  outline-offset: 3px;
+}
+
+@media (max-height: 760px) {
+  .zen-purge { padding: 18px 22px; }
+  .zen-purge__title { font-size: clamp(1.55rem, 2.4vw, 1.9rem); }
+  .zen-purge__tally { padding: 16px 0 14px; }
+  .zen-purge__count-value { font-size: clamp(2.1rem, 3.8vw, 2.6rem); }
+}
+
+[data-ui-orientation='portrait'] .zen-purge {
+  padding: 18px;
+}

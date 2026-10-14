@@ -1,0 +1,118 @@
+.entropy-artifact-panel {
+    position: relative;
+    height: 100%;
+    min-height: 0;
+    padding: 12px 16px 12px 18px;
+    color: #21272b;
+}
+.entropy-artifact-panel__guide {
+    position: absolute;
+    inset: 24px 3px 28px 5px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+.entropy-artifact-panel__guide span {
+    width: 8px;
+    border: 1px solid #161b1e;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #22282b, #d2d7d7 38%, #7c878a 55%, #22282b);
+    box-shadow: 0 0 0 3px #343a3c, 0 2px 5px #0008;
+}
+.entropy-artifact-panel__carriage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    border: 2px solid #454d50;
+    border-radius: 5px;
+    padding: 23px 17px 10px;
+    background: linear-gradient(135deg, #f2f1e9, #d9ddd9 70%, #c4cbc7);
+    box-shadow: inset 0 1px 0 #fff, inset 0 -3px 0 #8b9694, 0 0 0 4px #22282b, 0 8px 14px #0004;
+    overflow: hidden;
+}
+.entropy-artifact-panel__fastener {
+    position: absolute;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e9eeeb 40%, #404a4d 45%, #404a4d 55%, #a9b4b2 60%);
+    box-shadow: 0 0 0 1px #697574;
+}
+.entropy-artifact-panel__fastener--left { left: 8px; }
+.entropy-artifact-panel__fastener--right { right: 8px; }
+.entropy-artifact-panel__header { flex-shrink: 0; padding: 0 1px 17px; }
+.entropy-artifact-panel__plate {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #869491;
+    color: #475452;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .15em;
+}
+.entropy-artifact-panel__title-row { display: flex; gap: 12px; align-items: flex-start; }
+.entropy-artifact-panel__manifestation { color: #515e5c; font-size: 10px; line-height: 1.5; margin: 0 0 7px; }
+.entropy-artifact-panel__title { font-size: clamp(23px, 2.2vw, 34px); font-weight: 800; letter-spacing: -.03em; line-height: 1.15; overflow-wrap: anywhere; }
+.entropy-artifact-panel__description { margin-top: 12px; color: #465451; font-size: 12px; line-height: 1.65; overflow-wrap: anywhere; }
+.entropy-artifact-panel__controls {
+    --artifact-control-radius: 3px;
+    --color-on-surface: #e7eeeb;
+    --color-on-surface-muted: #b6c5bf;
+    --color-on-surface-subtle: #9caea5;
+    --color-surface: #151d1e;
+    --color-surface-elevated: #283437;
+    --color-border: #778e85;
+    --color-danger: #ff9484;
+    --color-warning: #e9c988;
+    --artifact-segment-selected-background: linear-gradient(180deg, color-mix(in srgb, var(--entropy-control-accent) 92%, #fff), var(--entropy-control-accent));
+    --artifact-segment-selected-foreground: #fff;
+    --artifact-segment-selected-border: color-mix(in srgb, var(--entropy-control-accent) 65%, #fff);
+    --artifact-segment-selected-shadow: inset 0 1px 1px #ffffff78, inset 0 -2px 3px #0005, 0 0 9px color-mix(in srgb, var(--entropy-control-accent) 24%, transparent);
+    padding: 2px 12px 0;
+    border: 3px solid #30393a;
+    border-radius: 3px;
+    background: #11191a;
+    box-shadow: inset 0 2px 8px #0008, 0 1px 0 #ffffffb3;
+}
+.entropy-artifact-panel__controls [data-artifact-control-value] {
+    border-radius: 3px;
+    min-height: 36px;
+    box-shadow: inset 0 1px 0 #fff2, 0 2px 0 #050909;
+}
+.entropy-artifact-panel__controls [data-artifact-control-value]:active:not(:disabled) { transform: translateY(1px); }
+.entropy-artifact-panel__controls [data-artifact-control-value]:focus-visible { outline: 2px solid #e6eee8; outline-offset: 3px; }
+.entropy-artifact-panel__controls [data-artifact-control-value="0"][aria-pressed="true"] {
+    --artifact-segment-selected-background: linear-gradient(180deg, #dbe1d8, #a9b6ac);
+    --artifact-segment-selected-foreground: #1c2826;
+    --artifact-segment-selected-border: #dce3d9;
+    --artifact-segment-selected-shadow: inset 0 1px 0 #fff9, inset 0 -2px 3px #0003;
+}
+.entropy-artifact-panel__base { display: flex; align-items: center; gap: 10px; flex-shrink: 0; height: 23px; margin-top: 8px; }
+.entropy-artifact-panel__base span { height: 3px; flex: 1; background: repeating-linear-gradient(90deg, #53615e 0 2px, transparent 2px 5px); }
+.entropy-artifact-panel__base i { width: 32px; height: 7px; border: 1px solid #5f6e69; border-radius: 1px; background: #78897f; box-shadow: inset 0 1px 2px #0005; }
+.entropy-artifact-panel[data-entropy-console-powered="true"] .entropy-artifact-panel__base i { background: #c9dbc4; box-shadow: inset 0 1px 2px #fff5; }
+.entropy-artifact-bay { overflow: hidden; background: #080d0f; }
+.entropy-artifact-bay__recess { box-shadow: inset 0 0 0 1px #445052, inset 0 0 0 7px #141b1e, inset 0 0 60px #000; background: radial-gradient(ellipse at 50% 55%, #222d30 0, #0a1013 55%, #030608 100%); }
+.entropy-artifact-bay__registration { position: absolute; inset: 22px; pointer-events: none; }
+.entropy-artifact-bay__registration span { position: absolute; width: 12px; height: 12px; border-color: #5b6b6a; border-style: solid; }
+.entropy-artifact-bay__registration span:nth-child(1) { top: 0; left: 0; border-width: 1px 0 0 1px; }
+.entropy-artifact-bay__registration span:nth-child(2) { top: 0; right: 0; border-width: 1px 1px 0 0; }
+.entropy-artifact-bay__registration span:nth-child(3) { bottom: 0; left: 0; border-width: 0 0 1px 1px; }
+.entropy-artifact-bay__registration span:nth-child(4) { bottom: 0; right: 0; border-width: 0 1px 1px 0; }
+[data-theme='entropy'] [data-artifact-gallery-quickbar] {
+    --color-on-surface: #e4ece8;
+    --color-on-surface-muted: #a7b7b1;
+    --color-surface: #10191b;
+    --color-border: #50615b;
+    --shadow-md: 0 2px 5px #0008;
+}
+@media (prefers-reduced-motion: reduce) {
+    .entropy-artifact-panel__controls [data-artifact-control-value] { transition: none; }
+    .entropy-artifact-panel__controls [data-artifact-control-value]:active:not(:disabled) { transform: none; }
+}

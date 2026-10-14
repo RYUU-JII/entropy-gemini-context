@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entropy — 오디오 합성 연구소</title>
+  <link rel="stylesheet" href="./soundLabStyles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">∿</span><div><p class="eyebrow">ENTROPY / SOUND RESEARCH</p><h1>오디오 합성 연구소</h1></div></div>
+    <div class="stats-bar" aria-label="현재 카탈로그 통계">
+      <div><strong id="stat-total">—</strong><span>사운드 순간</span></div>
+      <div><strong id="stat-product">—</strong><span>제품 코드 연결</span></div>
+      <div><strong id="stat-candidates">—</strong><span>연구 시안</span></div>
+      <div><strong id="stat-reviewed">—</strong><span>피드백한 기능</span></div>
+    </div>
+  </header>
+  <div class="workspace-status"><span id="connectionStatus">작업 공간 확인 중</span><p id="workspaceMessage" role="status" aria-live="polite"></p><button id="btnConnect" type="button">기록 새로고침</button></div>
+  <main class="app-container">
+    <aside class="sound-ledger-pane" aria-label="기능별 사운드 목록">
+      <div class="ledger-heading"><p class="eyebrow">01 / SOUND MOMENTS</p><h2>어느 순간에 울릴까요?</h2><p class="muted">기능을 고르고, 소리의 역할부터 생각해 보세요.</p></div>
+      <div class="filter-bar">
+        <label class="sr-only" for="searchInput">기능 또는 사운드 검색</label><input id="searchInput" type="search" placeholder="기능, 장면, 사운드 검색…">
+        <div class="filter-selects">
+          <label>
+            <span class="sr-only">테마</span>
+            <select id="themeFilter">
+              <option value="zen" selected>Zen (禪)</option>
+              <option value="entropy">Entropy</option>
+              <option value="cyberpunk">Cyberpunk</option>
+              <option value="matrix">Matrix</option>
+              <option value="clinical">Clinical</option>
+              <option value="scp">SCP</option>
+              <option value="all">모든 테마</option>
+            </select>
+          </label>
+          <label>
+            <span class="sr-only">작업 상태</span>
+            <select id="reviewFilter">
+              <option value="all">모든 작업</option>
+              <option value="unreviewed">피드백 전</option>
+              <option value="planned">시안 대기</option>
+            </select>
+          </label>
+        </div>
+        <div class="scope-pills" aria-label="기능 범위"><button type="button" data-scope="all" aria-pressed="true">전체</button><button type="button" data-scope="artifact" aria-pressed="false">아티팩트</button><button type="button" data-scope="app_fx" aria-pressed="false">앱 효과음</button></div>
+      </div>
+      <p id="resultCount" class="result-count"></p><div id="soundList" class="sound-list"></div>
+    </aside>
+    <section class="studio-pane" aria-label="사운드 청음과 디자인 맥락">
+      <div class="studio-intro"><p class="eyebrow">02 / LISTEN & COMPARE</p><p>듣고, 느낌을 남기고, 함께 다듬습니다.</p></div>
+      <article class="moment-card">
+        <div class="card-topline"><p id="detailBreadcrumbs" class="eyebrow"></p><span id="productStatus" class="status-badge"></span></div>
+        <h2 id="detailTitle"></h2><p id="detailMoment" class="moment-description"></p>
+        <div class="purpose-block"><span class="mini-label">소리의 역할</span><p id="detailPurpose"></p></div>
+        <div class="question-block"><span class="mini-label">이렇게 들어 보세요</span><p id="listeningQuestion"></p></div>
+      </article>
+      <section class="audition-section" aria-labelledby="auditionHeading">
+        <div class="section-heading"><h3 id="auditionHeading">작업물 청음</h3><span class="muted">제품 연결본 ↔ 연구 시안</span></div>
+        <div id="candidateList" class="candidate-list" aria-label="비교할 작업물"></div>
+        <div class="playback-panel">
+          <p id="candidateRationale"></p><div class="playback-controls"><button class="primary-button play-button" id="btnPlayCurrent" type="button">▶ 선택한 소리 듣기</button><button id="btnStop" type="button" disabled>■ 정지</button></div>
+          <p id="playbackStatus" class="muted" role="status"></p><p id="candidateNote" class="candidate-note"></p>
+        </div>
+      </section>
+      <details id="technicalDetails" class="technical-details">
+        <summary>소리 조금 조절하기 · 합성 정보</summary>
+        <div id="factorControls">
+          <p class="muted">보조 청음 조건입니다. 조절 후 다시 들어 보세요. 제품 설정은 바뀌지 않습니다.</p>
+          <label class="slider-label" for="sliderIntensity">강도 <output id="lblIntensity"></output></label><input type="range" id="sliderIntensity" min="0.2" max="1.3" step="0.01">
+          <div id="pitchControl"><label class="slider-label" for="sliderPitch">공명 높이 <output id="lblPitch"></output></label><input type="range" id="sliderPitch" step="0.01"></div>
+          <button id="btnResetFactors" type="button">시안 기본값으로</button>
+        </div>
+        <p id="analyserNote" class="muted"></p><canvas id="visualizerCanvas" width="720" height="100" aria-label="연구 시안 파형 및 주파수 분석"></canvas>
+        <p id="detailDesc"></p><ul id="physicalLayersList"></ul><p id="detailId" class="source-path"></p><p id="candidateSource" class="source-path"></p>
+      </details>
+      <p class="integration-note">제품 연결은 현재 코드 기준입니다. 시안의 선호 기록과 앱에서의 타이밍·믹스 검증은 별도로 관리합니다.</p>
+    </section>
+    <aside class="feedback-pane" aria-label="피드백과 에이전트 전달">
+      <p class="eyebrow">03 / FEEDBACK & HANDOFF</p><h2>어떤 느낌이었나요?</h2><p id="reviewSubject" class="muted"></p>
+      <label for="reviewContext">사용 맥락 보완 <span class="muted">선택</span></label><textarea id="reviewContext" rows="2" maxlength="2000"></textarea>
+      <label for="reviewDecision">다음 방향</label><select id="reviewDecision"></select>
+      <p id="auditionStatus" class="muted"></p>
+      <div id="feedbackTags" class="feedback-tags" aria-label="소리에 대한 인상"></div>
+      <label for="reviewNote">에이전트에게 전할 의견</label><textarea id="reviewNote" rows="5" maxlength="6000" placeholder="예: 대나무 느낌은 좋은데 첫 타격이 조금 날카로워. 끝 울림은 살리고, 처음만 더 부드러운 시안을 들어 보고 싶어."></textarea>
+      <p id="draftStatus" class="draft-status"></p>
+      <div class="feedback-actions"><button id="btnSaveReview" class="primary-button" type="button" disabled>피드백 저장</button><button id="btnCopyPrompt" type="button">에이전트 요청 복사</button></div>
+      <p class="handoff-note">저장한 기록은 에이전트가 읽을 수 있는 연구소 파일에 남습니다. 요청을 대화에 붙여 넣으면 이어서 작업할 수 있어요.</p>
+      <details class="handoff-details"><summary>전달할 요청문 보기</summary><label class="sr-only" for="agentPromptText">에이전트 요청문</label><textarea id="agentPromptText" readonly rows="16"></textarea></details>
+      <div class="history-heading"><h3>이 기능의 피드백 기록</h3><span class="muted">버전별로 보존</span></div><div id="reviewHistory"></div>
+    </aside>
+  </main>
+  <script src="./soundLab.bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+.feed-media {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    isolation: isolate;
+    background: #1a2023;
+}
+
+.feed-media-description {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.feed-art-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 8 / 5;
+    overflow: hidden;
+    color: #f8ecee;
+    user-select: none;
+}
+
+.feed-art-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.feed-art-svg text {
+    font-family: inherit;
+}
+
+.feed-art-frame::after {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    content: '';
+    pointer-events: none;
+    opacity: 0.1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.74' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.5' d='M0 0h160v160H0z'/%3E%3C/svg%3E");
+}
+
+.feed-art-orbit {
+    color: #d6e4bd;
+    cursor: crosshair;
+    touch-action: pan-y;
+}
+
+.feed-art-orbit-decoration {
+    position: absolute;
+    inset: 0;
+}
+
+.feed-art-signal-decoration {
+    position: absolute;
+    inset: 0;
+}
+
+.feed-art-signal-next {
+    color: var(--feed-art-signal-control-color);
+    border-color: color-mix(in srgb, var(--feed-art-signal-control-color) 35%, transparent);
+    background: rgb(16 24 28 / 70%);
+}
+
+.feed-art-signal-next:hover {
+    border-color: var(--feed-art-signal-control-color);
+    background: rgb(45 48 49 / 80%);
+}
+
+.feed-art-signal-next:focus-visible {
+    outline-color: var(--feed-art-signal-control-color);
+}
+
+.feed-art-remix {
+    position: absolute;
+    z-index: 3;
+    top: 7.6%;
+    right: 6.4%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 36px;
+    padding: 8px 13px;
+    border: 1px solid rgb(204 229 163 / 30%);
+    border-radius: 100px;
+    background: rgb(16 30 21 / 60%);
+    color: #d7e7ba;
+    font: inherit;
+    font-size: 10px;
+    cursor: pointer;
+    transition: background 160ms, border-color 160ms;
+}
+
+.feed-art-remix:hover {
+    border-color: #b8d28e;
+    background: #34442c;
+}
+
+.feed-art-remix:focus-visible {
+    outline: 2px solid #e1edc1;
+    outline-offset: 4px;
+}
+
+.feed-art-generative {
+    aspect-ratio: 16 / 13;
+    color: #d5d8cc;
+}
+
+.feed-art-ambient--typography {
+    color: #3c4535;
+}
+
+@media (width <= 620px) {
+
+    .feed-art-remix {
+        min-height: 36px;
+        gap: 9px;
+        padding: 7px 10px;
+        font-size: 9px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .feed-art-remix {
+        transition: none;
+    }
+}

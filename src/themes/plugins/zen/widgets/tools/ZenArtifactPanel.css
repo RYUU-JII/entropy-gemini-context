@@ -1,0 +1,104 @@
+.zen-artifact-panel__layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: clamp(32px, 4vh, 54px) clamp(22px, 2vw, 28px) 24px;
+  gap: 32px;
+}
+
+.zen-artifact-panel__identity {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 0 0 auto;
+  gap: 18px;
+  padding-bottom: 18px;
+}
+
+.zen-artifact-panel__identity-top {
+  display: grid;
+  min-height: 0;
+  grid-template-columns: 34px minmax(0, 1fr);
+  column-gap: 16px;
+}
+
+/* Same slender vertical tag as before, just tall enough now (align-items:
+   stretch, the grid default) to reach down the subtitle+title block beside
+   it — a height-only scale-up, not a wider or heavier glyph. */
+.zen-artifact-panel__number-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--zen-ambient-border) 42%, transparent);
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--color-surface-elevated) 36%, transparent);
+}
+
+.zen-artifact-panel__number {
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.zen-artifact-panel__subtitle {
+  display: block;
+  font-size: var(--zen-type-floor);
+  font-weight: 600;
+  letter-spacing: var(--zen-tracking-label);
+  line-height: 1.35;
+  text-transform: var(--zen-label-case);
+}
+
+.zen-artifact-panel__title {
+  font-size: clamp(2.4rem, 3.2vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  word-break: keep-all;
+}
+
+.zen-artifact-panel__inscription {
+  display: block;
+  /* Shares the title's left edge (34px number cell + 16px gap), not the
+     header's own edge, so title and description read as one aligned block. */
+  margin-left: 50px;
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: var(--zen-tracking-caption);
+}
+
+.zen-artifact-panel__control-garden {
+  flex: 1 1 0%;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+@media (max-height: 760px) {
+  .zen-artifact-panel__layout {
+    padding: 26px 22px 18px;
+    gap: 24px;
+  }
+
+  .zen-artifact-panel__title {
+    font-size: clamp(2.2rem, 3vw, 2.6rem);
+  }
+
+  .zen-artifact-panel__inscription {
+    font-size: var(--zen-type-body);
+  }
+}
+
+[data-ui-orientation='portrait'] .zen-artifact-panel__layout {
+  padding: 18px;
+  gap: 12px;
+}
+
+[data-ui-orientation='portrait'] .zen-artifact-panel__identity {
+  /* The stacked rail retains the same intrinsic identity and control scroll owner. */
+  flex: 0 0 auto;
+}
+
+[data-ui-orientation='portrait'] .zen-artifact-panel__title {
+  font-size: clamp(2.1rem, 6.5vw, 2.6rem);
+}

@@ -1,0 +1,432 @@
+/**
+ * Console Layout System - Unified Base Styles
+ * 
+ * This file defines the structural layout for the dashboard console.
+ * Theme-specific visual styling is handled by theme CSS files (entropy.css, camouflage.css).
+ * 
+ * Class Naming Convention:
+ * - console-* : Layout shell/frame classes
+ * - nav-button* : Navigation button base
+ * - panel-* : Content panel areas
+ * - settings-* : Settings-specific elements
+ */
+
+/* ========================================
+   Layout Tokens (Theme-Configurable)
+   ======================================== */
+/* Layout Tokens now inherited from layout.css */
+:root,
+[data-theme] {
+    --console-sidebar-width: clamp(120px, var(--sidebar-ratio), 200px);
+
+    --console-shell-padding: 0px;
+    --console-shell-overflow: visible;
+
+    --console-frame-display: grid;
+    --console-frame-direction: row;
+    --console-frame-columns: var(--console-sidebar-width) minmax(0, 1fr);
+    --console-frame-gap: 0px;
+    --console-frame-padding: 0px;
+    --console-frame-overflow: visible;
+
+    --console-sidebar-flex: 0 0 auto;
+    --console-sidebar-padding: 0px;
+    --console-sidebar-overflow: visible;
+
+    --console-content-flex: 1 1 auto;
+    --console-content-padding: 0px;
+    --console-content-overflow: visible;
+    --console-content-border: none;
+
+    --panel-viewport-padding: 0px;
+    --panel-viewport-overflow: visible;
+
+    /* Internal Spacing via Density Tokens */
+    --sidebar-controls-gap: calc(var(--sidebar-gap, 8px) * var(--ui-density-scale, 1));
+    --sidebar-controls-padding: calc(var(--sidebar-spacing, 10px) * var(--ui-density-scale, 1)) 0;
+
+    --nav-button-aspect: 1 / 1;
+    --nav-button-height: auto;
+    --nav-button-width: 100%;
+    --nav-button-padding: 0px;
+    --nav-button-gap: 0px;
+    --nav-button-margin: 0px;
+    --nav-button-align: stretch;
+    --settings-button-height: auto;
+    --settings-button-padding: 0px;
+    --settings-button-gap: 0px;
+    --settings-button-group-padding: 0px;
+    --settings-button-group-margin: 0px;
+    --sidebar-logo-margin: 0px;
+    --sidebar-logo-padding: 0px;
+    --sidebar-logo-border: none;
+    --sidebar-controls-height: 100%;
+}
+
+/* ========================================
+   Console Shell - Root Container
+   ======================================== */
+.console-shell {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--console-shell-padding);
+    overflow: var(--console-shell-overflow);
+}
+
+
+/* ========================================
+   Console Frame - Main Grid Layout
+   ======================================== */
+.console-frame {
+    display: var(--console-frame-display);
+    flex-direction: var(--console-frame-direction);
+    grid-template-columns: var(--console-frame-columns);
+    gap: var(--console-frame-gap);
+    padding: var(--console-frame-padding);
+    overflow: var(--console-frame-overflow);
+    height: 100%;
+    width: 100%;
+    min-height: 0;
+    flex: 1;
+}
+
+/* ========================================
+   Console Sidebar - Navigation Area
+   ======================================== */
+.console-sidebar {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    /* Sidebar width with ratio + min/max bounds */
+    width: var(--console-sidebar-width);
+    flex: 0 0 var(--console-sidebar-width);
+
+    padding: var(--console-sidebar-padding);
+    overflow: var(--console-sidebar-overflow);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* ========================================
+   Sidebar Controls Container
+   ======================================== */
+.sidebar-controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sidebar-controls-gap);
+    padding: var(--sidebar-controls-padding);
+    height: var(--sidebar-controls-height);
+}
+
+/* ========================================
+   Navigation Button - Base Structure
+   ======================================== */
+.nav-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Align to left for better text readability */
+    width: var(--nav-button-width);
+    aspect-ratio: var(--nav-button-aspect);
+    height: var(--nav-button-height);
+    padding: var(--nav-button-padding, 0 16px);
+    gap: var(--nav-button-gap, 12px);
+    margin: var(--nav-button-margin);
+    align-self: var(--nav-button-align);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.nav-button-lamp {
+    position: absolute;
+    pointer-events: none;
+}
+
+.nav-button-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-button-label {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Active state */
+.nav-button.is-active {
+    z-index: 1;
+}
+
+/* ========================================
+   Settings Button - Special Navigation
+   ======================================== */
+.settings-button-group {
+    margin-top: auto;
+    padding: var(--settings-button-group-padding);
+    margin: var(--settings-button-group-margin);
+}
+
+.settings-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--settings-button-gap);
+    width: 100%;
+    height: var(--settings-button-height);
+    padding: var(--settings-button-padding);
+    border: none;
+    cursor: pointer;
+}
+
+.settings-button.is-active {
+    z-index: 1;
+}
+
+/* ========================================
+   Console Content - Main Panel Area
+   ======================================== */
+.console-content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    min-width: 0;
+    height: 100%;
+    width: 100%;
+    flex: var(--console-content-flex);
+    padding: var(--console-content-padding);
+    overflow: var(--console-content-overflow);
+    border: var(--console-content-border);
+}
+
+/* ========================================
+   Panel Transition Wrapper
+   ======================================== */
+.panel-transition-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    /* The theme owns chassis paint; MainPanel owns tab transition clipping. */
+    overflow: var(--console-content-overflow);
+}
+
+/* ========================================
+   Panel Viewport - Tab Content Container
+   ======================================== */
+.panel-viewport {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    min-height: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: var(--panel-viewport-padding);
+    overflow: var(--panel-viewport-overflow);
+}
+
+/* ========================================
+   Shared internal layout contract
+   Ensures components using old class names retain layout structure
+   regardless of selected theme.
+   ======================================== */
+
+.ui-module {
+    position: relative;
+    overflow: hidden;
+}
+
+.ui-panel-frame {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.ui-panel-window {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.ui-panel-inset {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ========================================
+   Mobile Menu Button
+   ======================================== */
+.console-mobile-menu {
+    display: none;
+}
+
+html[data-theme] [data-ui-layout='portrait-compact'] .console-mobile-menu {
+    display: block;
+}
+
+/* ========================================
+   Portrait Runtime Layout
+   ======================================== */
+html[data-theme] [data-ui-orientation='portrait'] {
+    --console-frame-display: flex;
+    --console-frame-direction: column;
+    --console-frame-columns: 1fr;
+    --console-sidebar-width: 100%;
+    --console-sidebar-flex: 0 0 auto;
+    --sidebar-controls-height: auto;
+    --panel-viewport-padding: 0px;
+}
+
+html[data-theme] [data-ui-orientation='portrait'] .console-frame {
+    gap: clamp(6px, calc(8px * var(--ui-density-scale, 1)), 14px);
+}
+
+html[data-theme] [data-ui-orientation='portrait'] .console-sidebar {
+    width: 100%;
+    flex: 0 0 auto;
+    min-height: 0;
+    height: auto;
+    clip-path: none;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+html[data-theme] [data-ui-orientation='portrait'] .console-sidebar::after,
+html[data-theme] [data-ui-orientation='portrait'] .console-content::before {
+    display: none;
+}
+
+html[data-theme] [data-ui-orientation='portrait'] .sidebar-controls {
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    height: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: clamp(8px, calc(10px * var(--ui-density-scale, 1)), 16px);
+    gap: clamp(8px, calc(10px * var(--ui-density-scale, 1)), 16px);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html[data-theme] [data-ui-orientation='portrait'] .sidebar-controls::-webkit-scrollbar {
+    display: none;
+}
+
+html[data-theme] [data-ui-orientation='portrait'] .nav-button {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: clamp(84px, 14vw, 140px);
+    max-width: 180px;
+    height: clamp(42px, 6vh, 62px);
+    aspect-ratio: auto;
+    padding-inline: clamp(10px, 1.8vw, 20px);
+}
+
+html[data-theme] [data-ui-orientation='portrait'] .settings-button-group {
+    margin-top: 0;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+html[data-theme] [data-ui-orientation='portrait'] .settings-button {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: clamp(84px, 14vw, 140px);
+    max-width: 180px;
+    height: clamp(42px, 6vh, 58px);
+    padding-inline: clamp(10px, 1.8vw, 20px);
+}
+
+html[data-theme] [data-ui-orientation='portrait'] .panel-transition-wrapper {
+    min-height: 0;
+    flex: 1;
+}
+
+/* Wide portrait monitors keep navigation visible as a compact top dock. */
+html[data-theme] [data-ui-layout='portrait-desktop'] {
+    --console-portrait-dock-height: 68px;
+}
+
+html[data-theme] [data-ui-layout='portrait-desktop'] .console-frame {
+    gap: 0;
+}
+
+html[data-theme] [data-ui-layout='portrait-desktop'] .console-sidebar {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    min-height: var(--console-portrait-dock-height);
+    height: var(--console-portrait-dock-height);
+    max-height: var(--console-portrait-dock-height);
+    flex: 0 0 var(--console-portrait-dock-height);
+    /* The compact dock has one inset owner: its controls, not the side rail. */
+    padding: 0;
+}
+
+html[data-theme] [data-ui-layout='portrait-desktop'] .sidebar-controls {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    gap: 8px;
+}
+
+html[data-theme] [data-ui-layout='portrait-desktop'] .sidebar-controls::before {
+    content: none;
+    display: none;
+}
+
+html[data-theme] [data-ui-layout='portrait-desktop'] .nav-button,
+html[data-theme] [data-ui-layout='portrait-desktop'] .settings-button {
+    min-width: clamp(96px, 14vw, 140px);
+    /* The controls content box already excludes dock borders and padding. */
+    height: 100% !important;
+    margin: 0;
+    padding-inline: clamp(12px, 1.6vw, 18px);
+}
+
+html[data-theme] [data-ui-layout='portrait-desktop'] .nav-button-lamp {
+    inset: auto 0 0;
+    width: auto;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left center;
+}
+
+html[data-theme] [data-ui-layout='portrait-desktop'] .nav-button.is-active .nav-button-lamp {
+    transform: scaleX(1);
+}
+
+html[data-theme] [data-ui-layout='portrait-desktop'] .settings-button-group {
+    height: 100%;
+    margin: 0 0 0 auto;
+    padding: 0;
+    border-top: 0;
+}
+
+/* Compact portrait keeps named navigation in the same normal flow. */
+html[data-theme] [data-ui-layout='portrait-compact'] .console-sidebar {
+    position: relative;
+    inset: auto;
+    width: 100%;
+}

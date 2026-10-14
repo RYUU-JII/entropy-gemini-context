@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "storage",
+  "title": "Storage boundary",
+  "pathPrefixes": [
+    "src/platform/storage/",
+    "src/apps/background/services/SettingsService.js",
+    "tests/storage",
+    "tests/chromeStorage",
+    "docs/system-architecture/02-runtime-storage-",
+    "docs/architecture/storage/"
+  ],
+  "ownerDocs": [
+    "docs/system-architecture/02-runtime-storage-boundaries.md",
+    "docs/architecture/storage/storage-architecture-target.md"
+  ],
+  "resourceClaims": [],
+  "focusedChecks": [
+    {
+      "id": "storage-architecture",
+      "label": "storage architecture boundary guard",
+      "executable": "node",
+      "args": [
+        "scripts/ci/check-storage-architecture-boundaries.mjs"
+      ],
+      "estimatedSeconds": 6
+    }
+  ],
+  "harnessIds": [
+    "storage-lifecycle"
+  ]
+}

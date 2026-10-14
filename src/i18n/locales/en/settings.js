@@ -1,0 +1,1013 @@
+import backgroundRuntimeResource from './backgroundRuntime.js';
+
+const resource = {
+  "protection": {
+    "saving": "Saving and applying your choice.",
+    "save_failed": "Your choice could not be saved or applied. Check the current selection and try again.",
+    "curve": {
+      "title": "Protection over time",
+      "description": "Enabled effects build in stages as you approach a site's daily time goal.",
+      "gentle": "Gentle",
+      "gentle_desc": "Starts later and builds gradually.",
+      "standard": "Standard",
+      "standard_desc": "Adds effects in sequence as you approach your goal.",
+      "steep": "Steep",
+      "steep_desc": "Starts earlier and builds more quickly.",
+      "preview_label": "Illustration of the selected protection curve",
+      "preview_note": "An illustration of the rise. Each effect has its own onset and strength. The final stage stays in place after your goal is reached.",
+      "start": "Start of use",
+      "target": "Goal reached",
+      "basis": "A site goal and usage recording are required. Sites without a goal or recording use the existing fixed behavior. Choose each effect's maximum strength and curve or fixed mode in Tools.",
+      "custom": "A custom curve is active. Choosing a preset below clears the custom values and applies that preset."
+    },
+    "goal_ends": {
+      "title": "When a goal is reached",
+      "description": "Choose which goals to be reminded about, independently of your time goals.",
+      "site": "Site goal reminder",
+      "site_desc": "A reminder when each site reaches its daily time goal.",
+      "global": "Overall goal reminder",
+      "global_desc": "A reminder when daily use across protected sites reaches your overall goal.",
+      "presentation": "Goals currently end with a reminder. Supported feeds first show a readable boundary, then the reminder follows a fresh action to continue. An unverified boundary leaves the reminder waiting.",
+      "paused": "Goal reminders are selected, but protection or the reminder tool is currently paused. Reminders prepare again after protection is resumed."
+    },
+    "principles": {
+      "title": "Overlapping reminders and changed goals",
+      "boundary": "A reminder waits for a safe boundary that lets you finish the current content. Time expiry alone does not interrupt the flow.",
+      "priority": "New reminders are selected in this order: overall goal, site goal, periodic reflection. An experience already in progress keeps its place. Only goals actually reached together are combined.",
+      "edits": "Changing a goal rechecks reminders that have not been delivered. A reminder already delivered is not repeated by editing the goal on the same day.",
+      "periodic": "Periodic reflection is a separate Barrier choice. Its cadence is independent of goal reminders."
+    },
+    "links": {
+      "sites": "Set time goals in Sites",
+      "tools": "Choose effects in Tools",
+      "recording": "Check recording settings",
+      "barrier": "Set Barrier reflection"
+    }
+  },
+  "daily_rhythm": {
+    "title": "Start of your day",
+    "desc": "Align daily usage and limits with your routine. The default start time is 04:00.",
+    "start_label": "Day starts at",
+    "current": "When daily usage and limits begin a new day.",
+    "default": "Default",
+    "save": "Save",
+    "change_timing": "Applies at the next boundary of your current day.",
+    "pending": "Your day will start at {{hour}} from {{date}}.",
+    "recommendation_title": "Would a {{hour}} start suit you?",
+    "recommendation_desc": "Suggested from {{days}} completed days with usage. Your start time changes only when you accept.",
+    "accept": "Accept suggestion",
+    "dismiss": "Keep current time",
+    "recommendation_hint": "Suggestions appear only when enough usage history indicates a different routine. Your start time never changes automatically.",
+    "error": "Could not load or save your day start setting. Please try again."
+  },
+  "zen_render": {
+    "title": "Zen visual quality",
+    "desc": "Choose a balance between visual detail and power use.",
+    "full_label": "High quality",
+    "full_desc": "Keep full water and lighting detail.",
+    "balanced_label": "Balanced",
+    "balanced_desc": "Keep smooth motion with softer water detail and fewer small effects.",
+    "low_label": "Power saving",
+    "low_desc": "Lower visual detail and frame rate to reduce power use and heat.",
+    "smooth": "60 fps target",
+    "power_saver": "30 fps target",
+    "error": "Could not save visual quality. Please select it again."
+  },
+  "common": {
+    "selected": "Selected",
+    "option": "Option",
+    "off": "Off",
+    "cancel": "Cancel",
+    "apply": "Apply",
+    "processing": "Applying"
+  },
+  "header": {
+    "title": "Settings",
+    "desc": "Manage browser access, reset protection, data cleanup, and workspace defaults.",
+    "back_to_sites": "Back to Sites",
+    "scope_settings_note": "Permissions and safety live in Settings",
+    "open_settings_cta": "Settings"
+  },
+  "sections": {
+    "protection": {
+      "title": "Protection",
+      "desc": "Choose protection over time and goal reminders."
+    },
+    "overview": {
+      "title": "Quick setup",
+      "desc": "Connect access and choose the defaults most people actually need."
+    },
+    "permissions": {
+      "title": "Records and insights",
+      "desc": "Choose site protection access and the scope of on-device analysis."
+    },
+    "safety": {
+      "title": "Security and data",
+      "desc": "Manage passcode protection and local record deletion."
+    },
+    "workspace": {
+      "title": "General",
+      "desc": "Manage the sidebar, language and region, and system notifications."
+    },
+    "precision": {
+      "title": "Precision Analysis",
+      "desc": "Manage beta behavior signals and analysis scope."
+    },
+    "badges": {
+      "missing_permissions": "Missing {{count}}",
+      "reset_pending": "Reset Pending",
+      "guard_on": "Guard ON",
+      "active": "ACTIVE",
+      "attention": "Attention",
+      "passcode_needed": "Passcode needed",
+      "beta": "Beta"
+    }
+  },
+  "settings_overview": {
+    "hero": {
+      "eyebrow": "Start here",
+      "title": "Set up the three essentials.",
+      "desc": "Choose access, safety, and insights. Everything else can wait.",
+      "permissions_cta": "Open permissions",
+      "safety_cta": "Open safety controls",
+      "display_cta": "Go to Display"
+    },
+    "quick": {
+      "permissions_label": "1. Permissions",
+      "permissions_cta": "Open permissions",
+      "workspace_label": "2. Workspace",
+      "workspace_value": "Full controls",
+      "workspace_hint": "All controls are available from the main workspace.",
+      "scope_label": "3. Personalized insights",
+      "scope_full_hint": "Turn this on when you want home-surface visual feedback and suggestions.",
+      "scope_focused_hint": "Leave this off if you only want blocking and site effects.",
+      "advanced_title": "Less common options",
+      "advanced_desc": "Less common options live here.",
+      "open_reset": "Passcode and reset",
+      "open_app": "Language and app defaults",
+      "open_display": "Display tab"
+    },
+    "stats": {
+      "workspace": {
+        "label": "App"
+      },
+      "permissions": {
+        "label": "Permissions"
+      },
+      "safety": {
+        "label": "Privacy & Reset"
+      }
+    },
+    "shortcuts": {
+      "open": "Open tab",
+      "sites": {
+        "title": "Sites",
+        "desc": "Choose managed sites and limits.",
+        "meta": "{{count}} managed domains"
+      },
+      "schedule": {
+        "title": "Routine",
+        "desc": "Set time windows and scheduled protection.",
+        "meta": "Time windows and routines"
+      },
+      "filter": {
+        "title": "Protection",
+        "desc": "Preview and tune automatic protection.",
+        "meta": "Live preview and protection tuning"
+      },
+      "display": {
+        "title": "Display",
+        "desc": "Theme and visual presentation live there.",
+        "meta": "Current theme: {{theme}}"
+      }
+    },
+    "scope": {
+      "eyebrow": "What stays here",
+      "title": "Access, safety, and workspace defaults",
+      "desc": "Browser access, reset protection, data, and language stay here."
+    },
+    "scope_moved": {
+      "eyebrow": "What moved out",
+      "title": "Policy and presentation live elsewhere",
+      "desc": "Sites, Routine, Protection, and Display each have their own tab."
+    },
+    "checklist": {
+      "eyebrow": "Setup checklist",
+      "pending_title": "{{count}} items need attention",
+      "complete_title": "Core setup is complete",
+      "complete_desc": "Essentials are connected. Advanced settings can wait.",
+      "done_count": "{{done}} / {{total}} done",
+      "site_control": "Connect site control",
+      "site_control_hint": "Required for page intervention.",
+      "analysis": "Turn on personalized insights",
+      "analysis_hint": "Only needed for home feedback.",
+      "coverage": "Finish site access coverage",
+      "coverage_selective": "Selective access still has missing host permissions to connect.",
+      "passcode": "Protect resets with a passcode",
+      "passcode_hint_done": "A passcode is already configured for sensitive actions.",
+      "passcode_hint_missing": "Set a passcode if you want reset protection to actually lock destructive actions.",
+      "open_permissions": "Open permissions",
+      "open_safety": "Open safety"
+    },
+    "permissions": {
+      "value_attention": "Needs attention",
+      "value_ready": "Ready",
+      "hint_attention": "{{count}} permission steps remain.",
+      "hint_selective": "Selective access is connected for the sites you manage."
+    },
+    "safety": {
+      "value_guarded": "Guarded",
+      "value_open": "Open",
+      "hint_guarded": "Sensitive resets are protected by a passcode.",
+      "hint_missing": "Reset protection is enabled but no passcode has been set yet.",
+      "hint_off": "Reset protection is turned off."
+    },
+    "workspace": {
+      "hint": "Personalized insights are {{scope}}. Notifications and language live here.",
+      "scope_hint": "Personalized insights: {{scope}}."
+    }
+  },
+  "settings_permissions": {
+    "access": {
+      "title": "Site Effects",
+      "desc": "Access used to run blocking, friction effects, and guidance UI on protected sites.",
+      "status_idle": "Requested when needed",
+      "status_missing": "Access needed",
+      "status_ready": "Ready",
+      "status_partial": "Access needed · {{count}}",
+      "empty_title": "No site access is needed yet",
+      "empty_desc": "Entropy asks once for a site when you first add it to protection.",
+      "missing_title": "Some managed sites still need access",
+      "missing_desc": "Allow access only to managed sites where page effects should run.",
+      "ready_title": "Page effects can run on protected sites",
+      "ready_desc": "Access remains limited to sites you manage.",
+      "connect_cta": "Allow site effects",
+      "fix_missing_cta": "Allow {{count}} managed sites"
+    },
+    "summary": {
+      "analysis": {
+        "label": "Insights",
+        "off": "Off",
+        "basic": "Basic",
+        "precision": "Precision",
+        "hint": "Optional. Basic insights use only browser-level signals."
+      },
+      "sites": {
+        "label": "1. Site access",
+        "ready": "Site control connected",
+        "missing": "Site control missing",
+        "hint": "Needed to run protection on actual pages."
+      },
+      "records": {
+        "label": "2. Usage records",
+        "hint": "Defines which domains can create local time facts."
+      },
+      "precision": {
+        "label": "3. Analysis depth",
+        "ready": "Behavior permission is connected.",
+        "missing": "Behavior permission is only requested if you enable precision."
+      }
+    },
+    "analysis": {
+      "desc": "Reads local patterns for home feedback. No extra browser access is required.",
+      "note": "Leave it off if you only want blocking and site effects.",
+      "profile_step_title": "Local analysis",
+      "profile_desc": "Start with one of two clear modes. Detailed scope and precision signals are still available in advanced settings.",
+      "profile_recommended_status": "Recommended",
+      "profile_small_status": "Small start",
+      "profile_custom_status": "Custom",
+      "profile_rhythm_eyebrow": "Recommended",
+      "profile_rhythm_label": "Local rhythm map",
+      "profile_rhythm_desc": "Summarize domain and time for every site, and use precision behavior signals only inside protected sites.",
+      "profile_small_eyebrow": "Small",
+      "profile_small_label": "Protected sites only",
+      "profile_small_desc": "Start with sites you explicitly protect and keep precision behavior signals off.",
+      "profile_advanced_show": "Advanced settings",
+      "profile_advanced_hide": "Hide advanced",
+      "records_step_title": "Usage records",
+      "records_title": "Domain time records",
+      "records_desc": "Choose which domains can leave local time records.",
+      "records_detail": "Recorded domains",
+      "home_feedback_detail": "Home feedback",
+      "records_recommended_eyebrow": "Recommended",
+      "records_small_eyebrow": "Small start",
+      "records_advanced_eyebrow": "Broader context",
+      "records_private_eyebrow": "Private",
+      "records_protected_label": "Protected only",
+      "records_protected_desc": "Record time only for protected sites and their local goals.",
+      "records_all_sites_label": "All sites minimal",
+      "records_all_sites_desc": "Record domain and time for every visited site. No behavior details.",
+      "records_off_label": "Off",
+      "records_off_desc": "Do not create domain usage history.",
+      "precision_title": "Precision behavior analysis",
+      "precision_step_title": "Precision analysis",
+      "precision_eyebrow": "Precision",
+      "precision_on": "Precision insights enabled",
+      "precision_off": "Using basic insights only",
+      "precision_desc": "Choose which activity history to keep from protected sites.",
+      "precision_detail": "Behavior signals",
+      "precision_recommended_eyebrow": "Recommended",
+      "precision_minimal_eyebrow": "Minimal",
+      "precision_selective_eyebrow": "Selective",
+      "precision_power_eyebrow": "Power",
+      "precision_max_eyebrow": "Maximum",
+      "precision_off_label": "Off",
+      "precision_off_desc": "Does not add new activity history or personal learning. Observation needed by protection may continue.",
+      "precision_protected_label": "Protected sites",
+      "precision_protected_desc": "Allow precision signals only inside protected sites.",
+      "precision_enable_cta": "Enable precision insights",
+      "precision_disable_cta": "Return to basic insights",
+      "precision_note": "Precision can improve explanations and threshold timing, but it asks for higher-resolution local behavior signals.",
+      "excluded_title": "Excluded from analysis",
+      "excluded_desc": "Excluded sites do not contribute new usage records or analysis. Protection settings and existing records are retained. Removing an exclusion applies the current recording scope.",
+      "excluded_restore": "Remove exclusion"
+    },
+    "sites": {
+      "title": "Site permissions",
+      "desc": "Uses Chrome site access so protection can run on managed sites.",
+      "runtime_access_desc": "Turns page intervention on or off.",
+      "selective_eyebrow": "Recommended",
+      "basic_eyebrow": "Recommended",
+      "basic_selective": "Selective access is currently enabled",
+      "basic_selective_desc": "Selective access stays recommended.",
+      "recommended_cta": "Use recommended selective mode",
+      "hosts_label": "Permission scope",
+      "hosts_selective": "{{count}} host permissions connected",
+      "hosts_missing": "{{count}} host permissions missing",
+      "hosts_ready": "No host permissions are currently missing."
+    },
+    "behavior": {
+      "eyebrow": "Optional advanced feature",
+      "title": "Behavior insights engine",
+      "desc": "Experimental. Turn on only if you need CLSE sensing.",
+      "turn_off": "Turn off",
+      "turn_on": "Turn on",
+      "permission_label": "Dependency",
+      "permission_ready": "Usage sensing connected",
+      "permission_missing": "Usage sensing required",
+      "permission_desc": "Requires precision-insights access first.",
+      "recommendation_label": "Recommendation",
+      "recommendation_value": "Keep this advanced-only",
+      "recommendation_desc": "Not needed for basic limits and friction."
+    }
+  },
+  "app_chrome": {
+    "title": "Sidebar",
+    "desc": "Choose whether app navigation also shows tab names.",
+    "expanded_eyebrow": "Default",
+    "expanded_label": "Show labels",
+    "expanded_desc": "Show icons and tab names together.",
+    "icons_eyebrow": "Compact",
+    "icons_label": "Icons only",
+    "icons_desc": "Narrow the sidebar to leave more room for content."
+  },
+  "precision_beta": {
+    "badge": "Beta",
+    "title": "Precision Behavior Analysis",
+    "desc": "Reads more detailed page behavior signals locally than basic usage records. It can improve explanations and thresholds, but should stay an explicit advanced opt-in.",
+    "enable_cta": "Enable beta",
+    "disable_cta": "Turn off",
+    "permission_ready": "Behavior access connected",
+    "permission_missing": "Enabling asks for behavior access",
+    "permission_desc": "Activity history needs browser permissions to check active use and page navigation.",
+    "scope_title": "Analysis scope",
+    "scope_desc": "Choose where precision signals are allowed.",
+    "signals_title": "Signals available",
+    "signals_desc": "Allow or exclude each signal individually. If the feature is off, no precision signal is recorded.",
+    "collected_label": "Recorded items",
+    "not_collected_label": "Not recorded",
+    "signal_effective_label": "Current state",
+    "signal_status_on": "Recording",
+    "signal_status_off": "Signal excluded",
+    "signal_status_paused": "Feature off",
+    "signal_toggle_on": "Allowed",
+    "signal_toggle_off": "Excluded",
+    "raw_title": "Activity history",
+    "raw_open": "View records",
+    "raw_export": "Export",
+    "raw_loading": "Loading",
+    "raw_error": "Could not load raw data: {{message}}",
+    "signals": {
+      "clse": {
+        "title": "Cognitive load signals",
+        "desc": "Computes local CLSE estimates for focus, switching pressure, and overload.",
+        "collect_1": "Short-dwell and cognitive-load rollup signals",
+        "collect_2": "Scroll spikes, feed pressure, and feed skim bursts",
+        "exclude_1": "Page body, search terms, and typed text"
+      },
+      "navigation": {
+        "title": "Navigation flow",
+        "desc": "Uses tab switches, idle state, and page navigation timing to analyze flow.",
+        "collect_1": "Tab switches, revisit intervals, new-tab and duplicate-tab entries",
+        "collect_2": "Navigation type counters such as address bar, link, and reload",
+        "exclude_1": "Full URL paths, query strings, and page titles"
+      }
+    }
+  },
+  "settings_safety": {
+    "mode": {
+      "eyebrow": "Complexity",
+      "title": "Control surface",
+      "desc": "Entropy now uses one full workspace instead of separate product modes.",
+      "basic_eyebrow": "Recommended",
+      "basic": "Guided",
+      "basic_desc": "Start from the everyday controls.",
+      "full_eyebrow": "Advanced",
+      "full": "Full workspace",
+      "full_desc": "Advanced rules and access strategy are part of this app."
+    },
+    "scope": {
+      "eyebrow": "Privacy",
+      "title": "Personalized insights",
+      "desc": "Choose whether the app should generate home-surface feedback and suggestions.",
+      "focused_eyebrow": "Recommended",
+      "focused": "Off",
+      "focused_desc": "Use blocking and site intervention only.",
+      "full_eyebrow": "Personalized",
+      "full": "On",
+      "full_desc": "Read broader flow for home feedback."
+    },
+    "reset": {
+      "eyebrow": "Daily rhythm",
+      "title": "Reset anchor",
+      "desc": "The daily reset time used by the system.",
+      "current": "Current reset",
+      "manual_title": "Manual override",
+      "manual_desc": "Lock the day boundary to one hour.",
+      "apply": "Apply",
+      "pending": "A new reset time is queued: {{hour}} at {{time}}.",
+      "recommendation_title": "Adaptive recommendation",
+      "recommendation_desc": "Suggested from {{days}} recent days: {{hour}}.",
+      "accept": "Accept recommendation",
+      "dismiss": "Dismiss",
+      "no_recommendation": "No adaptive recommendation is waiting right now.",
+      "basic_note": "Reset timing is editable here."
+    }
+  },
+  "settings_workspace_panel": {
+    "display_title": "Display",
+    "advanced_title": "Advanced controls",
+    "advanced_desc": "Deeper controls live in the full workspace.",
+    "advanced_cta": "Open controls"
+  },
+  "settings_workspace": {
+    "notifications": {
+      "title": "System notifications",
+      "desc": "Show only essential protection status outside the app.",
+      "toggle_title": "Base status notifications",
+      "toggle_desc": "Notify when today's limit is reached or an immediate boundary expires. Set time-window alerts in each window.",
+      "capability_unavailable": "System notifications are unavailable in this browser.",
+      "status_on": "Base notifications on",
+      "status_off": "Base notifications off"
+    },
+    "display": {
+      "eyebrow": "Moved out of Settings",
+      "title": "Display is now a dedicated tab",
+      "desc": "Themes and visual settings now live in Display.",
+      "current_label": "Current display",
+      "cta": "Open Display",
+      "theme_fallback": "Unknown"
+    }
+  },
+  "notifications": {
+    "session_start": {
+      "title": "Protected time started",
+      "body": "A protected window is now active."
+    },
+    "session_end": {
+      "title": "Protected time ended",
+      "body": "Take a breath before switching."
+    }
+  },
+  "language": {
+    "title": "Language & region",
+    "desc": "Choose the interface language and Zen daylight reference.",
+    "interface_title": "Interface language",
+    "interface_desc": "The display language used throughout the app.",
+    "select": "Select Language",
+    "en_short": "English",
+    "ko_short": "한국어"
+  },
+  "solar_location": {
+    "row_title": "Daylight reference",
+    "row_desc": "Aligns dawn, day, dusk, and night across Zen.",
+    "current_auto": "Automatic · {{location}}",
+    "current_fixed": "Fixed region · {{location}}",
+    "change": "Change",
+    "dialog_title": "Change daylight reference",
+    "dialog_desc": "Align Zen lighting to the device timezone or a selected region without collecting your precise location.",
+    "mode_label": "Reference Mode",
+    "recommended": "Recommended",
+    "device_mode_title": "Follow device timezone",
+    "device_mode_desc": "The daylight reference follows timezone changes on this device. No GPS, network, or permission prompt is used.",
+    "fixed_mode_title": "Keep a fixed region",
+    "fixed_mode_desc": "Keep the selected region's day and night even when you travel or the device timezone changes.",
+    "region_label": "Reference region",
+    "device_reference": "Device timezone",
+    "current_fixed_option": "Current fixed value · {{location}}",
+    "presets": {
+      "seoul_kr": "Seoul",
+      "tokyo_jp": "Tokyo",
+      "los_angeles_us": "Los Angeles",
+      "new_york_us": "New York",
+      "london_gb": "London",
+      "sydney_au": "Sydney"
+    },
+    "preset_somewhere_in_space": "Somewhere in Space",
+    "choose_region": "Choose a region"
+  },
+  "permissions": {
+    "title": "Access & Local Data",
+    "desc": "Choose site permissions, usage records, and precision analysis scope.",
+    "refresh": "Refresh",
+    "active": "Active",
+    "paused": "Paused",
+    "inactive": "Inactive",
+    "missing": "Missing",
+    "enable": "Allow site access",
+    "revoke": "Turn off site access",
+    "authorized_domains": "Authorized Domains",
+    "fix_missing": "Fix Missing",
+    "fix_missing_count": "Fix {{count}}",
+    "reset_hosts": "Reset hosts",
+    "toggle_aria": "Toggle {{title}}",
+    "types": {
+      "scripting": "Scripting",
+      "history": "History",
+      "notifications": "Notifications",
+      "behavior": "Precision Insights",
+      "host": "Site Access"
+    },
+    "details": {
+      "history": "Visit History",
+      "idle_detection": "Idle and Navigation Signals",
+      "basic_insights": "Basic Insights",
+      "precision_signals": "Precision Signals"
+    },
+    "cards": {
+      "site_control": "Site Permissions",
+      "site_control_hint": "Runs limits on managed sites.",
+      "history_cleaner": "History Cleaner",
+      "history_cleaner_hint": "Clears blocked-site visits.",
+      "personalized_insights": "Personalized Insights",
+      "behavior_sense": "Usage Sensing",
+      "behavior_sense_hint": "Uses history and idle signals only. No page content."
+    },
+    "managed_sites_count": "{{count}} Managed Sites",
+    "selective_info": "Selective mode limits access to the sites you manage.",
+    "coverage_value": "{{count}} host permissions connected",
+    "coverage_empty": "No host permissions connected yet"
+  },
+  "security": {
+    "title": "Settings Protection PIN",
+    "desc": "Confirm sensitive actions with a local PIN. This PIN is separate from the encryption passphrase.",
+    "passcode_set": "Passcode set",
+    "passcode_not_set": "No passcode",
+    "passcode_configured_title": "An settings PIN is set",
+    "passcode_configured_desc": "The passcode stays on this device and confirms the sensitive actions you choose.",
+    "passcode_empty_title": "No settings PIN yet",
+    "passcode_empty_desc": "Set a passcode to lock data deletion and app reset.",
+    "policy_title": "Passcode protection policy",
+    "policy_desc": "Choose which actions require the passcode and whether protection settings can change.",
+    "dialog": {
+      "set_title": "Set settings PIN",
+      "set_desc": "Create the passcode Entropy will use to confirm sensitive actions.",
+      "change_title": "Change settings PIN",
+      "change_desc": "Confirm the current passcode, then choose a new one.",
+      "remove_title": "Remove settings PIN",
+      "remove_desc": "Removing the passcode means passcode-locked actions can no longer be protected."
+    },
+    "current_passcode": "Current Passcode",
+    "new_passcode": "New Passcode",
+    "confirm_passcode": "Confirm New Passcode",
+    "placeholder_current": "Enter current passcode",
+    "placeholder_min_chars": "Min 4 chars",
+    "placeholder_repeat": "Repeat new passcode",
+    "update_btn": "Change Passcode",
+    "set_btn": "Set Passcode",
+    "change_btn": "Change",
+    "remove_btn": "Remove",
+    "reset_guard": "Delete data and reset the app",
+    "reset_guard_desc": "Require the settings PIN before clearing analytics or resetting Entropy.",
+    "guard_active": "Passcode required",
+    "guard_disabled": "No passcode required",
+    "passcode_required_state": "Available after setting a passcode",
+    "lock_policy_title": "Keep lock settings fixed",
+    "lock_policy_desc": "While enabled, the lock above cannot be turned off and the settings PIN cannot be removed.",
+    "lock_policy_active": "Lock settings fixed",
+    "lock_policy_disabled": "Changes allowed"
+  },
+  "data": {
+    "title": "Data Management",
+    "desc": "Clear analytics records or return Entropy to its initial state.",
+    "auth_passcode": "Settings Protection PIN",
+    "passcode_placeholder": "Enter settings PIN",
+    "passcode_dialog_hint": "The passcode is cleared when this confirmation closes.",
+    "analytics_title": "Clear analytics records",
+    "analytics_desc": "Delete stats, activity logs, graphs and local analysis results. Sites, protection settings and garden progress stay. You remain in Settings when complete.",
+    "analytics_dialog_title": "Clear analytics records?",
+    "clear_history": "Clear Analytics Records",
+    "factory_reset_title": "Reset Entropy",
+    "factory_reset_desc": "Delete sites, settings, records, garden progress, encryption keys, settings PIN and local models, then return to the first garden. Browser site-access permissions remain.",
+    "factory_reset_dialog_title": "Reset Entropy?",
+    "reset_everything": "Reset Entropy",
+    "security_blocked": "Passcode needed",
+    "security_blocked_desc": "Lock settings are fixed but no settings PIN exists. Set a passcode before managing data."
+  },
+  "status": {
+    "loading": "Loading...",
+    "error": "Error",
+    "granted": "{{type}} access granted",
+    "denied": "{{type}} access denied",
+    "revoked": "{{type}} access revoked",
+    "revoked_hosts": "Host permissions revoked",
+    "missing_granted": "Missing host permissions granted",
+    "insights_basic_enabled": "Basic personalized insights enabled.",
+    "insights_disabled": "Personalized insights disabled.",
+    "data_collection_protected_sites": "Recording only protected-site usage.",
+    "data_collection_all_sites": "Minimal records enabled for all visited sites.",
+    "data_collection_off": "Domain usage records disabled.",
+    "tracking_domain_restored": "{{domain}} will be included in local analysis again.",
+    "insights_precision_enabled": "Precision insights enabled.",
+    "insights_precision_enabled_protected_sites": "Precision analysis is on for protected sites.",
+    "insights_precision_disabled": "Precision insights disabled. Returned to basic insights.",
+    "local_analysis_rhythm_map": "Using the local rhythm map.",
+    "local_analysis_protected_start": "Starting small with protected sites only.",
+    "precision_signal_enabled": "This precision signal is included in recording.",
+    "precision_signal_disabled": "This precision signal is excluded from recording.",
+    "behavior_active": "Behavior Analysis Active",
+    "behavior_disabled": "Behavior Analysis Disabled",
+    "notifications_enabled": "Notifications enabled.",
+    "notifications_disabled": "Notifications disabled.",
+    "notifications_unavailable": "System notifications are unavailable in this browser context.",
+    "notifications_session_start_enabled": "Schedule-start notifications enabled.",
+    "notifications_session_start_disabled": "Schedule-start notifications disabled.",
+    "notifications_session_end_enabled": "Schedule-end notifications enabled.",
+    "notifications_session_end_disabled": "Schedule-end notifications disabled.",
+    "reset_hour_saved": "Reset hour scheduled.",
+    "reset_hour_failed": "Failed to update reset hour.",
+    "reset_recommendation_accepted": "Reset hour recommendation accepted.",
+    "reset_recommendation_dismissed": "Reset hour recommendation dismissed.",
+    "reset_recommendation_failed": "Failed to process reset hour recommendation.",
+    "solar_location_saved": "Solar reference saved.",
+    "passcode_valid": "Passcode must be 4-64 chars.",
+    "passcode_mismatch": "Confirmation does not match.",
+    "passcode_incorrect": "Incorrect current passcode.",
+    "passcode_updated": "Passcode updated successfully.",
+    "passcode_removed": "Passcode removed.",
+    "guard_enabled": "Reset Guard Enabled.",
+    "guard_disabled": "Reset Guard Disabled.",
+    "high_security_requires_passcode": "Set a passcode before enabling High Security Mode.",
+    "high_security_enabled": "High Security Mode enabled.",
+    "high_security_disabled": "High Security Mode disabled.",
+    "high_security_disable_before_passcode_remove": "Turn off High Security Mode before removing the passcode.",
+    "settings_sync_saving": "Saving and applying changes...",
+    "settings_sync_applying": "Applying saved changes to open tabs...",
+    "settings_sync_retrying": "Connection interrupted. Retrying...",
+    "settings_sync_saved": "Changes saved.",
+    "auth_failed": "Passcode verification failed.",
+    "reset_complete": "Reset complete.",
+    "reset_failed": "Reset failed.",
+    "busy": "Please wait..."
+  },
+  "confirm": {
+    "factory_reset": "Delete sites, settings, records, garden progress, encryption keys, settings PIN and local models, then return to the first garden. Browser site-access permissions remain.",
+    "clear_history": "Delete stats, activity logs, graphs and local analysis results. Sites, protection settings and garden progress stay. You remain in Settings when complete."
+  },
+  "dialogs": {
+    "confirm_title": "Confirm this action",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "close": "Close"
+  },
+  "clse": {
+    "permission_denied": "Behavior Engine requires idle/webNavigation permission to run.",
+    "loading": "Loading CLSE data...",
+    "load_failed": "Failed to load CLSE status.",
+    "retry_load": "Retry",
+    "refresh_failed": "Last CLSE refresh failed: {{message}}",
+    "permission_check_failed": "Failed to verify Behavior Engine permissions: {{message}}",
+    "save_failed": "Failed to save CLSE settings: {{message}}",
+    "reset_failed": "Failed to reset CLSE baseline: {{message}}",
+    "header": {
+      "title": "CLSE Monitor",
+      "subtitle": "Cognitive Load Sensing Engine"
+    },
+    "tabs": {
+      "status": "Status",
+      "baseline": "Personal Baseline",
+      "logs": "Logs"
+    },
+    "status_panel": {
+      "title": "System Status",
+      "active": "ACTIVE",
+      "inactive": "INACTIVE",
+      "initialized": "Initialized",
+      "yes": "✓ YES",
+      "no": "✗ NO",
+      "buckets_total": "Buckets (Total)",
+      "tracked_sites": "Tracked Sites",
+      "baseline_stable": "Baseline Stable"
+    },
+    "alert_panel": {
+      "title": "Current Alert State",
+      "type": "Type",
+      "severity": "Severity",
+      "action": "Action",
+      "block": "BLOCK",
+      "warn": "WARN",
+      "triggered": "Triggered",
+      "normal": "System Normal. No anomalies detected."
+    },
+    "sustained_panel": {
+      "title": "Sustained Load Monitor",
+      "in_load": "In Load",
+      "yes_warning": "YES ⚠️",
+      "no": "NO",
+      "elevated_windows": "Elevated Windows",
+      "load_severity": "Load Severity"
+    },
+    "baseline": {
+      "policy_title": "Detection Policy",
+      "policy_spike_label": "Spike (Short Term):",
+      "policy_spike_desc": "High activity in <10s. Triggers",
+      "policy_warning": "WARNING",
+      "policy_sustain_label": "Sustain (Long Term):",
+      "policy_sustain_desc": "Consistent high load over time. Triggers",
+      "policy_block": "BLOCK",
+      "policy_baseline_label": "Personal baseline:",
+      "policy_baseline_desc": "Learned online from completed 10-second and 60-second windows at the same time grain.",
+      "baseline_title": "Baseline Snapshot",
+      "reset_baseline": "Reset Baseline",
+      "reset_recovery_action": "Reset personal baseline",
+      "reset_confirm_title": "Reset personal baseline?",
+      "reset_confirm_description": "This starts a new learning epoch and permanently clears the learned evidence and associated aggression diagnostics.",
+      "reset_confirm_action": "Reset and start new epoch",
+      "resetting": "Resetting…",
+      "baseline_state": "State",
+      "baseline_confidence": "Confidence",
+      "policy_version": "Policy",
+      "grain_10s": "10-second profile",
+      "grain_60s": "60-second profile",
+      "evidence_summary": "{{days}} days · {{samples}} samples · {{minutes}} active min",
+      "feature_statistics": "Feature Statistics (μ / σ)",
+      "tab_switch_rate": "Tab Switch Rate",
+      "navigation_rate": "Navigation Rate",
+      "scroll_volatility": "Scroll Volatility",
+      "seek_rate": "Media Seek Rate",
+      "last_updated": "Last Updated:",
+      "baseline_empty": "Baseline not initialized yet.",
+      "sensitivity_tuning": "Sensitivity Tuning",
+      "threshold_scale": "Threshold Scale",
+      "high_sensitivity": "High Sensitivity (0.7x)",
+      "low_sensitivity": "Low Sensitivity (1.5x)",
+      "alert_cooldown": "Alert Cooldown",
+      "cooldown_min_label": "30s",
+      "cooldown_max_label": "10m"
+    },
+    "logs": {
+      "recent_history": "Recent History (60s)",
+      "last_buckets": "(Last {{count}} buckets)",
+      "no_data": "No data yet. Enable CLSE and browse to collect data.",
+      "time": "Time",
+      "tab_sw": "Tab SW",
+      "nav": "Nav",
+      "scroll_delta": "Scroll Δ",
+      "media_seek": "Media Seek",
+      "active": "Active",
+      "aggression_title": "Aggression Diagnostics",
+      "last_count": "(Last {{count}})",
+      "no_aggression": "No aggression logs yet.",
+      "type": "Type",
+      "score": "Score",
+      "aggressive": "Aggressive",
+      "meaningless": "Meaningless",
+      "details": "Details",
+      "event_log": "Event Log",
+      "no_events": "No events recorded.",
+      "event": "EVENT",
+      "severity": "Severity",
+      "debug_info": "Debug Info",
+      "debug_refresh": "Refresh #{{count}} | Last update: {{time}}",
+      "aggression_scroll_detail": "int {{intensity}} | jitter {{jitter}} | feed {{feed}}",
+      "aggression_nav_detail": "rate {{rate}} | back {{back}}",
+      "aggression_tab_detail": "rate {{rate}} | tabs {{tabs}}",
+      "aggression_media_detail": "seek {{seek}} | skim {{skim}}"
+    }
+  },
+  "preview": {
+    "chrome": {
+      "protocol_prefix": "https://",
+      "domain_suffix": ".io",
+      "select_platform": "Select Platform"
+    },
+    "platforms": {
+      "default": "ENTROPY LAB",
+      "default_dark": "ENTROPY LAB // NIGHT",
+      "youtube": "YouTube",
+      "x": "X",
+      "instagram": "Instagram",
+      "tiktok": "TikTok"
+    },
+    "signal_test_pattern": {
+      "calibration_signal": "Calibration Signal",
+      "carrier_id": "ENTROPY-STP-01 // NO_CARRIER",
+      "ref_level": "REF.LVL: -18dBFS",
+      "sync_internal": "SYNC: INTERNAL",
+      "color_gray": "Gray",
+      "color_yellow": "Yellow",
+      "color_cyan": "Cyan",
+      "color_green": "Green",
+      "color_magenta": "Magenta",
+      "color_red": "Red",
+      "color_blue": "Blue",
+      "readability_test": "Readability Test",
+      "headline_mark": "HEADLINE_MARK",
+      "default_copy": "The quick brown fox jumps over the lazy dog.",
+      "small_sample": "Small text sample for blur/distort verification.",
+      "tiny_sample": "Tiny text sample for extreme filter testing.",
+      "resolution_target": "Resolution_Target",
+      "live_signal": "LIVE SIGNAL",
+      "system_code": "EN-OS-012",
+      "system_status": "SYSTEM_STABLE"
+    },
+    "instagram": {
+      "brand": "Instagram",
+      "nav": {
+        "home": "Home",
+        "search": "Search",
+        "explore": "Explore",
+        "reels": "Reels",
+        "messages": "Messages",
+        "notifications": "Notifications",
+        "create": "Create",
+        "profile": "Profile"
+      },
+      "sidebar": {
+        "threats": "Threats",
+        "more": "More"
+      },
+      "actions": {
+        "view_more": "View more"
+      },
+      "story": {
+        "your_story": "Your Story"
+      },
+      "suggestion": {
+        "subtitle_joined_instagram": "New to Instagram",
+        "subtitle_followed_by_friend1": "Followed by friend1 and 2 more",
+        "subtitle_recommended": "Suggested for you",
+        "subtitle_followed_by_tech_guru": "Followed by tech_guru",
+        "switch": "Switch",
+        "for_you": "Suggested for you",
+        "see_all": "See all",
+        "momentum_user": "Momentum user",
+        "follow": "Follow",
+        "following": "Following"
+      },
+      "footer": {
+        "tags": "Avocado • Kelp • Pears • Pie • Jams • Pastry • Tacos • Lollipops • Lemonade • Meow Verified",
+        "copyright": "© 2026 INSTANTGLAM FROM GELATO"
+      }
+    },
+    "tiktok": {
+      "brand": "TikTok",
+      "header": {
+        "search_placeholder": "Search accounts and videos",
+        "upload": "Upload",
+        "login": "Log in"
+      },
+      "nav": {
+        "for_you": "For You",
+        "following": "Following",
+        "live": "LIVE"
+      },
+      "sidebar": {
+        "suggested_accounts": "Suggested accounts"
+      },
+      "actions": {
+        "follow": "Follow"
+      },
+      "aria": {
+        "previous_video": "Previous video",
+        "next_video": "Next video"
+      }
+    },
+    "x": {
+      "media": {
+        "badge": "Mock media",
+        "preview_asset": "Preview asset"
+      },
+      "nav": {
+        "home": "Home",
+        "explore": "Explore",
+        "notifications": "Notifications",
+        "messages": "Messages",
+        "profile": "Profile",
+        "more": "More"
+      },
+      "compose": {
+        "post": "Post",
+        "placeholder": "What's happening?"
+      },
+      "tabs": {
+        "for_you": "For you",
+        "following": "Following"
+      },
+      "search": {
+        "placeholder": "Search"
+      },
+      "trends": {
+        "title": "What's happening",
+        "show_more": "Show more"
+      }
+    },
+    "youtube": {
+      "shared": {
+        "preview": "Preview"
+      },
+      "brand": "YouTube",
+      "actions": {
+        "reply": "Reply",
+        "delete": "Delete",
+        "add_reply_placeholder": "Add a reply...",
+        "cancel": "Cancel",
+        "add_comment_placeholder": "Add a comment...",
+        "subscribe": "Subscribe",
+        "subscribed": "Subscribed",
+        "share": "Share",
+        "save_offline": "Save offline",
+        "comment": "Comment"
+      },
+      "search": {
+        "placeholder": "Search"
+      },
+      "comments": {
+        "sort_top": "Top comments",
+        "sort_newest": "Newest first",
+        "replies_count": "Replies {{count}}",
+        "just_now": "Just now",
+        "total_count": "Comments {{count}}"
+      },
+      "filters": {
+        "all": "All",
+        "related_content": "Related content",
+        "recent_uploads": "Recently uploaded videos"
+      },
+      "dialogs": {
+        "delete_comment_title": "Delete comment",
+        "delete_comment_body": "Do you really want to delete this?"
+      }
+    }
+  },
+  "recording": {
+    "scope_title": "Usage records",
+    "scope_desc": "Choose where to keep site usage records. Turning recording off keeps existing history.",
+    "scope_off": "Do not keep records",
+    "scope_protected": "Protected sites only",
+    "scope_all": "All sites · basic records",
+    "flow_details": "Activity history",
+    "flow_title": "Keep activity history",
+    "flow_desc": "Keep activity summaries from protected sites to understand patterns over time.",
+    "flow_paused": "This choice applies when usage records are enabled.",
+    "flow_intro": "Protection features observe the activity they need while in use. These settings choose what also becomes history.",
+    "flow_not_recorded": "No new activity history",
+    "flow_allowed_count": "{{count}} signal groups allowed",
+    "permission_needed": "Connection needed",
+    "permission_desc": "Check the browser permissions needed for activity history.",
+    "permission_connect": "Connect permissions",
+    "permission_denied": "Permissions were not connected, so your recording settings stayed the same. You can retry or choose another scope.",
+    "site_access": "Site access",
+    "site_access_desc": "Used to run protection on the sites you choose.",
+    "site_access_empty": "Access is requested when you add a site for protection.",
+    "access_connected": "Connected",
+    "access_on_demand": "Requested when adding a site",
+    "data_details": "Observation and storage",
+    "runtime_title": "Observation for current protection",
+    "runtime_desc": "Active features may observe input, scrolling or playback. The observation a feature needs can continue when history is off.",
+    "stored_title": "Stored activity history",
+    "stored_desc": "Export activity records from the most recent 14 days to a JSON file on this device.",
+    "raw_desc": "Review activity history from the last 14 days.",
+    "excluded_count": "{{count}} excluded",
+    "appearance_title": "Display and performance",
+    "signals": {
+      "clse": {
+        "title": "Page activity",
+        "desc": "Summaries of scrolling, feed movement and media activity"
+      },
+      "navigation": {
+        "title": "Tab and site movement",
+        "desc": "Tab switches and navigation between sites"
+      }
+    },
+    "excluded_empty": "No excluded sites.",
+    "excluded_restore_failed": "Could not remove this exclusion. Try again.",
+    "export_history": "Export activity records"
+  }
+};
+resource["notifications"] = {
+  ...backgroundRuntimeResource["settings"]["notifications"],
+  ...resource["notifications"],
+};
+
+export default resource;

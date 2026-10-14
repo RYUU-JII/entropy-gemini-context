@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "zen-bonsai-developmental-research",
+  "title": "Zen bonsai developmental V10 research",
+  "pathPrefixes": [
+    "scripts/dev/zen-bonsai-morphology-research/successor/developmental/",
+    "scripts/harness/adapters/zenBonsaiDevelopmentalHarnessAdapter.mjs",
+    "tests/zenBonsaiDevelopmental"
+  ],
+  "ownerDocs": [
+    "docs/architecture/themes/zen/zen-bonsai-architecture-guards.md",
+    "scripts/dev/zen-bonsai-morphology-research/successor/developmental/README.md"
+  ],
+  "resourceClaims": [],
+  "focusedChecks": [
+    {
+      "id": "zen-bonsai-developmental-harness-contracts",
+      "label": "Zen bonsai developmental harness contracts",
+      "executable": "node",
+      "args": [
+        "scripts/dev/run-local-command.mjs",
+        "vitest",
+        "run",
+        "tests/zenBonsaiDevelopmentalHarnessAdapter.test.js",
+        "tests/zenBonsaiDevelopmentalOwnership.test.js",
+        "--no-file-parallelism"
+      ],
+      "estimatedSeconds": 12
+    }
+  ],
+  "harnessIds": [
+    "zen-bonsai-developmental"
+  ]
+}

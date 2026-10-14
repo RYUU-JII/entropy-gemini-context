@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "zen-bonsai",
+  "title": "Zen bonsai runtime and research",
+  "pathPrefixes": [
+    "src/themes/plugins/zen/bonsai/",
+    "scripts/dev/zen-bonsai-morphology-research/README.md",
+    "scripts/dev/zen-bonsai-morphology-research/browser/",
+    "scripts/dev/zen-bonsai-morphology-research/diagnosis/",
+    "scripts/dev/zen-bonsai-morphology-research/host/",
+    "scripts/dev/zen-bonsai-morphology-research/references/",
+    "scripts/dev/zen-bonsai-morphology-research/rust-engine/",
+    "scripts/dev/zen-bonsai-morphology-research/studio/",
+    "scripts/dev/zen-bonsai-morphology-research/successor/README.md",
+    "scripts/dev/zen-bonsai-morphology-research/successor/autonomous/",
+    "scripts/dev/zen-bonsai-morphology-research/successor/composite/",
+    "scripts/dev/zen-bonsai-morphology-research/successor/generative/",
+    "scripts/dev/zen-bonsai-morphology-research/successor/grammar/",
+    "scripts/dev/zen-bonsai-morphology-research/successor/graph/",
+    "scripts/dev/zen-bonsai-morphology-research/successor/reference/",
+    "scripts/dev/zen-bonsai-morphology-research/successor/synthesis/",
+    "tests/themes/zenBonsai",
+    "tests/zenBonsaiAutonomous",
+    "tests/zenBonsaiComposite",
+    "tests/zenBonsaiFeedback",
+    "tests/zenBonsaiPreview",
+    "tests/zenBonsaiSource",
+    "tests/zenBonsaiSuccessor",
+    "docs/architecture/themes/zen/zen-bonsai-"
+  ],
+  "ownerDocs": [
+    "docs/architecture/themes/zen/zen-bonsai-architecture-guards.md"
+  ],
+  "resourceClaims": [],
+  "focusedChecks": [],
+  "harnessIds": [
+    "zen-bonsai"
+  ]
+}

@@ -1,0 +1,124 @@
+.zen-rhythm-marker__time {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+  letter-spacing: -0.035em;
+}
+
+.zen-rhythm-marker__hour,
+.zen-rhythm-marker__minute {
+  display: inline-block;
+  min-width: 2ch;
+}
+
+.zen-rhythm-marker__separator {
+  display: inline-block;
+  width: 0.55em;
+  color: var(--zen-ambient-rhythm-ink-wash);
+  text-align: center;
+  transform: translateY(-0.035em);
+}
+
+/* Date and phase are inscriptions, not headings: they use the Zen label
+ * tokens so Latin capitals keep their spacing while Hangul stays set solid. */
+.zen-rhythm-marker__date {
+  font-family: var(--font-theme-serif);
+  font-size: var(--zen-type-caption);
+  font-weight: 500;
+  letter-spacing: var(--zen-tracking-caption);
+  text-transform: var(--zen-label-case);
+}
+
+.zen-rhythm-marker__phase {
+  font-family: var(--font-theme-serif);
+  font-size: var(--zen-type-caption);
+  font-weight: 500;
+  letter-spacing: var(--zen-tracking-label);
+  text-transform: var(--zen-label-case);
+}
+
+[data-ui-layout='landscape'] .zen-home-rhythm-slot
+  .zen-rhythm-marker[data-frame-variant='slab-inscription'] {
+  isolation: isolate;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 0;
+  --zen-ambient-rhythm-ink: var(--zen-ambient-garden-ink);
+  --zen-ambient-rhythm-ink-wash: color-mix(in srgb, var(--zen-ambient-garden-ink) 60%, transparent);
+}
+
+[data-ui-layout='landscape'] .zen-home-rhythm-slot
+  .zen-rhythm-marker[data-frame-variant='slab-inscription']
+  .zen-rhythm-marker__time {
+  color: var(--zen-ambient-rhythm-ink);
+  font-size: clamp(44px, 3.6vw, 64px);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  gap: 0.04em;
+  /* A restrained glass face lit by the same sky as the tree. Keep most of the
+   * contrast-bearing ink; the narrow reflection crosses only the glyphs. */
+  background: linear-gradient(
+    165deg,
+    var(--zen-ambient-garden-ink) 0%,
+    color-mix(in srgb, var(--zen-ambient-garden-ink) 94%, var(--zen-ambient-garden-sky-top)) 36%,
+    color-mix(in srgb, var(--zen-ambient-garden-ink) 82%, var(--zen-ambient-garden-sky-top)) 49%,
+    var(--zen-ambient-garden-ink) 62%,
+    color-mix(in srgb, var(--zen-ambient-garden-ink) 90%, var(--zen-ambient-garden-sky-top)) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.3px color-mix(in srgb, var(--zen-ambient-garden-ink) 78%, transparent);
+  filter: drop-shadow(0 3px 5px color-mix(in srgb, var(--zen-ambient-cast-shadow) 34%, transparent));
+}
+
+[data-ui-layout='landscape'] .zen-home-rhythm-slot
+  .zen-rhythm-marker[data-frame-variant='slab-inscription']
+  .zen-rhythm-marker__separator {
+  width: 0.3em;
+}
+
+[data-ui-layout='landscape'] .zen-home-rhythm-slot
+  .zen-rhythm-marker[data-frame-variant='slab-inscription']
+  .zen-rhythm-marker__phase-wash {
+  display: none;
+}
+
+[data-ui-layout='landscape'] .zen-home-rhythm-slot
+  .zen-rhythm-marker[data-frame-variant='slab-inscription']
+  .zen-rhythm-marker__date-phase {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+[data-ui-layout='landscape'] .zen-home-rhythm-slot
+  .zen-rhythm-marker[data-frame-variant='slab-inscription']
+  .zen-rhythm-marker__date {
+  color: var(--zen-ambient-rhythm-ink);
+  font-size: var(--zen-type-caption);
+  font-weight: 500;
+  letter-spacing: var(--zen-tracking-caption);
+}
+
+[data-ui-layout='landscape'] .zen-home-rhythm-slot
+  .zen-rhythm-marker[data-frame-variant='slab-inscription']
+  .zen-rhythm-marker__phase {
+  color: var(--zen-ambient-garden-ink);
+  font-size: var(--zen-type-caption);
+  letter-spacing: var(--zen-tracking-caption);
+}
+
+@media (prefers-reduced-transparency: reduce), (forced-colors: active) {
+  [data-ui-layout='landscape'] .zen-home-rhythm-slot
+    .zen-rhythm-marker[data-frame-variant='slab-inscription']
+    .zen-rhythm-marker__time {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    -webkit-text-stroke: 0;
+    filter: none;
+  }
+}

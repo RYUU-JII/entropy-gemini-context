@@ -1,0 +1,46 @@
+.feed-post { padding: 30px 36px 22px; border-bottom: 1px solid var(--feed-border); scroll-margin-top: 75px; --post-desaturation: 0; --post-blur: 0px; --post-signal-opacity: 1; }
+.feed-post-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.feed-avatar { width: 35px; height: 35px; display: grid; place-items: center; flex-shrink: 0; border-radius: 50%; background: var(--feed-avatar-bg); border: 1px solid var(--feed-border); color: var(--feed-avatar-text); }
+.feed-author { display: grid; gap: 1px; }
+.feed-author-name { display: flex; align-items: center; color: var(--feed-secondary); font-size: 12px; font-weight: 500; }
+.feed-author-handle { color: var(--feed-muted); font-size: 10px; }
+.feed-avatar[data-author] { font-size: 12px; font-weight: 500; }
+.feed-avatar[data-author=entropy-lab] { background: #e6ece8; color: #3f6158; }
+.feed-avatar[data-author=notes] { background: #efebe2; color: #6d5a43; }
+.feed-avatar[data-author=one-sky-daily] { background: linear-gradient(160deg, #5b4a86, #e08a6c); border-color: transparent; color: #fff8ee; }
+.feed-avatar[data-author=evening-walk] { background: #e9e6ef; color: #4f4867; }
+.feed-post-copy { margin-bottom: 22px; }
+.feed-post-copy h2 { font-size: 18px; font-weight: 500; letter-spacing: -0.6px; line-height: 1.65; }
+.feed-post-copy p { color: var(--feed-body); font-size: 14px; line-height: 1.95; margin-top: 10px; white-space: pre-line; }
+.feed-post-content { filter: saturate(calc(1 - var(--post-desaturation))); }
+.feed-media-filter { overflow: hidden; border-radius: 8px; isolation: isolate; }
+.feed-media-filter .feed-art-svg { filter: blur(var(--post-blur)); }
+.feed-post-actions { display: flex; justify-content: space-between; align-items: center; margin: 14px -7px 2px; }
+.feed-post-actions-start { display: flex; align-items: center; gap: 15px; }
+.feed-action { display: inline-flex; align-items: center; justify-content: center; gap: 7px; border: 0; background: none; color: var(--feed-muted) !important; min-height: 40px; min-width: 36px; padding: 6px; border-radius: 6px; }
+.feed-action > span { font-size: 10px; min-width: 9px; opacity: var(--post-signal-opacity); }
+.feed-action:hover { background: var(--feed-hover); color: var(--feed-text) !important; }
+.feed-action.is-liked { color: var(--feed-like) !important; }
+.feed-action.is-liked svg { fill: var(--feed-like-fill); }
+.feed-post-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 9px; color: var(--feed-muted); }
+.feed-post-footer > span:first-child { color: var(--feed-avatar-text); }
+.feed-post-footer > button { background: none; border: 0; padding: 0; font-size: 9px; color: var(--feed-secondary); }
+.feed-post-footer > button:hover { color: var(--feed-accent); }
+.feed-gallery { position: relative; }
+.feed-gallery :focus-visible { outline-color: #fff; }
+.feed-gallery-index { position: absolute; top: 14px; right: 14px; padding: 4px 9px; background: #111214b3; color: #e9e9e2; border-radius: 20px; font-size: 9px; font-family: monospace; }
+.feed-gallery-arrow { position: absolute; top: calc(50% - 16px); width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: #111214aa; color: #fff !important; border: 1px solid #ffffff33; }
+.feed-gallery-prev { left: 12px; }
+.feed-gallery-prev svg { transform: rotate(180deg); }
+.feed-gallery-next { right: 12px; }
+.feed-gallery-dots { position: absolute; left: 0; right: 0; bottom: 15px; display: flex; justify-content: center; gap: 5px; }
+.feed-gallery-dots button { border: 0; width: 22px; height: 22px; padding: 8px; background: none; }
+.feed-gallery-dots button::after { content: ''; display: block; width: 5px; height: 5px; border-radius: 50%; background: #ffffff55; }
+.feed-gallery-dots button[aria-current=true]::after { background: #d9edb5; }
+.feed-quote { padding: 46px 30px 40px; margin-bottom: 20px; text-align: center; background: var(--feed-surface-soft); border: 1px solid var(--feed-border); border-radius: 8px; }
+.feed-quote > span:first-child { font-family: Georgia, serif; font-size: 55px; line-height: 1; color: var(--feed-avatar-text); }
+.feed-quote blockquote { margin: 0 0 24px; font-size: 24px; line-height: 1.8; letter-spacing: -1px; white-space: pre-line; font-weight: 400; }
+.feed-post-text .feed-post-copy { padding: 15px 2px 20px; }
+.feed-post-text .feed-post-copy h2 { font-size: 22px; letter-spacing: -0.9px; }
+.feed-post-text .feed-post-copy p { font-size: 14px; line-height: 2.1; margin-top: 18px; }
+@media (max-width: 760px) { .feed-post { padding: 26px 22px 20px; } .feed-post-copy h2 { font-size: 17px; } .feed-post-copy p { font-size: 14px; } .feed-post-actions-start { gap: 16px; } .feed-quote { padding: 35px 22px; } .feed-quote blockquote { font-size: 21px; } }

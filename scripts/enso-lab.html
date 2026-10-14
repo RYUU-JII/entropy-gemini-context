@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Enso Icon Lab</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font: 13px/1.5 -apple-system, "Segoe UI", system-ui, sans-serif;
+    background: #14110f; color: #e7ded3; padding: 28px;
+  }
+  h1 { font-size: 16px; font-weight: 600; letter-spacing: .04em; margin: 0 0 4px; }
+  .sub { color: #8c8073; margin: 0 0 24px; }
+  .wrap { display: grid; grid-template-columns: 260px 1fr; gap: 32px; align-items: start; }
+
+  /* controls */
+  .panel { background: #1d1916; border: 1px solid #2c2620; border-radius: 12px; padding: 18px; position: sticky; top: 28px; }
+  .ctl { margin-bottom: 14px; }
+  .ctl label { display: flex; justify-content: space-between; font-size: 12px; color: #b7ab9c; margin-bottom: 5px; }
+  .ctl label b { color: #f0c66f; font-variant-numeric: tabular-nums; font-weight: 600; }
+  input[type=range] { width: 100%; accent-color: #c8607a; }
+  .row { display: flex; gap: 8px; }
+  button { background: #2c2620; color: #e7ded3; border: 1px solid #3a332b; border-radius: 7px; padding: 7px 10px; cursor: pointer; font-size: 12px; }
+  button:hover { background: #382f27; }
+
+  /* hero */
+  .hero-row { display: flex; gap: 24px; align-items: flex-end; flex-wrap: wrap; margin-bottom: 28px; }
+  .stage { border-radius: 16px; padding: 18px; display: inline-flex; flex-direction: column; align-items: center; gap: 8px; }
+  .stage span { font-size: 11px; opacity: .55; }
+  .stage.light { background: #f4efe7; color: #3a332b; }
+  .stage.dark  { background: #14110f; color: #cabfb0; border: 1px solid #2c2620; }
+  .stage.toolbar { background: linear-gradient(#fbfbfb,#ededed); color: #555; }
+  .stage.toolbardk { background: #2b2b2b; color: #aaa; }
+
+  /* size previews */
+  .sizes { display: flex; gap: 18px; align-items: center; margin-bottom: 30px; }
+  .sizes .cell { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .sizes .cell.lt { background:#f4efe7; padding:10px; border-radius:8px; }
+  .sizes .cell span { font-size: 10px; opacity: .5; }
+
+  /* color grid */
+  h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .12em; color: #8c8073; margin: 0 0 12px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px; }
+  .swatch { border-radius: 10px; padding: 10px 8px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; transition: transform .12s; }
+  .swatch:hover { transform: translateY(-2px); }
+  .swatch small { font-size: 10px; opacity: .6; }
+  canvas { display: block; image-rendering: -webkit-optimize-contrast; }
+</style>
+</head>
+<body>
+  <h1>Enso Icon Lab — 달팽이 껍질 나선</h1>
+  <p class="sub">로그 나선 중심선 · 머리 굵게 → 꼬리 1:0.6 · 슬라이더로 튜닝, 스와치 클릭으로 색 적용</p>
+
+  <div class="wrap">
+    <div class="panel">
+      <div class="ctl"><label>머리 굵기 <b id="vMax"></b></label><input type="range" id="cMax" min="0.16" max="0.40" step="0.005"></div>
+      <div class="ctl"><label>꼬리 비율 (head:tail) <b id="vRatio"></b></label><input type="range" id="cRatio" min="0.35" max="0.85" step="0.01"></div>
+      <div class="ctl"><label>머리 반지름 <b id="vR"></b></label><input type="range" id="cR" min="0.26" max="0.40" step="0.005"></div>
+      <div class="ctl"><label>나선 수축 (snail) <b id="vShrink"></b></label><input type="range" id="cShrink" min="0.55" max="1.00" step="0.01"></div>
+      <div class="ctl"><label>회전량 <b id="vSweep"></b>°</label><input type="range" id="cSweep" min="300" max="400" step="1"></div>
+      <div class="ctl"><label>시작 각도 <b id="vStart"></b>°</label><input type="range" id="cStart" min="-180" max="180" step="1"></div>
+      <div class="ctl"><label>머리 끝 (0 칼각 ↔ 1 물방울) <b id="vHead"></b></label><input type="range" id="cHead" min="0" max="1" step="0.01"></div>
+      <div class="ctl"><label>몸통 taper (꼬리 가늘기) <b id="vP"></b></label><input type="range" id="cP" min="0.6" max="2.6" step="0.05"></div>
+      <div class="ctl"><label>흔들림 (organic) <b id="vWob"></b></label><input type="range" id="cWob" min="0" max="0.04" step="0.002"></div>
+      <div class="row">
+        <button id="reset">기본값</button>
+        <button id="dump">파라미터 복사</button>
+      </div>
+    </div>
+
+    <div>
+      <div class="hero-row">
+        <div class="stage dark"><canvas id="heroDk" width="320" height="320"></canvas><span>dark</span></div>
+        <div class="stage light"><canvas id="heroLt" width="320" height="320"></canvas><span>light</span></div>
+      </div>
+
+      <h2>실제 크기 미리보기</h2>
+      <div class="sizes">
+        <div class="cell"><canvas id="s128d" width="128" height="128"></canvas><span>128 dark</span></div>
+        <div class="cell lt"><canvas id="s128l" width="128" height="128"></canvas><span>128 light</span></div>
+        <div class="cell"><canvas id="s48d" width="48" height="48"></canvas><span>48</span></div>
+        <div class="cell lt"><canvas id="s48l" width="48" height="48"></canvas><span>48</span></div>
+        <div class="cell"><canvas id="s16d" width="16" height="16"></canvas><span>16</span></div>
+        <div class="cell lt"><canvas id="s16l" width="16" height="16"></canvas><span>16</span></div>
+      </div>
+
+      <h2>색 / 배경 테스트</h2>
+      <div class="grid" id="grid"></div>
+    </div>
+  </div>
+
+<script>
+const TAU = Math.PI * 2;
+const deg = d => d * Math.PI / 180;
+const lerp = (a,b,t) => a + (b-a)*t;
+
+const DEFAULTS = {
+  maxW: 0.300,   // head thickness (fraction of size)
+  ratio: 0.60,   // tail = ratio * head  (1 : 0.6)
+  R: 0.340,      // head centerline radius
+  shrink: 0.700, // tail radius / head radius (log-spiral inward drift)
+  sweep: 364,    // total rotation° — tail tucks just under the head
+  start: -108,   // head start angle
+  p: 1.40,       // taper curve — bigger = head holds full longer, drop-like sides
+  wob: 0.010,    // organic radius wobble amplitude
+  head: 0.70,    // HEAD terminus: 0 = flat knife-cut (칼각) … 1 = round water-drop (물방울)
+};
+let P = { ...DEFAULTS };
+
+// ---- the brush itself --------------------------------------------------
+// Centerline is a logarithmic spiral; the stroke is a ribbon offset along its
+// normal. The HEAD terminus morphs continuously from a flat knife-cut (head=0)
+// to a round water-drop (head=1). Everything is composited OPAQUE on an
+// offscreen buffer so caps union seamlessly (no 단절감), then drawn with a halo.
+function computePts(sz, P) {
+  const cx = sz * 0.5, cy = sz * 0.515;
+  const N = Math.max(200, Math.round(sz * 4));
+  const Rh = P.R * sz;
+  const maxW = P.maxW * sz;
+  const start = deg(P.start);
+  const sweep = deg(P.sweep);
+  const wob = P.wob * sz;
+
+  const cen = [], half = [];
+  for (let i = 0; i < N; i++) {
+    const t = i / (N - 1);
+    const ang = start + sweep * t;
+    // log spiral: r = Rh * shrink^t   (radius winds inward → snail shell)
+    let r = Rh * Math.pow(P.shrink, t);
+    r += Math.sin(t * TAU + 0.6) * wob * Math.sin(Math.PI * t); // wobble fades to 0 at both ends → clean caps
+    cen.push({ x: cx + Math.cos(ang) * r, y: cy + Math.sin(ang) * r });
+    // width: full at head (t=0), tapering convexly to ratio at the tail (t=1)
+    const w = maxW * (P.ratio + (1 - P.ratio) * Math.pow(1 - t, P.p));
+    half.push(w * 0.5);
+  }
+
+  const outer = [], inner = [];
+  for (let i = 0; i < N; i++) {
+    const a = cen[Math.max(0, i - 1)], b = cen[Math.min(N - 1, i + 1)];
+    let tx = b.x - a.x, ty = b.y - a.y;
+    const len = Math.hypot(tx, ty) || 1; tx /= len; ty /= len;
+    const nx = -ty, ny = tx;
+    outer.push({ x: cen[i].x + nx * half[i], y: cen[i].y + ny * half[i] });
+    inner.push({ x: cen[i].x - nx * half[i], y: cen[i].y - ny * half[i] });
+  }
+  return { cen, half, outer, inner };
+}
+
+// cap as a half-ellipse arc woven into the outline (not a separate fill).
+// c=0 → samples lie on the straight flat cut (칼각); c=1 → round half-disc (물방울).
+// th runs lo→hi; th=0 is the +normal corner, th=PI the -normal corner; bulge in +out.
+function capArc(pts, p, nx, ny, ox, oy, h, c, lo, hi, M) {
+  for (let i = 0; i <= M; i++) {
+    const th = lo + (hi - lo) * (i / M);
+    const cs = Math.cos(th), sn = Math.sin(th);
+    pts.push({ x: p.x + nx * h * cs + ox * h * c * sn, y: p.y + ny * h * cs + oy * h * c * sn });
+  }
+}
+
+function buildSilhouette(sz, ink) {
+  const o = document.createElement('canvas');
+  o.width = sz; o.height = sz;
+  const oc = o.getContext('2d');
+  oc.fillStyle = `rgb(${ink[0]},${ink[1]},${ink[2]})`;
+
+  const { cen, half, outer, inner } = computePts(sz, P);
+  const N = cen.length, last = N - 1;
+
+  const nrm = (i) => { let dx = outer[i].x - cen[i].x, dy = outer[i].y - cen[i].y, l = Math.hypot(dx,dy)||1; return [dx/l, dy/l]; };
+  const out = (i, j) => { let dx = cen[i].x - cen[j].x, dy = cen[i].y - cen[j].y, l = Math.hypot(dx,dy)||1; return [dx/l, dy/l]; };
+  const [hnx,hny] = nrm(0),    [hox,hoy] = out(0, 1);        // head normal / backward
+  const [tnx,tny] = nrm(last), [tox,toy] = out(last, last-1); // tail normal / forward
+  const M = 28;
+
+  // single continuous outline: outer edge → tail cap → inner edge → head cap
+  const pts = [...outer];
+  capArc(pts, cen[last], tnx, tny, tox, toy, half[last], 1.0, 0, Math.PI, M); // round tail
+  for (let i = N - 2; i >= 1; i--) pts.push(inner[i]);
+  capArc(pts, cen[0], hnx, hny, hox, hoy, half[0], P.head, Math.PI, 0, M);    // morphing head
+
+  oc.beginPath();
+  oc.moveTo(pts[0].x, pts[0].y);
+  for (let i = 1; i < pts.length; i++) oc.lineTo(pts[i].x, pts[i].y);
+  oc.closePath();
+  oc.fill();
+
+  return o;
+}
+
+function drawEnso(canvas, ink, opts = {}) {
+  const sz = canvas.width;
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, sz, sz);
+  const o = buildSilhouette(sz, ink);
+
+  if (sz >= 40 && opts.glow !== false) {
+    ctx.save();
+    ctx.shadowBlur = sz * 0.05;
+    ctx.shadowColor = `rgba(${ink[0]},${ink[1]},${ink[2]},0.45)`;
+    ctx.drawImage(o, 0, 0); // crisp silhouette + soft halo behind
+    ctx.restore();
+  } else {
+    ctx.drawImage(o, 0, 0);
+  }
+}
+
+// ---- palette -----------------------------------------------------------
+const COLORS = [
+  ['Rose',      [200,96,122]],
+  ['Sumi',      [38,34,30]],
+  ['Charcoal',  [74,70,64]],
+  ['Indigo',    [70,86,140]],
+  ['Jade',      [86,140,116]],
+  ['Gold',      [198,150,74]],
+  ['Terracotta',[188,104,72]],
+  ['Plum',      [128,82,128]],
+  ['Teal',      [56,124,128]],
+  ['Crimson',   [168,58,66]],
+];
+const BGS = [['light','#f4efe7'], ['dark','#16130f'], ['paper','#e9e0d0']];
+
+function buildGrid() {
+  const g = document.getElementById('grid');
+  g.innerHTML = '';
+  for (const [name, ink] of COLORS) {
+    for (const [bgn, bg] of BGS) {
+      const cell = document.createElement('div');
+      cell.className = 'swatch';
+      cell.style.background = bg;
+      const cv = document.createElement('canvas');
+      cv.width = 72; cv.height = 72;
+      cell.appendChild(cv);
+      const lab = document.createElement('small');
+      lab.textContent = name;
+      lab.style.color = bgn === 'dark' ? '#cabfb0' : '#5a5145';
+      cell.appendChild(lab);
+      cell.onclick = () => { CUR_INK = ink; renderAll(); };
+      g.appendChild(cell);
+      cell._cv = cv; cell._ink = ink;
+    }
+  }
+  redrawGrid();
+}
+function redrawGrid() {
+  for (const cell of document.querySelectorAll('.swatch')) drawEnso(cell._cv, cell._ink, { glow: false });
+}
+
+let CUR_INK = [200, 96, 122];
+function renderAll() {
+  drawEnso(document.getElementById('heroDk'), CUR_INK);
+  drawEnso(document.getElementById('heroLt'), CUR_INK);
+  for (const id of ['s128d','s128l']) drawEnso(document.getElementById(id), CUR_INK);
+  for (const id of ['s48d','s48l','s16d','s16l']) drawEnso(document.getElementById(id), CUR_INK, { glow: false });
+  redrawGrid();
+}
+
+// ---- controls ----------------------------------------------------------
+const BIND = [
+  ['cMax','vMax','maxW',3], ['cRatio','vRatio','ratio',2], ['cR','vR','R',3],
+  ['cShrink','vShrink','shrink',2], ['cSweep','vSweep','sweep',0], ['cStart','vStart','start',0],
+  ['cHead','vHead','head',2], ['cP','vP','p',2], ['cWob','vWob','wob',3],
+];
+function syncInputs() {
+  for (const [cid, vid, key, dp] of BIND) {
+    document.getElementById(cid).value = P[key];
+    document.getElementById(vid).textContent = (+P[key]).toFixed(dp);
+  }
+}
+for (const [cid, vid, key, dp] of BIND) {
+  document.getElementById(cid).addEventListener('input', e => {
+    P[key] = parseFloat(e.target.value);
+    document.getElementById(vid).textContent = P[key].toFixed(dp);
+    renderAll();
+  });
+}
+document.getElementById('reset').onclick = () => { P = { ...DEFAULTS }; syncInputs(); renderAll(); };
+document.getElementById('dump').onclick = () => {
+  const s = JSON.stringify(P, null, 2);
+  navigator.clipboard?.writeText(s);
+  console.log(s); alert(s);
+};
+
+buildGrid();
+syncInputs();
+renderAll();
+window._ready = true;
+</script>
+</body>
+</html>

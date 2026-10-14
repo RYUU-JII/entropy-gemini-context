@@ -1,0 +1,15 @@
+export const THEME_PLUGIN_WIDGET_MODULES = import.meta.glob([
+    '../../plugins/*/widgets/main/*.{js,jsx,ts,tsx}',
+    '../../plugins/*/widgets/core/*.{js,jsx,ts,tsx}',
+    '../../plugins/*/widgets/signals/*.{js,jsx,ts,tsx}',
+    '../../plugins/*/widgets/signals/*/index.{js,jsx,ts,tsx}',
+    '../../plugins/*/widgets/signals/*/app/*.{js,jsx,ts,tsx}',
+    '../../plugins/*/widgets/sites/*.{js,jsx,ts,tsx}',
+    '../../plugins/*/widgets/tools/*.{js,jsx,ts,tsx}',
+    '../../plugins/*/widgets/tools/*/*.{js,jsx,ts,tsx}',
+    '!../../plugins/zen/widgets/core/ZenCoreStatusClassicExperiment.jsx',
+    '!../../plugins/zen/widgets/core/ZenCoreStatusVNext.jsx',
+    '!../../plugins/zen/widgets/signals/signalScanner/app/ZenSignalTunerContainer.jsx',
+    '!../../plugins/zen/widgets/tools/FurinTuner.jsx',
+    '!../../plugins/zen/widgets/tools/ShishiOdoshiTuner.jsx',
+]);

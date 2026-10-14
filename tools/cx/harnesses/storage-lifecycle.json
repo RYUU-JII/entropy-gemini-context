@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "storage-lifecycle",
+  "title": "Storage data lifecycle evidence",
+  "targets": [
+    "lifecycle/data"
+  ],
+  "estimatedSeconds": 300,
+  "guide": "docs/system-architecture/02-runtime-storage-boundaries.md",
+  "entrypoints": [
+    "scripts/e2e/mv3DataLifecycleE2E.mjs"
+  ],
+  "resourceClaims": [
+    "runtime:storage-contract"
+  ]
+}

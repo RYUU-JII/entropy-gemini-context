@@ -1,0 +1,51 @@
+.artifact-workspace {
+  display: grid;
+  grid-template-columns:
+    var(--artifact-workspace-threshold-width, 8px)
+    minmax(0, 1fr)
+    var(--artifact-control-rail-width, clamp(380px, 36%, 480px));
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.artifact-workspace__threshold {
+  position: relative;
+  z-index: 10;
+  background: var(--artifact-workspace-threshold-background, var(--color-surface, #fdfbf7));
+  border-right: 1px solid var(
+    --artifact-workspace-threshold-edge,
+    var(--artifact-control-rail-edge, var(--color-border, rgba(41, 37, 36, 0.12)))
+  );
+  box-shadow: var(
+    --artifact-workspace-threshold-shadow,
+    12px 0 26px rgba(41, 37, 36, 0.07)
+  );
+}
+
+.artifact-workspace__control-rail {
+  background: var(--artifact-control-rail-background, var(--color-surface, #fdfbf7));
+  border-left: 1px solid var(
+    --artifact-control-rail-edge,
+    var(--color-border, rgba(41, 37, 36, 0.12))
+  );
+  box-shadow: var(
+    --artifact-control-rail-shadow,
+    -12px 0 26px rgba(41, 37, 36, 0.07)
+  );
+}
+
+[data-ui-orientation='portrait'] .artifact-workspace {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 0 minmax(0, 56%) minmax(0, 44%);
+}
+
+[data-ui-orientation='portrait'] .artifact-workspace__control-rail {
+  border-top: 1px solid var(
+    --artifact-control-rail-edge,
+    var(--color-border, rgba(41, 37, 36, 0.12))
+  );
+  border-left: 0;
+  box-shadow: var(
+    --artifact-control-rail-portrait-shadow,
+    0 -12px 26px rgba(41, 37, 36, 0.07)
+  );
+}

@@ -1,0 +1,21 @@
+@keyframes zenShojiFloatAxis {
+  0% { transform: translate3d(0, 0, 0); }
+  12.5% { transform: translate3d(0, -5px, 0); }
+  25% { transform: translate3d(0, -1.5px, 0); }
+  37.5% { transform: translate3d(0, 3.5px, 0); }
+  50% { transform: translate3d(0, -3px, 0); }
+  62.5% { transform: translate3d(0, 1.75px, 0); }
+  75% { transform: translate3d(0, 4.25px, 0); }
+  87.5% { transform: translate3d(0, -2.25px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes zenShojiFloatShadow {
+  0% { opacity: 0.58; transform: scaleX(1); }
+  16.666% { opacity: 0.5; transform: scaleX(0.94); }
+  33.333% { opacity: 0.62; transform: scaleX(1.05); }
+  50% { opacity: 0.53; transform: scaleX(0.97); }
+  66.666% { opacity: 0.6; transform: scaleX(1.03); }
+  83.333% { opacity: 0.56; transform: scaleX(0.99); }
+  100% { opacity: 0.58; transform: scaleX(1); }
+}

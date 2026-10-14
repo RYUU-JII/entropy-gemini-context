@@ -1,0 +1,61 @@
+import { THEME_IDS } from '../../core/ids.js';
+import {
+    SCHEDULE_RECIPE_VARIANTS,
+    SCHEDULE_TEXTURE_BLEND_MODES,
+    createScheduleVisualPolicy,
+} from '../../core/schedule/policyContract.js';
+import { SCHEDULE_TEXTURES } from '../../core/schedule/textureLibrary.js';
+
+export const entropyScheduleVisualPolicy = createScheduleVisualPolicy({
+    themeId: THEME_IDS.ENTROPY,
+    recipes: {
+        shell: SCHEDULE_RECIPE_VARIANTS.shell.FRAMED,
+        heading: SCHEDULE_RECIPE_VARIANTS.heading.PAGE_HEADER,
+        status: SCHEDULE_RECIPE_VARIANTS.status.PAGE_HEADER,
+        rhythmIdentity: SCHEDULE_RECIPE_VARIANTS.rhythmIdentity.COUNTED_TABS,
+        timeline: SCHEDULE_RECIPE_VARIANTS.timeline.FRAMED_TRACK,
+        workbench: SCHEDULE_RECIPE_VARIANTS.workbench.STANDARD_PANEL,
+        utilities: SCHEDULE_RECIPE_VARIANTS.utilities.FLOATING,
+        specialSession: SCHEDULE_RECIPE_VARIANTS.specialSession.FLOATING_CARD,
+    },
+    typography: {
+        body: '"Share Tech Mono", monospace',
+        label: '"Share Tech Mono", monospace',
+        title: '"Orbitron", "Share Tech Mono", monospace',
+        time: '"Share Tech Mono", monospace',
+        titleLetterSpacing: '0.14em',
+    },
+    tokens: {
+        canvas: '#15100C',
+        pageBackground: 'transparent',
+        panelBackground: 'rgba(34, 27, 21, 0.9)',
+        stageSurface: '#231B15',
+        stageHighlight: '#31271F',
+        stageDepth: '#110D0A',
+        stageEdge: '#6E553B',
+        stageRidge: '#826344',
+        timeFieldSurface: '#15100C',
+        workbenchSurface: 'rgba(34, 27, 21, 0.9)',
+        workbenchSelectedSurface: 'rgba(28, 43, 37, 0.94)',
+        workbenchSeam: '#6E553B',
+        inkPrimary: '#F7DDC1',
+        inkMuted: '#BCA086',
+        relaxationWash: '#4FD1C5',
+        relaxationInk: '#1F8B81',
+        currentMarker: '#EAA14A',
+        focusMarker: '#1F8B81',
+        isolationInk: '#3AC4B4',
+        danger: '#D65353',
+        onDarkInk: '#1A130D',
+        shadowInk: '#110D0A',
+        panelControlSurface: 'rgba(255, 255, 255, 0.32)',
+    },
+    timeline: {
+        textureImage: SCHEDULE_TEXTURES.NOISE_SOFT,
+        textureOpacity: 0.2,
+        textureSize: null,
+        textureBlendMode: SCHEDULE_TEXTURE_BLEND_MODES.NORMAL,
+        idleBlockOpacity: 14,
+        selectedBlockOpacity: 20,
+    },
+});

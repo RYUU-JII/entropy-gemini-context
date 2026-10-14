@@ -1,0 +1,2433 @@
+{
+  "cooling_curve": {
+    "strength": "Strength",
+    "curve": "Over time",
+    "fixed": "Always the same",
+    "description": "Applies only to enabled effects. Structural blocks such as shortform blocking and periodic reflection follow their own settings.",
+    "save_error": "The setting could not be saved or applied. Try again."
+  },
+  "artifact_appearance": {
+    "enabled": "On",
+    "disabled": "Off",
+    "actions": {
+      "veil": {
+        "enable": "Draw the veil",
+        "disable": "Lift the veil"
+      },
+      "open": {
+        "enable": "Leave open",
+        "disable": "Close"
+      },
+      "empty": {
+        "enable": "Clear",
+        "disable": "Reveal"
+      },
+      "bind": {
+        "enable": "Bind",
+        "disable": "Release"
+      },
+      "raise": {
+        "enable": "Raise",
+        "disable": "Lower"
+      },
+      "gather": {
+        "enable": "Gather",
+        "disable": "Disperse"
+      },
+      "ring": {
+        "enable": "Sound",
+        "disable": "Still"
+      },
+      "wind": {
+        "enable": "Invite the wind",
+        "disable": "Let it rest"
+      },
+      "flow": {
+        "enable": "Let it flow",
+        "disable": "Hold"
+      }
+    }
+  },
+  "artifact_number": {
+    "value_label": "{{label}} · protected tabs to keep",
+    "increase": "Increase {{label}} count",
+    "decrease": "Decrease {{label}} count",
+    "invalid": "Enter an integer from {{min}} to {{max}}."
+  },
+  "progression_unlock_debug": {
+    "aria_label": "Progression unlock debug control",
+    "title": "Development · Day 0–{{target}} preview",
+    "loading": "Reading canonical progress…",
+    "unavailable": "Progression snapshot unavailable",
+    "live_status": "Live use · {{canonical}} days",
+    "debug_status": "Journey preview day {{effective}} · live {{canonical}}",
+    "full_access_status": "Full access · live {{canonical}} days",
+    "scope_note": "Days 0–{{target}} preview the artifact, bonsai and site registration policies. Recorded use and the flow graph's observed days stay unchanged.",
+    "day": "D{{day}}",
+    "live": "Use live",
+    "full_access": "Full access",
+    "first_vision_replay": "Replay First Vision"
+  },
+  "development_tools": {
+    "title": "Development tools",
+    "short_label": "DEV",
+    "open": "Open development tools",
+    "close": "Close development tools",
+    "time_title": "Garden time",
+    "time_scope": "Changes the garden lighting. Qualified use days stay independent.",
+    "time_follow": "Follow real time",
+    "time_custom": "Set appearance time",
+    "time_slider": "Garden appearance time",
+    "time_fixed": "Fixed",
+    "time_live": "Live"
+  },
+  "header": {
+    "title": "Arsenal",
+    "title_zen": "Artifacts",
+    "desc": "Active intervention protocols and cognitive stabilizers.",
+    "desc_zen": "Tools for returning to the flow."
+  },
+  "tools": {
+    "workspace_eyebrow": "Workspace",
+    "workspace_desc": "Manual actions and recovery utilities live here.",
+    "scope_artifacts": "Manual interventions and recovery actions live here.",
+    "scope_system": "Permissions and privacy stay in Settings.",
+    "open_sites": "Sites",
+    "open_settings": "Settings",
+    "support_mode": "Support"
+  },
+  "artifact_capabilities": {
+    "runs_on_protected_sites": "Runs on protected sites",
+    "insights_can_improve_timing": "Insights can improve timing",
+    "needs_memory_access": "Needs memory access"
+  },
+  "artifacts": {
+    "loop_breaker": {
+      "title": "Event Horizon",
+      "title_zen": "The Hollow Striker",
+      "subtitle": "Loop Breaker",
+      "desc": "Interrupts loops and asks before continuing.",
+      "desc_zen": "A hollow bamboo strike marks the moment to stop.",
+      "distance": "DISTANCE",
+      "boost": "SHORTFORM BOOST",
+      "elastic_spring": "ELASTIC SPRING",
+      "elastic_damping": "ELASTIC DAMPING",
+      "scroll_impulse": "SCROLL IMPULSE",
+      "trip_distance": "TRIP DISTANCE",
+      "anim_test": "Loop Anim Test",
+      "anim_test_zen": "Hollow Striker Anim Test",
+      "overlay_test": "Loop Test",
+      "overlay_test_zen": "Hollow Striker Test",
+      "anim_toast": "ANIM TEST FIRED",
+      "pause_marker": "PAUSE",
+      "title_clinical": "Examination Airlock",
+      "title_scp": "Blast Airlock",
+      "title_entropy": "Airlock"
+    },
+    "memory_purge": {
+      "title": "The Lethe",
+      "title_zen": "The Forgetting Tide",
+      "subtitle": "Memory Purge",
+      "subtitle_zen": "A tide that washes traces away",
+      "desc": "Prevent trace formation. Automatically erases history of hazard zones.",
+      "desc_zen": "A forgetting tide washes away footprints before they harden into habit.",
+      "history_label": "Visit history",
+      "history_desc": "Clear blocked-site visits now and going forward.",
+      "bookmark_label": "Destroy bookmarks",
+      "bookmark_desc": "Remove blocked-site bookmarks without an internal recovery copy. Export HTML first if you need your own backup.",
+      "tab_evaporation_label": "Tab evaporation",
+      "tab_evaporation_desc": "Automatically close blocked tabs left idle in the background.",
+      "tab_evaporation_timeout_options": {
+        "3": "3 min",
+        "5": "5 min",
+        "10": "10 min",
+        "15": "15 min"
+      },
+      "tab_evaporation_timeout_feedback": {
+        "3": "Closes tabs idle for over 3 minutes.",
+        "5": "Closes tabs idle for over 5 minutes.",
+        "10": "Closes tabs idle for over 10 minutes.",
+        "15": "Closes tabs idle for over 15 minutes."
+      },
+      "title_clinical": "Specimen Archive",
+      "title_scp": "Memory Cartridge",
+      "title_entropy": "Memory Cartridge"
+    },
+    "shoji": {
+      "title": "The Diffused Lattice",
+      "subtitle": "A door that filters light",
+      "desc": "A paper lattice softens color, edges, and reading flow.",
+      "title_clinical": "Optical Assay",
+      "title_scp": "Inspection Array",
+      "title_entropy": "Aperture Assembly"
+    },
+    "enso": {
+      "title": "The Ultimate Circle",
+      "subtitle": "Stars orbit an ancient question.",
+      "desc": "A brush circle opens a small cosmos where urgency, numbers, and the next tap fall quiet.",
+      "title_clinical": "Sterile Shield",
+      "title_scp": "Redacted Dossier",
+      "title_entropy": "Signal Scrim"
+    },
+    "suikinkutsu": {
+      "title": "Suikinkutsu",
+      "subtitle": "Buried Water Harp",
+      "desc": "A low stone basin pulls sound into a cooler underground resonance."
+    },
+    "rhythm_brake": {
+      "title": "The Stopping Stone",
+      "subtitle": "Hand-level friction",
+      "desc": "A roped stopping stone gives weight to rushed scrolling rhythm.",
+      "title_clinical": "Flow Damper",
+      "title_scp": "Restraint Clamp",
+      "title_entropy": "Inertial Damper"
+    },
+    "sentinel_flare": {
+      "title": "Sentinel Flare",
+      "title_entropy": "Warning Beacon",
+      "title_zen": "Dreamscape Furin",
+      "subtitle": "Intervention Beacon",
+      "subtitle_entropy": "Protocol Trigger",
+      "subtitle_zen": "A chime from the dream",
+      "desc": "Rings when the global or current site target is crossed.",
+      "desc_entropy": "Emits a strong signal for Sentinel response.",
+      "desc_zen": "The dreamscape furin rings to mark a stop.",
+      "trigger": "TRIGGER",
+      "trigger_basis": "ACTIVATION BASIS",
+      "trigger_basis_entropy": "SUMMON BASIS",
+      "trigger_basis_zen": "FLOW BREAK BASIS",
+      "site_goal": "SITE BUDGET",
+      "site_goal_entropy": "HAZARD ZONE LIMIT",
+      "site_goal_zen": "SITE PRACTICE GOAL",
+      "status": "STATE",
+      "status_entropy": "LINK STATE",
+      "status_zen": "FLOW STATE",
+      "armed": "Watching",
+      "armed_entropy": "TRACKED ZONES",
+      "armed_zen": "WATCHED SITES",
+      "breached": "OVER-LIMIT SITES",
+      "breached_entropy": "BREACHED ZONES",
+      "breached_zen": "OUT-OF-FLOW SITES",
+      "breach": "OVER LIMIT",
+      "breach_entropy": "BREACH",
+      "breach_zen": "OUT OF FLOW",
+      "rule_summary": "Global and site targets provide the activation signal.",
+      "rule_summary_entropy": "Global and zone limits provide the activation signal.",
+      "rule_summary_zen": "Global and site practice goals provide the chime signal.",
+      "target_feedback": {
+        "global_and_site": "Global target · {{count}} site targets",
+        "global_only": "No site targets · global target applies",
+        "site_only": "{{count}} site targets · no global target",
+        "unconfigured": "No targets configured"
+      },
+      "control_status": {
+        "site_policy": "Site goal endings {{state}}",
+        "global_policy": "Global goal endings {{state}}",
+        "open_policy": "Configure protection behavior in Settings",
+        "temporary_pause": "Temporarily pause Furin",
+        "temporary_resume": "Resume Furin",
+        "temporary_pause_error": "The temporary pause could not be saved. Please try again.",
+        "global_pause_hint": "All protection is paused.",
+        "off": "Off",
+        "paused": "On · paused",
+        "no_sites": "On · waiting for a protected site",
+        "unconfigured": "On · waiting for a time limit",
+        "mode_off": "On · waiting while usage records are off",
+        "consent_required": "On · waiting for usage recording consent",
+        "excluded": "On · time targets are excluded from recording",
+        "global_only": "On · linked to the {{minutes}} min total limit in Sites",
+        "site_only": "On · linked to {{count}} individual limits in Sites",
+        "global_and_site": "On · linked to {{minutes}} min total / {{count}} individual limits",
+        "open_sites": "Configure in Sites",
+        "open_recording": "Recording settings",
+        "open_exclusions": "Recording exclusions"
+      },
+      "no_site_target": "Set site budgets in Sites.",
+      "protocol_test": "PROTOCOL TEST",
+      "spawn_test": "SPAWN TEST",
+      "spawn_target_tab": "SPAWN TARGET TAB",
+      "spawn_target_auto": "AUTO (LAST ACTIVE WEB TAB)",
+      "spawn_target_refresh": "REFRESH TABS",
+      "spawn_position": "SPAWN POSITION",
+      "spawn_position_auto": "AUTO (RANDOM)",
+      "spawn_position_center": "CENTER",
+      "spawn_position_manual": "MANUAL",
+      "spawn_position_x": "X POSITION (%)",
+      "spawn_position_y": "Y POSITION (%)",
+      "spawn": "SPAWN",
+      "halt": "HALT",
+      "debug_controls": "DEBUG CONTROLS",
+      "decoy_size": "CHIME SIZE",
+      "swarm_speed": "SWARM SPEED",
+      "spawn_interval": "SPAWN INTERVAL",
+      "swarm_density": "SWARM DENSITY",
+      "total_spawn_cap": "TOTAL SPAWN CAP",
+      "split_cap": "SPLIT CAP",
+      "escalation": "ESCALATION",
+      "basis_global_protocol": "Global basis",
+      "basis_scope_target": "Scope basis",
+      "basis_global_or_scope": "Hybrid basis",
+      "sites_in_scope": "Sites in scope",
+      "reference_over": "Over reference",
+      "reference_targets": "Reference targets",
+      "reference_only": "Reference only",
+      "reference_targets_note": "Scope targets stay reference-only unless the active protocol promotes them.",
+      "no_reference_target": "No scope targets are available. Global protocol remains the active basis.",
+      "scope_fallback": "Fallback limit",
+      "title_clinical": "Warning Beacon",
+      "title_scp": "Containment Beacon"
+    },
+    "time_anchor": {
+      "title": "The Monolith",
+      "title_zen": "The White Night Predator",
+      "subtitle": "Temporal Anchor",
+      "subtitle_zen": "Entropy Inverter",
+      "desc": "A gravity well that prevents temporal slippage.",
+      "desc_zen": "Consumes the causality of stimulation to reverse the entropy of drifting gaze and time.",
+      "video_skip": "Jump Nullification",
+      "video_skip_desc": "When a large jump is detected, the lantern cools the movement or turns the skipped time into a null event.",
+      "shortform_block": "Cause Erasure",
+      "shortform_block_desc": "Erases the first cause leading into short reward loops like Shorts and Reels.",
+      "title_clinical": "Isolation Cabinet",
+      "title_scp": "Containment Capsule",
+      "title_entropy": "Monolith"
+    },
+    "advanced_config": "Advanced Configuration",
+    "settings_open": "Settings",
+    "settings_close": "Close",
+    "primary_control": "Primary Control",
+    "live_metrics": "Live Metrics",
+    "unknown": "Unknown",
+    "runtime": {
+      "unavailable": "Runtime unavailable",
+      "execution_kinds": {
+        "filter_settings": "Filter settings",
+        "runtime_artifacts": "Protection runtime"
+      },
+      "states": {
+        "disabled": "Idle",
+        "armed": "Ready",
+        "engaged": "Active",
+        "cleanup": "Cleaning"
+      }
+    },
+    "toggle_neural_armed": "Neural armed",
+    "toggle_arm_neural": "Arm neural",
+    "toggle_system_active": "System active",
+    "toggle_activate_system": "Activate system",
+    "lens": {
+      "title": "Visual Filter",
+      "title_zen": "The Diffused Lattice",
+      "desc": "Soften media saturation and brightness first, and add blur when needed. Media contrast and whole-page grayscale are available under extra adjustments.",
+      "desc_zen": "Soften color and light first; blur outlines only as needed.",
+      "children": {
+        "grayscale": {
+          "title": "Whole-page grayscale",
+          "title_zen": "Whole-page grayscale",
+          "desc": "A stronger adjustment that moves the entire page toward gray, including text and controls as well as media.",
+          "desc_zen": "A stronger adjustment that moves the entire page toward gray, including text and controls as well as media."
+        },
+        "blur": {
+          "title": "Media blur",
+          "title_zen": "Media blur",
+          "desc": "Softens image and video outlines. Enable this optional effect when needed.",
+          "desc_zen": "Softens image and video outlines. Enable this optional effect when needed."
+        },
+        "brightness": {
+          "title": "Media brightness",
+          "title_zen": "Media brightness",
+          "desc": "Gently dims images and videos. Use with saturation to soften glare.",
+          "desc_zen": "Gently dims images and videos. Use with saturation to soften glare."
+        },
+        "contrast": {
+          "title": "Media contrast",
+          "title_zen": "Media contrast",
+          "desc": "Reduces differences between light and dark in images and videos. Adjust this when saturation and brightness are not enough.",
+          "desc_zen": "Reduces differences between light and dark in images and videos. Adjust this when saturation and brightness are not enough."
+        },
+        "saturation": {
+          "title": "Media saturation",
+          "title_zen": "Media saturation",
+          "desc": "Softens vivid colors in images and videos. Start here to reduce the pull of media color.",
+          "desc_zen": "Softens vivid colors in images and videos. Start here to reduce the pull of media color."
+        },
+        "fullscreenVisualRelaxation": {
+          "title": "Soften visual effects in fullscreen",
+          "title_zen": "Soften visual effects in fullscreen",
+          "desc": "Lowers enabled visual effects by one profile in video fullscreen. Suspends them during scheduled relaxation, but grants no relaxation once the time goal is reached.",
+          "desc_zen": "Lowers enabled visual effects by one profile in video fullscreen. Suspends them during scheduled relaxation, but grants no relaxation once the time goal is reached.",
+          "inactiveDescription": "Applies when at least one visual effect is enabled. These effects pause during scheduled fullscreen viewing."
+        }
+      },
+      "subtitle": "Visual Filter",
+      "subtitle_zen": "Visual Filter"
+    },
+    "veil": {
+      "title": "Signal Mask",
+      "title_zen": "The Ultimate Circle",
+      "desc": "Hide comparison counts, freshness cues and short-form entry points that pull attention outward.",
+      "desc_zen": "A brush circle opens a small cosmos where urgency, numbers, and the next tap fall quiet.",
+      "children": {
+        "socialMetrics": {
+          "title": "Metric Counts",
+          "title_zen": "Numbers of Comparison",
+          "desc": "Choose whether to hide reaction, view, or all major comparison counts.",
+          "desc_zen": "Choose how far to quiet the counts that turn attention outward: reactions, views, and follower-scale numbers.",
+          "scope_options": {
+            "reactions": "Reactions",
+            "reactions_and_views": "Reactions + views",
+            "all_comparison": "All comparison"
+          },
+          "scope_feedback": {
+            "reactions": "Hide immediate reaction counts such as likes and comments.",
+            "reactions_and_views": "Hide reaction and view counts together.",
+            "all_comparison": "Also hide follower and subscriber-scale counts."
+          }
+        },
+        "timeSignals": {
+          "title": "Freshness Cues",
+          "title_zen": "Traces of Time",
+          "desc": "Reduce timestamps and freshness cues that create urgency.",
+          "desc_zen": "Soften signs like just now, today, and minutes ago so the present stops feeling like a command."
+        },
+        "socialSurface": {
+          "title": "Performative Surface",
+          "desc": "When ready, mute socially performative surfaces."
+        },
+        "shortformBlock": {
+          "title": "Short-form blocking",
+          "desc": "Removes short-form entry points to prevent the loop from starting.",
+          "title_zen": "Veil the Short Flow"
+        }
+      },
+      "subtitle": "Signal Mask",
+      "subtitle_zen": "Stars orbit an ancient question."
+    },
+    "resonance": {
+      "title": "Audio Resonance",
+      "title_zen": "Suikinkutsu",
+      "desc": "Dull protected-tab audio so media reward lands colder and farther away.",
+      "desc_zen": "Lets sound fall below the stones, cooling the pull of media.",
+      "capture_action": "CONNECT PAGE WATER DROP",
+      "capture_started": "Audio resonance is connected through the protected-page water drop.",
+      "capture_failed": "Audio resonance needs a protected media tab.",
+      "capture_status_ready": "A water drop appears when protected-page media starts playing.",
+      "capture_status_requesting": "Connecting tab audio from the water drop",
+      "capture_status_armed": "Waiting for protected media playback",
+      "capture_status_capturing": "Resonating protected tab audio",
+      "capture_status_permission": "Tab audio permission needed",
+      "capture_status_failed": "Could not capture tab audio",
+      "children": {
+        "audioDulling": {
+          "title": "Sound Dulling",
+          "desc": "Shows a water drop when protected-page media plays; after you catch it, tab audio passes through the local resonance chamber.",
+          "level_feedback": {
+            "1": "Lightly softens presence and high-frequency reward.",
+            "2": "Pushes media sound farther back with a muffled chamber tone.",
+            "3": "Makes sound hollow, distant, and harder to enjoy automatically."
+          }
+        }
+      },
+      "subtitle": "Audio Resonance",
+      "subtitle_zen": "Audio Resonance"
+    },
+    "brake": {
+      "title": "Rhythm Brake",
+      "title_zen": "The Stopping Stone",
+      "desc": "Resist hurried clicks, scrolling, typing and forward video skips.",
+      "desc_zen": "Heavy control over the momentum of rushed touches, scrolling, and typing.",
+      "children": {
+        "clickPause": {
+          "title": "Click Pause",
+          "title_zen": "Moment of Silence",
+          "desc": "Adds a brief pause upon clicking buttons and links to halt reflexive navigation.",
+          "desc_zen": "Places a quiet pause between press and response to slow the loop of instant impulse."
+        },
+        "scrollFriction": {
+          "title": "Scroll Friction",
+          "desc": "Applies physical friction and momentum to scrolling, slowing down relentless feed skimming.",
+          "desc_zen": "Applies physical friction and momentum to scrolling, slowing down relentless feed skimming.",
+          "mode_options": {
+            "1": "Ice Stone",
+            "2": "Deep Water",
+            "3": "Suspended Weight"
+          },
+          "mode_feedback": {
+            "1": "Breaking static latch causes frictionless sliding, disrupting target-stop precision.",
+            "2": "Normal at slow speeds, but rapid flicks lock the surface into viscous shear resistance.",
+            "3": "Attaches a heavy suspended mass, introducing a phase-lagged elastic inertia."
+          }
+        },
+        "inputVisualBrake": {
+          "title": "Ink Resistance",
+          "title_zen": "The Inky Boundary",
+          "desc": "Covers the text field in dark ink to curb rushed typing fixation.",
+          "desc_zen": "The ink deepens with rushed outbursts, and only clarifies as you calm your breath."
+        },
+        "navigationButtonLock": {
+          "title": "Back/Forward Lock",
+          "desc": "Consumes mouse side-button back and forward gestures on the page, so returning requires a deliberate choice."
+        },
+        "skipFriction": {
+          "title": "Skip prevention",
+          "desc": "Blocks forward skipping to halt the rush toward instant conclusions.",
+          "policy_options": {
+            "hard_block": "Full block"
+          },
+          "policy_feedback": {
+            "hard_block": "Block large forward skips entirely."
+          },
+          "title_zen": "The Stone Holds",
+          "desc_zen": "When you jump far ahead, a small stone holds the video at the present moment."
+        }
+      },
+      "subtitle": "Rhythm Brake",
+      "subtitle_zen": "Hand-level friction"
+    },
+    "barrier": {
+      "tab_management": {
+        "title": "Group protected tabs",
+        "desc": "Gather protected tabs into each window's Entropy group. Respect your own tab organization, independently of the tab review limit. Group saving and sync follow your Chrome settings.",
+        "permission_denied": "Tab grouping stayed off because tab group permission was not granted.",
+        "permission_missing": "Saved ON, but tab group access is missing, so tabs cannot be grouped."
+      },
+      "title": "Pattern Barrier",
+      "title_zen": "The White Night Predator",
+      "desc": "Deconstruct automatic reading, set consumption boundaries and contain protected-site branching.",
+      "desc_zen": "Consumes the causality of stimulation to reverse the entropy of drifting gaze and time.",
+      "children": {
+        "textRhythm": {
+          "title": "Text Scramble",
+          "title_zen": "Deconstruct",
+          "desc": "Scrambles lines and glyphs to disrupt automatic skim reading.",
+          "desc_zen": "Scrambles lines and glyphs to disrupt automatic skim reading."
+        },
+        "detourSpreadGuard": {
+          "title": "Protected-site tab review",
+          "title_zen": "Sever Detours",
+          "desc": "Choose tabs to close when protected tabs across all windows exceed your keep target. Set 1–20; ordinary tabs and browser windows are not counted.",
+          "desc_zen": "Choose tabs to close when protected tabs across all windows exceed your keep target. Set 1–20; ordinary tabs and browser windows are not counted.",
+          "budget_feedback": "Keep target: {{count}} tabs. Review starts with protected tab {{threshold}}.",
+          "max_tab_options": {
+            "1": "1 tab",
+            "2": "2 tabs",
+            "3": "3 tabs"
+          },
+          "max_tab_feedback": {
+            "1": "Keep target: 1 tab. Review starts with the 2nd protected tab.",
+            "2": "Keep target: 2 tabs. Review starts with the 3rd protected tab.",
+            "3": "Keep target: 3 tabs. Review starts with the 4th protected tab."
+          }
+        },
+        "intentThreshold": {
+          "title": "Consumption interval",
+          "title_zen": "Consumption interval",
+          "desc": "After protected-site consumption accumulates, pause at the next content boundary. Slide the boundary to continue or end this visit.",
+          "desc_zen": "After protected-site consumption accumulates, pause at the next content boundary. Slide the boundary to continue or end this visit.",
+          "interval_options": {
+            "frequent": "8 min",
+            "standard": "12 min · Default",
+            "spacious": "20 min"
+          },
+          "interval_feedback": "Counts time in the foreground protected-site tab while the browser is focused. Waiting for a content boundary or another intervention can delay the pause."
+        }
+      },
+      "subtitle": "Pattern Barrier",
+      "subtitle_zen": "Entropy Inverter"
+    },
+    "flare": {
+      "title": "Intervention Alert",
+      "title_zen": "Dreamscape Furin",
+      "desc": "Invites a pause at the time limit set in Sites.",
+      "desc_zen": "Invites a pause at the time limit set in Sites.",
+      "children": {
+        "sentinelFlare": {
+          "title": "Target Ring",
+          "title_zen": "Dreamscape Furin",
+          "desc": "Invites a pause and a choice at the time set in Sites.",
+          "desc_zen": "Invites a pause and a choice at the time set in Sites."
+        }
+      },
+      "subtitle": "Intervention Alert",
+      "subtitle_zen": "A chime from the dream"
+    },
+    "echo": {
+      "title": "Trace Cleanup",
+      "title_zen": "The Forgetting Tide",
+      "desc": "Clear history and saved traces that keep the loop easy to resume.",
+      "desc_zen": "Washes traces away before repetition hardens.",
+      "children": {
+        "memoryPurge": {
+          "title": "Trace Cleanup",
+          "title_zen": "The Forgetting Tide",
+          "desc": "Clear blocked history and saved traces before they reinforce the loop.",
+          "desc_zen": "Clears footprints and saved markers before repetition deepens."
+        },
+        "tabEvaporation": {
+          "title": "Tab Evaporation",
+          "desc": "Automatically close blocked tabs left idle in the background."
+        }
+      },
+      "subtitle": "Trace Cleanup",
+      "subtitle_zen": "A tide that washes traces away"
+    },
+    "gate": {
+      "title": "Threshold Check",
+      "title_zen": "The Hollow Striker",
+      "desc": "Ask once at first entry, and keep a site you fully left closed for a while.",
+      "desc_zen": "Each hollow strike gathers the step before it crosses the threshold.",
+      "children": {
+        "entryCheckpoint": {
+          "title": "First Strike",
+          "desc": "Pause once before entering a protected site and ask whether this step is still intended."
+        },
+        "returnGuard": {
+          "title": "Return Echo",
+          "desc": "Once every tab of a protected site is closed or moved elsewhere, that site stays closed for 15 minutes. A site with a tab still open is never closed."
+        }
+      },
+      "subtitle": "Threshold Check",
+      "subtitle_zen": "Threshold Check",
+      "cooldown_label": "Cooldown Window"
+    }
+  },
+  "artifact_altar": {
+    "disclosure_refresh_failed": "Artifact access could not be refreshed: {{message}}",
+    "current_mode": "Current Mode",
+    "current_state": "Current State",
+    "bound_aspects": "Bound Aspects",
+    "manifesting_on": "Manifesting On",
+    "awaiting_signal": "Awaiting signal",
+    "none_bound": "No bound aspects",
+    "more_bound": "+{{count}} more",
+    "apply_recommended": "Use Recommended",
+    "seal_artifact": "Apply Artifact",
+    "revert_to_recommended": "Return To Recommended",
+    "open_custom_controls": "Custom Controls",
+    "close_custom_controls": "Close Controls",
+    "custom_controls": "Custom Controls",
+    "focused_aspect": "Focused Aspect",
+    "current_effect": "Current Effect",
+    "no_effects": "No Effects Applied",
+    "detail_apply": "Apply",
+    "detail_cancel": "Cancel",
+    "editing_badge": "Editing",
+    "open_attunement_tablet": "Fine Tune",
+    "close_attunement_tablet": "Close Fine Tune",
+    "attunement_tablet": "Fine Tune",
+    "deep_readings": "Deep Readings",
+    "navigation": {
+      "label": "Artifact navigation",
+      "previous": "Previous artifact",
+      "next": "Next artifact",
+      "select": "Select artifact {{index}}: {{title}}",
+      "load_failed": "Artifact could not be prepared.",
+      "path_label": "Artifact path",
+      "position": "{{index}} of {{count}} · {{title}}",
+      "retry": "Retry"
+    },
+    "dev_projection": {
+      "aria_label": "Artifact disclosure development projection",
+      "badge": "DEV PROJECTION",
+      "safety": "Display only · progression unchanged",
+      "settings_warning": "Card controls still write real dev settings.",
+      "stage": "{{visible}} / {{total}} visible",
+      "live": "Live",
+      "none": "Zero",
+      "previous": "Previous",
+      "next": "Next",
+      "all": "All",
+      "replay": "Replay",
+      "pause": "Pause"
+    },
+    "info_button_label": "Details",
+    "info_button_aria": "Open details for {{label}}",
+    "level": "Level",
+    "off": "Off",
+    "on": "On",
+    "intensity": "Intensity",
+    "policy": "Policy",
+    "saved_setting": "Saved: {{value}}",
+    "turn_on_to_adjust": "Turn on to adjust",
+    "temporary_pause": "Temporary Pause",
+    "system_pause": "System Pause",
+    "pause_running": "Live",
+    "pause_paused": "Paused",
+    "apply_recommendation": "Apply Recommended Settings",
+    "apply_recommendation_desc": "Apply a conservative starting configuration once.",
+    "pause": "Pause",
+    "resume": "Resume",
+    "pause_resume_desc": "Pause or resume this artifact without changing its configured children.",
+    "master_toggle_enabled": "Configured",
+    "master_toggle_disabled": "Not configured",
+    "mode_labels": {
+      "level": "Level Mode",
+      "custom": "Custom Mode"
+    },
+    "custom_mode_hint": "Adjust each control and apply when you're ready.",
+    "custom_mode_applied": "Custom values are currently applied.",
+    "custom_mode_pending": "You have unapplied custom changes.",
+    "control_modes": {
+      "sealed": "Locked",
+      "recommended": "Recommended",
+      "strong": "Strong",
+      "custom": "Custom"
+    },
+    "ritual_states": {
+      "sealed": "Locked",
+      "dormant": "Idle",
+      "attuned": "Ready",
+      "awakened": "Active",
+      "custom": "Custom"
+    },
+    "ritual_state_descriptions": {
+      "sealed": "The artifact is fully locked.",
+      "dormant": "The artifact is idle.",
+      "attuned": "The artifact is ready.",
+      "awakened": "The artifact is fully active.",
+      "custom": "Custom values are applied."
+    },
+    "manifestation_states": {
+      "quiet": "Quiet",
+      "watching": "Watching",
+      "manifesting": "Manifesting",
+      "settling": "Settling",
+      "unbound": "Unbound"
+    },
+    "application": {
+      "permission_snapshot_unavailable": "Preview only: permission state unavailable",
+      "runtime_snapshot_unavailable": "Preview only: runtime status unavailable",
+      "inactive_protection_access": "Preview only: needs protection access",
+      "inactive_protected_sites": "Preview only: no protected sites",
+      "inactive_memory_access": "Preview only: needs memory access",
+      "partial_protection_access": "Active on covered sites",
+      "active_on_page": "Active on this page",
+      "ready_on_page": "Ready on this page",
+      "ready_protection": "Ready for protected sites",
+      "ready_memory": "Memory access ready",
+      "detail_protection_access": "Grant site control to apply this artifact.",
+      "detail_no_protected_sites": "Add a protected or exception site first.",
+      "detail_permission_snapshot_unavailable": "Permission state could not be read: {{error}}",
+      "detail_runtime_snapshot_unavailable": "Runtime status could not be read: {{error}}",
+      "detail_memory_access": "Memory access is required for cleanup.",
+      "detail_partial_protection": "{{covered}} of {{total}} sites have access. {{missing}} still need permission.",
+      "detail_ready_protection": "Saved and ready where site control is available.",
+      "detail_ready_memory": "Cleanup settings are saved and memory access is available.",
+      "detail_active_on_host": "Currently applying on {{host}}.",
+      "detail_ready_on_host": "Configuration is saved for {{host}}.",
+      "actions": {
+        "sites": "Open Sites",
+        "permissions": "Open permission settings",
+        "retry_permissions": "Check permissions again",
+        "retry_runtime": "Check runtime again",
+        "tab_groups": "Allow tab group access",
+        "pending": "Checking…"
+      }
+    }
+  },
+  "matrix": {
+    "flux_toggle": {
+      "armed": "FLARE ARMED",
+      "arm": "ARM FLARE",
+      "activate_flow": "Activate Flow",
+      "deactivate_flow": "Deactivate Flow",
+      "flow": "Flow",
+      "still": "Still"
+    },
+    "artifact_visuals": {
+      "event_horizon": "LOOP BREAKER",
+      "lens": "GLYPH PRISM",
+      "lethe": "NEURALYZER",
+      "monolith": "TIME ANCHOR",
+      "sentinel_flare_title": "SENTINEL FLARE",
+      "sentinel_flare_link": "SUMMON LINK",
+      "veil": "CIPHER SCRIM"
+    }
+  },
+  "status": {
+    "api_unavailable": "API Unavailable",
+    "no_target": "No target tab found",
+    "target_tab_missing": "Selected target tab is unavailable",
+    "injecting": "Applying to page...",
+    "link_failed": "Connection failed",
+    "signal_sent": "Request sent",
+    "signal_established": "Connected",
+    "transmission_failed": "Transmission failed",
+    "transmission_failed_with_detail": "Transmission failed: {{error}}",
+    "transmission_error": "Transmission error",
+    "transmission_error_with_detail": "Transmission error: {{error}}",
+    "history_permission_denied": "History cleanup permission denied",
+    "bookmark_permission_denied": "Bookmark removal permission denied",
+    "access_denied": "Access denied",
+    "auth_required": "Passcode required",
+    "auth_failed": "Passcode verification failed",
+    "previewing_history": "Scanning history impact...",
+    "previewing_history_detail": "Calculating which blocked visits will be cleared from Chrome history.",
+    "previewing_bookmarks": "Scanning bookmark impact...",
+    "previewing_bookmarks_detail": "Calculating which blocked bookmarks will be permanently removed.",
+    "purging": "Clearing history...",
+    "purging_detail": "Removing blocked-site visits from Chrome history.",
+    "purge_failed": "History cleanup failed",
+    "erased_records": "Removed {{count}} visits",
+    "clean": "Cleanup complete",
+    "history_pending": "{{count}} visits queued for cleanup",
+    "history_pending_detail": "Chrome history will be cleared across {{domains}} domains.",
+    "history_done_detail": "Cleanup finished across {{domains}} domains and future visits stay protected.",
+    "history_enabled_no_matches": "History cleanup enabled",
+    "history_enabled_no_matches_detail": "No existing visits found; future ones will be cleared.",
+    "history_disabled": "History cleanup paused",
+    "history_disabled_detail": "Automatic cleanup for future blocked-site visits is now off.",
+    "bookmark_pending_destroy": "{{count}} bookmarks queued for destruction",
+    "bookmark_pending_destroy_detail": "Chrome bookmarks will be permanently removed across {{domains}} domains.",
+    "bookmarks_destroyed": "{{count}} bookmarks removed",
+    "bookmarks_destroyed_detail": "Removed bookmarks across {{domains}} domains. Entropy did not keep a recovery copy.",
+    "bookmark_destroy_enabled_no_matches": "Bookmark destruction enabled",
+    "bookmark_destroy_enabled": "Bookmark cleanup enabled",
+    "bookmark_destroy_enabled_detail": "Protected-site bookmarks are removed automatically while Echo is active.",
+    "bookmark_destroy_apply_failed": "Bookmark cleanup needs attention",
+    "bookmark_destroy_apply_failed_detail": "The setting was saved, but cleanup did not finish. Use the settings status above to retry.",
+    "bookmark_destroy_apply_pending": "Bookmark cleanup is still pending",
+    "bookmark_destroy_apply_pending_detail": "The setting was saved. Cleanup is still being checked in the settings status above.",
+    "bookmark_destroy_enabled_no_matches_detail": "No existing bookmarks were found; future protected-site bookmarks will be removed.",
+    "bookmark_destroy_disabled": "Bookmark destruction paused",
+    "bookmark_destroy_disabled_detail": "Automatic removal of future protected-site bookmarks is now off.",
+    "bookmark_backup_ready": "HTML backup generated",
+    "bookmark_backup_ready_detail": "Exported {{count}} bookmarks to a file. Entropy did not retain this URL list.",
+    "bookmark_backup_failed": "HTML backup failed",
+    "exporting": "Generating...",
+    "export_done": "Export Done",
+    "no_data": "No data",
+    "sentinel_flare_active": "INTERVENTION: ACTIVE",
+    "sentinel_flare_active_entropy": "SENTINEL LINK: ACTIVE",
+    "sentinel_flare_active_zen": "PROTECTION: ACTIVE",
+    "sentinel_flare_standby": "INTERVENTION: STANDBY",
+    "sentinel_flare_standby_entropy": "SENTINEL LINK: STANDBY",
+    "sentinel_flare_standby_zen": "PROTECTION: STANDBY",
+    "sentinel_flare_patrol": "MONITORING",
+    "sentinel_flare_patrol_entropy": "LOW-SIGNAL WATCH",
+    "sentinel_flare_patrol_zen": "MONITORING",
+    "sentinel_flare_armed": "READY",
+    "sentinel_flare_armed_entropy": "LINK ARMED",
+    "sentinel_flare_armed_zen": "READY",
+    "sentinel_flare_breach": "TRIGGERED",
+    "sentinel_flare_breach_entropy": "SENTINEL BREACH",
+    "sentinel_flare_breach_zen": "TRIGGERED",
+    "on": "ON",
+    "off": "OFF"
+  },
+  "units": {
+    "min": "MIN",
+    "sec": "SEC",
+    "px": "px",
+    "ms": "ms"
+  },
+  "sentinel_flare_protocol": {
+    "site_furin_chime_label": "A chime, a moment",
+    "site_furin_reflection_title": "Your chosen time is up.",
+    "site_furin_reflection_summary": "{{used}} min today · {{goal}} min set",
+    "site_furin_reflection_unavailable": "Usage time unavailable",
+    "site_furin_reflection_leaving": "Closing this tab.",
+    "site_furin_wind_label": "Send a breeze and close this tab. Press Enter or Space to activate.",
+    "site_furin_wind_hint": "Press, sweep sideways, then release to close this tab.",
+    "site_furin_wind_keyboard": "Enter / Space to close this tab",
+    "site_furin_wind_release": "Release to close · Esc to cancel",
+    "site_furin_meaning_clear_wind": "A clear breeze, a bright moon",
+    "site_furin_meaning_still_water": "A clear, still mind",
+    "site_furin_meaning_one_encounter": "Each encounter, only once",
+    "site_furin_meaning_harmony": "Harmony · Respect · Purity · Calm",
+    "site_furin_meaning_one_act": "Fully present in one act",
+    "site_furin_meaning_flowing_clouds": "Like moving clouds and flowing water",
+    "site_furin_close_failed": "Could not close this tab. Please try again.",
+    "site_furin_reflection_continue": "Continue",
+    "site_furin_chime_caption": "Let a breeze pass.",
+    "site_furin_chime_complete_title": "Your chosen interval has ended.",
+    "site_furin_chime_complete_body": "Pause here, or stay a little longer?",
+    "site_furin_chime_leave": "Leave here",
+    "site_furin_chime_continue": "Keep watching",
+    "title": "INTERVENTION PROTOCOL",
+    "title_entropy": "SENTINEL PROTOCOL",
+    "title_zen": "INTERVENTION RESPONSE",
+    "title_localized": "Intervention Protocol",
+    "title_localized_entropy": "Sentinel Protocol",
+    "title_localized_zen": "Intervention required",
+    "simulation_drift": "ATTENTION DRIFT DETECTED",
+    "combined_goals_title": "SITE AND DAILY GOALS REACHED",
+    "combined_goals_body": "This site's goal and your overall daily goal have both been reached.",
+    "simulation_drift_entropy": "SIMULATION DRIFT DETECTED",
+    "simulation_drift_zen": "ATTENTION DRIFT DETECTED",
+    "hint": "Click the flare to synchronize.",
+    "hint_entropy": "Click the flare to synchronize.",
+    "hint_zen": "Click the flare to synchronize.",
+    "body": "Usage limit exceeded. Synchronize or return to dashboard.",
+    "body_entropy": "Exposure limit exceeded. Synchronize or return to safe zone.",
+    "body_zen": "Usage limit exceeded. Synchronize or return to dashboard.",
+    "system_tag": "SENTINEL PROTOCOL ACTIVE",
+    "system_tag_zen": "SENTINEL PROTOCOL ACTIVE",
+    "primary_cta": "Continue after sync",
+    "primary_cta_entropy": "Continue after sync",
+    "primary_cta_zen": "Continue after sync",
+    "primary_desc": "",
+    "primary_desc_zen": "Sync and remain here",
+    "secondary_cta": "Open dashboard",
+    "secondary_cta_entropy": "Open dashboard",
+    "secondary_cta_zen": "Open dashboard",
+    "secondary_desc": "",
+    "secondary_desc_zen": "Leave for the dashboard",
+    "recovery_pause_body": "Attention drift is rising. Sync or step out briefly.",
+    "recovery_pause_body_global": "Today's rhythm is tilting. Pause or view the pattern.",
+    "recovery_pause_primary_cta": "Stay after sync",
+    "recovery_pause_primary_desc": "Continue at a calmer pace",
+    "recovery_pause_secondary_cta": "View pattern",
+    "recovery_pause_secondary_desc": "Open the dashboard and break this loop",
+    "recovery_dashboard_body": "This session drifted off target. Sync or open the dashboard.",
+    "recovery_dashboard_body_global": "Today's overall flow drifted off target. Sync or view the pattern.",
+    "recovery_dashboard_primary_cta": "Stay after sync",
+    "recovery_dashboard_primary_desc": "Continue carefully",
+    "recovery_dashboard_secondary_cta": "View pattern",
+    "recovery_dashboard_secondary_desc": "Step out and review your protection state",
+    "recovery_review_goal_body": "Past today's target. Sync or review this site target.",
+    "recovery_review_goal_body_global": "Past today's target. Sync or review the limits.",
+    "recovery_review_goal_primary_cta": "Stay after sync",
+    "recovery_review_goal_primary_desc": "Sync and remain here for now",
+    "recovery_review_goal_secondary_cta": "Review target",
+    "recovery_review_goal_secondary_desc": "Open the dashboard and adjust this site target",
+    "ritual_title_site": "The dreamscape furin rings",
+    "ritual_title_global": "The day bell rings",
+    "ritual_step_site": "Follow the guide koi and draw the return current slowly.",
+    "ritual_step_global": "Stop {{current}}/{{target}} shadow koi. {{seconds}} seconds remain.",
+    "ritual_hold_site": "Stay for one breath while the return current grows still.",
+    "ritual_hold_global": "The whole rhythm is realigning. Take one more breath.",
+    "ritual_ready_site": "Choose now. Is your reason to stay still clear?",
+    "ritual_ready_global": "Sentinel interception complete. Does continuing fit today's rhythm?",
+    "ritual_failed_global": "The window has closed. The shadow koi pull attention back beneath the surface.",
+    "global_sentinel_title": "Sentinel sync is rising",
+    "global_sentinel_step": "Put the shadow koi to sleep {{current}}/{{target}} before sync reaches {{syncPercent}}%. {{seconds}} seconds remain.",
+    "global_sentinel_hold": "The shadow koi are asleep. The simulation is losing coherence.",
+    "global_sentinel_ready": "The sentinels are asleep. The simulation can collapse now.",
+    "global_sentinel_failed": "Sync completed. The shadow koi have synchronized the simulation around you.",
+    "global_sentinel_hud_title": "GLOBAL FURIN · DEBUG",
+    "global_sentinel_hud_boot": "Waiting for the first rendered frame",
+    "global_sentinel_hud_status": "{{phase}} · accepted inputs {{strokes}}",
+    "global_sentinel_hud_meter": "Crack {{breakPercent}}% / target {{breakTargetPercent}}% · repair pressure {{restorePercent}}%",
+    "global_sentinel_hud_hint": "Repair in {{seconds}}s",
+    "global_sentinel_hud_waiting": "Waiting for the starter · clock paused",
+    "global_sentinel_hud_finished": "Outcome committed",
+    "global_sentinel_action_start": "Touch the koi to answer the signal",
+    "global_sentinel_action_repair": "One touch when the ring opens · You can wait for the next beat",
+    "global_sentinel_outcome_success_announcement": "Repair pressure has broken. The fracture is opening.",
+    "global_sentinel_outcome_failure_announcement": "Resynchronization is sealing the simulation surface.",
+    "site_furin_title": "The return current is opening",
+    "site_furin_brief_complete_body": "You have reached the time you set for this site too. Choose whether you want to keep watching.",
+    "site_furin_brief_complete_title": "A moment to pause",
+    "site_furin_brief_descent_announcement": "The koi is descending. Rest with the water for a moment.",
+    "site_furin_brief_guidance_announcement": "Lead the koi into the central circle, or let the current guide you. After this short return, choose whether to continue.",
+    "site_furin_brief_guidance_hint": "You can remain still and let the current guide you. Then choose whether to continue.",
+    "site_furin_brief_guidance": "Lead the koi gently into the central circle",
+    "site_furin_brief_title": "A moment in the current",
+    "site_furin_action_start": "Entrust yourself to the return current",
+    "site_furin_prelude_title": "The return current",
+    "site_furin_prelude": "Move your pointer gently to guide the koi",
+    "site_furin_prelude_hint": "No press is needed. You can also remain still and let the current guide you.",
+    "site_furin_prelude_announcement": "The return current is ready. Move your pointer or use the keyboard action to begin. You do not need to hold a button.",
+    "site_furin_attunement_title": "The current opens",
+    "site_furin_attunement": "Keep going gently",
+    "site_furin_attunement_hint": "The koi swims gently toward your pointer.",
+    "site_furin_attunement_announcement": "The current is attuning. No further keyboard input is required.",
+    "site_furin_guidance_title": "Gather in the current",
+    "site_furin_step": "Lead the guide koi slowly toward each ripple",
+    "site_furin_guidance_hint": "A companion joins at each lotus. Gather them all; the current helps when you remain still.",
+    "site_furin_guidance_announcement": "The awakened companions are joining the return current one at a time.",
+    "site_furin_return_point_title": "Return together",
+    "site_furin_return_point": "Lead gently into the central circle",
+    "site_furin_return_point_hint": "Pause there as the school descends. You can let the current guide you.",
+    "site_furin_return_point_announcement": "All five koi have gathered. Guide them toward the central circle or let the current help.",
+    "site_furin_descent_title": "Returning as one current",
+    "site_furin_descent": "The koi sinks quietly beneath the water",
+    "site_furin_descent_hint": "When the water settles, you can choose whether to continue.",
+    "site_furin_descent_announcement": "All five koi are descending into the deep pond.",
+    "site_furin_quiet_hold_title": "The water settles",
+    "site_furin_hold": "Nothing more is required",
+    "site_furin_quiet_hold_hint": "Remain for a moment. When the current settles, you can choose whether to stay on this site.",
+    "site_furin_quiet_hold_announcement": "The final quiet has begun. Nothing more is required.",
+    "site_furin_ready_title": "Return complete",
+    "site_furin_ready": "Choose whether your reason to return to this site remains clear",
+    "site_furin_ready_hint": "Leave to review the pattern, or continue only when your reason to return is clear.",
+    "site_furin_ready_announcement": "The return is complete. Choose whether to leave this site or continue deliberately.",
+    "site_furin_hud_status": "{{phase}} · return {{returnPercent}}% · school {{schoolPercent}}%",
+    "site_furin_hud_meter": "Current {{currentPercent}}% · descent {{descentPercent}}%",
+    "site_furin_hud_hint": "Once the companions gather, return to the central circle.",
+    "site_furin_complete_title": "The Return Current Has Stilled",
+    "site_furin_complete_body": "The awakened companions have returned as one wake and the page has receded into dusk. Continue only if the reason remains clear.",
+    "site_furin_complete_tag": "RETURN CURRENT COMPLETE",
+    "site_furin_complete_primary_cta": "Leave this page",
+    "site_furin_complete_primary_desc": "Open the dashboard and review the flow you just interrupted",
+    "site_furin_complete_secondary_cta": "Continue with a clear reason",
+    "site_furin_complete_secondary_desc": "Choose your reason to return to this site again",
+    "outcome_success_title_global": "Simulation Collapse",
+    "outcome_success_body_global": "Every shadow koi is asleep. The simulation breaks open and protected sites shift to maximum-strength filtering for the rest of today.",
+    "outcome_success_tag_global": "SENTINEL PROTOCOL BREACHED",
+    "outcome_success_primary_cta_global": "Hold the collapse",
+    "outcome_success_primary_desc_global": "Keep today's remaining protection at maximum strength",
+    "outcome_success_secondary_cta_global": "View dashboard",
+    "outcome_success_secondary_desc_global": "Review the collapsed flow in the dashboard",
+    "outcome_failure_title_global": "Resynchronization Complete",
+    "outcome_failure_body_global": "A shadow falls across your mind again. Sentinel protocol complete. User simulation sync: 98%.",
+    "outcome_failure_tag_global": "SENTINEL PROTOCOL COMPLETE",
+    "outcome_failure_primary_cta_global": "Into the mist",
+    "outcome_failure_primary_desc_global": "Return with all filters cleared for a short time",
+    "outcome_failure_secondary_cta_global": "Open dashboard",
+    "outcome_failure_secondary_desc_global": "Review what remains",
+    "modal_aria_label": "Focus guidance",
+    "modal_aria_label_zen": "Sentinel Protocol — focus guidance",
+    "rift_invite_aria_label": "Take a moment",
+    "room_478_page_title": "Room 478",
+    "room_478_exit": "Leave Room 478",
+    "room_478_breathing_label": "Room 478 breathing meditation",
+    "room_478_phase_arrival": "Arrive",
+    "room_478_phase_grounding": "Anchor",
+    "room_478_phase_inhale": "Breathe in",
+    "room_478_phase_hold": "Stay",
+    "room_478_phase_exhale": "Breathe out",
+    "room_478_phase_still": "Stillness",
+    "room_478_return": "Return",
+    "room_478_repeat": "One more breath",
+    "room_478_grounding_hint": "Hold Space to seal the circle",
+    "room_478_grounding_touch_hint": "Hold to seal the circle",
+    "room_478_status_arrival": "You have crossed the fracture. Let the room grow quiet around you.",
+    "room_478_status_grounding": "Hold Space to close the circle and begin your breath.",
+    "room_478_status_inhale": "Breathe in slowly as the light gathers toward the center.",
+    "room_478_status_hold": "Hold gently and remain still as the room settles.",
+    "room_478_status_exhale": "Breathe out slowly as the remaining screen noise recedes.",
+    "room_478_status_still": "The breathing cycle is complete. Remain in the quiet, or return when you are ready.",
+    "room_478_departure_notice": "Take a moment to choose what comes next.",
+    "sync_level": "SYNC LEVEL {{percent}}%",
+    "sync_level_entropy": "SYNC LEVEL {{percent}}%",
+    "sync_level_zen": "RESYNC {{percent}}%",
+    "telemetry": "SYNC {{percent}}% | {{runtime}} | Q {{quality}} | LIVE {{live}} | TOTAL {{total}} | SPLIT {{split}}",
+    "telemetry_entropy": "SYNC {{percent}}% | {{runtime}} | Q {{quality}} | LIVE {{live}} | TOTAL {{total}} | SPLIT {{split}}",
+    "telemetry_zen": "RESYNC {{percent}}% | {{runtime}} | Q {{quality}} | KOI {{live}} | TOTAL {{total}} | SPLIT {{split}}",
+    "telemetry_runtime_main": "MAIN",
+    "telemetry_runtime_main_zen": "CANVAS",
+    "telemetry_runtime_worker": "WORKER",
+    "telemetry_runtime_worker_zen": "OFFSCREEN",
+    "telemetry_quality_high": "HIGH",
+    "telemetry_quality_high_zen": "HIGH",
+    "telemetry_quality_medium": "MED",
+    "telemetry_quality_medium_zen": "MED",
+    "telemetry_quality_low": "LOW",
+    "telemetry_quality_low_zen": "LOW"
+  },
+  "history_modal": {
+    "preview_total": "{{count}} affected items",
+    "affected_domains": "{{count}} domains",
+    "records_unit": "items",
+    "affected_list_label": "Affected domains",
+    "more_domains": "{{count}} more domains",
+    "impact_hint": "Raw URLs stay on-device. Only domain-level counts are shown here.",
+    "passcode_label": "Authorization Passcode",
+    "passcode_placeholder": "Enter passcode to continue",
+    "cancel": "Cancel",
+    "effects": {
+      "history": "Delete from Chrome history",
+      "bookmark_destroy": "Permanently remove from Chrome bookmarks"
+    },
+    "irreversible_badge": "Irreversible",
+    "irreversible_body": "This choice cannot be undone. Entropy does not store your URLs, so lost bookmarks cannot be recovered here.",
+    "backup_cta": "Download backup file",
+    "backup_busy": "Generating backup",
+    "bookmark_acknowledgement": "I understand these bookmarks will be permanently removed from Chrome and cannot be recovered inside Entropy.",
+    "modes": {
+      "history": {
+        "badge": "Chrome History Cleanup",
+        "title": "These history visits will be cleared",
+        "desc": "Blocked-site visits are cleared now and going forward.",
+        "empty": "No blocked history visits were found.",
+        "confirm": "Continue cleanup"
+      },
+      "bookmark_destroy": {
+        "badge": "Chrome Bookmark Destruction",
+        "title": "Cut the handles back to the old loop",
+        "desc": "The protected-site bookmarks below will be removed from Chrome. No recovery copy remains inside Entropy.",
+        "empty": "No protected-site bookmarks were found.",
+        "confirm": "Permanently remove"
+      }
+    }
+  },
+  "koi_tuner": {
+    "header": "Koi Archetype",
+    "tabs": {
+      "body": "Body",
+      "physics": "Movement",
+      "fins": "Fins",
+      "env": "Nature"
+    },
+    "sub_tabs": {
+      "structure": "Structure",
+      "head": "Head",
+      "torso": "Torso",
+      "tail": "Tail",
+      "locomotion": "Locomotion",
+      "dynamics": "Wave Dynamics",
+      "hybrid": "Hybrid Core",
+      "debug": "Debug",
+      "shape": "Shape",
+      "motion": "Motion",
+      "ecosystem": "Ecosystem",
+      "waterTone": "Water Tone",
+      "waterFx": "Water FX",
+      "pectoral": "Main Wing",
+      "ventral": "Sub Wing"
+    },
+    "params": {
+      "baseSize": "Overall Size",
+      "historyLength": "Segments (MD)",
+      "headLen": "Snout Length",
+      "headWidth": "Head Width",
+      "headMin": "Nose Width",
+      "eyeFB": "Eye Position (F/B)",
+      "eyeSP": "Eye Spacing / Width",
+      "shoulderMax": "Shoulder Width",
+      "shoulderPos": "Shoulder Pos",
+      "midWidth": "Belly Width",
+      "midPos": "Belly Pos",
+      "tailWidth": "Tail Base Width",
+      "tailCurve": "Tail Taper",
+      "swimModel": "Swim Model",
+      "compareSwimModels": "Dual Model Compare",
+      "compareModelA": "Compare Model A",
+      "compareModelB": "Compare Model B",
+      "speed": "Global Simulation Speed",
+      "accelScale": "Accel Force",
+      "frictionScale": "Inertia (Drag)",
+      "coreSegment": "Pivot Position",
+      "waveAmplitudeScale": "Wag Amplitude",
+      "wavelengthScale": "S-Curve Length",
+      "spineStiffness": "Spine Stiffness",
+      "swimSpeedScale": "Tail Speed",
+      "eventHeadYawGain": "Event Head Yaw",
+      "eventHeadTurnLeadGain": "Event Turn Lead",
+      "eventHeadSwayGain": "Event Head Sway",
+      "eventHeadPivotFollow": "Event Pivot Follow",
+      "eventEyeAnchorIndex": "Event Eye Anchor",
+      "koiMotionGrace": "Grace",
+      "koiMotionAgility": "Agility",
+      "koiMotionTailDrive": "Tail Drive",
+      "koiMotionTurnSharpness": "Turn Sharpness",
+      "hybridCurvatureGain": "Curvature Gain",
+      "hybridTurnResponse": "Turn Response",
+      "hybridThrustGain": "Tail Thrust Gain",
+      "hybridRearWaveGain": "Rear Wave Gain",
+      "hybridCounterYawGain": "Counter Yaw Gain",
+      "hybridHeadSwayGain": "Head Sway Gain",
+      "debugOverlay": "Debug HUD",
+      "debugVectors": "Motion Vectors",
+      "pectoralSize": "Main Size",
+      "pectoralAngle": "Main Angle",
+      "pectoralPosShift": "Main Shift F/B",
+      "pectoralPosSide": "Main Width Offset",
+      "pectoralWidthScale": "Fin Width Scale",
+      "pectoralTipRoundness": "Tip Roundness",
+      "pectoralLeadingCurvature": "Leading Edge Curve",
+      "pectoralTrailingCurvature": "Trailing Edge Curve",
+      "pectoralFlutterAmp": "Flutter Amp",
+      "pectoralFlutterSpeed": "Flutter Spd",
+      "ventralSize": "Sub Size",
+      "ventralAngle": "Sub Angle",
+      "ventralPosShift": "Sub Shift F/B",
+      "ventralPosSide": "Sub Width Offset",
+      "tailFinSize": "Tail Fin Size",
+      "tailFinSpread": "Tail Spread",
+      "tailFinNotchDepth": "Tail Notch",
+      "tailFinBaseWidth": "Tail Base Width",
+      "tailFinRoundness": "Tail Roundness",
+      "tailFinEdgeSharpness": "Tail Edge Sharpness",
+      "tailFinRootOffset": "Tail Root Offset",
+      "tailFinVeinAlpha": "Tail Vein Alpha",
+      "pectoralTurnRateBoost": "Drive Rate Boost",
+      "pectoralOpposingRateMin": "Opposing Rate Min",
+      "pectoralOpposingFold": "Opposing Fold",
+      "tailFinTurnSpreadGain": "Tail Turn Spread",
+      "timeMode": "Time Mode",
+      "manualHour": "Pond Hour",
+      "envCloudiness": "Cloudiness",
+      "envRainIntensity": "Rain Intensity",
+      "envWaterClarity": "Water Clarity",
+      "padDensity": "Lily Pad Count",
+      "flowerChance": "Water Lily Probability",
+      "petalDensity": "Falling Petals",
+      "petalFallCurve": "Petal Fall Curve",
+      "petalFallSway": "Petal Fall Sway",
+      "petalFallSpeed": "Petal Fall Speed",
+      "petalLandingScale": "Landing Scale",
+      "petalFallSpawnRatio": "Falling Spawn Ratio",
+      "petalZigzagChance": "Zigzag Chance",
+      "particleDensity": "Water Dust",
+      "rockDensity": "Submerged Rock Density",
+      "rockClusterBias": "Rock Cluster Bias",
+      "rockSizeVariance": "Rock Size Variance",
+      "rockToneVariance": "Rock Tone Variance",
+      "sunlightIntensity": "Sunlight Strength",
+      "causticsIntensity": "Caustics Strength",
+      "pollenDensity": "Pollen (Glimmer)",
+      "pondPaletteId": "Pond Palette",
+      "waterReflectionAlgorithm": "Water Reflection Algorithm",
+      "compareWaterReflectionAlgorithms": "Reflection A/B Compare",
+      "compareWaterReflectionAlgorithmA": "Reflection Algorithm A",
+      "compareWaterReflectionAlgorithmB": "Reflection Algorithm B",
+      "waterReflectionStability": "Reflection Stability (Master)",
+      "waterReflectionSpatialStability": "Reflection Spatial Stability",
+      "waterReflectionDetailStability": "Reflection Detail Stability",
+      "waterReflectionTemporalStability": "Reflection Temporal Stability",
+      "waterReflectionSoftKnee": "Reflection Soft Knee",
+      "pondClarityBlend": "State Blend",
+      "temporalNightTintStrength": "Night Tint Strength",
+      "pondSaturation": "Water Saturation",
+      "pondLightness": "Water Lightness",
+      "pondDepthStrength": "Depth Strength",
+      "pondContourDensity": "Contour Density",
+      "pondSedimentAmount": "Sediment Amount",
+      "causticsOpacity": "Light Patterns",
+      "vignetteStrength": "Vignette Power",
+      "enableRefraction": "Water Refraction",
+      "enableSecondCausticLayer": "Dual Caustics"
+    },
+    "model_options": {
+      "cpg_dynamics": "CPG Dynamics",
+      "kinematic_hybrid": "Kinematic Hybrid",
+      "event_fsm": "Event FSM",
+      "event_fsm_life_v1": "Event FSM + Life Intent",
+      "event_fsm_life_v2": "Life Intent v2 (Continuous Spine)"
+    },
+    "reflection_algorithm_options": {
+      "ggx": "GGX",
+      "looped_caustic": "Looped Caustic",
+      "phase_noise": "Phase Noise",
+      "limited_waves": "Limited Waves",
+      "yoonseul_glint": "Yoonseul Glint",
+      "slope_lobe": "Slope Lobe",
+      "stochastic_slope_spectrum": "Stochastic Slope Spectrum",
+      "surface_field": "Canonical Surface Field"
+    },
+    "palette_options": {
+      "zen_garden": "Zen Garden",
+      "ramune_soda": "Ramune Soda",
+      "summer_lagoon": "Summer Lagoon",
+      "sapphire_pool": "Sapphire Pool",
+      "emerald_glass": "Emerald Glass"
+    },
+    "badges": {
+      "cause": "Cause",
+      "operational": "Operational",
+      "creature": "Creature",
+      "advanced": "Advanced"
+    },
+    "groups": {
+      "environment": "Environment",
+      "channels": "Channels",
+      "ecosystem": "Ecosystem",
+      "waterTone": "Water Tone",
+      "waterReflection": "Water Reflection",
+      "waterReflectionLab": "Reflection Compare",
+      "koiModel": "Koi Model",
+      "koiFeel": "Koi Feel",
+      "koiLook": "Koi Look",
+      "koiBody": "Koi Body",
+      "koiRig": "Koi Rig",
+      "koiSwim": "Koi Swim",
+      "koiAppendages": "Koi Fins",
+      "koiHybrid": "Hybrid Core",
+      "koiCompare": "Koi Compare",
+      "koiDiagnostics": "Koi Diagnostics"
+    },
+    "flow_stages": {
+      "environment": "Environment",
+      "surface": "Surface",
+      "koi": "Koi",
+      "inspect": "Inspect"
+    },
+    "targets": {
+      "world": "World",
+      "koi": "Koi"
+    },
+    "modes": {
+      "authoring": "Authoring",
+      "advanced": "Advanced",
+      "lab": "Lab"
+    },
+    "panel": {
+      "scope": "Scope",
+      "pipeline": "Pipeline",
+      "active_model": "Active Model"
+    },
+    "inactive_for_model": "Not applied by {{model}}.",
+    "actions": {
+      "reset": "Reset",
+      "copy": "Copy Tweaks",
+      "copied_alert": "Tuning configuration copied to clipboard.",
+      "copy_failed": "Unable to copy tuning configuration.",
+      "hard_cache_reset": "Hard cache reset"
+    },
+    "domain_badge": "koi: {{domain}}",
+    "select_url_prompt": "koi: select a URL",
+    "reroll_within_breed": "Reroll Within Breed",
+    "reroll_breed": "Reroll Breed",
+    "reroll_all_color": "Reroll All Colors",
+    "reroll_all_breed": "Reroll All Breeds",
+    "footer_hint": "All parameters linked to biomechanics",
+    "default_hint": "All parameters linked to biomechanics",
+    "reroll_scene": "Reroll pond",
+    "sections": {
+      "koi_color": "Color",
+      "body_structure": "Structure",
+      "body_head": "Head",
+      "body_torso": "Torso",
+      "body_tail": "Tail",
+      "fins_shape": "Fin Shape",
+      "fins_motion": "Fin Motion",
+      "koi_look_body": "Body Read",
+      "koi_look_tail": "Tail Read",
+      "koi_rig_spine": "Spine Rig",
+      "koi_rig_segmented_solver": "Segmented Solver"
+    },
+    "env_channels": {
+      "title": "Channel monitor",
+      "hint": "Updates live as scene causes change.",
+      "preview_note": "Environment preview calculated from current settings; these are not measurements from the running worker.",
+      "group": {
+        "illumination": {
+          "label": "Lighting",
+          "hint": "Direct light, ambient light and highlights"
+        },
+        "surface": {
+          "label": "Surface & reflections",
+          "hint": "Waves, reflection and roughness"
+        },
+        "volume": {
+          "label": "Water clarity",
+          "hint": "Turbidity, transmission and bottom visibility"
+        }
+      },
+      "directLight": {
+        "label": "Direct light"
+      },
+      "ambientLight": {
+        "label": "Ambient light"
+      },
+      "specularResponse": {
+        "label": "Highlights"
+      },
+      "waveEnergy": {
+        "label": "Wave energy"
+      },
+      "roughness": {
+        "label": "Roughness"
+      },
+      "cloudReflectionFactor": {
+        "label": "Cloud reflection"
+      },
+      "mirrorFactor": {
+        "label": "Mirror reflection"
+      },
+      "turbidity": {
+        "label": "Turbidity"
+      },
+      "transmittance": {
+        "label": "Transmittance"
+      },
+      "bottomVisibility": {
+        "label": "Bottom visibility"
+      }
+    }
+  },
+  "furin_tuner": {
+    "header": "Dreamscape Furin Tuning",
+    "tabs": {
+      "physics": "Physics",
+      "environment": "Environment"
+    },
+    "sub_tabs": {
+      "mass": "Mass",
+      "length": "Length",
+      "damping": "Damping",
+      "angular": "Angular",
+      "wind": "Wind Settings"
+    },
+    "params": {
+      "M_BELL": "Bell Mass",
+      "M_STRIKER": "Striker Mass",
+      "M_PAPER": "Paper Mass",
+      "L_BELL": "Bell Pivot Length",
+      "L_STRIKER": "Striker Pivot Length",
+      "L_PAPER": "Paper Length",
+      "DAMP_BELL": "Bell Damping",
+      "DAMP_STRIKER": "Striker Damping",
+      "DAMP_PAPER": "Paper Damping",
+      "SPEED_BELL": "Bell Angular Speed",
+      "SPEED_STRIKER": "Striker Angular Speed",
+      "SPEED_PAPER": "Paper Angular Speed",
+      "WIND_MULT": "Wind Multiplier",
+      "G": "Gravity Pull",
+      "IMPACT_ANGLE_DEG": "Impact Angle (Deg)",
+      "WIND_DEBUG_STRENGTH": "Debug Wind Strength",
+      "WIND_DEBUG_PERIOD_SEC": "Debug Switch Period (sec)",
+      "WIND_DEBUG_MIX": "Debug Mix (0..1)"
+    },
+    "wind_debug": {
+      "header": "Wind Pattern (Debug)",
+      "modes": {
+        "off": "Natural",
+        "fixed_left": "Fixed Left",
+        "fixed_right": "Fixed Right",
+        "cycle_lr": "Cycle L/R",
+        "cycle_rl": "Cycle R/L"
+      }
+    },
+    "default_hint": "Adjust Dreamscape Furin rigid-body pendulum physics."
+  },
+  "shishi_tuner": {
+    "header": "Hollow Striker Tuning",
+    "tabs": {
+      "balance": "Balance",
+      "flow": "Flow",
+      "impact": "Impact"
+    },
+    "params": {
+      "minAngle": "Min Angle",
+      "maxAngle": "Max Angle",
+      "spring": "Return Spring",
+      "angularDrag": "Angular Drag",
+      "balancePivotFill": "Balance Fill",
+      "balanceGain": "Flow-Angle Sensitivity",
+      "stickTorqueThreshold": "Static Torque Threshold",
+      "stickOmegaThreshold": "Static Velocity Threshold",
+      "inflowRate": "Inflow Rate",
+      "outflowRate": "Outflow Rate",
+      "spillStartAngle": "Spill Start Angle",
+      "spillBandDeg": "Spill Transition Width",
+      "spillPull": "Spill Torque Assist",
+      "fillRateTorque": "Rapid Inflow Assist",
+      "fillRateResponse": "Inflow Response Speed",
+      "impactAngle": "Impact Angle",
+      "impactMinSpeed": "Min Impact Speed",
+      "impactRestitution": "Impact Restitution",
+      "pulseDecayPerSec": "Ground Wave Decay",
+      "lipDecayPerSec": "Lip Wave Decay"
+    },
+    "actions": {
+      "reset": "Reset",
+      "copy": "Copy Tweaks",
+      "copied": "Copied",
+      "copy_failed": "Unable to copy tuning configuration."
+    },
+    "default_hint": "Adjust Hollow Striker continuous physics in Artifact Lab."
+  },
+  "experiment": {
+    "lab_module_error_title": "Lab module unavailable",
+    "lab_module_retry": "Retry lab",
+    "lab_sections": {
+      "home": {
+        "label": "Experiment Home",
+        "title": "Experiment Lab",
+        "desc": "Switchboard for laboratories and dev-only runtime tools"
+      },
+      "bonsai": {
+        "label": "Bonsai Lab",
+        "title": "Bonsai Lab",
+        "desc": "A/B test + optimizer controls"
+      },
+      "bonsai_classic": {
+        "label": "Bonsai Lab · Classic2",
+        "title": "Classic2 Growth Lab",
+        "desc": "Inspect reversible growth against the Main model with Classic as comparison"
+      },
+      "sakura_refinement": {
+        "label": "Sakura Refinement Sandbox",
+        "title": "Sakura Detail & Highlight Lab",
+        "desc": "Compare dot speck removal and high-resolution offscreen sakura rendering"
+      },
+      "bonsai_vnext": {
+        "label": "Bonsai Lab VNext",
+        "title": "Bonsai Lab VNext",
+        "desc": "VNext generator + learning flow"
+      },
+      "bonsai_render_debug": {
+        "label": "Render Debug",
+        "title": "Bonsai Render Debug",
+        "desc": "One-click signature and cache diagnostics"
+      },
+      "sentinel_protocol": {
+        "label": "Sentinel Protocol",
+        "title": "Sentinel Protocol Lab",
+        "desc": "Runtime debugger, spawn, split, and protocol intensity controls"
+      },
+      "boot": {
+        "label": "Boot Diagnostics",
+        "title": "Boot Diagnostics Lab",
+        "desc": "Capture dashboard boot state, trace, and telemetry reports by layer"
+      },
+      "blossom_lab": {
+        "label": "Blossom Lab",
+        "title": "Blossom Lab",
+        "desc": "Petal-form tuning with manual apply"
+      },
+      "runtime": {
+        "label": "Worker Runtime",
+        "title": "Worker Runtime",
+        "desc": "Worker queue, timeout, fallback diagnostics"
+      },
+      "stats_rules": {
+        "label": "Stats",
+        "title": "Stats Lab",
+        "desc": "Inspect collection, storage, query, and UI boundaries in order"
+      },
+      "clse": {
+        "label": "CLSE",
+        "title": "CLSE Diagnostics",
+        "desc": "Inspect cognitive-load runtime state, personal baseline, and raw diagnostic logs"
+      },
+      "ceremony": {
+        "label": "Ceremony Check",
+        "title": "Transition Ceremony Check",
+        "desc": "Replay pond-entry and memory-purge visuals without changing data"
+      },
+      "pond": {
+        "label": "Well Lab",
+        "title": "Well Lab",
+        "desc": "Pond simulation with live tuning feed"
+      },
+      "artifact_disclosure": {
+        "label": "Disclosure Model",
+        "title": "Artifact Disclosure Model",
+        "desc": "Current local scoring path for staged artifact order"
+      },
+      "artifact": {
+        "label": "Artifact Lab",
+        "title": "Artifact Lab",
+        "desc": "Protocol artifact preview + behavior state"
+      }
+    },
+    "lab_actions": {
+      "open": "Open",
+      "back": "Experiment Home"
+    },
+    "vnext_growth_lab": {
+      "seed": "Seed",
+      "stage": "Stage",
+      "randomize": "Randomize",
+      "reset": "Reset",
+      "claims": "Claim ledger",
+      "copy_ledger": "Copy JSON",
+      "preset_compare": "Preset comparison",
+      "stages": {
+        "seedling": "Seedling",
+        "mid": "Mid",
+        "mature": "Mature",
+        "display": "Display"
+      },
+      "controls": {
+        "trunk_movement": "Trunk movement",
+        "branch_density": "Branch density",
+        "crown_openness": "Crown openness",
+        "blossom_bias": "Blossom bias"
+      },
+      "metrics": {
+        "nodes": "Nodes",
+        "claims": "Claims",
+        "attractors": "Attractors",
+        "complexity": "Complexity",
+        "negative_space": "Negative space"
+      },
+      "presets": {
+        "balanced": "Balanced",
+        "windswept": "Windswept",
+        "ramified": "Ramified",
+        "flowering": "Flowering"
+      },
+      "claim_kinds": {
+        "trunk_guide": "Trunk guide",
+        "apex": "Apex",
+        "light": "Light",
+        "space": "Space",
+        "style": "Style",
+        "pad": "Pad",
+        "void": "Void"
+      },
+      "copy_states": {
+        "copied": "Copied",
+        "failed": "Copy failed"
+      }
+    },
+    "runtime_debugger_option": {
+      "eyebrow": "Runtime debugging",
+      "title": "Protected-site runtime debugger",
+      "desc": "Opens the integrated runtime HUD on protected sites for protection, Sentinel, feed, and video skip logs.",
+      "status_on": "Protected-site HUD on",
+      "status_off": "Protected-site HUD off",
+      "saved_on": "Runtime debugger will open on protected sites.",
+      "saved_off": "Runtime debugger protected-site auto-open is off.",
+      "save_failed": "Unable to save runtime debugger option."
+    },
+    "boot_lab": {
+      "eyebrow": "Dashboard boot",
+      "title": "Boot Diagnostics Lab",
+      "desc": "Captures current and recent reload boot timing, state, errors, and trace as separate evidence bundles.",
+      "trace_on": "Trace on · {{count}}",
+      "trace_off": "Trace off · {{count}}",
+      "arm_trace": "Trace Next Boot",
+      "trace_reload": "Reload Diagnostics",
+      "cold_visual_reload": "Cold Visual Reload",
+      "refresh": "Refresh",
+      "clear": "Clear",
+      "copy_summary": "Copy Summary",
+      "copy_timing": "Copy Timing",
+      "copy_main_frame": "Copy First Frame",
+      "copy_errors": "Copy Errors",
+      "copy_state": "Copy State",
+      "copy_trace": "Copy Trace",
+      "copy_full": "Copy Full",
+      "copy_done": "Boot diagnostics copied.",
+      "copy_failed": "Unable to copy boot diagnostics.",
+      "trace_armed": "Next boot trace is armed.",
+      "clear_done": "Temporary boot diagnostics were cleared.",
+      "state_title": "State",
+      "timing_title": "Timing",
+      "errors_title": "Errors",
+      "trace_title": "Trace",
+      "metric_status": "Status",
+      "metric_phase": "Phase",
+      "metric_theme": "Theme",
+      "metric_core": "Core",
+      "metric_main_frame": "First Frame",
+      "metric_mode": "Diagnostic Mode",
+      "metric_reports": "Stored Reports",
+      "metric_total": "Total",
+      "metric_loader": "Shell Visible",
+      "metric_main_wait": "First-Frame Wait",
+      "metric_long_tasks": "Long Tasks",
+      "metric_boot_errors": "Boot Errors",
+      "metric_task_errors": "Task Errors",
+      "metric_trace_errors": "Trace Errors",
+      "tasks": "Tasks",
+      "phases": "Phases",
+      "main_frame_segment": "First-Frame Segment",
+      "main_frame_trace_events": "Trace Events",
+      "main_frame_pond": "Pond",
+      "main_frame_bonsai": "Bonsai",
+      "empty": "No records",
+      "no_errors": "No errors captured.",
+      "no_trace": "No trace events captured."
+    },
+    "artifacts": {
+      "Artifact_Monolith": "The White Night Predator",
+      "Artifact_Gate": "The Hollow Striker",
+      "Artifact_Lethe": "The Forgetting Tide",
+      "Artifact_SentinelFlare": "Dreamscape Furin",
+      "active": "Active",
+      "idle": "Idle",
+      "color_title": "Artifact accent color",
+      "component_unavailable": "No artifact component available."
+    },
+    "artifact_disclosure": {
+      "eyebrow": "Progression model",
+      "title": "Current artifact order",
+      "desc": "Uses current local settings and available runtime state as a proxy; this is not population-normalized statistics.",
+      "source_label": "Signal source",
+      "middle_eyebrow": "Support signals",
+      "middle_title": "Absolute artifact signal weights",
+      "middle_desc": "These scores describe current local intensity only; they do not reorder the fixed artifact sequence.",
+      "causality_eyebrow": "Barrier evidence",
+      "causality_title": "{{artifact}} evidence band",
+      "causality_desc": "Classifies current local causal evidence for analysis only; it cannot change disclosure order.",
+      "score": "Score",
+      "base_priority": "Base",
+      "evidence_band": "Evidence band",
+      "fixed_first": "First",
+      "fixed_final": "Final",
+      "barrier_evidence": "Evidence focus",
+      "artifacts": {
+        "lens": "Shoji",
+        "brake": "The Stopping Stone",
+        "gate": "The Hollow Striker",
+        "echo": "The Forgetting Tide",
+        "flare": "Dreamscape Furin",
+        "barrier": "The White Night Predator",
+        "veil": "Enso"
+      }
+    },
+    "ceremony_preview": {
+      "eyebrow": "Ceremony preview",
+      "title": "Manual transition replay",
+      "desc": "Plays only the visual effect over the current page without changing progression or records.",
+      "status_idle": "Idle",
+      "status_playing": "Playing {{title}}",
+      "status_last": "Last: {{title}}",
+      "play": "Play",
+      "play_aria": "Play {{title}}",
+      "replay_first_vision": {
+        "eyebrow": "First Vision preview",
+        "title": "Replay the complete opening",
+        "desc": "Requests a one-shot development presentation and reloads. Canonical First Vision and progression records are not changed.",
+        "button": "Replay and reload",
+        "button_aria": "Replay First Vision without changing canonical progression",
+        "status_idle": "The preview is session-only and returns to the all-open development mode after completion.",
+        "status_busy": "Preparing the session-only First Vision preview...",
+        "status_done": "Preview prepared. Reloading...",
+        "status_error": "Preview request failed: {{error}}"
+      },
+      "items": {
+        "firstVisionDescent": {
+          "title": "First Pond Entry",
+          "desc": "Replays the descending sakura and light transition from the first pond vision."
+        },
+        "memoryPurgeTide": {
+          "title": "Memory Purge",
+          "desc": "Replays the cleansing wave and foam transition for memory purge."
+        }
+      }
+    },
+    "pond_lab": {
+      "eyebrow": "Pond data",
+      "title_synthetic": "Synthetic fixture",
+      "title_live": "Live dashboard feed",
+      "mode_synthetic": "Synthetic isolated",
+      "mode_live": "Live data",
+      "randomize": "Randomize",
+      "copy_snapshot": "Copy snapshot",
+      "copy_snapshot_done": "Snapshot copied · {{count}} koi",
+      "copy_snapshot_failed": "Snapshot copy failed",
+      "copy_snapshot_empty": "No koi candidates to copy",
+      "metric_seed": "Seed {{seed}}",
+      "metric_candidates": "{{count}} koi candidates",
+      "metric_pressure": "{{count}} pressure cases · max {{max}}",
+      "metric_share": "Max share {{value}}",
+      "visual_profile": {
+        "title": "Visual profile",
+        "mode_single": "Single",
+        "reset": "Product defaults",
+        "axes": {
+          "floor": "Floor",
+          "plants": "Plants",
+          "rocks": "Rocks",
+          "sunlight": "Sunlight"
+        },
+        "options": {
+          "floor": {
+            "product": "Product",
+            "mineral_airy": "Mineral airy v1",
+            "neutral_depth": "Neutral depth v2"
+          },
+          "plants": {
+            "product": "Product",
+            "botanical": "Botanical"
+          },
+          "rocks": {
+            "product": "Product",
+            "natural": "Natural",
+            "grounded": "Grounded",
+            "ishigumi": "Ishigumi"
+          },
+          "sunlight": {
+            "product": "Product",
+            "lacy_connected": "Lacy + connected"
+          }
+        }
+      },
+      "effects_title": "Effect controls",
+      "reset_pending": "Clearing caches…",
+      "reset_complete": "Caches cleared",
+      "reset_scope": "Deletes saved koi appearance, activity profiles and roster cache, then restarts the pond. Tuning is preserved.",
+      "runtime": {
+        "idle": "Pond idle",
+        "mount_wait": "Waiting for data and viewport",
+        "attached": "Canvas attached",
+        "starting": "Starting pond",
+        "worker_ready": "Worker ready · awaiting first frame",
+        "first_frame_committed": "Pond running · first frame confirmed",
+        "degraded": "Pond degraded",
+        "failed": "Pond failed",
+        "disposed": "Pond disposed"
+      },
+      "effect_groups": {
+        "gates": "Water effect gates",
+        "surface": "Water surface",
+        "layers": "Underwater layers",
+        "interaction": "Shadows & ripples"
+      },
+      "effect_controls": {
+        "waterEffectsEnabled": "All water effects",
+        "waterSurfaceEffectsEnabled": "Surface effects",
+        "waterLayerEffectsEnabled": "Underwater layers",
+        "yoonseulEnabled": "Yoonseul",
+        "cloudReflectionEnabled": "Cloud reflection",
+        "surfaceOpticsEnabled": "Optics",
+        "surfaceNormalEnabled": "Surface normal",
+        "screenRefractionEnabled": "Refraction",
+        "surfaceReflectionEnabled": "Reflection",
+        "rgbSplitEnabled": "RGB split",
+        "benthicEnabled": "Floor material",
+        "causticsEnabled": "Caustics",
+        "godRaysEnabled": "Light shafts",
+        "atmosphereEnabled": "Atmosphere",
+        "komorebiEnabled": "Komorebi",
+        "fishShadowEnabled": "Koi shadows",
+        "koiWakeDisturbanceEnabled": "Koi wakes",
+        "tapDisturbanceEnabled": "Tap ripples",
+        "petalDisturbanceEnabled": "Petal ripples"
+      },
+      "workbench": {
+        "title": "Pond research lab",
+        "navigation": "Pond research tools",
+        "scene": "Scene",
+        "water": "Water & light",
+        "koi": "Koi",
+        "inspect": "Inspect",
+        "scene_hint": "Choose the input and scene, then observe changes under the same conditions.",
+        "water_hint": "Toggle or isolate effects to compare how water and lighting contribute to the image.",
+        "koi_hint": "Choose a swim model and adjust its feel. Detailed physics and shape values are under Precision controls.",
+        "inspect_hint": "Check runtime status and reset settings or stored caches when needed.",
+        "copy_experiment": "Copy experiment",
+        "synthetic_note": "Synthetic input is isolated from real usage. Keep the same roster while comparing changes.",
+        "live_note": "Uses actual dashboard input. The roster and state can change over time.",
+        "new_roster": "Generate roster",
+        "effects_default": "Default effects",
+        "effects_off": "All effects off",
+        "effects_note": "Checks reflect effect settings after parent gates. Isolate enables one effect with its required parent effects.",
+        "solo_active": "Isolated · {{effect}}",
+        "solo_label": "Isolate {{effect}}",
+        "solo_restore": "Restore previous effects",
+        "blocked_by": "Waiting for {{gate}}",
+        "precision_controls": "Precision controls",
+        "recipe_note": "These feel sliders change several physics values together. Using them after precision adjustments recalculates the related physics values.",
+        "runtime_title": "Runtime status",
+        "runtime_note": "This is actual renderer readiness, including its first-frame acknowledgement. It is not an acknowledgement for each effect or a performance measurement.",
+        "intent_hud": "Behavior intent overlay · Life models",
+        "maintenance": "Reset",
+        "reset_tuning": "Reset environment & koi tuning",
+        "reset_tuning_note": "Restores environment and koi values. Reset visual styles and effect switches in their own sections.",
+        "scanner_unavailable": "The pond renderer is unavailable for this theme.",
+        "tuner_unavailable": "Detailed tuning is unavailable for this theme."
+      }
+    },
+    "render_trace": {
+      "eyebrow": "Render trace",
+      "title": "Boot rendering trace",
+      "desc": "Records boot, first-vision, pond, and bonsai readiness to the console and a temporary buffer after the next reload.",
+      "status_enabled": "Recording · {{count}}",
+      "status_disabled": "Off · {{count}}",
+      "reload": "Trace and reload",
+      "copy": "Copy log",
+      "disable": "Disable",
+      "clear": "Clear",
+      "copy_done": "Render trace log copied.",
+      "copy_empty": "No render trace log is available to copy.",
+      "copy_failed": "Unable to copy the render trace log.",
+      "disabled_feedback": "Render trace disabled.",
+      "clear_feedback": "Render trace log cleared."
+    },
+    "stats_pipeline_diagnostics": {
+      "eyebrow": "Live stats pipeline",
+      "title": "Usage tracking diagnostics",
+      "desc": "Captures the active tab classifier, collection policy, alarms, durable facts, and dashboard read models without writing data.",
+      "target_label": "Target domain",
+      "target_placeholder": "target domain (auto if empty)",
+      "run": "Run diagnostics",
+      "running": "Running",
+      "copy": "Copy summary",
+      "copy_raw": "Copy raw",
+      "clear": "Clear",
+      "copy_done": "Summary diagnostics copied.",
+      "copy_raw_done": "Raw diagnostics copied ({{lines}} lines).",
+      "copy_empty": "No diagnostics report is available to copy.",
+      "copy_failed": "Unable to copy the diagnostics report.",
+      "run_done": "Diagnostics report generated.",
+      "run_failed": "Diagnostics failed: {{message}}",
+      "metric_overall": "Result",
+      "metric_elapsed": "Active elapsed",
+      "metric_hourly": "Hourly rows",
+      "metric_today": "Today active",
+      "primary_stage": "Primary finding",
+      "stage_sequence": "Pipeline sequence",
+      "stage_sequence_desc": "Shows where the canonical path breaks, from browser source through dashboard snapshots.",
+      "boundary_title": "Boundary comparison",
+      "boundary_desc": "Compares runtime, hourly ledger, repository read, facts summary, and read model values.",
+      "target_matrix": "Target domains",
+      "target_matrix_desc": "Compares raw ledger, repository series, activity-day, and Rules projection values per domain.",
+      "target_empty": "No target domain is available. Enter one or keep a web tab active, then run again.",
+      "observations": "Observations",
+      "observations_desc": "Fail/watch signals to inspect alongside the stage verdict.",
+      "report_preview": "Copy summary preview",
+      "summary_size": "Summary: {{lines}} lines / {{bytes}}",
+      "raw_size": "Raw: {{lines}} lines / {{bytes}}",
+      "evidence": {
+        "active_tabs": "Active tabs",
+        "excluded": "Excluded",
+        "sites_sites": "Rules sites",
+        "tracked_dates": "Tracked dates",
+        "status_snapshot": "Status snapshot",
+        "sites_snapshot": "Sites snapshot",
+        "available": "Available"
+      },
+      "boundary": {
+        "runtime": "Runtime",
+        "hourly": "Hourly ledger",
+        "repository": "Repository read",
+        "facts": "Facts summary",
+        "read_model": "Read model"
+      },
+      "unit": {
+        "rows": "rows",
+        "domains": "domains",
+        "sites": "sites"
+      },
+      "target_table": {
+        "domain": "Domain",
+        "ledger": "Ledger active",
+        "repository": "Repository active",
+        "current_day": "Activity-day",
+        "sites": "Rules",
+        "patterns": "Patterns",
+        "status": "Verdict"
+      },
+      "stage": {
+        "source": "Source",
+        "runtime_health": "Runtime health",
+        "policy": "Policy",
+        "classification": "Classifier",
+        "runtime_mutation": "Runtime write",
+        "persistence": "Persistence",
+        "facts_read": "Facts read",
+        "target_domain": "Target domain",
+        "query_projection": "Query",
+        "dashboard_snapshot": "Dashboard",
+        "unknown": "Unknown"
+      },
+      "signal": {
+        "mode": "Mode",
+        "focus": "Focus",
+        "focused_active": "Focused tab",
+        "settlement": "Settlement",
+        "candidate": "Fallback",
+        "classified": "Active/bg",
+        "policy": "Policy tabs",
+        "diagnostics": "Errors",
+        "hourly_usage": "Hourly usage",
+        "hourly_today": "Today hourly",
+        "tick_gap": "Tick gap",
+        "seal_gap": "Seal gap",
+        "save_lag": "Save lag",
+        "health": "Health",
+        "facts_active": "Facts active",
+        "facts_domains": "Fact domains",
+        "facts_repo_active": "Repo active",
+        "facts_repo_domains": "Repo domains",
+        "facts_repo_rows": "Repo rows",
+        "target": "Target",
+        "target_db": "Target DB",
+        "target_ledger": "Target ledger"
+      },
+      "code": {
+        "tick_alarm_owner_unavailable": "Heartbeat alarm owner could not be read.",
+        "tick_alarm_missing": "Heartbeat alarm is missing.",
+        "last_focused_window_owner_unavailable": "Focused window owner could not be read.",
+        "idle_state_owner_unavailable": "Idle-state owner could not be read.",
+        "runtime_state_query_failed": "Service worker runtime diagnostics failed.",
+        "active_tab_missing": "No active browser tab was visible to the diagnostic run.",
+        "source_surface_ready": "Browser source surface is available.",
+        "stats_runtime_health_missing": "Runtime health checkpoints are not available yet.",
+        "stats_runtime_health_write_failed": "Runtime health checkpoint persistence failed.",
+        "tick_health_current": "Heartbeat, active seal, and save health are current.",
+        "tick_not_completed_yet": "No completed heartbeat tick has been recorded yet.",
+        "tick_gap_delayed": "The last completed heartbeat tick is delayed.",
+        "tick_gap_excessive": "The heartbeat tick gap is large enough to threaten usage accuracy.",
+        "tick_failed": "The latest heartbeat tick failed after the last successful tick.",
+        "stats_save_failed": "The latest stats save failed after the last successful save.",
+        "active_seal_not_saved": "Active elapsed was sealed but has not been followed by a recent save.",
+        "stats_save_after_seal_missing": "Active elapsed was sealed but save is stale enough to threaten durability.",
+        "foreground_resume_ambiguous_recorded": "A foreground resume ambiguity was recorded in runtime health.",
+        "data_collection_disabled": "Domain usage collection is disabled.",
+        "policy_rejected_trackable_tabs": "Trackable tabs were rejected by collection policy.",
+        "collection_policy_allows_tracking": "Collection policy allows at least the current trackable path.",
+        "tab_urls_unavailable": "Tab URL surfaces are empty, so the classifier cannot see domains.",
+        "idle_blocked_active_elapsed": "Idle state is blocking active elapsed.",
+        "tab_activity_batch_missing": "No tab activity batch has run yet.",
+        "active_tab_not_classified": "An active tab exists, but the batch did not classify one as active.",
+        "tabs_classified_as_background": "Elapsed time is being classified as background.",
+        "background_elapsed_without_trackable_active": "No trackable active web tab is available, so only open-tab background elapsed was observed.",
+        "active_classifier_ready": "Active tab classification looks healthy.",
+        "active_elapsed_recorded": "Active elapsed time was recorded in the runtime batch.",
+        "first_tick_initialized_tabs_only": "The batch only initialized tracking points; run again after a minute.",
+        "active_elapsed_not_applied": "An active tab was classified but elapsed time was not applied.",
+        "no_active_elapsed_observed": "No active elapsed time was observed in the latest batch.",
+        "previous_tab_settlement_failed": "Previous-tab settlement failed.",
+        "previous_tab_settlement_incomplete": "Previous-tab settlement is incomplete.",
+        "foreground_segment_closed": "The previous foreground segment was closed as active elapsed.",
+        "foreground_segment_missing": "No runtime snapshot exists for the foreground segment to close.",
+        "foreground_segment_tab_mismatch": "The foreground segment tab id differs from the settlement target tab id.",
+        "foreground_segment_not_started": "The foreground segment has no start timestamp.",
+        "foreground_segment_non_positive_elapsed": "The foreground segment elapsed time is zero or negative.",
+        "foreground_segment_policy_rejected": "The foreground segment domain is excluded by the current collection policy.",
+        "foreground_segment_no_change": "Foreground segment settlement did not produce a storage mutation.",
+        "foreground_segment_resume_ambiguous": "The service worker resumed with an open foreground segment that no longer matches a confirmed foreground tab.",
+        "stats_runtime_diagnostic_error": "Stats runtime diagnostics contain a load/save/rollover error.",
+        "durable_hourly_rows_present": "Durable hourly facts are present.",
+        "stats_hourly_ledger_inspection_failed": "Durable hourly ledger inspection failed.",
+        "hourly_rows_without_usage_delta": "Hourly rows exist, but they do not contain usage deltas.",
+        "hourly_rows_outside_today": "Hourly rows exist, but no bucket is present for today.",
+        "active_elapsed_not_yet_persisted": "Active elapsed exists but durable hourly rows are not visible yet.",
+        "stats_hourly_empty": "No durable hourly facts are visible.",
+        "facts_query_failed": "Recent durable facts query failed.",
+        "recent_durable_facts_present": "Recent durable facts contain usage.",
+        "durable_rows_outside_recent_window": "Durable rows exist, but no usage appears in the recent facts window.",
+        "recent_durable_facts_empty": "Recent durable facts are empty.",
+        "target_domain_missing": "No target domain was available. Enter one or keep an active web tab open.",
+        "target_domain_query_failed": "Target-domain durable facts query failed.",
+        "target_domain_facts_not_projected": "Target-domain durable facts exist, but Rules projection does not expose them.",
+        "target_domain_hourly_ledger_not_projected": "Target domain exists in the hourly ledger but not in facts/read models.",
+        "target_domain_facts_outside_sites_day": "Target-domain facts exist, but they are outside the current Rules activity day.",
+        "target_domain_durable_facts_present": "Target-domain durable facts are present.",
+        "target_domain_runtime_only": "Runtime has target active elapsed, but durable facts do not show it yet.",
+        "target_domain_not_in_durable_facts": "Target domain is not present in durable facts.",
+        "read_model_query_failed": "Status or Sites read-model query failed.",
+        "durable_rows_not_projected": "Durable rows exist but the read models are empty.",
+        "read_models_have_usage": "Read models expose usage.",
+        "read_models_empty": "Read models are empty.",
+        "dashboard_snapshot_received": "Dashboard snapshots were received.",
+        "dashboard_snapshot_missing": "Dashboard snapshots are missing.",
+        "pipeline_clear": "No failing stage was identified."
+      }
+    },
+    "sites_benchmark": {
+      "eyebrow": "Stats read model",
+      "title": "Read-model benchmark",
+      "desc": "Runs synthetic protected-site scenarios through the stats read path without writing IndexedDB.",
+      "run": "Run scenarios",
+      "running": "Running",
+      "running_detail": "Running synthetic Rules scenarios...",
+      "copy": "Copy report",
+      "clear": "Clear",
+      "empty": "No benchmark report yet.",
+      "copy_done": "Benchmark report copied.",
+      "copy_empty": "No benchmark report is available to copy.",
+      "copy_failed": "Unable to copy the benchmark report.",
+      "run_done": "Generated {{count}} scenario results.",
+      "run_failed": "Benchmark failed: {{message}}",
+      "summary_total": "Total compute",
+      "summary_slowest": "Slowest scenario",
+      "summary_flags": "Watch / High",
+      "metric_days": "Days",
+      "metric_domains": "Domains",
+      "metric_intels": "Intels",
+      "metric_candidates": "Candidates",
+      "metric_generate": "Generate",
+      "metric_compute": "Compute",
+      "metric_rows": "Rows h/domain",
+      "scenarios": {
+        "protected-core-30d": "Protected core · 30d",
+        "sites-pro-mixed-30d": "Rules Pro mixed · 30d",
+        "long-baseline-90d": "Long baseline · 90d",
+        "wide-domain-stress-30d": "Wide domain stress · 30d"
+      }
+    },
+    "bonsai_debug": {
+      "eyebrow": "Bonsai debug",
+      "title": "Life-state preview",
+      "mode_live": "Live data",
+      "mode_override": "Debug override",
+      "reset": "Reset",
+      "activation_label": "Activation",
+      "activation_hint": "Maps to vitality, stress, dryness, and bloom without writing the cultivation ledger.",
+      "growth_label": "Growth stage",
+      "growth_hint": "Maps to the same seedling, juvenile, and mature thresholds used by cultivation growth.",
+      "phase_seedling": "Seedling",
+      "phase_juvenile": "Juvenile",
+      "phase_mature": "Mature",
+      "model_label": "Growth model · Classic2 baseline",
+      "model_classic": "Classic comparison",
+      "model_classic2": "Classic2 Main baseline"
+    },
+    "sentinel_lab": {
+      "mode_eyebrow": "Debug mode",
+      "mode_title": "Protocol access",
+      "debug_enabled": "Debug mode enabled",
+      "debug_disabled": "Debug mode disabled",
+      "debug_desc": "Unlocks laboratory controls without console flags.",
+      "hud_visible": "Debug HUD",
+      "hud_visible_desc": "Includes runtime HUD telemetry in debug launches.",
+      "field_scope": "Debug launch default",
+      "scope_site": "Site",
+      "scope_global": "Global",
+      "intensity": "Protocol intensity",
+      "break_preview_eyebrow": "Global break",
+      "break_preview_title": "Crack growth lab",
+      "break_preview_canvas": "Global simulation break preview",
+      "break_control_fracture": "Fracture",
+      "break_control_sync": "Repair pressure",
+      "break_control_seed": "Skeleton seed",
+      "break_control_shape": "Crack shape",
+      "break_shape_seeded": "Seeded",
+      "break_shape_diagonal_spine": "Diagonal spine",
+      "break_shape_center_spider": "Center spider",
+      "break_shape_edge_tear": "Edge tear",
+      "break_shape_horizontal_lcd_split": "LCD split",
+      "break_inject_sentinel": "Inject koi",
+      "break_reset_preview": "Reset",
+      "break_metric_fracture": "Fracture",
+      "break_metric_sync": "Sync",
+      "break_metric_repair": "Repair",
+      "break_metric_shape": "Shape",
+      "break_metric_length": "Length",
+      "break_metric_branch": "Branch",
+      "break_metric_aperture": "Aperture",
+      "break_metric_debris": "Debris",
+      "spawn_eyebrow": "Simulation",
+      "spawn_title": "Shadow koi spawn control",
+      "target_tab": "Target tab",
+      "target_auto": "Auto target",
+      "target_active_prefix": "Active: ",
+      "refresh_targets": "Refresh tabs",
+      "run_validation": "Run validation",
+      "spawn": "Spawn",
+      "spawn_only": "Spawn only",
+      "worker_probe": "Probe worker",
+      "frame_worker_probe": "Frame host",
+      "stop": "Stop",
+      "live_entities": "Live entities",
+      "total_spawn_cap": "Total spawn cap",
+      "split_cap": "Split cap",
+      "split_generation": "Split generation",
+      "validation_eyebrow": "Validation",
+      "validation_title": "Dreamscape Furin path report",
+      "validation_spawn": "Spawn",
+      "validation_runtime": "Runtime",
+      "validation_probe": "Worker probe",
+      "validation_frame_host": "Frame host",
+      "validation_main_canvas": "Main canvas",
+      "validation_surface": "Surface",
+      "validation_worker_support": "Worker support",
+      "validation_bootstrap": "Bootstrap",
+      "validation_ready": "Ready ack",
+      "validation_activation": "Activation",
+      "validation_frame_first_frame": "Frame first paint",
+      "validation_page_worker_blocked": "Page block confirmed",
+      "validation_detached": "Detached",
+      "validation_active": "Active",
+      "validation_copy_hint": "Run validation, then copy this report for the agent.",
+      "validation_frame_success_worker_blocked": "Frame host rendered; page worker remains blocked.",
+      "validation_copy_report": "Copy report",
+      "validation_copy_unavailable": "Clipboard API unavailable.",
+      "validation_copied": "Validation report copied.",
+      "timeline_eyebrow": "Observability",
+      "timeline_title": "Event timeline",
+      "timeline_count": "{{count}} recorded events",
+      "timeline_clear": "Clear",
+      "timeline_empty": "No Sentinel protocol events yet.",
+      "timeline_error": "Timeline unavailable: {{error}}",
+      "timeline_phase_requested": "Requested",
+      "timeline_phase_background_accepted": "Background accepted",
+      "timeline_phase_protected_site_validated": "Protected site validated",
+      "timeline_phase_content_ready": "Content ready",
+      "timeline_phase_nudge_dispatched": "Nudge dispatched",
+      "timeline_phase_content_rendered": "Content rendered",
+      "timeline_phase_worker_probed": "Worker probed",
+      "timeline_phase_config_delivered": "Config delivered",
+      "timeline_phase_stopped": "Stopped",
+      "timeline_phase_skipped": "Skipped",
+      "timeline_phase_failed": "Failed",
+      "timeline_status_info": "Info",
+      "timeline_status_pending": "Pending",
+      "timeline_status_success": "Success",
+      "timeline_status_skipped": "Skipped",
+      "timeline_status_error": "Error",
+      "timeline_source_experiment_lab": "Experiment lab",
+      "timeline_source_runtime": "Runtime",
+      "render_eyebrow": "Render trace",
+      "render_title": "Spawn path diagnostics",
+      "render_root_cause": "Current cause",
+      "render_no_trace": "No spawn has been traced yet.",
+      "render_last_target": "Last target",
+      "render_current_session": "Content session",
+      "render_recent_events": "Recent runtime events",
+      "render_refresh_diagnostics": "Refresh diagnostics",
+      "render_diagnostics_error": "Content diagnostics unavailable: {{error}}",
+      "render_no_diagnostics": "No content diagnostics",
+      "render_step_target": "Target tab",
+      "render_step_content": "Content ready",
+      "render_step_delivery": "Message delivery",
+      "render_step_render": "Render ack",
+      "render_step_idle": "Idle",
+      "render_step_pending": "Pending",
+      "render_step_success": "Success",
+      "render_step_error": "Error",
+      "render_root_idle": "Run Spawn to trace target selection through render acknowledgement.",
+      "render_root_pending": "The request is in flight. Waiting for content readiness or render response.",
+      "render_root_api_unavailable": "Chrome tab APIs are unavailable, so the target tab could not be inspected.",
+      "render_root_no_target": "No target web tab was found. Activate x.com or select a tab directly.",
+      "render_root_invalid_target": "The selected tab disappeared or is not a web page.",
+      "render_root_dispatch_ready_timeout": "The content receiver did not report receiver_ready before the timeout. Code: {{code}}",
+      "render_root_bootstrap_message_invalid": "A bootstrap message reached the background without a valid status. The receiver state cannot advance.",
+      "render_root_bootstrap_stalled": "The content runtime reported bootstrapping, then never advanced to receiver_ready.",
+      "render_root_bootstrap_signal_ignored": "The content runtime reported receiver_ready/active, but the background session guard kept the tab in injecting.",
+      "render_root_loader_no_bootstrap": "The loader was injected, but no bootstrap state reached the background.",
+      "render_root_bootstrap_failed": "Content bootstrap failed. Code: {{code}}",
+      "render_root_inject_failed": "Content script injection failed. Code: {{code}}",
+      "render_root_missing_scripting": "The scripting permission is missing, so the content script cannot be injected.",
+      "render_root_content_not_ready": "The content runtime is not ready. Code: {{code}}",
+      "render_root_send_failed": "Message delivery failed after content readiness. Suspect navigation or receiver teardown.",
+      "render_root_rendered": "Rendering was confirmed. The protocol reached the on-page runtime.",
+      "render_root_runtime_start_exception": "The runtime threw while starting. Check renderer initialization and canvas ownership transfer. Code: {{code}}",
+      "render_root_spawn_timeout": "The spawn request was delivered, but no rendered acknowledgement arrived before timeout. Code: {{code}}",
+      "render_root_worker_spawn_accepted_timeout": "The worker accepted the spawn request, but did not report a rendered frame afterward. Code: {{code}}",
+      "render_root_worker_spawn_requested_timeout": "The spawn request was sent to the worker, but no accepted/rendered signal returned. Code: {{code}}",
+      "render_root_spawn_canvas_missing": "The spawn request reached the main runtime, but the canvas context was unavailable. Code: {{code}}",
+      "render_root_spawn_live_limit": "The spawn request reached the runtime, but the live entity cap is already full. Code: {{code}}",
+      "render_root_spawn_total_limit": "The spawn request reached the runtime, but the total spawn budget is already exhausted. Code: {{code}}",
+      "render_root_worker_script_origin_blocked": "The worker runtime was selected, but the page origin cannot open the extension worker script directly. Code: {{code}}",
+      "render_root_worker_bootstrap_failed": "The worker runtime bootstrap failed. Code: {{code}}",
+      "render_root_spawn_runtime_inactive": "The spawn request reached the runtime, but the runtime was not active. Code: {{code}}",
+      "render_root_worker_runtime_failed": "The worker runtime failed on the render path. Code: {{code}}",
+      "render_root_spawn_split_limit": "The spawn request reached the runtime, but split spawning is blocked by the current split limits. Code: {{code}}",
+      "render_root_spawn_rejected": "The runtime rejected the spawn request. Code: {{code}}",
+      "render_root_render_failed": "The spawn response did not finish as rendered. Code: {{code}}",
+      "render_root_delivered": "The request reached the content runtime.",
+      "render_root_unknown": "Unclassified failure. Code: {{code}}"
+    },
+    "render_debug": {
+      "actions": {
+        "run": "Run Sequence"
+      },
+      "status": {
+        "pass": "PASS",
+        "fail": "FAIL",
+        "not_run": "READY"
+      },
+      "summary": {
+        "scene_updates": "Scene",
+        "back_layer": "Back bake",
+        "front_layer": "Front bake",
+        "branch_rig": "Branch rig"
+      },
+      "columns": {
+        "step": "Step",
+        "scene": "Scene",
+        "back": "Back",
+        "front": "Front",
+        "branch": "Branch",
+        "reason": "Reason"
+      },
+      "observations": {
+        "scene_changed": "Changed",
+        "scene_steady": "Steady",
+        "rebake": "Rebake",
+        "reuse": "Reuse",
+        "rebuild": "Rebuild"
+      },
+      "steps": {
+        "baseline": "Baseline",
+        "wind_motion": "Wind motion",
+        "gust_motion": "Gust motion",
+        "bloom_band": "Bloom band",
+        "health_band": "Health band",
+        "light_band": "Light band",
+        "canvas_resize": "Canvas resize",
+        "seed_change": "Seed change",
+        "version_bump": "Version bump",
+        "resume_rehydrate": "Resume rehydrate"
+      },
+      "reasons": {
+        "initial": "Initial bake",
+        "wind_runtime": "Runtime motion only",
+        "bloom_backdrop": "Bloom backdrop band",
+        "health_full": "Health band changes front/back",
+        "light_bake": "Light bake band",
+        "canvas_static": "Static canvas textures only",
+        "seed_cache": "Seed cache boundary",
+        "version_cache": "Renderer version boundary",
+        "resume_rig": "Tab resume rig rehydrate"
+      },
+      "empty": "Run the sequence to inspect the current render cache contract."
+    },
+    "pond_controls": {
+      "strategy_label": "Site koi color strategy",
+      "strategy_options": {
+        "off": "OFF",
+        "direct": "Direct",
+        "hybrid": "Hybrid",
+        "breed": "Breed approx"
+      }
+    },
+    "blossom_lab": {
+      "preview_eyebrow": "Live Preview",
+      "preview_title": "Single Blossom Canvas",
+      "preview_desc": "Tune the flower separately. Apply changes the bonsai.",
+      "pending_badge": "Draft",
+      "applied_badge": "Applied",
+      "preview_stage_label": "Preview Stage",
+      "preview_stage_auto": "Auto",
+      "preview_stage_bud": "Bud",
+      "preview_stage_half_open": "Half",
+      "preview_stage_full": "Full",
+      "controls_eyebrow": "Shape Controls",
+      "controls_title": "Blossom Factors",
+      "controls_desc": "These controls bias the blossom generator itself rather than faking a one-off render.",
+      "apply": "Apply To Bonsai",
+      "revert": "Revert Draft",
+      "reset": "Reset Draft",
+      "apply_hint": "Apply stores the tuning for future bonsai renders.",
+      "toast_applied": "Blossom tuning applied to the bonsai.",
+      "preview_controls": {
+        "preview_yaw": {
+          "label": "Facing Yaw",
+          "hint": "Turn the blossom left or right to inspect side profile quality."
+        },
+        "preview_pitch": {
+          "label": "Facing Pitch",
+          "hint": "Tilt the blossom upward or downward to inspect depth cues."
+        }
+      },
+      "sliders": {
+        "openness_bias": {
+          "label": "Openness Bias",
+          "hint": "Push petals outward or keep them more closed."
+        },
+        "petal_length_scale": {
+          "label": "Petal Length",
+          "hint": "Lengthens or shortens the blossom silhouette."
+        },
+        "petal_width_scale": {
+          "label": "Petal Width",
+          "hint": "Controls whether petals feel slim or broad."
+        },
+        "petal_count": {
+          "label": "Petal Count",
+          "hint": "Sets how many visible petals each flower presents."
+        },
+        "layers": {
+          "label": "Layers",
+          "hint": "Adds inner petal rings for a fuller blossom."
+        },
+        "ruffle_gain": {
+          "label": "Ruffle",
+          "hint": "Amplifies petal waviness and edge softness."
+        },
+        "core_size_gain": {
+          "label": "Core Size",
+          "hint": "Expands or compresses the pink center mass."
+        },
+        "inner_scale_gain": {
+          "label": "Inner Scale",
+          "hint": "Adjusts inner petal spread and layering depth."
+        },
+        "notch_depth_gain": {
+          "label": "Notch Depth",
+          "hint": "Changes how deeply each petal cleaves at the tip."
+        },
+        "translucency_gain": {
+          "label": "Translucency",
+          "hint": "Controls light bleed through the petals."
+        },
+        "stamen_burst_gain": {
+          "label": "Stamen Burst",
+          "hint": "Makes the center stamens quieter or more radiant."
+        },
+        "warmth_bias": {
+          "label": "Warmth Bias",
+          "hint": "Shifts the blossom toward cooler blush or warmer pink."
+        }
+      }
+    }
+  },
+  "worker_runtime": {
+    "title": "Worker Runtime",
+    "subtitle": "Worker diagnostics stream for failures, fallbacks, queue drops and cancellations.",
+    "refresh": "Refresh",
+    "clear": "Clear",
+    "events": "Events",
+    "fail": "Fail",
+    "fallback": "Fallback",
+    "circuit": "Circuit",
+    "task_type": "Task Type",
+    "priority": "Priority",
+    "all_task_types": "All task types",
+    "all_priorities": "All priorities",
+    "filtered": "Filtered: {{total}} / {{all}}",
+    "reset_filters": "Reset Filters",
+    "unknown": "unknown",
+    "worker": "Worker",
+    "task": "Task",
+    "priority_short": "Pri",
+    "lane": "Lane",
+    "context_short": "Context",
+    "no_events": "No runtime events captured yet."
+  },
+  "shortform_blocker": {
+    "notice_navigation_blocked": "Shortform navigation blocked",
+    "overlay_title": "SHORTFORM BLOCK ACTIVE",
+    "overlay_description": "Shortform pages are disabled to keep focus. Return to a standard feed.",
+    "leave_button": "Go To Feed",
+    "back_button": "Back"
+  },
+  "support": {
+    "eyebrow": "Support Mode",
+    "title": "Storage Inspector",
+    "desc": "Hidden storage diagnostics and repair actions.",
+    "refreshing": "Refreshing...",
+    "refresh": "Refresh",
+    "hide": "Hide",
+    "generated_at": "Snapshot captured:",
+    "buffered_logs": "Buffered logs:",
+    "stats_cache": "Cached stats dates:",
+    "local_documents": "Local Documents",
+    "fields": "Fields",
+    "bytes": "Bytes",
+    "size_unavailable": "Unavailable",
+    "unknown": "Unknown",
+    "present": "Present",
+    "empty": "Empty",
+    "session": "Session Checkpoints",
+    "indexed_db": "IndexedDB Stores",
+    "rows": "Rows",
+    "security": "Security / Keys",
+    "missing": "Missing",
+    "reset_guard": "Reset Guard",
+    "guard_on": "Enabled",
+    "guard_off": "Disabled",
+    "passcode_set": "Passcode set",
+    "passcode_missing": "No passcode configured",
+    "actions_title": "Repair Actions",
+    "shortcut_hint": "Alt+Shift+I to toggle",
+    "passcode_label": "Authorization Passcode",
+    "passcode_placeholder": "Enter passcode for repair actions",
+    "actions": {
+      "repair_hashes": "Repair Domain Hashes",
+      "run_retention": "Run Stats Retention",
+      "clear_runtime": "Clear Runtime Session",
+      "clear_favicons": "Clear Favicon Cache"
+    },
+    "status": {
+      "hashes_repaired": "Domain hash artifacts were rebuilt.",
+      "hashes_ok": "Domain hash artifacts were already healthy.",
+      "retention_failed": "Stats retention failed: {{error}}",
+      "retention_done": "Stats retention completed ({{removed}} day buckets removed).",
+      "runtime_cleared": "Runtime session checkpoints cleared ({{cleared}} keys).",
+      "favicons_cleared": "Persisted favicon cache cleared.",
+      "action_complete": "Support action completed.",
+      "snapshot_refreshed": "Storage inspector snapshot refreshed.",
+      "snapshot_failed": "Storage inspector refresh failed: {{error}}",
+      "auth_required": "Passcode is required for support repair actions.",
+      "auth_failed": "Support action authorization failed.",
+      "action_failed": "Support action failed: {{error}}"
+    }
+  },
+  "artifact_range": {
+    "value_label": "{{label}} strength",
+    "value": "{{value}}%",
+    "minimum": "Original",
+    "maximum": "Current effect",
+    "effective": "{{value}}",
+    "save_failed": "Could not save the strength."
+  },
+  "artifact_controls": {
+    "secondary_adjustments": "Extra adjustments",
+    "group_active_count": "{{count}} on"
+  }
+}

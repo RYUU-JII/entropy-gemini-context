@@ -1,0 +1,400 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "global_common_001",
+      "platform": "any",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 8,
+      "cooldownHours": 1,
+      "text": "Filter calibration window active. Validate visual and input pipelines."
+    },
+    {
+      "id": "global_common_002",
+      "platform": "any",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 7,
+      "cooldownHours": 1,
+      "text": "Runtime diagnostics in progress. Confirm readability under active rules."
+    },
+    {
+      "id": "global_common_003",
+      "platform": "any",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 7,
+      "cooldownHours": 1,
+      "text": "Intervention preview is live. Check delay, blur, and shuffle response."
+    },
+    {
+      "id": "global_common_004",
+      "platform": "any",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 6,
+      "cooldownHours": 1,
+      "text": "Control surface synced. Execute quick interactions to verify friction flow."
+    },
+    {
+      "id": "global_common_005",
+      "platform": "any",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 6,
+      "cooldownHours": 1,
+      "text": "레이아웃, 반응속도, 가독성 체크 항목을 현재 세션 기준으로 갱신합니다."
+    },
+    {
+      "id": "global_uncommon_001",
+      "platform": "any",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "uncommon",
+      "weight": 3,
+      "cooldownHours": 6,
+      "text": "Release notes draft: filter preview architecture unified across themes."
+    },
+    {
+      "id": "default_common_001",
+      "platform": "default",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 9,
+      "cooldownHours": 1,
+      "text": "기본 실험실 시퀀스 실행 중: 입력 지연, 클릭 의도 게이트, 시각 왜곡 노드 점검."
+    },
+    {
+      "id": "default_common_002",
+      "platform": "default",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 8,
+      "cooldownHours": 1,
+      "text": "현재 빌드 상태 기준으로 필터 강도 체감값을 재측정합니다."
+    },
+    {
+      "id": "default_common_003",
+      "platform": "default",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 8,
+      "cooldownHours": 1,
+      "text": "실험실 패널에서 blur, contrast, saturation, text shuffle 동작을 동시에 검증합니다."
+    },
+    {
+      "id": "default_uncommon_001",
+      "platform": "default",
+      "theme": "entropy",
+      "slot": "body",
+      "rarity": "uncommon",
+      "weight": 3,
+      "cooldownHours": 8,
+      "text": "Entropy lab note: industrial profile enabled, precision pass scheduled."
+    },
+    {
+      "id": "default_dark_common_001",
+      "platform": "default-dark",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 9,
+      "cooldownHours": 1,
+      "text": "야간 실험실 모드 활성화: 저휘도 대비와 가독성 안정성을 점검합니다."
+    },
+    {
+      "id": "default_dark_common_002",
+      "platform": "default-dark",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 8,
+      "cooldownHours": 1,
+      "text": "Night pass 진행 중: blur 경계 누수와 텍스트 가장자리 번짐을 재확인합니다."
+    },
+    {
+      "id": "default_dark_common_003",
+      "platform": "default-dark",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 8,
+      "cooldownHours": 1,
+      "text": "암전 조건에서 클릭 의도 게이트 체감값과 스크롤 간섭 반응을 동시 검증합니다."
+    },
+    {
+      "id": "default_dark_uncommon_001",
+      "platform": "default-dark",
+      "theme": "entropy",
+      "slot": "body",
+      "rarity": "uncommon",
+      "weight": 3,
+      "cooldownHours": 10,
+      "text": "Entropy night note: low-luminance diagnostics synced, anomaly scan queued."
+    },
+    {
+      "id": "youtube_common_001",
+      "platform": "youtube",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 10,
+      "cooldownHours": 1,
+      "text": "새 업로드 테스트 중: 컷 전환, 자막 타이밍, 사운드 밸런스 체크 완료."
+    },
+    {
+      "id": "youtube_common_002",
+      "platform": "youtube",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 8,
+      "cooldownHours": 1,
+      "text": "오늘 브이로그는 작업실 세팅 업데이트 + 실제 편집 루틴 공개."
+    },
+    {
+      "id": "youtube_common_003",
+      "platform": "youtube",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 8,
+      "cooldownHours": 1,
+      "text": "촬영 장비 질문은 고정 댓글 링크를 확인해 주세요."
+    },
+    {
+      "id": "youtube_common_004",
+      "platform": "youtube",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 7,
+      "cooldownHours": 1,
+      "text": "다음 영상에서 컬러 그레이딩 워크플로우를 상세하게 다룹니다."
+    },
+    {
+      "id": "youtube_uncommon_001",
+      "platform": "youtube",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "uncommon",
+      "weight": 3,
+      "cooldownHours": 10,
+      "text": "신규 프로젝트 킥오프 촬영분 편집 중. 릴리즈 버전은 이번 주 공개 예정."
+    },
+    {
+      "id": "x_common_001",
+      "platform": "x",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 10,
+      "cooldownHours": 1,
+      "text": "Shipping a UI polish pass tonight. Motion + spacing diff screenshots soon."
+    },
+    {
+      "id": "x_common_002",
+      "platform": "x",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 8,
+      "cooldownHours": 1,
+      "text": "Just closed sprint review: latency issue fixed, rollout starts tomorrow."
+    },
+    {
+      "id": "x_common_003",
+      "platform": "x",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 8,
+      "cooldownHours": 1,
+      "text": "Hot take: clarity beats novelty when interaction speed is high."
+    },
+    {
+      "id": "x_common_004",
+      "platform": "x",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 7,
+      "cooldownHours": 1,
+      "text": "What is your default checklist before publishing a release build?"
+    },
+    {
+      "id": "x_uncommon_001",
+      "platform": "x",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "uncommon",
+      "weight": 3,
+      "cooldownHours": 8,
+      "text": "Thread draft ready: design rationale, performance notes, and rollout guardrails."
+    },
+    {
+      "id": "instagram_common_001",
+      "platform": "instagram",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 9,
+      "cooldownHours": 1,
+      "text": "오늘 피드: 데스크 셋업 리셋 + 작업 동선 정리 + 마감 루틴."
+    },
+    {
+      "id": "instagram_common_002",
+      "platform": "instagram",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 8,
+      "cooldownHours": 1,
+      "text": "짧은 릴스로 편집 전/후 비교 업로드했어요. 프로필 링크 참고."
+    },
+    {
+      "id": "instagram_common_003",
+      "platform": "instagram",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 8,
+      "cooldownHours": 1,
+      "text": "스토리에 작업 타임랩스 올렸습니다. 질문은 DM으로 주세요."
+    },
+    {
+      "id": "instagram_common_004",
+      "platform": "instagram",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 7,
+      "cooldownHours": 1,
+      "text": "이번 주는 미니멀 레이아웃 실험 주간. 결과물 곧 공유합니다."
+    },
+    {
+      "id": "instagram_uncommon_001",
+      "platform": "instagram",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "uncommon",
+      "weight": 3,
+      "cooldownHours": 8,
+      "text": "Carousel draft updated: before/after UI snapshots + component notes."
+    },
+    {
+      "id": "tiktok_common_001",
+      "platform": "tiktok",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 9,
+      "cooldownHours": 1,
+      "text": "30초 안에 오늘 작업 흐름 요약: 기획 -> 편집 -> 업로드."
+    },
+    {
+      "id": "tiktok_common_002",
+      "platform": "tiktok",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 8,
+      "cooldownHours": 1,
+      "text": "타건음 + 컷 편집 ASMR 버전. 다음 파트 요청 댓글 환영."
+    },
+    {
+      "id": "tiktok_common_003",
+      "platform": "tiktok",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 8,
+      "cooldownHours": 1,
+      "text": "새 프리셋 테스트 완료. 전/후 비교는 다음 클립에서 공개."
+    },
+    {
+      "id": "tiktok_common_004",
+      "platform": "tiktok",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "common",
+      "weight": 7,
+      "cooldownHours": 1,
+      "text": "작업실 야간 무드 세팅 완료. 짧은 비하인드 계속 올립니다."
+    },
+    {
+      "id": "tiktok_uncommon_001",
+      "platform": "tiktok",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "uncommon",
+      "weight": 3,
+      "cooldownHours": 8,
+      "text": "Short-form sequence pass complete. Next cut includes motion breakdown."
+    },
+    {
+      "id": "easter_default_001",
+      "platform": "default",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "rare",
+      "weight": 1,
+      "cooldownHours": 72,
+      "easterEgg": true,
+      "text": "Secondary channel handshake logged at 03:17."
+    },
+    {
+      "id": "easter_x_001",
+      "platform": "x",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "rare",
+      "weight": 1,
+      "cooldownHours": 72,
+      "easterEgg": true,
+      "text": "Draft 7C was archived before publish."
+    },
+    {
+      "id": "easter_youtube_001",
+      "platform": "youtube",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "rare",
+      "weight": 1,
+      "cooldownHours": 72,
+      "easterEgg": true,
+      "text": "Metadata tag M-13 detected in rendered timeline."
+    },
+    {
+      "id": "easter_instagram_001",
+      "platform": "instagram",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "rare",
+      "weight": 1,
+      "cooldownHours": 72,
+      "easterEgg": true,
+      "text": "Archived story frame restored from temp cache."
+    },
+    {
+      "id": "easter_tiktok_001",
+      "platform": "tiktok",
+      "theme": "any",
+      "slot": "body",
+      "rarity": "rare",
+      "weight": 1,
+      "cooldownHours": 72,
+      "easterEgg": true,
+      "text": "Clip checksum mismatch resolved after pass 2."
+    }
+  ]
+}

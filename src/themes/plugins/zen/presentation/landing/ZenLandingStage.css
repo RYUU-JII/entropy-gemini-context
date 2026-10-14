@@ -1,0 +1,252 @@
+.zenLandingStage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--zen-landing-ink);
+  background: var(--zen-landing-sky-top);
+  pointer-events: none;
+}
+
+.zenLandingArtifactPlane {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--zen-landing-ink);
+  pointer-events: none;
+}
+
+.zenLandingStage,
+.zenLandingStage *,
+.zenLandingArtifactPlane,
+.zenLandingArtifactPlane * {
+  box-sizing: border-box;
+}
+
+.zenLandingStage__sky,
+.zenLandingStage__stars,
+.zenLandingStage__sun,
+.zenLandingStage__lightField,
+.zenLandingStage__pondArchitecture,
+.zenLandingStage__mist,
+.zenLandingPond,
+.zenLandingArtifact,
+.zenLandingStage__shore,
+.zenLandingStage__vignette,
+.zenLandingStage__grain {
+  position: absolute;
+  inset: 0;
+}
+
+.zenLandingStage__sky {
+  z-index: 0;
+  background:
+    radial-gradient(
+      ellipse at 20% 4%,
+      rgb(255 251 235 / calc(0.2 + (var(--zen-landing-daylight) * 0.18))),
+      transparent 42%
+    ),
+    linear-gradient(
+      180deg,
+      var(--zen-landing-sky-top) 0%,
+      color-mix(in srgb, var(--zen-landing-sky-bottom) 78%, var(--zen-landing-shore)) 34%,
+      color-mix(in srgb, var(--zen-landing-sky-bottom) 68%, var(--zen-landing-shore)) 100%
+    );
+}
+
+.zenLandingStage__sun {
+  z-index: 2;
+  inset: var(--zen-landing-sun-y) auto auto var(--zen-landing-sun-x);
+  width: clamp(3.4rem, 5.8vw, 6.4rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgb(255 245 216 / 0.2);
+  opacity: calc(var(--zen-landing-sun-opacity) * 0.66);
+  background:
+    radial-gradient(circle at 42% 38%, rgb(255 245 213 / 0.72), rgb(231 203 158 / 0.22) 56%, transparent 72%);
+  box-shadow:
+    0 0 4.5rem rgb(238 183 129 / calc(0.08 + (var(--zen-landing-twilight) * 0.1))),
+    inset 0 0 1.8rem rgb(255 252 229 / 0.12);
+  transform: translateX(-50%);
+  filter: blur(1.2px);
+  mix-blend-mode: screen;
+}
+
+.zenLandingStage__stars {
+  z-index: 2;
+  opacity: calc(var(--zen-landing-night) * 0.34);
+  background-image:
+    radial-gradient(circle at 12% 17%, rgb(231 234 221 / 0.8) 0 0.6px, transparent 1.1px),
+    radial-gradient(circle at 32% 9%, rgb(231 234 221 / 0.55) 0 0.5px, transparent 1px),
+    radial-gradient(circle at 57% 21%, rgb(231 234 221 / 0.6) 0 0.6px, transparent 1.1px),
+    radial-gradient(circle at 78% 12%, rgb(231 234 221 / 0.68) 0 0.5px, transparent 1px),
+    radial-gradient(circle at 91% 28%, rgb(231 234 221 / 0.55) 0 0.6px, transparent 1.1px);
+  background-size: 29rem 19rem, 33rem 21rem, 41rem 23rem, 37rem 18rem, 27rem 22rem;
+  mask-image: linear-gradient(180deg, #000 0%, #000 34%, transparent 68%);
+}
+
+.zenLandingStage__lightField {
+  z-index: 1;
+  overflow: hidden;
+  opacity: calc(0.42 + (var(--zen-landing-daylight) * 0.32));
+  background:
+    linear-gradient(90deg, rgb(255 255 255 / 0.025), transparent 24% 76%, rgb(9 25 26 / 0.035)),
+    radial-gradient(ellipse at 48% 40%, rgb(255 250 229 / 0.13), transparent 56%);
+}
+
+.zenLandingStage__lightFieldGlow {
+  position: absolute;
+  top: 18%;
+  left: 16%;
+  width: 52%;
+  height: 38%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgb(255 244 215 / 0.14), transparent 70%);
+  filter: blur(32px);
+  opacity: calc(0.46 + (var(--zen-landing-dawn) * 0.28));
+  transform:
+    translate3d(calc(var(--zen-landing-journey-progress) * 18vw), calc(var(--zen-landing-journey-progress) * 7vh), 0)
+    rotate(-8deg);
+}
+
+.zenLandingStage__pondArchitecture {
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.zenLandingStage__pondPlane {
+  fill: color-mix(in srgb, var(--zen-landing-bank-rear) 20%, transparent);
+  fill-opacity: calc(0.08 + (var(--zen-landing-night) * 0.04));
+}
+
+.zenLandingStage__pondBank {
+  fill: color-mix(in srgb, var(--zen-landing-bank-near) 78%, var(--zen-landing-paper));
+  fill-opacity: calc(0.38 + (var(--zen-landing-night) * 0.08));
+}
+
+.zenLandingStage__pondRim {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+}
+
+.zenLandingStage__pondRim--rear {
+  stroke: color-mix(in srgb, var(--zen-landing-paper) 58%, var(--zen-landing-ink));
+  stroke-width: 1.15;
+  stroke-opacity: calc(0.18 + (var(--zen-landing-daylight) * 0.1));
+}
+
+.zenLandingStage__pondRim--near {
+  stroke: color-mix(in srgb, var(--zen-landing-shore) 68%, var(--zen-landing-ink));
+  stroke-width: 1.4;
+  stroke-opacity: 0.3;
+}
+
+.zenLandingStage__mist {
+  z-index: 3;
+  top: 26%;
+  bottom: auto;
+  height: 18%;
+  filter: blur(30px);
+  opacity: calc(0.18 + (var(--zen-landing-dawn) * 0.16));
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--zen-landing-mist) 27%, transparent) 32%,
+    color-mix(in srgb, var(--zen-landing-mist) 15%, transparent) 68%,
+    transparent
+  );
+}
+
+.zenLandingStage__mist--one {
+  transform: translateX(-9%);
+}
+
+.zenLandingStage__mist--two {
+  top: 42%;
+  opacity: 0.1;
+  transform: translateX(16%);
+}
+
+.zenLandingPond {
+  z-index: 4;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: var(--zen-landing-pond-opacity);
+}
+
+.zenLandingArtifact {
+  z-index: 9;
+  transition: opacity 420ms cubic-bezier(0.22, 0.72, 0.28, 1);
+}
+
+.zenLandingArtifact svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.zenLandingStage__shore {
+  z-index: 8;
+  top: auto;
+  height: 10%;
+  opacity: calc(0.28 + (var(--zen-landing-night) * 0.18));
+  background: linear-gradient(
+    180deg,
+    transparent,
+    color-mix(in srgb, var(--zen-landing-shore) 72%, rgb(4 12 14))
+  );
+}
+
+.zenLandingStage__vignette {
+  z-index: 9;
+  box-shadow: inset 0 0 clamp(5rem, 13vw, 14rem) rgb(4 12 17 / calc(0.1 + (var(--zen-landing-night) * 0.24)));
+  background:
+    radial-gradient(
+      circle at 52% 69%,
+      transparent 20%,
+      rgb(12 19 28 / calc(var(--zen-landing-invitation) * 0.06)) 60%,
+      rgb(7 14 23 / calc(var(--zen-landing-invitation) * 0.16))
+    ),
+    linear-gradient(
+      rgb(7 12 19 / calc(var(--zen-landing-invitation) * 0.08)),
+      rgb(7 12 19 / calc(var(--zen-landing-invitation) * 0.14))
+    );
+}
+
+.zenLandingStage__grain {
+  z-index: 10;
+  opacity: calc(0.04 - (var(--zen-landing-invitation) * 0.018));
+  background-image:
+    repeating-radial-gradient(circle at 17% 29%, rgb(255 255 255 / 0.38) 0 0.35px, transparent 0.6px 3px),
+    repeating-radial-gradient(circle at 71% 63%, rgb(0 0 0 / 0.35) 0 0.3px, transparent 0.6px 4px);
+  background-size: 5px 7px, 7px 5px;
+  mix-blend-mode: soft-light;
+}
+
+.zenLandingArtifactPlane[data-motion="reduced"] .zenLandingArtifact,
+.zenLandingStage[data-motion="reduced"] .zenLandingPond {
+  transition: none;
+}
+
+@media (max-width: 720px) {
+  .zenLandingStage__pondRim--rear {
+    stroke-opacity: 0.16;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zenLandingArtifact,
+  .zenLandingPond {
+    transition: none;
+  }
+}

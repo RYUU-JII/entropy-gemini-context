@@ -1,0 +1,61 @@
+import { THEME_IDS } from '../../core/ids.js';
+import {
+    SCHEDULE_RECIPE_VARIANTS,
+    SCHEDULE_TEXTURE_BLEND_MODES,
+    createScheduleVisualPolicy,
+} from '../../core/schedule/policyContract.js';
+import { SCHEDULE_TEXTURES } from '../../core/schedule/textureLibrary.js';
+
+export const matrixScheduleVisualPolicy = createScheduleVisualPolicy({
+    themeId: THEME_IDS.MATRIX,
+    recipes: {
+        shell: SCHEDULE_RECIPE_VARIANTS.shell.FRAMED,
+        heading: SCHEDULE_RECIPE_VARIANTS.heading.PAGE_HEADER,
+        status: SCHEDULE_RECIPE_VARIANTS.status.PAGE_HEADER,
+        rhythmIdentity: SCHEDULE_RECIPE_VARIANTS.rhythmIdentity.COUNTED_TABS,
+        timeline: SCHEDULE_RECIPE_VARIANTS.timeline.FRAMED_TRACK,
+        workbench: SCHEDULE_RECIPE_VARIANTS.workbench.STANDARD_PANEL,
+        utilities: SCHEDULE_RECIPE_VARIANTS.utilities.FLOATING,
+        specialSession: SCHEDULE_RECIPE_VARIANTS.specialSession.FLOATING_CARD,
+    },
+    typography: {
+        body: '"Share Tech Mono", monospace',
+        label: '"Share Tech Mono", monospace',
+        title: '"VT323", monospace',
+        time: '"Share Tech Mono", monospace',
+        titleLetterSpacing: '0.2em',
+    },
+    tokens: {
+        canvas: '#050B06',
+        pageBackground: 'transparent',
+        panelBackground: 'rgba(6, 18, 10, 0.86)',
+        stageSurface: '#09160C',
+        stageHighlight: '#0D1F12',
+        stageDepth: '#030704',
+        stageEdge: '#205C33',
+        stageRidge: '#175728',
+        timeFieldSurface: '#050B06',
+        workbenchSurface: 'rgba(6, 18, 10, 0.86)',
+        workbenchSelectedSurface: 'rgba(9, 32, 18, 0.92)',
+        workbenchSeam: '#205C33',
+        inkPrimary: '#C4FFC9',
+        inkMuted: '#7ECF88',
+        relaxationWash: '#2DD4BF',
+        relaxationInk: '#0F766E',
+        currentMarker: '#78FFA5',
+        focusMarker: '#0F766E',
+        isolationInk: '#3CE885',
+        danger: '#EF4444',
+        onDarkInk: '#021105',
+        shadowInk: '#000000',
+        panelControlSurface: 'rgba(255, 255, 255, 0.32)',
+    },
+    timeline: {
+        textureImage: SCHEDULE_TEXTURES.GRID_FINE,
+        textureOpacity: 0.12,
+        textureSize: null,
+        textureBlendMode: SCHEDULE_TEXTURE_BLEND_MODES.SCREEN,
+        idleBlockOpacity: 14,
+        selectedBlockOpacity: 20,
+    },
+});

@@ -1,0 +1,43 @@
+.zen-pond-invitation-entry {
+    position: absolute;
+    z-index: 24;
+    max-width: calc(100% - 40px);
+    min-height: 44px;
+    padding: 8px 4px;
+    transform: translateX(-50%);
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--zen-water-ink);
+    font-family: var(--font-theme-ui);
+    font-size: var(--zen-type-caption);
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: var(--zen-tracking-caption);
+    text-align: center;
+    text-shadow: 0 1px 8px var(--zen-water-ink-shadow);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease;
+    cursor: pointer;
+}
+
+.zen-pond-invitation-entry[data-first-use-hint="true"],
+.zen-pond-invitation-entry[data-invitation-attending="true"],
+.zen-pond-invitation-entry:hover,
+.zen-pond-invitation-entry:focus,
+.zen-pond-invitation-entry:focus-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.zen-pond-invitation-entry:focus-visible {
+    outline: 1px solid color-mix(in srgb, var(--zen-water-ink) 80%, transparent);
+    outline-offset: 5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .zen-pond-invitation-entry {
+        transition: none;
+    }
+}

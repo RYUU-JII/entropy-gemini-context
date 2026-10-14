@@ -1,0 +1,75 @@
+.entropy-feed-app[data-view=shortform] .feed-main { height: 100svh; overflow: hidden; }
+.short-stage { position: relative; height: calc(100svh - 68px); background: var(--feed-surface-soft); }
+.short-viewport { height: 100%; overflow-y: auto; overflow-x: hidden; scroll-snap-type: y mandatory; overscroll-behavior-y: contain; scrollbar-width: none; outline-offset: -3px !important; }
+.short-viewport::-webkit-scrollbar { display: none; }
+.short-card, .short-terminus { height: 100%; scroll-snap-align: start; scroll-snap-stop: always; position: relative; }
+.short-card { display: flex; justify-content: center; align-items: center; padding: 14px 0; }
+.short-surface { height: 100%; aspect-ratio: 9 / 16; max-width: calc(100% - 76px); position: relative; border-radius: 10px; overflow: hidden; background: #192229; box-shadow: 0 8px 28px var(--feed-shadow); isolation: isolate; transform: scale(0.94); opacity: 0.66; transition: transform 420ms cubic-bezier(.2,.75,.2,1), opacity 350ms ease; }
+.short-card[data-active=true] .short-surface { transform: scale(1); opacity: 1; }
+.short-surface :focus-visible { outline-color: #fff; }
+.short-video { position: absolute; inset: 0; overflow: hidden; }
+.short-video video { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(calc(1 - var(--short-desaturation))) blur(var(--short-blur)); }
+.short-playback-surface { position: absolute; inset: 0; display: grid; place-items: center; border: 0; background: transparent; width: 100%; height: 100%; touch-action: pan-y; }
+.short-playback-surface:focus-visible { outline-offset: -8px !important; }
+.short-play-indicator { width: 70px; height: 70px; display: grid; place-items: center; border-radius: 50%; background: #0004; color: #fff; backdrop-filter: blur(8px); }
+.short-play-indicator svg { margin-left: 4px; fill: currentColor; }
+.short-video-progress { position: absolute; z-index: 4; left: 0; right: 0; bottom: 0; height: 2px; background: #ffffff20; pointer-events: none; }
+.short-video-progress > span { display: block; width: 100%; height: 100%; background: #ffffffb3; transform-origin: left; transition: transform 240ms linear; }
+.short-video-error { position: absolute; top: 45%; left: 15px; right: 15px; text-align: center; background: #101214d9; color: #f2b7a3; font-size: 12px; padding: 15px; pointer-events: none; }
+.short-shade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(#0003, transparent 24%, transparent 50%, #0009); pointer-events: none; }
+.short-profile { position: absolute; z-index: 2; top: 23px; left: 20px; right: 20px; display: flex; align-items: center; gap: 10px; pointer-events: none; }
+.short-profile > span { font-size: 12px; font-weight: 500; color: #fff; text-shadow: 0 1px 12px #0007; }
+.short-profile-avatar { width: 39px; height: 39px; display: grid; place-items: center; padding: 0; border: 1px solid #ffffff80; background: #25322ab3; color: #e8f2d9 !important; border-radius: 50%; pointer-events: auto; }
+.short-caption { position: absolute; z-index: 2; bottom: 36px; left: 22px; right: 80px; pointer-events: none; color: #fff; text-shadow: 0 1px 10px #0005; }
+.short-caption > strong { display: block; font-size: 12px; font-weight: 600; margin-bottom: 9px; }
+.short-caption h2 { font-size: 16px; font-weight: 500; letter-spacing: -0.4px; }
+.short-caption p { margin-top: 8px; font-size: 11px; line-height: 1.9; opacity: 0.8; }
+.short-actions { position: absolute; z-index: 3; right: 13px; bottom: 37px; display: flex; flex-direction: column; align-items: center; gap: 21px; color: #fff; }
+.short-actions > button { display: grid; justify-items: center; gap: 4px; min-width: 42px; min-height: 44px; padding: 2px; border: 0; background: none; color: #fff; filter: drop-shadow(0 1px 5px #0004); }
+.short-actions > button > span { font-size: 10px; line-height: 1.5; opacity: var(--short-signal-opacity); }
+.short-actions > button.is-liked { color: #f29e9b; }
+.short-actions > button.is-liked svg { fill: #f29e9b; }
+.short-card-reel .short-profile { top: auto; left: auto; right: 15px; bottom: 256px; }
+.short-card-reel .short-profile > span { display: none; }
+.short-card-story .short-profile { top: 29px; }
+.short-card-story .short-video-progress { top: 14px; left: 18px; right: 18px; bottom: auto; border-radius: 4px; }
+.short-card-story .short-caption { bottom: 37px; }
+.short-card-clip .short-surface { background: var(--feed-elevated); }
+.short-card-clip .short-surface :focus-visible { outline-color: var(--feed-accent); }
+.short-card-clip .short-playback-surface:focus-visible { outline-color: #fff; }
+.short-card-clip .short-profile { top: 16px; }
+.short-card-clip .short-profile > span { color: var(--feed-text); text-shadow: none; }
+.short-card-clip .short-profile-avatar { width: 32px; height: 32px; border-color: var(--feed-border); background: var(--feed-avatar-bg); color: var(--feed-avatar-text) !important; }
+.short-card-clip .short-video { top: 65px; bottom: 140px; }
+.short-card-clip .short-shade { display: none; }
+.short-card-clip .short-caption { bottom: 65px; left: 20px; right: 20px; color: var(--feed-text); text-shadow: none; }
+.short-card-clip .short-caption h2 { font-size: 14px; }
+.short-card-clip .short-caption p { margin-top: 3px; font-size: 10px; }
+.short-card-clip .short-actions { bottom: 12px; right: auto; left: 16px; flex-direction: row; gap: 18px; }
+.short-card-clip .short-actions > button { display: flex; gap: 7px; color: var(--feed-secondary); filter: none; }
+.short-card-clip .short-actions > button.is-liked { color: var(--feed-like); }
+.short-card-clip .short-actions > button.is-liked svg { fill: var(--feed-like); }
+.short-card-clip .short-actions svg { width: 23px; height: 23px; }
+.short-like-burst { position: absolute; z-index: 5; left: calc(50% - 45px); top: calc(45% - 45px); color: #fff; pointer-events: none; animation: short-heart 680ms cubic-bezier(.18,.7,.22,1) both; filter: drop-shadow(0 6px 20px #0004); }
+.short-like-burst svg { fill: currentColor; stroke-width: 1; }
+.short-page-controls { position: absolute; right: 9px; top: calc(50% - 48px); z-index: 4; display: grid; gap: 11px; }
+.short-page-controls > button { border: 1px solid var(--feed-border-bright); border-radius: 50%; width: 34px; height: 34px; background: var(--feed-surface); display: grid; place-items: center; color: var(--feed-secondary); }
+.short-page-controls > button:first-child svg { transform: rotate(-90deg); }
+.short-page-controls > button:last-child svg { transform: rotate(90deg); }
+.short-page-controls > button:hover { color: var(--feed-accent); border-color: var(--feed-secondary); }
+.short-terminus { overflow-y: auto; scrollbar-width: thin; }
+.short-comparison-poster { width: 100%; max-height: 420px; object-fit: cover; display: block; filter: blur(var(--post-blur)); }
+.short-terminus > .feed-horizon { min-height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.short-terminus > .feed-terminus-void { min-height: 60%; }
+.short-terminus .feed-horizon-boundary { align-self: stretch; }
+.short-terminus .short-comparison-poster { max-height: 360px; }
+@keyframes short-heart { 0% { transform: scale(.4) rotate(-14deg); opacity: 0; } 25% { transform: scale(1.13) rotate(8deg); opacity: 1; } 55% { transform: scale(1); opacity: 1; } 100% { transform: translateY(-40px) scale(.85); opacity: 0; } }
+@media (max-width: 760px) {
+  .entropy-feed-app[data-view=shortform] .feed-main { height: calc(100svh - 61px - env(safe-area-inset-bottom)); padding-bottom: 0; }
+  .short-stage { height: calc(100svh - 122px - env(safe-area-inset-bottom)); }
+  .short-card { padding: 0; }
+  .short-surface { height: 100%; width: 100%; max-width: none; aspect-ratio: auto; border-radius: 0; }
+  .short-page-controls { right: 9px; top: 22%; opacity: .7; }
+  .short-page-controls > button { width: 30px; height: 30px; background: #11121455; border-color: #ffffff30; color: #fff; }
+  .short-caption { bottom: 30px; }
+}

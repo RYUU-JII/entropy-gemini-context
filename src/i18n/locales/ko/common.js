@@ -1,0 +1,647 @@
+export default {
+  "app": {
+    "title": "엔트로피"
+  },
+  "action": {
+    "save": "저장",
+    "cancel": "취소",
+    "confirm": "확인",
+    "delete": "삭제",
+    "edit": "편집",
+    "close": "닫기",
+    "clear": "지우기",
+    "back": "뒤로"
+  },
+  "prev": "이전",
+  "next": "다음",
+  "status": {
+    "loading": "로딩 중...",
+    "error": "오류"
+  },
+  "popup": {
+    "media_support": {
+      "label": "미디어",
+      "title": "임베디드 미디어",
+      "scope": "현재 탭에 연결된 임베디드 프레임의 미디어 제어 상태입니다.",
+      "refresh": "다시 확인",
+      "loading": "확인 중…",
+      "load_failed": "미디어 지원 상태를 불러오지 못했습니다. 다시 확인해 주세요.",
+      "coverage_unknown": "프레임 탐지 범위가 확인되지 않았습니다. 상태를 보고한 프레임이 없습니다.",
+      "coverage_known": "연결된 프레임 {{count}}개의 보고입니다. 다른 임베디드 프레임은 아직 탐지되지 않았을 수 있습니다.",
+      "detected": "발견한 미디어",
+      "count": "{{count}}개",
+      "count_partial": "최소 {{count}}개",
+      "unobserved": "미확인",
+      "pause_supported": "정지 제어 가능",
+      "command_accepted": "제어 요청 수락",
+      "pause_verified": "실제 정지 확인",
+      "resume_supported": "재개 제어 가능",
+      "frames": "프레임 {{count}}개",
+      "seek": "건너뛰기 제어",
+      "seek_unavailable": "여기서는 미지원",
+      "hold_active": "현재 탭에서 미디어 정지 유지 요청이 활성화되어 있습니다.",
+      "hold_inactive": "현재 탭에 활성화된 원격 미디어 정지 유지가 없습니다.",
+      "evidence_scope": "탐지나 요청 수락만으로 정지가 확인되지는 않습니다. 정지 확인은 마지막 보고 시점의 결과입니다.",
+      "managed_by_top": "동일 출처 임베드는 페이지에서 직접 제어하므로 원격 정지 확인 결과를 보고하지 않습니다.",
+      "partial": "일부 프레임의 미디어 제어가 확인되지 않았습니다.",
+      "permission_title": "임베디드 호스트 접근",
+      "permission_scope": "목록의 호스트에 미디어 제어를 허용할 수 있습니다. 각 버튼은 표시된 호스트에만 접근 권한을 요청합니다.",
+      "allow_origin": "{{origin}} 허용",
+      "granted_reload": "접근이 허용되었습니다. 현재 탭을 새로고침한 뒤 미디어 지원을 다시 확인해 주세요.",
+      "permission_denied": "접근이 허용되지 않아 임베디드 미디어 지원이 제한됩니다.",
+      "permission_failed": "임베디드 호스트 권한을 요청하지 못했습니다. 다시 시도해 주세요.",
+      "port_unsupported": "브라우저에서 요청한 포트만 권한 범위로 지정할 수 없어 접근을 요청하지 않았습니다."
+    },
+    "status": {
+      "loading": "불러오는 중...",
+      "error": "오류"
+    },
+    "metric_lines": {
+      "today_top": "오늘",
+      "today_bottom": "",
+      "seven_day_avg_top": "최근 7일",
+      "seven_day_avg_bottom": "일평균",
+      "share_today_top": "오늘",
+      "share_today_bottom": "비중"
+    },
+    "labels": {
+      "unsupported_page": "지원되지 않는 페이지",
+      "today": "오늘",
+      "today_hint": "현재까지 사용",
+      "seven_day_avg": "최근 7일 일평균",
+      "share_today": "오늘 비중",
+      "daily_goal": "하루 목표",
+      "progress_against_goal": "{{goal}}분 목표 중",
+      "no_goal": "시간 미설정",
+      "register_site": "사이트 보호"
+    },
+    "actions": {
+      "start_protection": "보호 시작",
+      "start_in_dashboard": "정원에서 시작하기",
+      "starting_protection": "보호 시작 중...",
+      "start_isolation_session": "결계 시작",
+      "starting_special_session": "세션 시작 중...",
+      "end_special_session": "현재 세션 종료",
+      "ending_special_session": "세션 종료 중...",
+      "allow_current_site_for_session": "이번 세션에서 이 사이트 허용",
+      "allowing_current_site_for_session": "사이트 허용 중...",
+      "open_sites": "사이트 열기",
+      "open_dashboard": "대시보드 열기",
+      "unsupported": "설정 불가",
+      "end_occurrence": "이번만 끝내기"
+    },
+    "messages": {
+      "page_unavailable": "이 페이지는 여기서 보호할 수 없어요.",
+      "load_error": "현재 사이트 정보를 불러오지 못했어요.",
+      "permission_required": "이 도메인을 보호하려면 사이트 권한이 필요해요.",
+      "permission_hint": "브라우저 권한에서 허용하면 바로 적용돼요.",
+      "registration_in_dashboard": "처음 다섯 사용일 동안은 정원에서 사이트를 연결해요.",
+      "dashboard_hint": "저장한 사이트는 대시보드에서 볼 수 있어요.",
+      "protect_success": "{{hostname}} 보호를 시작했습니다.",
+      "protect_error": "보호 목표를 저장하지 못했어요.",
+      "registration_limit_reached": "지금은 사이트를 {{limit}}개까지 등록할 수 있어요. {{nextDay}}번째 사용일에 등록 한도가 늘어나요.",
+      "special_session_started": "{{minutes}}분 결계을 시작했어요.",
+      "special_session_load_error": "현재 결계 상태를 읽지 못했어요.",
+      "special_session_error": "결계을 시작하지 못했어요.",
+      "special_session_ended": "특별 세션을 종료했어요.",
+      "special_session_end_error": "현재 세션을 종료하지 못했어요.",
+      "special_session_site_allowed": "이번 세션에서 {{hostname}}를 허용했어요.",
+      "special_session_site_allow_error": "현재 세션에서 이 사이트를 허용하지 못했어요.",
+      "dashboard_goal_hint": "시간은 Sites의 사이트 노트에서 설정합니다."
+    },
+    "isolation_picker": {
+      "title": "결계",
+      "duration_minutes": "{{minutes}}분",
+      "start": "시작",
+      "cancel": "닫기"
+    },
+    "permission_sheet": {
+      "eyebrow": "사이트 권한",
+      "title": "{{domain}} 보호 시작?",
+      "body": "이 사이트에 대한 접근을 허용하면 현재 페이지에서 보호를 시작합니다.",
+      "scope": "이 사이트만",
+      "scope_detail": "권한은 현재 사이트에만 붙어요. 다른 사이트는 따로 허용하기 전까지 건드리지 않아요.",
+      "local_only": "로컬 처리",
+      "local_only_detail": "설정과 사용 기록은 이 기기에서 처리·보관되며 외부로 자동 전송되지 않아요.",
+      "immediate_apply": "즉시 적용",
+      "immediate_apply_detail": "허용하면 이 창의 현재 페이지부터 바로 보호가 작동해요. 새로고침할 필요 없어요.",
+      "cancel": "나중에",
+      "confirm": "이 사이트만 허용"
+    },
+    "state": {
+      "unavailable": "설정 불가",
+      "not_protected": "아직 보호 안 됨",
+      "protected": "보호 중",
+      "near_goal": "목표 근접",
+      "over_goal": "목표 초과",
+      "tightening": "보호 강화 중",
+      "active_now": "보호 작동 중"
+    },
+    "state_detail": {
+      "unavailable": "일반 웹사이트를 열어 사이트 보호를 시작하세요.",
+      "not_protected": "사이트 보호를 시작할 수 있습니다. 시간은 Sites 노트에서 설정합니다.",
+      "protected": "이 사이트를 목표 시간 쪽으로 조용히 유도하고 있어요.",
+      "near_goal": "오늘 목표에 가까워졌어요. 필요하면 보호 강도가 올라가요.",
+      "over_goal": "오늘 목표를 넘겼어요. 보호가 더 강해질 수 있어요.",
+      "tightening": "현재 세션을 다시 목표 쪽으로 끌어오고 있어요."
+    },
+    "diagnostics": {
+      "title": "사이트 진단",
+      "none": "없음",
+      "level": "정책 Lv{{level}}",
+      "filter_source": "{{label}} · {{source}}",
+      "summary_unavailable": "이 페이지는 보호 런타임 밖에 있어요.",
+      "summary_unprotected": "이 페이지에는 아직 사이트 규칙이 없어요.",
+      "summary_idle": "사이트 규칙은 켜져 있지만 현재 작동 중인 런타임 필터는 없어요.",
+      "summary_filters": "현재 {{count}}개의 런타임 필터가 작동 중이에요.",
+      "rows": {
+        "policy": "정책",
+        "filters": "필터",
+        "tools": "도구"
+      },
+      "filter_sources": {
+        "user_config": "사용자 설정",
+        "policy": "적응 정책",
+        "runtime_artifact": "런타임 도구"
+      },
+      "filters": {
+        "blur": "콘텐츠 블러",
+        "saturation": "그레이스케일",
+        "brightness": "밝기",
+        "contrast": "대비",
+        "color_saturation": "채도",
+        "text_rhythm": "텍스트 리듬",
+        "click_delay": "클릭 일시정지",
+        "enso_gate": "의도 문턱",
+        "scroll_friction": "스크롤 관성",
+        "input_delay": "입력 지연",
+        "input_visual_brake": "먹의 저항",
+        "navigation_button_lock": "되돌리기 잠금",
+        "social_metrics": "소셜 숫자",
+        "infinite_scroll": "무한 스크롤",
+        "short_form": "숏폼 차단",
+        "video_skip": "스킵 가드",
+        "temporal": "시간대 베일",
+        "hide_icons": "아이콘 베일",
+        "unknown": "필터",
+        "text_shadow": "텍스트 그림자"
+      },
+      "artifacts": {
+        "loop_breaker": "루프 브레이커",
+        "time_anchor": "타임 앵커",
+        "sentinel_flare": "센티넬 플레어",
+        "memory_purge": "메모리 퍼지",
+        "unknown": "도구",
+        "entry_checkpoint": "진입 확인",
+        "return_guard": "재방문 가드",
+        "detour_spread_guard": "우회 확산 가드"
+      }
+    },
+    "attention": {
+      "label": "주의가 필요한 활성 효과",
+      "active_filter": "{{label}} 적용 중",
+      "active_artifact": "{{label}} 작동 중"
+    },
+    "artifacts": {
+      "lens": "Lens",
+      "veil": "Veil",
+      "barrier": "Barrier",
+      "flare": "Flare",
+      "echo": "Echo",
+      "gate": "Gate"
+    },
+    "format": {
+      "minutes_short": "{{count}}분",
+      "hours_minutes_short": "{{hours}}시간 {{minutes}}분",
+      "percent": "{{value}}%",
+      "per_day": "분/일",
+      "hours_suffix": "시간",
+      "minutes_suffix": "분"
+    },
+    "fallback": {
+      "title": "Entropy Popup",
+      "description": "팝업 로드 중 오류가 발생했습니다.",
+      "unknown_error": "알 수 없는 오류",
+      "bootstrap_failed": "팝업 부트스트랩 실패"
+    },
+    "design": {
+      "effects": "적용 중인 효과",
+      "filter": "필터",
+      "artifact": "아티팩트",
+      "no_effects": "현재 적용 중인 효과가 없습니다. 사이트 보호 규칙은 유지됩니다.",
+      "remaining": "{{duration}} 남음",
+      "over": "{{duration}} 초과",
+      "isolation": "결계",
+      "session": "결계",
+      "running": "실행 중",
+      "dashboard": "대시보드",
+      "sites": "사이트",
+      "session_hint": "잠시 다른 사이트로 향하는 길을 닫아두세요. 결계할 시간을 선택합니다.",
+      "session_active_hint": "결계가 실행 중입니다. 현재 사이트의 임시 허용과 세션 종료를 관리할 수 있습니다."
+    },
+    "effect_descriptions": {
+      "blur": "이미지와 영상의 윤곽을 살짝 흐립니다.",
+      "saturation": "페이지 전체의 색을 회색에 가깝게 낮춥니다.",
+      "brightness": "이미지와 영상의 밝기를 낮춥니다.",
+      "contrast": "이미지와 영상의 밝고 어두운 차이를 줄입니다.",
+      "color_saturation": "이미지와 영상의 색 선명도를 낮춥니다.",
+      "text_rhythm": "텍스트를 읽는 리듬에 마찰을 더합니다.",
+      "click_delay": "클릭에 잠깐의 멈춤을 더합니다.",
+      "enso_gate": "계속하기 전에 의도를 확인합니다.",
+      "scroll_friction": "스크롤 움직임에 저항을 더합니다.",
+      "input_delay": "입력 반응을 늦춥니다.",
+      "input_visual_brake": "입력 화면에 시각적인 저항을 더합니다.",
+      "navigation_button_lock": "일부 탐색 버튼 사용을 제한합니다.",
+      "social_metrics": "좋아요 등 소셜 숫자의 자극을 줄입니다.",
+      "infinite_scroll": "끝없는 스크롤 흐름에 제동을 겁니다.",
+      "short_form": "짧은 영상으로 이어지는 접근을 제한합니다.",
+      "video_skip": "영상 건너뛰기에 마찰을 더합니다.",
+      "temporal": "시간대에 맞춰 화면에 베일을 적용합니다.",
+      "hide_icons": "아이콘의 시각적 자극을 줄입니다.",
+      "loop_breaker": "반복되는 탐색 흐름에 개입합니다.",
+      "time_anchor": "숏폼 접근과 영상 건너뛰기에 개입합니다.",
+      "sentinel_flare": "주의를 되돌리는 개입이 작동 중입니다.",
+      "memory_purge": "기록 정리 아티팩트가 작동 중입니다.",
+      "text_shadow": "글자에 그림자를 더해 읽기에 마찰을 줍니다.",
+      "entry_checkpoint": "사이트 진입 전 의도를 확인합니다.",
+      "return_guard": "사이트로 되돌아올 때 잠시 멈추게 합니다.",
+      "detour_spread_guard": "여러 사이트로 우회하는 흐름에 개입합니다."
+    }
+  },
+  "dashboard": {
+    "main_panel": {
+      "loading_module": "모듈 로딩 중...",
+      "load_failed": "작업 공간을 불러오지 못했습니다",
+      "retry": "다시 시도",
+      "missing_tab_title": "탭 없음",
+      "missing_tab_placeholder": "탭을 찾지 못했습니다."
+    }
+  },
+  "indicator": {
+    "aria_label": "마찰 상태",
+    "status": {
+      "on": "필터 적용중",
+      "off": "필터 비활성"
+    },
+    "reason": {
+      "hard_block_window": "시간대 강력차단",
+      "global_cap_exceeded": "전체 한도 도달",
+      "allowed_window": "예외 시간",
+      "default": "정책 적용 중",
+      "standard_clean_phase": "초기 예외 구간",
+      "standard_mud_phase": "점진적 마찰 증가",
+      "standard_wall_phase": "강력 개입 단계",
+      "filtered": "필터 적용중",
+      "video_alert": "스킵 차단"
+    },
+    "video": {
+      "skip_guard": "스킵 가드",
+      "skip_guard_active": "스킵 감시중",
+      "skip_guard_waiting": "스킵 대기",
+      "skip_guard_locked": "완전 차단",
+      "skip_guard_cooldown": "{{seconds}}초 대기",
+      "phrases": {
+        "flow_preserved": "시간의 궤적 유지",
+        "skip_restrained": "도약 무효화",
+        "stay_present": "현재 시점 고정",
+        "release_haste": "의도 기각됨",
+        "stone_patience": "공백 감지됨",
+        "cycle_returns": "인과율 복원됨",
+        "night_calm": "심야 도약 차단",
+        "take_breath": "피로 누적 감지됨",
+        "pause_is_journey": "새벽 도약 기각됨",
+        "this_too_shall_pass": "지름길 없음",
+        "wind_trace": "도약 궤적 소멸",
+        "silent_monolith": "모노리스 침묵 유지",
+        "easter_egg_mirage": "도달했다고 착각한 미래.",
+        "easter_egg_signature": "백야의 포식자"
+      }
+    },
+    "time": {
+      "now_available": "지금 가능",
+      "in_minutes": "{{count}}분 후",
+      "today_at": "오늘 {{time}}",
+      "date_at": "{{date}} {{time}}"
+    },
+    "filters": {
+      "blur": "블러",
+      "saturation": "그레이스케일",
+      "brightness": "밝기",
+      "contrast": "대비",
+      "color_saturation": "채도",
+      "text_rhythm": "텍스트 리듬",
+      "text_shadow": "그림자",
+      "click_delay": "클릭멈춤",
+      "enso_gate": "의도문턱",
+      "scroll_friction": "스크롤",
+      "input_delay": "입력지연",
+      "input_visual_brake": "먹의 저항",
+      "navigation_button_lock": "되돌리기",
+      "social_metrics": "숫자숨김",
+      "none": "적용된 필터 없음"
+    },
+    "tooltip": {
+      "accumulated_time": "누적 시간",
+      "next_available": "다음 가능",
+      "limit_time": "설정 제한",
+      "limit_none": "제한 없음",
+      "minutes_only": "{{minutes}}분",
+      "schedule_block_badge": "스케줄 차단 시간대",
+      "status_active": "필터 적용됨",
+      "status_waiting": "대기 중",
+      "hours_minutes": "{{hours}}시간 {{minutes}}분"
+    },
+    "edge": {
+      "open_site": "{{domain}} 사이트 기록 열기",
+      "loading": "사용 시간 확인 중",
+      "unavailable": "사용 시간 확인 불가",
+      "usage": "{{minutes}}/{{limit}}분",
+      "usage_without_limit": "{{minutes}}분",
+      "open_failed": "기록을 열지 못했습니다. 다시 시도해 주세요."
+    },
+    "feedback": {
+      "video_blocked": "영상 건너뛰기 제한 중",
+      "shortform_blocked": "숏폼 이동 제한 중"
+    }
+  },
+  "clse_alert": {
+    "title_default": "부하 경보",
+    "dismiss": "경보 닫기",
+    "monitoring": "행동 신호를 모니터링하는 중입니다.",
+    "just_now": "방금 전",
+    "severity": "심각도: {{value}}%",
+    "detail": {
+      "value": "값 {{value}}",
+      "repeat_count": "반복 {{count}}회",
+      "window_count": "구간 {{count}}개",
+      "duration": "지속 {{seconds}}초",
+      "components": "구성 요소 {{value}}",
+      "fallback": "행동 신호가 감지되었습니다."
+    },
+    "type": {
+      "tab_spike": "탭 전환 급증 감지",
+      "nav_spike": "탐색 급증 감지",
+      "scroll_spike": "과도한 스크롤 감지",
+      "composite_spike": "복합 부하 급증 감지",
+      "sustained_load_start": "지속 부하 감지",
+      "sustained_load_escalation": "지속 부하 상승 중",
+      "page_loop_detected": "페이지 루프 감지",
+      "site_loop_detected": "사이트 루프 감지"
+    }
+  },
+  "gate_alert": {
+    "title_default": "게이트 개입 중",
+    "dismiss": "게이트 알림 닫기",
+    "just_now": "방금 전",
+    "detail_fallback": "계속하기 전에 한 번 멈추세요.",
+    "status": {
+      "low": "가벼운 게이트",
+      "mid": "게이트 개입 중",
+      "high": "강한 게이트"
+    },
+    "actions": {
+      "continue": "계속 보기",
+      "continue_countdown": "계속 보기 {{seconds}}초",
+      "leave": "돌아가기",
+      "processing": "처리 중..."
+    },
+    "type": {
+      "entry_checkpoint": "입장 확인",
+      "return_guard": "복귀 제동",
+      "detour_spread_guard": "탭 확산 방지"
+    },
+    "detail": {
+      "entry_checkpoint": "지금 정말 들어갈지 잠깐만 확인하세요.",
+      "return_guard": "방금 나왔던 사이트로 너무 빨리 돌아오고 있어요.",
+      "return_guard_recent": "{{seconds}}초 만에 다시 돌아왔어요. 한 번 더 의도적으로 선택하세요.",
+      "return_guard_with_cooldown": "{{returnSeconds}}초 만에 다시 돌아왔어요. 냉각 {{cooldownSeconds}}초를 넘기고 계속할지 정하세요.",
+      "detour_spread_guard": "같은 사이트 탭이 퍼지기 전에 한 번 멈추세요.",
+      "detour_spread_guard_tabs": "같은 사이트 탭이 {{tabCount}}개 열려 있어요. 한 탭으로 정리할지 먼저 정해 주세요.",
+      "detour_spread_guard_switches": "같은 사이트 탭이 퍼지기 전에 한 번 멈추세요.",
+      "detour_spread_guard_mixed": "같은 사이트 탭이 {{tabCount}}개 열려 있어요. 한 탭으로 정리할지 먼저 정해 주세요."
+    }
+  },
+  "social": {
+    "instagram": {
+      "like": "좋아요",
+      "comment": "댓글",
+      "repost": "리포스트",
+      "posts": "게시물",
+      "follower": "팔로워",
+      "following": "팔로잉",
+      "views": "조회수",
+      "upload": "업로드"
+    },
+    "actions": {
+      "like": "좋아요",
+      "comment": "댓글"
+    }
+  },
+  "scroll_flow_interrupt": {
+    "title_default": "스크롤 흐름 차단",
+    "title_zen": "루프가 절단되었습니다",
+    "subtitle_zen": "불빛이 원인을 지울 때까지 손을 잠깐 멈추세요",
+    "cta_default": "계속 보기 (길게 누르기)",
+    "cta_zen": "불빛 가라앉히기 (길게 누르기)",
+    "reason": {
+      "default": "흐름이 다시 자동으로 빨라지고 있어요",
+      "fast_forward": "멈춤 없이 피드가 계속 전진하고 있어요",
+      "fresh_items": "새 항목을 멈춤 없이 빠르게 넘기고 있어요",
+      "paged_transition": "항목이 너무 빠르게 바뀌고 있어요",
+      "relapsed": "방금 풀고 다시 같은 흐름으로 돌아왔어요"
+    }
+  },
+  "boot": {
+    "system_boot": "시스템 부팅",
+    "initializing_kernel": "커널 초기화 중...",
+    "loading_modules": "모듈 로딩 중...",
+    "establishing_uplink": "업링크 연결 중...",
+    "sequence": {
+      "initializing_void_runner": "VOID_RUNNER 커널 초기화 중...",
+      "loading_tactical_interface": "전술 인터페이스 로딩 중...",
+      "mounting_file_system": "파일 시스템 마운트 중: /dev/sda1 [RO]",
+      "checking_neural_link": "신경 링크 점검 중... 안정",
+      "bypassing_security": "보안 프로토콜 우회 중...",
+      "optimizing_dopamine": "도파민 수용체 최적화 중...",
+      "system_ready": "시스템 준비 완료.",
+      "footer_os": "ENTROPY_OS release-v1",
+      "footer_hypervisor": "등록되지 않은 하이퍼바이저"
+    }
+  },
+  "controls": {
+    "color": "색상",
+    "off": "끔",
+    "shadow_intensity": "그림자 강도",
+    "select_shadow_color": "그림자 색상 선택"
+  },
+  "toast": {
+    "dismiss_notification": "알림 닫기"
+  },
+  "feedback": {
+    "settings": {
+      "channels": {
+        "default": "설정",
+        "multiple": "설정",
+        "protocol": "보호 설정",
+        "preference": "디스플레이 설정",
+        "security": "보안 설정",
+        "clse": "인사이트 설정"
+      },
+      "saved": {
+        "title": "{{scope}} 저장됨",
+        "message": "변경 사항이 바로 적용되었습니다."
+      },
+      "failed": {
+        "title": "{{scope}} 저장 실패",
+        "message": "변경 사항을 저장하지 못했습니다. 해당 설정 항목에서 다시 시도해 주세요."
+      },
+      "apply_failed": {
+        "title": "{{scope}} 적용 확인 필요",
+        "message": "선택은 저장되었습니다. 보호 기능의 적용을 확인하지 못했습니다. 다시 시도해 주세요.",
+        "retry": "{{scope}} 적용 다시 시도",
+        "retrying": "적용 중…"
+      }
+    },
+    "interaction": {
+      "copy_completed": {
+        "title": "복사됨",
+        "message": "텍스트가 클립보드에 준비되었습니다."
+      },
+      "copy_failed": {
+        "title": "복사 실패",
+        "message": "클립보드 접근을 사용할 수 없습니다."
+      }
+    }
+  },
+  "navigation": {
+    "main": "주요 내비게이션"
+  },
+  "dashboard_boot_recovery": {
+    "pending_title": "로컬 프로필을 준비하고 있습니다",
+    "pending_body": "Dashboard를 열기 전에 이 기기의 설정을 확인하고 있습니다.",
+    "failed_title": "Dashboard를 열 수 없습니다",
+    "failed_body": "로컬 데이터는 보존되어 있습니다. 다시 불러와 확인하세요. 저장된 프로필을 초기화해야 하는 경우 별도의 복구 작업이 표시됩니다.",
+    "retry": "다시 불러와 재시도"
+  },
+  "profile_mutation_recovery": {
+    "settings_reset_body": "저장된 설정이 현재 계약과 일치하지 않아 Dashboard를 열 수 없습니다. 데이터를 보존하고 있으며, 전체 로컬 초기화는 아래 확인을 거친 경우에만 실행됩니다.",
+    "diagnostics": "진단 정보",
+    "lifecycle_code_label": "프로필 상태 코드",
+    "request_code_label": "이번 요청 오류",
+    "request_failed": "복구 요청을 완료하지 못했습니다. 아래 진단 코드를 확인하세요.",
+    "auth_failed": "설정 보호 PIN이 필요하거나 일치하지 않습니다. PIN을 확인하고 다시 시도하세요.",
+    "handoff_failed": "프로필 변경은 저장되었습니다. 재시작 요청이 실패했으므로 아래에서 요청만 다시 보내세요.",
+    "retry_handoff": "재시작 요청 재시도",
+    "eyebrow": "프로필 일관성 펜스",
+    "title": "로컬 프로필 복구가 필요합니다",
+    "resetting_body": "프로필 변경이 아직 차단 상태입니다. 완료를 기다리거나, 작업이 중단되었다면 로컬 프로필을 명시적으로 다시 구성하세요.",
+    "committed_body": "영속 프로필 반영은 끝났고 런타임 소유자들이 다시 열리는 중입니다. 잠시 기다리거나, 워커 재시작 뒤에도 이 상태가 지속되면 로컬 프로필을 다시 구성하세요.",
+    "failed_body": "이전 프로필 변경이 실패해 일반 런타임 소유자가 닫혀 있습니다. 계속하기 전에 로컬 프로필을 다시 구성해야 합니다.",
+    "complete_body": "프로필 변경은 저장되었습니다. 계속하려면 Entropy를 다시 시작해야 합니다.",
+    "contract_reset_body": "현재 빌드가 이전 개발 프로필 기준선을 감지했습니다. 로컬 프로필을 명시적으로 다시 구성할 때까지 일반 런타임 소유자는 닫힌 상태를 유지합니다.",
+    "baseline_label": "프로필 기준선",
+    "reason_label": "초기화 사유",
+    "passcode_label": "설정 보호 PIN (설정한 경우)",
+    "prepare_reset": "전체 로컬 초기화로 복구",
+    "confirm_body": "로컬 설정, 기록, 진행 상태, Zen 모델 데이터를 영구 삭제한 뒤 하나의 새 프로필 세대를 만듭니다.",
+    "confirm_reset": "전체 로컬 초기화 확인",
+    "recovering": "로컬 프로필 재구성 중..."
+  },
+  "error_boundary": {
+    "crash_title": "시스템 크래시 감지",
+    "error_message": "오류 메시지",
+    "stack_trace": "스택 트레이스",
+    "build_info": "빌드 정보",
+    "build_id": "빌드 ID",
+    "build_created_at": "생성 시각",
+    "build_target": "대상",
+    "build_out_dir": "출력 디렉터리",
+    "unknown": "알 수 없음",
+    "reboot": "시스템 재부팅"
+  },
+  "friction_profiles": {
+    "relaxed": "완화",
+    "normal": "기본",
+    "reinforced": "강화",
+    "label": "{{label}} · {{band}}"
+  },
+  "security_vault": {
+    "setup_title": "데이터 잠금 설정",
+    "preparing_title": "Entropy 준비 중",
+    "preparing_description": "암호 입력 없이 시작할 수 있도록 이 기기의 로컬 데이터를 준비합니다.",
+    "preparing_failed": "로컬 데이터를 준비하지 못했습니다. 아래 진단 코드를 확인하고 다시 시도하세요.",
+    "unlock_title": "기록 잠금 해제",
+    "incompatible_title": "개발 프로필을 새로 시작해야 합니다",
+    "description": "데이터 잠금 암호는 상세 로그와 이를 여는 키를 보호합니다. 사이트 설정, 집계 통계와 보호용 키는 브라우저 프로필에서 읽을 수 있습니다. 설정 보호 PIN과는 별개의 암호입니다.",
+    "paused": "사이트 보호와 집계 통계는 계속 동작합니다. 잠긴 동안 새 상세 로그는 저장하지 않으며, 잠금을 해제해도 그 기간의 상세 기록을 소급해 만들지 않습니다.",
+    "passphrase": "데이터 잠금 암호",
+    "current_passphrase": "현재 데이터 잠금 암호",
+    "new_passphrase": "새 데이터 잠금 암호",
+    "confirm_passphrase": "데이터 잠금 암호 확인",
+    "passphrase_help": "16자 이상, UTF-8 기준 128바이트 이하로 입력하세요. 길고 고유한 문구를 권장하며 공백과 한글을 사용할 수 있습니다.",
+    "mismatch": "암호가 서로 일치하지 않습니다.",
+    "no_recovery": "이 암호는 복구할 수 없으므로 안전하게 보관하세요. 별도 암호로 만든 백업이 있으면 데이터를 복원할 수 있습니다.",
+    "setup": "데이터 잠금 사용",
+    "unlock": "기록 잠금 해제",
+    "operation_failed": "잠금을 해제하지 못했습니다. 데이터 잠금 암호를 확인하고 다시 시도하세요.",
+    "retry": "다시 시도",
+    "incompatible_description": "이 출시 전 프로필은 지원하지 않는 데이터 형식입니다. 자동으로 변환하거나 삭제하지 않습니다.",
+    "reset_title": "암호를 잊었거나 이전 개발 프로필인 경우",
+    "reset_description": "새로 시작하면 로컬 설정과 기록, 키가 모두 삭제됩니다. 설정 보호 PIN이 있다면 입력하세요.",
+    "pin": "설정 보호 PIN",
+    "reset_confirmation": "모든 로컬 데이터가 삭제된다는 것을 이해했습니다.",
+    "reset": "로컬 데이터 삭제하고 다시 시작",
+    "reset_failed": "프로필을 초기화하지 못했습니다. 아래 진단 코드를 확인하세요.",
+    "reset_auth_failed": "설정 보호 PIN이 필요하거나 일치하지 않습니다. PIN을 확인하고 다시 시도하세요.",
+    "reset_committed": "로컬 데이터가 초기화되었습니다. 계속하려면 앱을 다시 시작해야 합니다.",
+    "reset_handoff_failed": "로컬 데이터는 초기화되었지만 다시 시작 요청을 보내지 못했습니다. 아래에서 다시 시작을 재시도하세요.",
+    "reset_retry_handoff": "다시 시작 재시도",
+    "reset_finishing": "다시 시작하는 중…",
+    "popup_locked": "이전 데이터 잠금 구조를 사용 중입니다. 대시보드에서 현재 암호를 확인하면 다음부터 사이트 보호는 암호 입력 없이 시작합니다.",
+    "open_dashboard": "대시보드 열기",
+    "settings_title": "데이터 잠금 · 선택 사항",
+    "settings_description": "사이트 보호는 항상 암호 입력 없이 시작합니다. 상세 로그에만 별도 데이터 잠금을 설정할 수 있습니다.",
+    "lock_disabled": "데이터 잠금 사용 안 함",
+    "lock_disabled_description": "앱을 바로 시작합니다. 암호화 로그를 여는 키는 이 브라우저 프로필에 함께 보관합니다.",
+    "lock_enabled": "데이터 잠금 사용 중",
+    "lock_enabled_description": "브라우저를 다시 시작하거나 확장을 다시 로드하면 상세 로그가 잠깁니다. 사이트 보호와 집계 통계는 계속 동작하며 새 상세 로그는 잠금 해제 후부터 저장합니다.",
+    "enable_lock": "데이터 잠금 설정",
+    "remove_lock": "데이터 잠금 끄기",
+    "remove_lock_description": "현재 암호를 확인하면 상세 로그를 암호 입력 없이 사용할 수 있습니다. 기존 데이터와 설정 보호 PIN은 유지됩니다.",
+    "lock_operation_failed": "데이터 잠금 설정을 바꾸지 못했습니다. 암호와 아래 진단 코드를 확인하세요.",
+    "change": "데이터 잠금 암호 변경",
+    "changed": "데이터 잠금 암호를 변경했습니다.",
+    "export": "암호화 백업 저장",
+    "backup_description": "비밀 키를 포함한 백업 전체를 별도 백업 암호로 암호화합니다. 백업 암호도 안전하게 보관하세요.",
+    "backup_passphrase": "백업 암호",
+    "confirm_backup_passphrase": "백업 암호 확인",
+    "exported": "암호화 백업을 저장했습니다.",
+    "restore": "백업으로 로컬 데이터 교체",
+    "backup_file": "암호화 백업 파일",
+    "restore_passphrase": "복원 후 사용할 새 데이터 잠금 암호",
+    "restore_local_description": "복원 후에는 새 데이터 잠금 암호 없이 시작합니다. 데이터 잠금은 나중에 설정에서 켤 수 있습니다.",
+    "replace_confirmation": "현재 로컬 설정과 기록 전체를 백업 내용으로 교체합니다. 설정 보호 PIN은 백업의 값으로 바뀝니다.",
+    "restored": "백업 복원이 완료되었습니다. 앱을 다시 시작합니다.",
+    "restore_handoff_failed": "백업 복원은 완료되었지만 다시 시작 요청을 보내지 못했습니다. 아래에서 다시 시작만 재시도하세요.",
+    "backup_failed": "작업에 실패했습니다. 백업 암호와 설정 보호 PIN, 백업 파일을 확인하세요.",
+    "changed_unlock_required": "데이터 잠금 암호는 변경되었지만 잠금 해제 세션을 저장하지 못했습니다. 새 암호로 다시 열어 주세요.",
+    "removal_unlock_required": "데이터 잠금 해제를 완료하지 못했습니다. 현재 데이터 잠금 암호로 다시 열어 주세요.",
+    "backup_title": "암호화 백업과 복원",
+    "logs_locked": "상세 로그 잠김",
+    "logs_locked_description": "사이트 보호와 집계 통계는 계속 동작합니다. 기존 상세 로그를 열거나 새 상세 로그를 저장하려면 잠금을 해제하세요. 잠긴 기간의 상세 로그는 소급해 만들지 않습니다.",
+    "separate_title": "사이트 보호를 바로 시작하도록 변경",
+    "separate_description": "이 프로필은 사이트 보호용 키까지 암호로 잠그던 구조를 사용합니다. 현재 암호를 확인하면 기존 데이터와 암호를 유지하면서 상세 로그만 잠그도록 변경합니다. 다음부터 사이트 보호는 암호 입력 없이 시작합니다.",
+    "separate_action": "현재 암호 확인하고 변경",
+    "separate_failed": "변경을 완료하지 못했습니다. 아래 진단 코드를 확인하고 다시 시도하세요.",
+    "reset_return_description": "전체 초기화가 끝나면 앱을 다시 시작해 첫 정원으로 돌아갑니다. 브라우저의 사이트 접근 권한은 유지합니다."
+  },
+  "consumption_boundary": {
+    "title": "다음 흐름으로 넘어가기 전에",
+    "leave": "← 이번에는 여기까지",
+    "enter": "계속 보기 →",
+    "instruction": "가운데 경계를 천천히 밀고 놓으세요. 키보드는 방향키를 잠시 누른 뒤 놓으세요.",
+    "idle": "왼쪽은 마침, 오른쪽은 계속",
+    "release_enter": "놓으면 계속 봅니다",
+    "release_leave": "놓으면 이번 소비를 마칩니다"
+  }
+};

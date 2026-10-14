@@ -1,0 +1,7 @@
+@import 'tailwindcss/theme.css' layer(theme);
+@import '../../themes/styles/index.css';
+@import 'tailwindcss/preflight.css';
+@import '../../themes/styles/tailwindPreflight.css';
+@import '../../themes/styles/tailwindTheme.css';
+@import './dashboardStyles.css';
+@import 'tailwindcss/utilities.css' source(none);

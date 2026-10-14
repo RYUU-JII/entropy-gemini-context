@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "nudge",
+  "title": "Sentinel Flare and nudge runtime",
+  "pathPrefixes": [
+    "src/domains/nudge/engine/",
+    "src/domains/nudge/nudge/",
+    "src/domains/nudge/protocols/",
+    "src/domains/nudge/rendering/",
+    "src/domains/nudge/runtime/",
+    "tests/globalSentinel",
+    "tests/nudgeGame",
+    "tests/nudgeProtocol",
+    "tests/nudgeSwarm",
+    "tests/sentinel",
+    "tests/siteFurin",
+    "tests/zenFurin",
+    "docs/architecture/repository/nudge-",
+    "docs/architecture/themes/artifacts/sentinel-flare-",
+    "docs/architecture/themes/zen/zen-sentinel-"
+  ],
+  "ownerDocs": [
+    "docs/architecture/repository/nudge-main-runtime-boundary-map.md",
+    "docs/architecture/repository/nudge-worker-runtime-boundary-map.md"
+  ],
+  "resourceClaims": [],
+  "focusedChecks": []
+}
